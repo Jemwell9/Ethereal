@@ -43,7 +43,7 @@ export default function Hero() {
                 <img 
                   src="/Ethereal-Homepage.png" 
                   alt="3D Printing Showcase" 
-                  className="w-full h-full object-contain bg-black/50" 
+                  className="w-full h-full object-contain" 
                   onError={(e) => {
                     console.error('Hero image failed to load:', e);
                     const target = e.target as HTMLImageElement;
@@ -51,7 +51,6 @@ export default function Hero() {
                   }}
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
             </motion.div>
           </div>
         </motion.div>
