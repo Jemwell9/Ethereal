@@ -2,79 +2,310 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "wouter";
+import { Printer, Pen, Shapes, BookOpen, Trophy, Sparkles } from "lucide-react";
+import { Animated3DGrid } from "@/components/ui/animated-3d-grid";
 
-const workshops = [
+const printingWorkshops = [
   {
-    title: "Beginner's Workshop",
-    description: "Learn the basics of 3D printing",
+    title: "3D Printing Beginner",
+    description: "Start your journey into 3D printing. Learn basic operations, material handling, and simple print execution.",
+    details: "Perfect for those new to 3D printing",
+    features: [
+      "Basic printer operation",
+      "Material selection basics",
+      "Simple print execution",
+      "Basic troubleshooting"
+    ],
     duration: "4 hours",
     price: "$199",
-    image: "https://images.unsplash.com/photo-1734477127040-c5845f5af500"
+    icon: BookOpen,
+    image: "/workshop-print-beginner.jpg"
   },
   {
-    title: "Advanced Techniques",
-    description: "Master advanced 3D printing techniques",
+    title: "3D Printing Advanced",
+    description: "Take your skills further with CAD design integration and advanced printing techniques.",
+    details: "For those ready to design and print",
+    features: [
+      "CAD software basics",
+      "Design for 3D printing",
+      "Advanced material handling",
+      "Custom print settings"
+    ],
     duration: "8 hours",
     price: "$399",
-    image: "https://images.unsplash.com/photo-1561990975-6cfff5661206"
+    icon: Shapes,
+    image: "/workshop-print-advanced.jpg"
+  },
+  {
+    title: "3D Printing Master",
+    description: "Complete project management from concept to final product.",
+    details: "Comprehensive end-to-end training",
+    features: [
+      "Full project lifecycle",
+      "Advanced design techniques",
+      "Multi-material projects",
+      "Professional finishing"
+    ],
+    duration: "16 hours",
+    price: "$799",
+    icon: Trophy,
+    image: "/workshop-print-master.jpg"
+  }
+];
+
+const penArtWorkshops = [
+  {
+    category: "Kids",
+    workshops: [
+      {
+        title: "Kids Beginner Pen Art",
+        description: "Fun introduction to 3D pen art for young creators.",
+        details: "Age-appropriate projects",
+        features: [
+          "Basic pen control",
+          "Simple shapes creation",
+          "Safety guidelines",
+          "Fun starter projects"
+        ],
+        duration: "2 hours",
+        price: "$79",
+        icon: BookOpen,
+        image: "/workshop-kids-beginner.jpg"
+      },
+      {
+        title: "Kids Advanced Pen Art",
+        description: "Create more complex designs and learn color techniques.",
+        details: "For kids with basic experience",
+        features: [
+          "Advanced shapes",
+          "Color mixing",
+          "2D to 3D conversion",
+          "Character creation"
+        ],
+        duration: "3 hours",
+        price: "$129",
+        icon: Shapes,
+        image: "/workshop-kids-advanced.jpg"
+      },
+      {
+        title: "Kids Master Pen Art",
+        description: "Master complex projects and artistic techniques.",
+        details: "For young artistic enthusiasts",
+        features: [
+          "Complex structures",
+          "Multi-color projects",
+          "Original design creation",
+          "Portfolio development"
+        ],
+        duration: "4 hours",
+        price: "$179",
+        icon: Trophy,
+        image: "/workshop-kids-master.jpg"
+      }
+    ]
+  },
+  {
+    category: "Adults",
+    workshops: [
+      {
+        title: "Adult Beginner Pen Art",
+        description: "Start your journey in 3D pen artistry.",
+        details: "No experience needed",
+        features: [
+          "Fundamental techniques",
+          "Basic project planning",
+          "Material understanding",
+          "Essential skills practice"
+        ],
+        duration: "3 hours",
+        price: "$99",
+        icon: BookOpen,
+        image: "/workshop-adult-beginner.jpg"
+      },
+      {
+        title: "Adult Advanced Pen Art",
+        description: "Develop sophisticated techniques and artistic styles.",
+        details: "Intermediate skill level",
+        features: [
+          "Advanced techniques",
+          "Style development",
+          "Complex structures",
+          "Artistic principles"
+        ],
+        duration: "4 hours",
+        price: "$149",
+        icon: Shapes,
+        image: "/workshop-adult-advanced.jpg"
+      },
+      {
+        title: "Adult Master Pen Art",
+        description: "Create professional-level artwork and develop your unique style.",
+        details: "Professional artistry focus",
+        features: [
+          "Professional techniques",
+          "Original artwork creation",
+          "Advanced color theory",
+          "Exhibition preparation"
+        ],
+        duration: "6 hours",
+        price: "$249",
+        icon: Trophy,
+        image: "/workshop-adult-master.jpg"
+      }
+    ]
   }
 ];
 
 export default function Workshops() {
   return (
-    <section className="py-20 bg-accent/5">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-black relative overflow-hidden">
+      <Animated3DGrid variant="printer" />
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4">Workshops</h2>
-          <p className="text-foreground/80 max-w-2xl mx-auto">
-            Join our expert-led workshops and master the art of 3D printing
+          <h2 className="text-4xl font-bold mb-4 text-white">WORKSHOPS</h2>
+          <p className="text-white/60 max-w-3xl mx-auto">
+            From beginners to masters, explore our comprehensive range of workshops in 3D printing and pen art.
+            Each level is carefully designed to build your skills and creativity.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {workshops.map((workshop, index) => (
-            <motion.div
-              key={workshop.title}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <Card className="h-full">
-                <CardHeader>
-                  <CardTitle>{workshop.title}</CardTitle>
-                  <CardDescription>{workshop.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <img
-                    src={workshop.image}
-                    alt={workshop.title}
-                    className="w-full h-48 object-cover rounded-lg"
-                  />
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <p className="text-sm text-foreground/60">Duration</p>
-                      <p className="font-medium">{workshop.duration}</p>
+        {/* 3D Printing Workshops */}
+        <div className="mb-20">
+          <h3 className="text-2xl font-bold mb-8 text-white text-center">3D Printing Mastery</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {printingWorkshops.map((workshop, index) => (
+              <motion.div
+                key={workshop.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="h-full bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors">
+                  <CardHeader>
+                    <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
+                      <workshop.icon className="w-6 h-6 text-[#00FF00]" />
                     </div>
-                    <div className="text-right">
-                      <p className="text-sm text-foreground/60">Price</p>
-                      <p className="font-medium">{workshop.price}</p>
+                    <CardTitle className="text-white">{workshop.title}</CardTitle>
+                    <CardDescription className="text-white/60">{workshop.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-6">
+                    <div className="aspect-video bg-[#00FF00]/5 rounded-lg overflow-hidden">
+                      <img
+                        src={workshop.image}
+                        alt={workshop.title}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          console.error('Workshop image failed to load:', e);
+                          const target = e.target as HTMLImageElement;
+                          target.style.border = '2px solid red';
+                        }}
+                      />
                     </div>
-                  </div>
-                  <Button asChild className="w-full">
-                    <Link href="/booking">Book Now</Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+                    <div className="space-y-4">
+                      <p className="text-sm font-medium text-white">{workshop.details}</p>
+                      <ul className="space-y-2">
+                        {workshop.features.map((feature, i) => (
+                          <li key={i} className="text-sm text-white/60 flex items-center gap-2">
+                            <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="flex justify-between items-center pt-4">
+                        <div>
+                          <p className="text-sm text-white/60">Duration</p>
+                          <p className="font-medium text-white">{workshop.duration}</p>
+                        </div>
+                        <div className="text-right">
+                          <p className="text-sm text-white/60">Price</p>
+                          <p className="font-medium text-white">{workshop.price}</p>
+                        </div>
+                      </div>
+                      <Button asChild className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                        <Link href="/booking">Book Now</Link>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
         </div>
+
+        {/* 3D Pen Art Workshops */}
+        {penArtWorkshops.map((category, categoryIndex) => (
+          <div key={category.category} className="mb-20">
+            <h3 className="text-2xl font-bold mb-8 text-white text-center">
+              3D Pen Art - {category.category}
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {category.workshops.map((workshop, index) => (
+                <motion.div
+                  key={workshop.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="h-full bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors">
+                    <CardHeader>
+                      <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
+                        <workshop.icon className="w-6 h-6 text-[#00FF00]" />
+                      </div>
+                      <CardTitle className="text-white">{workshop.title}</CardTitle>
+                      <CardDescription className="text-white/60">{workshop.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-6">
+                      <div className="aspect-video bg-[#00FF00]/5 rounded-lg overflow-hidden">
+                        <img
+                          src={workshop.image}
+                          alt={workshop.title}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            console.error('Workshop image failed to load:', e);
+                            const target = e.target as HTMLImageElement;
+                            target.style.border = '2px solid red';
+                          }}
+                        />
+                      </div>
+                      <div className="space-y-4">
+                        <p className="text-sm font-medium text-white">{workshop.details}</p>
+                        <ul className="space-y-2">
+                          {workshop.features.map((feature, i) => (
+                            <li key={i} className="text-sm text-white/60 flex items-center gap-2">
+                              <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+                        <div className="flex justify-between items-center pt-4">
+                          <div>
+                            <p className="text-sm text-white/60">Duration</p>
+                            <p className="font-medium text-white">{workshop.duration}</p>
+                          </div>
+                          <div className="text-right">
+                            <p className="text-sm text-white/60">Price</p>
+                            <p className="font-medium text-white">{workshop.price}</p>
+                          </div>
+                        </div>
+                        <Button asChild className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                          <Link href="/booking">Book Now</Link>
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
