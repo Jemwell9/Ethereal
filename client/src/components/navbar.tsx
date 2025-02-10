@@ -3,35 +3,38 @@ import { Button } from "@/components/ui/button";
 
 export default function Navbar() {
   return (
-    <nav className="fixed w-full bg-black/90 backdrop-blur z-50">
-      <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <div className="flex space-x-8">
+    <nav className="fixed w-full z-50">
+      <div className="container mx-auto flex items-center justify-between h-20 px-4">
+        {/* Left menu */}
+        <div className="flex items-center space-x-12">
           <Link href="/">
-            <a className="text-white hover:text-primary/90 transition-colors uppercase text-sm tracking-wider">Home</a>
+            <a className="text-white hover:text-[#00FF00] transition-colors text-sm tracking-widest">HOME</a>
           </Link>
           <Link href="/about">
-            <a className="text-white hover:text-primary/90 transition-colors uppercase text-sm tracking-wider">About</a>
+            <a className="text-white hover:text-[#00FF00] transition-colors text-sm tracking-widest">ABOUT</a>
           </Link>
           <Link href="#services">
-            <a className="text-white hover:text-primary/90 transition-colors uppercase text-sm tracking-wider">Services</a>
+            <a className="text-white hover:text-[#00FF00] transition-colors text-sm tracking-widest">SERVICES</a>
           </Link>
         </div>
 
-        <Link href="/">
-          <a className="absolute left-1/2 -translate-x-1/2">
-            <img src="/logo.svg" alt="Ethereal" className="h-8" />
-          </a>
-        </Link>
+        {/* Center logo */}
+        <div className="absolute left-1/2 -translate-x-1/2">
+          <Link href="/">
+            <img src="/logo.svg" alt="Ethereal" className="h-12" />
+          </Link>
+        </div>
 
-        <div className="flex space-x-8 items-center">
+        {/* Right menu */}
+        <div className="flex items-center space-x-12">
           <Link href="/workshops">
-            <a className="text-white hover:text-primary/90 transition-colors uppercase text-sm tracking-wider">Workshops</a>
+            <a className="text-white hover:text-[#00FF00] transition-colors text-sm tracking-widest">WORKSHOPS</a>
           </Link>
           <Link href="/consult">
-            <a className="text-white hover:text-primary/90 transition-colors uppercase text-sm tracking-wider">Consult</a>
+            <a className="text-white hover:text-[#00FF00] transition-colors text-sm tracking-widest">CONSULT</a>
           </Link>
-          <Button className="bg-primary hover:bg-primary/90 text-white uppercase text-sm tracking-wider px-6">
-            Contact Us
+          <Button className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black text-sm tracking-widest px-8">
+            CONTACT US
           </Button>
         </div>
       </div>

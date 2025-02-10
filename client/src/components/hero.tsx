@@ -4,38 +4,43 @@ import { Link } from "wouter";
 
 export default function Hero() {
   return (
-    <div className="relative min-h-screen flex items-center">
-      <div 
-        className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M96,95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1,0v-9h-9v9h9zm-10,0v-9h-9v9h9zm-10,0v-9h-9v9h9zm-10,0v-9h-9v9h9zm-10,0v-9h-9v9h9zm-10,0v-9h-9v9h9zm-10,0v-9h-9v9h9zm-10,0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10,0h9v-9h-9v9zm10,0h9v-9h-9v9zm10,0h9v-9h-9v9zm10,0h9v-9h-9v9zm10,0h9v-9h-9v9zm10,0h9v-9h-9v9zm10,0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10,0v-9h-9v9h9zm-10,0v-9h-9v9h9zm-10,0v-9h-9v9h9zm-10,0v-9h-9v9h9zm-10,0v-9h-9v9h9zm-10,0v-9h-9v9h9zm-10,0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10,0h9v-9h-9v9zm10,0h9v-9h-9v9zm10,0h9v-9h-9v9zm10,0h9v-9h-9v9zm10,0h9v-9h-9v9zm10,0h9v-9h-9v9zm10,0h9v-9h-9v9z'/%3E%3C/svg%3E")`
-        }}
-      />
-      <div className="container mx-auto px-4">
+    <div className="relative min-h-screen bg-black overflow-hidden">
+      {/* Diagonal light streaks */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(0,255,0,0.1)_50%,transparent_75%)] animate-pulse"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(-45deg,transparent_25%,rgba(0,255,0,0.05)_50%,transparent_75%)] animate-pulse delay-75"></div>
+      </div>
+
+      <div className="container mx-auto px-4 pt-32 pb-16 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="max-w-3xl"
+          className="max-w-4xl mx-auto text-center mb-16"
         >
           <h1 className="text-7xl font-bold mb-6 tracking-tighter">
-            <span>PRINTING YOUR</span><br />
-            <span>IDEAS TO </span>
-            <span className="text-primary bg-gradient-to-r from-primary to-primary/50 bg-clip-text text-transparent">LIFE</span>
+            <span className="block text-white mb-2">PRINTING YOUR</span>
+            <span className="block text-white">IDEAS TO</span>
+            <span className="text-[#00FF00] bg-gradient-to-r from-[#00FF00] to-transparent bg-clip-text text-transparent">LIFE</span>
           </h1>
-          <p className="text-xl text-foreground/80 mb-8 max-w-2xl">
-            Transform your concepts into reality with our state-of-the-art 3D printing services.
-            From prototypes to production, we bring your vision to life with precision and care.
-          </p>
-          <div className="flex gap-4">
-            <Button asChild size="lg" className="text-lg px-8">
-              <Link href="/booking">Get Started</Link>
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8">
-              Learn More
-            </Button>
-          </div>
         </motion.div>
+
+        {/* Product showcase */}
+        <div className="relative mt-24">
+          <img 
+            src="/hero-graphics.png" 
+            alt="3D Printing Services" 
+            className="w-full max-w-5xl mx-auto"
+          />
+
+          {/* Service labels */}
+          <div className="grid grid-cols-4 gap-8 max-w-4xl mx-auto mt-4 text-center text-sm text-white/80">
+            <div>3D PRINTING<br />ALL MATERIALS</div>
+            <div>AUTOCAD<br />MODELING</div>
+            <div>PHD LEVEL<br />EXPERTISE</div>
+            <div>3D PEN<br />ART WORKSHOP</div>
+          </div>
+        </div>
       </div>
     </div>
   );
