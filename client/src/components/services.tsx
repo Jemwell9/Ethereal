@@ -33,7 +33,8 @@ const services = [
 export default function Services() {
   return (
     <section id="services" className="py-20 bg-black relative overflow-hidden">
-      <Animated3DGrid variant="printer" />
+      <div className="absolute inset-0 bg-black/80" /> {/* Dark overlay */}
+      <Animated3DGrid variant="scanner" />
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -57,7 +58,7 @@ export default function Services() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors">
+              <Card className="h-full bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors backdrop-blur-sm">
                 <CardHeader>
                   <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
                     <service.icon className="w-6 h-6 text-[#00FF00]" />

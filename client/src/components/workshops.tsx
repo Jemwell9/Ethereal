@@ -150,6 +150,7 @@ const penArtWorkshops = [
 export default function Workshops() {
   return (
     <section className="py-20 bg-black relative overflow-hidden">
+      <div className="absolute inset-0 bg-black/80" />
       <Animated3DGrid variant="printer" />
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -166,7 +167,6 @@ export default function Workshops() {
           </p>
         </motion.div>
 
-        {/* 3D Printing Workshops */}
         <div className="mb-20">
           <h3 className="text-2xl font-bold mb-8 text-white text-center">3D Printing Mastery</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -178,7 +178,7 @@ export default function Workshops() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors">
+                <Card className="h-full bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors backdrop-blur-sm">
                   <CardHeader>
                     <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
                       <workshop.icon className="w-6 h-6 text-[#00FF00]" />
@@ -221,7 +221,6 @@ export default function Workshops() {
           </div>
         </div>
 
-        {/* 3D Pen Art Workshops */}
         {penArtWorkshops.map((category, categoryIndex) => (
           <div key={category.category} className="mb-20">
             <h3 className="text-2xl font-bold mb-8 text-white text-center">
@@ -236,7 +235,7 @@ export default function Workshops() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <Card className="h-full bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors">
+                  <Card className="h-full bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors backdrop-blur-sm">
                     <CardHeader>
                       <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
                         <workshop.icon className="w-6 h-6 text-[#00FF00]" />
