@@ -24,6 +24,11 @@ export default function Navbar() {
             src="/Ethereal-Logo.png" 
             alt="Ethereal" 
             className="h-12 w-auto"
+            onError={(e) => {
+              console.error('Logo failed to load:', e);
+              const target = e.target as HTMLImageElement;
+              target.style.border = '2px solid red';
+            }}
           />
         </Link>
 
