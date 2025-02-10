@@ -10,22 +10,52 @@ const milestones = [
   {
     year: "2020",
     title: "Company Founded",
-    description: "Started with a vision to revolutionize 3D printing accessibility"
+    description: "Started in Singapore with a vision to revolutionize 3D printing accessibility in Southeast Asia"
   },
   {
-    year: "2021",
+    year: "2021 Q2",
+    title: "First Innovation Center",
+    description: "Opened our first innovation center in Bukit Merah, introducing cutting-edge FDM printing services"
+  },
+  {
+    year: "2021 Q4",
+    title: "Educational Partnership",
+    description: "Launched partnerships with local schools to promote STEM education through 3D printing"
+  },
+  {
+    year: "2022 Q1",
     title: "Expansion Phase",
-    description: "Introduced advanced materials and printing technologies"
+    description: "Introduced advanced SLA and SLS printing technologies, expanding our material capabilities"
   },
   {
-    year: "2022",
-    title: "Innovation Hub",
-    description: "Launched our state-of-the-art research facility"
+    year: "2022 Q3",
+    title: "Research Collaboration",
+    description: "Started collaboration with NTU's Advanced Materials Research Center"
   },
   {
-    year: "2023",
-    title: "Global Recognition",
-    description: "Achieved industry certifications and expanded services"
+    year: "2022 Q4",
+    title: "Innovation Hub Launch",
+    description: "Established our state-of-the-art research facility in Singapore Science Park"
+  },
+  {
+    year: "2023 Q2",
+    title: "Regional Recognition",
+    description: "Received Singapore's Technology Innovation Award for sustainable manufacturing"
+  },
+  {
+    year: "2023 Q4",
+    title: "Global Partnerships",
+    description: "Formed strategic partnerships with leading industrial manufacturers in Asia"
+  },
+  {
+    year: "2024 Q1",
+    title: "Sustainability Initiative",
+    description: "Launched our eco-friendly materials program and green manufacturing processes"
+  },
+  {
+    year: "2024 Q4",
+    title: "Market Leadership",
+    description: "Became Singapore's leading provider of advanced 3D printing solutions"
   }
 ];
 
@@ -54,22 +84,40 @@ const technologies = [
 
 const team = [
   {
-    name: "Dr. Sarah Chen",
+    name: "Dr. Chen Wei Ming",
     role: "Chief Technology Officer",
-    expertise: "Ph.D. in Materials Science",
-    description: "Leading our research initiatives in advanced materials"
+    expertise: "Ph.D. in Materials Science, NUS",
+    description: "Leading our research initiatives in advanced materials and sustainable manufacturing"
   },
   {
-    name: "Prof. James Wilson",
+    name: "Dr. Lee Mei Ling",
     role: "Head of Innovation",
-    expertise: "20+ years in 3D printing",
-    description: "Pioneering new printing methodologies"
+    expertise: "Ph.D. in Mechanical Engineering, NTU",
+    description: "Pioneering new printing methodologies and industrial applications"
   },
   {
-    name: "Dr. Michael Torres",
-    role: "Lead Engineer",
-    expertise: "Mechanical Engineering Ph.D.",
-    description: "Specialized in industrial-scale printing solutions"
+    name: "Prof. Tan Kah Kee",
+    role: "Lead Research Scientist",
+    expertise: "Ph.D. in Chemical Engineering",
+    description: "Expert in polymer science and material optimization"
+  },
+  {
+    name: "Dr. Wong Siew Mei",
+    role: "Director of Operations",
+    expertise: "Ph.D. in Industrial Engineering",
+    description: "Specializing in manufacturing process optimization"
+  },
+  {
+    name: "Er. Lim Jun Jie",
+    role: "Senior Design Engineer",
+    expertise: "M.Eng in Aerospace Engineering",
+    description: "Expert in CAD/CAM and advanced prototyping"
+  },
+  {
+    name: "Dr. Ng Wei Ling",
+    role: "Materials Research Lead",
+    expertise: "Ph.D. in Nanotechnology",
+    description: "Developing next-generation printing materials"
   }
 ];
 
@@ -189,7 +237,10 @@ export default function About() {
           >
             Our Journey
           </motion.h2>
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto relative">
+            {/* Continuous Timeline Line */}
+            <div className="absolute left-24 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-[#00FF00]/20 to-transparent" />
+
             {milestones.map((milestone, index) => (
               <motion.div
                 key={milestone.year}
@@ -197,12 +248,15 @@ export default function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="flex gap-4 mb-8"
+                className="flex gap-4 mb-12 relative"
               >
+                {/* Timeline Dot */}
+                <div className="absolute left-24 top-2 w-4 h-4 bg-black border-2 border-[#00FF00] rounded-full transform -translate-x-[7px]" />
+
                 <div className="w-24 flex-shrink-0 text-right">
                   <span className="text-[#00FF00] font-bold">{milestone.year}</span>
                 </div>
-                <div className="flex-grow pl-8 border-l border-[#00FF00]/20">
+                <div className="flex-grow pl-8">
                   <h3 className="text-white font-semibold mb-2">{milestone.title}</h3>
                   <p className="text-white/60">{milestone.description}</p>
                 </div>
@@ -252,7 +306,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Team Section with updated grid */}
       <section className="py-20 bg-black/40">
         <div className="container mx-auto px-4">
           <motion.h2
@@ -262,9 +316,9 @@ export default function About() {
             viewport={{ once: true }}
             className="text-3xl font-bold mb-12 text-center text-white"
           >
-            Expert Team
+            Our Expert Team
           </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {team.map((member, index) => (
               <motion.div
                 key={member.name}
@@ -406,7 +460,6 @@ export default function About() {
           >
             Our Core Values
           </motion.h2>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <motion.div
