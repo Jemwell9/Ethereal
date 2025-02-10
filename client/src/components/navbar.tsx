@@ -23,7 +23,8 @@ export default function Navbar() {
           <img 
             src="/Ethereal-Logo.png" 
             alt="Ethereal" 
-            className="h-12 w-auto"
+            className="h-10 w-auto object-contain" 
+            style={{ filter: 'drop-shadow(0 0 8px rgba(0, 255, 0, 0.3))' }}
             onError={(e) => {
               console.error('Logo failed to load:', e);
               const target = e.target as HTMLImageElement;
@@ -35,7 +36,7 @@ export default function Navbar() {
         {/* Right menu */}
         <div className="hidden md:flex items-center space-x-8">
           <Link href="/workshops">
-            <span className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium">WORKSHOPS</span>
+            <span className="text-white hover:text-[00FF00] transition-colors text-xs tracking-[0.2em] font-medium">WORKSHOPS</span>
           </Link>
           <Link href="/consult">
             <span className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium">CONSULT</span>

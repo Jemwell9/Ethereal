@@ -10,22 +10,22 @@ const services = [
     details: "Our technology ensures precision, durability, and customization for all creations, big or small.",
   },
   {
-    title: "AutoCAD Modeling",
-    description: "Transform your ideas into 3D-print-ready designs with our expert AutoCAD modelling services. We specialize in creating precise and functional models tailored for 3D printing.",
+    title: "AutoCAD Modeling (Small to Large Scale)",
+    description: "Transform your ideas into 3D-print-ready designs with our expert AutoCAD modelling services. We specialize in creating precise and functional models tailored for 3D printing, ensuring every detail is optimized for a flawless print.",
     icon: Code,
     details: "From intricate prototypes to large-scale production designs.",
   },
   {
-    title: "Consultation Services",
-    description: "Navigate the world of 3D printing with confidence through our expert consultation services. Our team provides tailored guidance at every step.",
+    title: "Consultation Services (Design and Materials)",
+    description: "Navigate the world of 3D printing with confidence through our expert consultation services. From selecting the right materials—such as PLA, ABS, resin, metal, and more—to refining your design for optimal results, our team provides tailored guidance at every step.",
     icon: GraduationCap,
     details: "Whether you're prototyping, creating functional parts, or producing artistic pieces.",
   },
   {
-    title: "3D Pen Art Workshop",
-    description: "Unleash your creativity with our fun and engaging 3D Pen Art Workshops, designed for all ages and skill levels. Perfect for kids, adults, families, and team-building events.",
+    title: "3D Pen Art Workshop (For Kids to Adults)",
+    description: "Unleash your creativity with our fun and engaging 3D Pen Art Workshops, designed for all ages and skill levels. Whether you're a curious beginner or a seasoned artist, our hands-on sessions guide you in creating stunning 3D masterpieces.",
     icon: Pen,
-    details: "Let your imagination come to life—one stroke at a time!",
+    details: "Perfect for kids, adults, families, and team-building events, these workshops combine creativity and innovation in an enjoyable and interactive environment. Let your imagination come to life—one stroke at a time!",
   }
 ];
 

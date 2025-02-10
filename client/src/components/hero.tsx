@@ -43,7 +43,7 @@ export default function Hero() {
                 <img 
                   src="/Ethereal-Homepage.png" 
                   alt="3D Printing Showcase" 
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-contain bg-black/50" 
                   onError={(e) => {
                     console.error('Hero image failed to load:', e);
                     const target = e.target as HTMLImageElement;

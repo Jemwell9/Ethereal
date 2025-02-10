@@ -84,11 +84,11 @@ expertise
 
 ![](https://quenstance.my.canva.site/trial-ethereal-website/_assets/media/795952394cba50b35f6ce060c343538d.png)
 
-![](blob:https://quenstance.my.canva.site/4f3cef1b-ae6b-4466-be97-a5f1d8564155)
+![](blob:https://quenstance.my.canva.site/2a4072d1-5b5f-40ec-b9b6-83f6b8b56d4e)
 
-![](blob:https://quenstance.my.canva.site/5a3414c0-e79d-40f3-b362-1207546040a0)
+![](blob:https://quenstance.my.canva.site/e951ca02-e428-42fd-851b-d14994290e5e)
 
-![](blob:https://quenstance.my.canva.site/7cd1daa5-ed4a-483f-b716-d5a1fc0b0764)
+![](blob:https://quenstance.my.canva.site/16c522c6-c06f-48b2-9496-46129b5044c5)
 
 Trusted by Leading Brands
 
@@ -106,11 +106,11 @@ WHY CHOOSE US?
 
 ![](https://quenstance.my.canva.site/trial-ethereal-website/_assets/media/71156e5045a1d161ea12ddfb8997fbac.png)
 
-![](blob:https://quenstance.my.canva.site/54602a12-90d1-41c0-a00b-3847c58e236f)
+![](blob:https://quenstance.my.canva.site/3e055d28-20c9-4e36-ba7b-9f219f3348a4)
 
-![](blob:https://quenstance.my.canva.site/c45f0d27-2240-47b7-88af-5add8501a829)
+![](blob:https://quenstance.my.canva.site/7e58c007-aeb4-4c8f-b1c8-bc1c4da5c69a)
 
-![](blob:https://quenstance.my.canva.site/ee722d96-9af4-4434-afce-ce039a374305)
+![](blob:https://quenstance.my.canva.site/446a52fb-c45a-4992-96cc-4fa37360803c)
 
 Title
 
@@ -190,11 +190,11 @@ footprint.
 
 ![](https://quenstance.my.canva.site/trial-ethereal-website/_assets/media/de5ca66df9c2b4223f14759ddb7d4f6b.jpg)
 
-![](blob:https://quenstance.my.canva.site/d5c2a055-041a-47d9-bd3a-0bd38da219b2)
+![](blob:https://quenstance.my.canva.site/5fbed00e-14f5-4161-82aa-dd555e5dba08)
 
-![](blob:https://quenstance.my.canva.site/288186bf-3036-4908-a867-5fe9c4618620)
+![](blob:https://quenstance.my.canva.site/ea9512dc-2247-49a3-9fe0-f6ade848967f)
 
-![](blob:https://quenstance.my.canva.site/3a9dfc07-a507-4b92-b9d6-cab19d602a12)
+![](blob:https://quenstance.my.canva.site/7d6cb111-6495-4ef8-aff7-254b12461a90)
 
 FEATURED SERVICES
 
@@ -229,6 +229,8 @@ CHECK OUT MORE
 ![](https://quenstance.my.canva.site/trial-ethereal-website/_assets/media/68e674cc12df71d1235b93efc637d589.jpg)
 
 CHECK OUT MORE
+
+![](blob:https://quenstance.my.canva.site/5c2de3e2-6860-4f2f-a2ff-74fe897c6fd5)
 
 AUTOCAD MODELING
 
@@ -463,10 +465,6 @@ adults had so much fun creating their own designs—it was easy to
 follow and so engaging.”
 
 “What Our Customers Say”
-
-![](blob:https://quenstance.my.canva.site/e5fbe53b-0021-4c7a-bcd4-38b3f4d85bd2)
-
-![](blob:https://quenstance.my.canva.site/e5fbe53b-0021-4c7a-bcd4-38b3f4d85bd2)
 
 ![](https://quenstance.my.canva.site/trial-ethereal-website/_assets/media/71156e5045a1d161ea12ddfb8997fbac.png)
 
