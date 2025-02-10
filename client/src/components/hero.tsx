@@ -29,6 +29,26 @@ export default function Hero() {
               LIFE
             </span>
           </h1>
+
+          {/* Neon Table with 3D Printing Showcase */}
+          <div className="relative mt-[-100px] mb-16">
+            <div className="absolute inset-0 bg-[#00FF00] blur-[100px] opacity-20 h-[200px]"></div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="relative"
+            >
+              <div className="w-full max-w-4xl mx-auto h-[200px] rounded-lg overflow-hidden shadow-[0_0_30px_rgba(0,255,0,0.3)]">
+                <img 
+                  src="/hero-graphics.png" 
+                  alt="3D Printing Showcase" 
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+            </motion.div>
+          </div>
         </motion.div>
 
         {/* Feature Grid */}
