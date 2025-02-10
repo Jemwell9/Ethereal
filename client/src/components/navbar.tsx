@@ -21,14 +21,9 @@ export default function Navbar() {
         {/* Center logo */}
         <Link href="/">
           <img 
-            src="/logo.svg" 
+            src="/Ethereal-Logo.png" 
             alt="Ethereal" 
-            className="h-12 w-auto transform scale-125"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.src = '/logo-fallback.png';
-              console.error('Logo image failed to load');
-            }}
+            className="h-12 w-auto"
           />
         </Link>
 
