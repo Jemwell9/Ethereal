@@ -1,37 +1,37 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Printer, Laptop, Wrench, Users } from "lucide-react";
+import { Printer, Code, GraduationCap, Pen } from "lucide-react";
 
 const services = [
   {
-    title: "3D Printing",
-    description: "High-quality 3D printing services using the latest technology",
+    title: "3D Printing (All Materials)",
+    description: "From prototypes to finished products, we deliver quality results for every project using various materials. We've got you covered whether it's PLA, ABS, PETG, resin, metal, carbon fiber, nylon, or any other material.",
     icon: Printer,
-    image: "https://images.unsplash.com/photo-1680536555364-9dd4a1ab313e"
+    details: "Our technology ensures precision, durability, and customization for all creations, big or small.",
   },
   {
-    title: "Design Services",
-    description: "Professional CAD modeling and design optimization",
-    icon: Laptop,
-    image: "https://images.unsplash.com/photo-1532102235608-dc8fc689c9ab"
+    title: "AutoCAD Modeling",
+    description: "Transform your ideas into 3D-print-ready designs with our expert AutoCAD modelling services. We specialize in creating precise and functional models tailored for 3D printing.",
+    icon: Code,
+    details: "From intricate prototypes to large-scale production designs.",
   },
   {
-    title: "Prototyping",
-    description: "Rapid prototyping and iterative development",
-    icon: Wrench,
-    image: "https://images.unsplash.com/photo-1642615835477-d303d7dc9ee9"
+    title: "Consultation Services",
+    description: "Navigate the world of 3D printing with confidence through our expert consultation services. Our team provides tailored guidance at every step.",
+    icon: GraduationCap,
+    details: "Whether you're prototyping, creating functional parts, or producing artistic pieces.",
   },
   {
-    title: "Workshops",
-    description: "Learn 3D printing from industry experts",
-    icon: Users,
-    image: "https://images.unsplash.com/photo-1734477127040-c5845f5af500"
+    title: "3D Pen Art Workshop",
+    description: "Unleash your creativity with our fun and engaging 3D Pen Art Workshops, designed for all ages and skill levels. Perfect for kids, adults, families, and team-building events.",
+    icon: Pen,
+    details: "Let your imagination come to life—one stroke at a time!",
   }
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="py-20">
+    <section id="services" className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -40,13 +40,13 @@ export default function Services() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold mb-4">Our Services</h2>
-          <p className="text-foreground/80 max-w-2xl mx-auto">
-            We offer a comprehensive range of 3D printing services to meet your needs
+          <h2 className="text-4xl font-bold mb-4 text-white">FEATURED SERVICES</h2>
+          <p className="text-[#00FF00]/80 max-w-2xl mx-auto">
+            We provide comprehensive services from consultation to delivery
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -55,20 +55,16 @@ export default function Services() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full hover:shadow-lg transition-shadow">
+              <Card className="h-full bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                    <service.icon className="w-6 h-6 text-primary" />
+                  <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
+                    <service.icon className="w-6 h-6 text-[#00FF00]" />
                   </div>
-                  <CardTitle>{service.title}</CardTitle>
-                  <CardDescription>{service.description}</CardDescription>
+                  <CardTitle className="text-white">{service.title}</CardTitle>
+                  <CardDescription className="text-white/60">{service.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-48 object-cover rounded-lg"
-                  />
+                  <p className="text-[#00FF00]/80 text-sm">{service.details}</p>
                 </CardContent>
               </Card>
             </motion.div>
