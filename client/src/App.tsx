@@ -21,13 +21,13 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="min-h-screen bg-background relative">
-        <Animated3DGrid variant="default" />
+      <div className="min-h-screen bg-black relative">
         <div className="relative z-10">
           <Navbar />
           <Router />
           <Toaster />
         </div>
+        <Animated3DGrid variant="default" />
       </div>
     </QueryClientProvider>
   );

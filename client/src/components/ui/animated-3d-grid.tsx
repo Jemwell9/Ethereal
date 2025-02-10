@@ -3,9 +3,6 @@ import { useEffect, useState } from "react";
 
 export function Animated3DGrid({ variant = "default" }: { variant?: "default" | "printer" | "scanner" }) {
   const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 1000], [0, -200]);
-  const y2 = useTransform(scrollY, [0, 1000], [0, -150]);
-  const y3 = useTransform(scrollY, [0, 1000], [0, -100]);
   const [isBelowHero, setIsBelowHero] = useState(false);
 
   useEffect(() => {
@@ -14,85 +11,87 @@ export function Animated3DGrid({ variant = "default" }: { variant?: "default" | 
       setIsBelowHero(window.scrollY > heroHeight * 0.8);
     };
 
-    checkScroll(); // Check initial position
+    checkScroll();
     window.addEventListener('scroll', checkScroll);
     return () => window.removeEventListener('scroll', checkScroll);
   }, []);
+
+  const y1 = useTransform(scrollY, [0, 1000], [0, -200]);
+  const y2 = useTransform(scrollY, [0, 1000], [0, -300]);
+  const y3 = useTransform(scrollY, [0, 1000], [0, -400]);
 
   return (
     <motion.div 
       className="fixed inset-0 overflow-hidden pointer-events-none"
       initial={{ opacity: 0 }}
-      animate={{ opacity: isBelowHero ? 1 : 0 }}
-      transition={{ duration: 0.5 }}
+      animate={{ opacity: isBelowHero ? 0.6 : 0 }}
+      transition={{ duration: 1 }}
     >
       {isBelowHero && (
-        <div className="absolute inset-0 opacity-30" style={{ perspective: "1500px" }}>
-          {/* Floating grid elements */}
+        <div className="absolute inset-0" style={{ perspective: "1000px" }}>
+          {/* Grid Layer 1 - Horizontal lines */}
           <motion.div
             className="absolute inset-0"
             style={{ 
               transformStyle: "preserve-3d", 
-              transform: "rotateX(60deg)",
+              transform: "rotateX(75deg)",
               y: y1
             }}
           >
-            {Array.from({ length: 15 }).map((_, i) => (
+            {Array.from({ length: 20 }).map((_, i) => (
               <motion.div
                 key={i}
-                className="absolute h-[1px] w-[80%] left-[10%] bg-gradient-to-r from-[#00FF00]/0 via-[#00FF00] to-[#00FF00]/0"
+                className="absolute h-[1px] w-full bg-gradient-to-r from-transparent via-[#00FF00] to-transparent"
                 style={{ 
-                  top: `${i * 7}%`,
+                  top: `${i * 5}%`,
+                  opacity: 0.3,
                   filter: "blur(0.5px)"
                 }}
                 animate={{
-                  x: [-50, 50],
-                  opacity: [0.1, 0.3, 0.1],
-                  scale: [0.98, 1.02, 0.98],
+                  x: [-20, 20],
+                  opacity: [0.2, 0.4, 0.2],
                 }}
                 transition={{
-                  duration: 3 + i * 0.2,
+                  duration: 3 + i * 0.1,
                   repeat: Infinity,
                   ease: "easeInOut",
-                  delay: i * 0.1,
                 }}
               />
             ))}
           </motion.div>
 
-          {/* Vertical lines with scroll parallax */}
+          {/* Grid Layer 2 - Vertical lines */}
           <motion.div
             className="absolute inset-0"
             style={{ 
               transformStyle: "preserve-3d", 
-              transform: "rotateY(60deg)",
+              transform: "rotateY(15deg)",
               y: y2
             }}
           >
-            {Array.from({ length: 10 }).map((_, i) => (
+            {Array.from({ length: 15 }).map((_, i) => (
               <motion.div
                 key={`v-${i}`}
-                className="absolute w-[1px] h-full bg-gradient-to-b from-[#00FF00]/0 via-[#00FF00] to-[#00FF00]/0"
+                className="absolute w-[1px] h-full bg-gradient-to-b from-transparent via-[#00FF00] to-transparent"
                 style={{ 
-                  left: `${i * 10 + 5}%`,
+                  left: `${i * 7}%`,
+                  opacity: 0.3,
                   filter: "blur(0.5px)"
                 }}
                 animate={{
                   y: [-30, 30],
-                  opacity: [0.1, 0.3, 0.1],
-                  scale: [0.98, 1.02, 0.98],
+                  opacity: [0.2, 0.4, 0.2],
                 }}
                 transition={{
                   duration: 4 + i * 0.2,
                   repeat: Infinity,
                   ease: "easeInOut",
-                  delay: i * 0.15,
                 }}
               />
             ))}
           </motion.div>
 
-          {/* Diagonal accent lines */}
+          {/* Grid Layer 3 - Diagonal accent lines */}
           <motion.div
             className="absolute inset-0"
             style={{ 
@@ -101,23 +100,23 @@ export function Animated3DGrid({ variant = "default" }: { variant?: "default" | 
               y: y3
             }}
           >
-            {Array.from({ length: 8 }).map((_, i) => (
+            {Array.from({ length: 10 }).map((_, i) => (
               <motion.div
                 key={`d-${i}`}
-                className="absolute w-full h-[1px] bg-gradient-to-r from-[#00FF00]/0 via-[#00FF00] to-[#00FF00]/0"
+                className="absolute w-full h-[1px] bg-gradient-to-r from-transparent via-[#00FF00] to-transparent"
                 style={{ 
-                  top: `${i * 12}%`,
-                  filter: "blur(1px)"
+                  top: `${i * 10}%`,
+                  opacity: 0.3,
+                  filter: "blur(0.5px)"
                 }}
                 animate={{
                   x: [-100, 100],
-                  opacity: [0.05, 0.15, 0.05],
+                  opacity: [0.2, 0.4, 0.2],
                 }}
                 transition={{
                   duration: 5 + i * 0.3,
                   repeat: Infinity,
                   ease: "easeInOut",
-                  delay: i * 0.2,
                 }}
               />
             ))}
