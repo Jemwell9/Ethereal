@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Printer, Code, GraduationCap, Pen } from "lucide-react";
+import { Printer, Code, GraduationCap, Pen, Image } from "lucide-react";
 import { Animated3DGrid } from "@/components/ui/animated-3d-grid";
 
 const services = [
@@ -8,35 +8,27 @@ const services = [
     title: "3D Printing (All Materials)",
     description: "From prototypes to finished products, we deliver quality results for every project using various materials. We've got you covered whether it's PLA, ABS, PETG, resin, metal, carbon fiber, nylon, or any other material.",
     icon: Printer,
-    details: "Our technology ensures precision, durability, and customization for all creations, big or small.",
-    images: ["/service-printing-1.jpg", "/service-printing-2.jpg", "/service-printing-3.jpg"]
+    details: "Our technology ensures precision, durability, and customization for all creations, big or small."
   },
   {
     title: "AutoCAD Modeling (Small to Large Scale)",
     description: "Transform your ideas into 3D-print-ready designs with our expert AutoCAD modelling services. We specialize in creating precise and functional models tailored for 3D printing, ensuring every detail is optimized for a flawless print.",
     icon: Code,
-    details: "From intricate prototypes to large-scale production designs.",
-    images: ["/service-autocad-1.jpg", "/service-autocad-2.jpg", "/service-autocad-3.jpg"]
+    details: "From intricate prototypes to large-scale production designs."
   },
   {
     title: "Consultation Services (Design and Materials)",
     description: "Navigate the world of 3D printing with confidence through our expert consultation services. From selecting the right materials—such as PLA, ABS, resin, metal, and more—to refining your design for optimal results, our team provides tailored guidance at every step.",
     icon: GraduationCap,
-    details: "Whether you're prototyping, creating functional parts, or producing artistic pieces.",
-    images: ["/service-consult-1.jpg", "/service-consult-2.jpg", "/service-consult-3.jpg"]
+    details: "Whether you're prototyping, creating functional parts, or producing artistic pieces."
   },
   {
     title: "3D Pen Art Workshop (For Kids to Adults)",
     description: "Unleash your creativity with our fun and engaging 3D Pen Art Workshops, designed for all ages and skill levels. Whether you're a curious beginner or a seasoned artist, our hands-on sessions guide you in creating stunning 3D masterpieces.",
     icon: Pen,
-    details: "Perfect for kids, adults, families, and team-building events, these workshops combine creativity and innovation in an enjoyable and interactive environment. Let your imagination come to life—one stroke at a time!",
-    images: ["/service-workshop-1.jpg", "/service-workshop-2.jpg", "/service-workshop-3.jpg"]
+    details: "Perfect for kids, adults, families, and team-building events, these workshops combine creativity and innovation in an enjoyable and interactive environment. Let your imagination come to life—one stroke at a time!"
   }
 ];
-
-// Animation for the background grid effect - REMOVED
-//const PrinterGridBackground = () => { ... };
-
 
 export default function Services() {
   return (
@@ -75,21 +67,12 @@ export default function Services() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-3 gap-2 mb-4">
-                    {service.images.map((image, imgIndex) => (
+                    {[1, 2, 3].map((_, imgIndex) => (
                       <div
                         key={imgIndex}
-                        className="aspect-square bg-[#00FF00]/5 rounded-lg overflow-hidden"
+                        className="aspect-square bg-[#00FF00]/5 rounded-lg overflow-hidden flex items-center justify-center"
                       >
-                        <img
-                          src={image}
-                          alt={`${service.title} example ${imgIndex + 1}`}
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            console.error(`Service image failed to load:`, e);
-                            const target = e.target as HTMLImageElement;
-                            target.style.border = '2px solid red';
-                          }}
-                        />
+                        <Image className="w-6 h-6 text-[#00FF00]/40" />
                       </div>
                     ))}
                   </div>

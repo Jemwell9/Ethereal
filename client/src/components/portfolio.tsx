@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Animated3DGrid } from "@/components/ui/animated-3d-grid";
+import { Image } from "lucide-react";
 
 export default function Portfolio() {
   return (
@@ -22,8 +23,10 @@ export default function Portfolio() {
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="aspect-square bg-[#00FF00]/10 rounded-lg"
-              />
+                className="aspect-square bg-[#00FF00]/10 rounded-lg flex items-center justify-center"
+              >
+                <Image className="w-12 h-12 text-[#00FF00]/40" />
+              </motion.div>
             ))}
           </div>
           <div className="flex justify-center mt-8">
