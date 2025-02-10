@@ -22,9 +22,13 @@ export default function Navbar() {
         <div className="flex-shrink-0">
           <Link href="/">
             <img 
-              src="/Ethereal-Logo.png" 
+              src="/images/logo.png" 
               alt="Ethereal" 
               className="h-12"
+              onError={(e) => {
+                e.currentTarget.src = '/images/fallback-logo.png';
+                console.error('Error loading logo image');
+              }}
             />
           </Link>
         </div>
