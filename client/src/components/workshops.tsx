@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "wouter";
-import { Printer, Pen, Shapes, BookOpen, Trophy, Sparkles } from "lucide-react";
+import { Printer, Pen, Shapes, BookOpen, Trophy, Sparkles, Image } from "lucide-react";
 import { Animated3DGrid } from "@/components/ui/animated-3d-grid";
 
 const printingWorkshops = [
@@ -18,8 +18,7 @@ const printingWorkshops = [
     ],
     duration: "4 hours",
     price: "$199",
-    icon: BookOpen,
-    image: "/workshop-print-beginner.svg"
+    icon: BookOpen
   },
   {
     title: "3D Printing Advanced",
@@ -33,8 +32,7 @@ const printingWorkshops = [
     ],
     duration: "8 hours",
     price: "$399",
-    icon: Shapes,
-    image: "/workshop-print-advanced.svg"
+    icon: Shapes
   },
   {
     title: "3D Printing Master",
@@ -48,8 +46,7 @@ const printingWorkshops = [
     ],
     duration: "16 hours",
     price: "$799",
-    icon: Trophy,
-    image: "/workshop-print-master.svg"
+    icon: Trophy
   }
 ];
 
@@ -69,8 +66,7 @@ const penArtWorkshops = [
         ],
         duration: "2 hours",
         price: "$79",
-        icon: BookOpen,
-        image: "/workshop-kids-beginner.svg"
+        icon: BookOpen
       },
       {
         title: "Kids Advanced Pen Art",
@@ -84,8 +80,7 @@ const penArtWorkshops = [
         ],
         duration: "3 hours",
         price: "$129",
-        icon: Shapes,
-        image: "/workshop-kids-advanced.svg"
+        icon: Shapes
       },
       {
         title: "Kids Master Pen Art",
@@ -99,8 +94,7 @@ const penArtWorkshops = [
         ],
         duration: "4 hours",
         price: "$179",
-        icon: Trophy,
-        image: "/workshop-kids-master.svg"
+        icon: Trophy
       }
     ]
   },
@@ -119,8 +113,7 @@ const penArtWorkshops = [
         ],
         duration: "3 hours",
         price: "$99",
-        icon: BookOpen,
-        image: "/workshop-adult-beginner.svg"
+        icon: BookOpen
       },
       {
         title: "Adult Advanced Pen Art",
@@ -134,8 +127,7 @@ const penArtWorkshops = [
         ],
         duration: "4 hours",
         price: "$149",
-        icon: Shapes,
-        image: "/workshop-adult-advanced.svg"
+        icon: Shapes
       },
       {
         title: "Adult Master Pen Art",
@@ -149,8 +141,7 @@ const penArtWorkshops = [
         ],
         duration: "6 hours",
         price: "$249",
-        icon: Trophy,
-        image: "/workshop-adult-master.svg"
+        icon: Trophy
       }
     ]
   }
@@ -196,17 +187,8 @@ export default function Workshops() {
                     <CardDescription className="text-white/60">{workshop.description}</CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-6">
-                    <div className="aspect-video bg-[#00FF00]/5 rounded-lg overflow-hidden">
-                      <img
-                        src={workshop.image}
-                        alt={workshop.title}
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          console.error('Workshop image failed to load:', e);
-                          const target = e.target as HTMLImageElement;
-                          target.style.border = '2px solid red';
-                        }}
-                      />
+                    <div className="aspect-video bg-[#00FF00]/5 rounded-lg overflow-hidden flex items-center justify-center">
+                      <Image className="w-12 h-12 text-[#00FF00]/40" />
                     </div>
                     <div className="space-y-4">
                       <p className="text-sm font-medium text-white">{workshop.details}</p>
@@ -263,17 +245,8 @@ export default function Workshops() {
                       <CardDescription className="text-white/60">{workshop.description}</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-6">
-                      <div className="aspect-video bg-[#00FF00]/5 rounded-lg overflow-hidden">
-                        <img
-                          src={workshop.image}
-                          alt={workshop.title}
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            console.error('Workshop image failed to load:', e);
-                            const target = e.target as HTMLImageElement;
-                            target.style.border = '2px solid red';
-                          }}
-                        />
+                      <div className="aspect-video bg-[#00FF00]/5 rounded-lg overflow-hidden flex items-center justify-center">
+                        <Image className="w-12 h-12 text-[#00FF00]/40" />
                       </div>
                       <div className="space-y-4">
                         <p className="text-sm font-medium text-white">{workshop.details}</p>
