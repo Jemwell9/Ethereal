@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { Printer, Code2, GraduationCap, Pen } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -39,7 +40,7 @@ export default function Hero() {
               >
                 <div className="bg-[#00FF00]/10 p-4 rounded-lg transition-all group-hover:bg-[#00FF00]/20">
                   <div className="w-full aspect-square bg-black/50 rounded-lg mb-2 flex items-center justify-center">
-                    <div className="w-16 h-16 border-2 border-[#00FF00] rounded-lg"></div>
+                    <Printer className="w-16 h-16 text-[#00FF00]" />
                   </div>
                   <p className="text-xs text-white/80 uppercase tracking-wider text-center">
                     3D PRINTING<br />ALL MATERIALS
@@ -56,7 +57,7 @@ export default function Hero() {
               >
                 <div className="bg-[#00FF00]/10 p-4 rounded-lg transition-all group-hover:bg-[#00FF00]/20">
                   <div className="w-full aspect-square bg-black/50 rounded-lg mb-2 flex items-center justify-center">
-                    <div className="w-16 h-16 border-2 border-[#00FF00] rounded-lg"></div>
+                    <Code2 className="w-16 h-16 text-[#00FF00]" />
                   </div>
                   <p className="text-xs text-white/80 uppercase tracking-wider text-center">
                     AUTOCAD<br />MODELING
@@ -73,7 +74,7 @@ export default function Hero() {
               >
                 <div className="bg-[#00FF00]/10 p-4 rounded-lg transition-all group-hover:bg-[#00FF00]/20">
                   <div className="w-full aspect-square bg-black/50 rounded-lg mb-2 flex items-center justify-center">
-                    <div className="w-16 h-16 border-2 border-[#00FF00] rounded-lg"></div>
+                    <GraduationCap className="w-16 h-16 text-[#00FF00]" />
                   </div>
                   <p className="text-xs text-white/80 uppercase tracking-wider text-center">
                     PHD LEVEL<br />EXPERTISE
@@ -90,7 +91,7 @@ export default function Hero() {
               >
                 <div className="bg-[#00FF00]/10 p-4 rounded-lg transition-all group-hover:bg-[#00FF00]/20">
                   <div className="w-full aspect-square bg-black/50 rounded-lg mb-2 flex items-center justify-center">
-                    <div className="w-16 h-16 border-2 border-[#00FF00] rounded-lg"></div>
+                    <Pen className="w-16 h-16 text-[#00FF00]" />
                   </div>
                   <p className="text-xs text-white/80 uppercase tracking-wider text-center">
                     3D PEN<br />ART WORKSHOP
