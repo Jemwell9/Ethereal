@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PenTool, Users, Code2, Beaker, Leaf, Palette } from "lucide-react";
+import { Animated3DGrid } from "@/components/ui/animated-3d-grid";
 
 const workshops = [
   { name: "3D PEN (KIDS)", icon: PenTool },
@@ -15,7 +16,8 @@ const workshops = [
 export default function Trainings() {
   return (
     <section className="py-20 bg-black relative overflow-hidden">
-      <div className="container mx-auto px-4">
+      <Animated3DGrid variant="printer" />
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

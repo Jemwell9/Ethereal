@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Zap, Award, Users, Palette, Layers, Leaf } from "lucide-react";
+import { Animated3DGrid } from "@/components/ui/animated-3d-grid";
 
 const features = [
   {
@@ -41,36 +42,36 @@ const features = [
   },
 ];
 
-// Animated 3D printer head background
-const PrinterHeadBackground = () => {
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      <div className="absolute inset-0 opacity-20">
-        {Array.from({ length: 10 }).map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute left-0 w-full h-[20px] bg-gradient-to-r from-[#00FF00]/0 via-[#00FF00] to-[#00FF00]/0"
-            style={{ top: `${i * 10}%` }}
-            animate={{
-              x: [-100, window.innerWidth + 100],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "linear",
-              delay: i * 0.5,
-            }}
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
+// Animated 3D printer head background - removed
+//const PrinterHeadBackground = () => {
+//  return (
+//    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+//      <div className="absolute inset-0 opacity-20">
+//        {Array.from({ length: 10 }).map((_, i) => (
+//          <motion.div
+//            key={i}
+//            className="absolute left-0 w-full h-[20px] bg-gradient-to-r from-[#00FF00]/0 via-[#00FF00] to-[#00FF00]/0"
+//            style={{ top: `${i * 10}%` }}
+//            animate={{
+//              x: [-100, window.innerWidth + 100],
+//            }}
+//            transition={{
+//              duration: 8,
+//              repeat: Infinity,
+//              ease: "linear",
+//              delay: i * 0.5,
+//            }}
+//          />
+//        ))}
+//      </div>
+//    </div>
+//  );
+//};
 
 export default function WhyChooseUs() {
   return (
     <section className="py-20 bg-black relative overflow-hidden">
-      <PrinterHeadBackground />
+      <Animated3DGrid variant="scanner" />
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

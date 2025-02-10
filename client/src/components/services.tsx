@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Printer, Code, GraduationCap, Pen } from "lucide-react";
+import { Animated3DGrid } from "@/components/ui/animated-3d-grid";
 
 const services = [
   {
@@ -33,52 +34,14 @@ const services = [
   }
 ];
 
-// Animation for the background grid effect
-const PrinterGridBackground = () => {
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      <div className="absolute inset-0 opacity-30">
-        {Array.from({ length: 20 }).map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute h-[2px] w-full bg-[#00FF00]"
-            style={{ top: `${i * 5}%` }}
-            animate={{
-              x: [-100, 100],
-              opacity: [0.2, 0.5, 0.2],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              delay: i * 0.1,
-            }}
-          />
-        ))}
-        {Array.from({ length: 20 }).map((_, i) => (
-          <motion.div
-            key={`v-${i}`}
-            className="absolute w-[2px] h-full bg-[#00FF00]"
-            style={{ left: `${i * 5}%` }}
-            animate={{
-              y: [-100, 100],
-              opacity: [0.2, 0.5, 0.2],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              delay: i * 0.1,
-            }}
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
+// Animation for the background grid effect - REMOVED
+//const PrinterGridBackground = () => { ... };
+
 
 export default function Services() {
   return (
     <section id="services" className="py-20 bg-black relative overflow-hidden">
-      <PrinterGridBackground />
+      <Animated3DGrid variant="printer" />
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
