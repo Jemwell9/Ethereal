@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 export default function Navbar() {
   return (
     <nav className="fixed w-full z-50 bg-black/50 backdrop-blur-sm border-b border-white/10">
-      <div className="container mx-auto flex items-center justify-between h-16 px-4">
+      <div className="container mx-auto flex items-center justify-between h-20 px-4">
         {/* Left menu */}
         <div className="hidden md:flex items-center space-x-8">
           <Link href="/">
@@ -23,7 +23,7 @@ export default function Navbar() {
           <img 
             src="/logo.svg" 
             alt="Ethereal" 
-            className="h-8"
+            className="h-12 w-auto transform scale-125"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
               target.src = '/logo-fallback.png';
