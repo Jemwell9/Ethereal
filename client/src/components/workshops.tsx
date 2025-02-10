@@ -19,7 +19,7 @@ const printingWorkshops = [
     duration: "4 hours",
     price: "$199",
     icon: BookOpen,
-    image: "/workshop-print-beginner.jpg"
+    image: "/workshop-print-beginner.svg"
   },
   {
     title: "3D Printing Advanced",
@@ -34,7 +34,7 @@ const printingWorkshops = [
     duration: "8 hours",
     price: "$399",
     icon: Shapes,
-    image: "/workshop-print-advanced.jpg"
+    image: "/workshop-print-advanced.svg"
   },
   {
     title: "3D Printing Master",
@@ -49,7 +49,7 @@ const printingWorkshops = [
     duration: "16 hours",
     price: "$799",
     icon: Trophy,
-    image: "/workshop-print-master.jpg"
+    image: "/workshop-print-master.svg"
   }
 ];
 
@@ -70,7 +70,7 @@ const penArtWorkshops = [
         duration: "2 hours",
         price: "$79",
         icon: BookOpen,
-        image: "/workshop-kids-beginner.jpg"
+        image: "/workshop-kids-beginner.svg"
       },
       {
         title: "Kids Advanced Pen Art",
@@ -85,7 +85,7 @@ const penArtWorkshops = [
         duration: "3 hours",
         price: "$129",
         icon: Shapes,
-        image: "/workshop-kids-advanced.jpg"
+        image: "/workshop-kids-advanced.svg"
       },
       {
         title: "Kids Master Pen Art",
@@ -100,7 +100,7 @@ const penArtWorkshops = [
         duration: "4 hours",
         price: "$179",
         icon: Trophy,
-        image: "/workshop-kids-master.jpg"
+        image: "/workshop-kids-master.svg"
       }
     ]
   },
@@ -120,7 +120,7 @@ const penArtWorkshops = [
         duration: "3 hours",
         price: "$99",
         icon: BookOpen,
-        image: "/workshop-adult-beginner.jpg"
+        image: "/workshop-adult-beginner.svg"
       },
       {
         title: "Adult Advanced Pen Art",
@@ -135,7 +135,7 @@ const penArtWorkshops = [
         duration: "4 hours",
         price: "$149",
         icon: Shapes,
-        image: "/workshop-adult-advanced.jpg"
+        image: "/workshop-adult-advanced.svg"
       },
       {
         title: "Adult Master Pen Art",
@@ -150,7 +150,7 @@ const penArtWorkshops = [
         duration: "6 hours",
         price: "$249",
         icon: Trophy,
-        image: "/workshop-adult-master.jpg"
+        image: "/workshop-adult-master.svg"
       }
     ]
   }
