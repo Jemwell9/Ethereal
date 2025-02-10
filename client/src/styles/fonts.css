@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Horizon';
+  src: url('/fonts/Horizon.woff2') format('woff2'),
+       url('/fonts/Horizon.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Agrandir Wide';
+  src: url('/fonts/AgrandirWide-Regular.woff2') format('woff2'),
+       url('/fonts/AgrandirWide-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
