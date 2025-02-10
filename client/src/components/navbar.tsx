@@ -3,37 +3,39 @@ import { Button } from "@/components/ui/button";
 
 export default function Navbar() {
   return (
-    <nav className="fixed w-full z-50">
+    <nav className="fixed w-full z-50 bg-black/50 backdrop-blur-sm">
       <div className="container mx-auto flex items-center justify-between h-20 px-4">
         {/* Left menu */}
-        <div className="flex items-center space-x-12">
+        <div className="hidden md:flex items-center space-x-12">
           <Link href="/">
-            <a className="text-white hover:text-[#00FF00] transition-colors text-sm tracking-[0.2em] font-light">HOME</a>
+            <span className="text-white hover:text-[#00FF00] transition-colors text-sm tracking-[0.2em] font-light cursor-pointer">HOME</span>
           </Link>
           <Link href="/about">
-            <a className="text-white hover:text-[#00FF00] transition-colors text-sm tracking-[0.2em] font-light">ABOUT</a>
+            <span className="text-white hover:text-[#00FF00] transition-colors text-sm tracking-[0.2em] font-light cursor-pointer">ABOUT</span>
           </Link>
           <Link href="#services">
-            <a className="text-white hover:text-[#00FF00] transition-colors text-sm tracking-[0.2em] font-light">SERVICES</a>
+            <span className="text-white hover:text-[#00FF00] transition-colors text-sm tracking-[0.2em] font-light cursor-pointer">SERVICES</span>
           </Link>
         </div>
 
         {/* Center logo */}
-        <Link href="/">
-          <img 
-            src="/logo.svg" 
-            alt="Ethereal" 
-            className="h-12 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-          />
-        </Link>
+        <div className="flex-shrink-0">
+          <Link href="/">
+            <img 
+              src="/Ethereal-Logo.png" 
+              alt="Ethereal" 
+              className="h-12"
+            />
+          </Link>
+        </div>
 
         {/* Right menu */}
-        <div className="flex items-center space-x-12">
+        <div className="hidden md:flex items-center space-x-12">
           <Link href="/workshops">
-            <a className="text-white hover:text-[#00FF00] transition-colors text-sm tracking-[0.2em] font-light">WORKSHOPS</a>
+            <span className="text-white hover:text-[#00FF00] transition-colors text-sm tracking-[0.2em] font-light cursor-pointer">WORKSHOPS</span>
           </Link>
           <Link href="/consult">
-            <a className="text-white hover:text-[#00FF00] transition-colors text-sm tracking-[0.2em] font-light">CONSULT</a>
+            <span className="text-white hover:text-[#00FF00] transition-colors text-sm tracking-[0.2em] font-light cursor-pointer">CONSULT</span>
           </Link>
           <Button className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black text-sm tracking-[0.2em] font-medium px-8">
             CONTACT US

@@ -7,7 +7,6 @@ export default function Hero() {
     <div className="relative min-h-screen bg-black overflow-hidden">
       {/* Animated diagonal light streaks */}
       <div className="absolute inset-0">
-        {/* Multiple diagonal streaks with different angles and opacities */}
         <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(0,255,0,0.1)_50%,transparent_75%)] animate-pulse"></div>
         <div className="absolute inset-0 bg-[linear-gradient(-45deg,transparent_25%,rgba(0,255,0,0.05)_50%,transparent_75%)] animate-pulse delay-75"></div>
         <div className="absolute inset-0 bg-[linear-gradient(60deg,transparent_25%,rgba(0,255,0,0.03)_50%,transparent_75%)] animate-pulse delay-150"></div>
@@ -27,13 +26,17 @@ export default function Hero() {
           </h1>
         </motion.div>
 
-        {/* 3D Model Showcase */}
+        {/* Feature Grid */}
         <div className="relative mt-24">
           <div className="max-w-5xl mx-auto">
-            {/* Interactive 3D Model Display */}
-            <div className="grid grid-cols-4 gap-8 items-end">
-              {/* 3D Printer Section */}
-              <div className="relative group">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-end">
+              {/* 3D Printing */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="relative group"
+              >
                 <div className="bg-[#00FF00]/10 p-4 rounded-lg transition-all group-hover:bg-[#00FF00]/20">
                   <div className="w-full aspect-square bg-black/50 rounded-lg mb-2 flex items-center justify-center">
                     <div className="w-16 h-16 border-2 border-[#00FF00] rounded-lg"></div>
@@ -42,10 +45,15 @@ export default function Hero() {
                     3D PRINTING<br />ALL MATERIALS
                   </p>
                 </div>
-              </div>
+              </motion.div>
 
-              {/* AutoCAD Section */}
-              <div className="relative group">
+              {/* AutoCAD */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="relative group"
+              >
                 <div className="bg-[#00FF00]/10 p-4 rounded-lg transition-all group-hover:bg-[#00FF00]/20">
                   <div className="w-full aspect-square bg-black/50 rounded-lg mb-2 flex items-center justify-center">
                     <div className="w-16 h-16 border-2 border-[#00FF00] rounded-lg"></div>
@@ -54,10 +62,15 @@ export default function Hero() {
                     AUTOCAD<br />MODELING
                   </p>
                 </div>
-              </div>
+              </motion.div>
 
-              {/* PHD Expertise Section */}
-              <div className="relative group">
+              {/* PhD Level */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="relative group"
+              >
                 <div className="bg-[#00FF00]/10 p-4 rounded-lg transition-all group-hover:bg-[#00FF00]/20">
                   <div className="w-full aspect-square bg-black/50 rounded-lg mb-2 flex items-center justify-center">
                     <div className="w-16 h-16 border-2 border-[#00FF00] rounded-lg"></div>
@@ -66,10 +79,15 @@ export default function Hero() {
                     PHD LEVEL<br />EXPERTISE
                   </p>
                 </div>
-              </div>
+              </motion.div>
 
-              {/* Workshop Section */}
-              <div className="relative group">
+              {/* 3D Pen */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="relative group"
+              >
                 <div className="bg-[#00FF00]/10 p-4 rounded-lg transition-all group-hover:bg-[#00FF00]/20">
                   <div className="w-full aspect-square bg-black/50 rounded-lg mb-2 flex items-center justify-center">
                     <div className="w-16 h-16 border-2 border-[#00FF00] rounded-lg"></div>
@@ -78,7 +96,7 @@ export default function Hero() {
                     3D PEN<br />ART WORKSHOP
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
