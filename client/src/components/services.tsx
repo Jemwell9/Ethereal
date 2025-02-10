@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Printer, Code, GraduationCap, Pen, Image } from "lucide-react";
-import { Animated3DGrid } from "@/components/ui/animated-3d-grid";
 
 const services = [
   {
@@ -32,9 +31,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 bg-black relative overflow-hidden">
-      <div className="absolute inset-0 bg-black/80" /> {/* Dark overlay */}
-      <Animated3DGrid variant="scanner" />
+    <section id="services" className="py-20 bg-black/40 relative">
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

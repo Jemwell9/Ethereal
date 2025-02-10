@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Zap, Award, Users, Palette, Layers, Leaf, Image } from "lucide-react";
-import { Animated3DGrid } from "@/components/ui/animated-3d-grid";
+//import { Animated3DGrid } from "@/components/ui/animated-3d-grid"; // Removed as per edited code
 
 const features = [
   {
@@ -38,9 +38,9 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-20 bg-black relative overflow-hidden">
-      <div className="absolute inset-0 bg-black/80" /> {/* Dark overlay */}
-      <Animated3DGrid variant="default" />
+    <section className="py-20 bg-black/40 relative"> {/* Updated background color */}
+      {/*<div className="absolute inset-0 bg-black/80" /> */} {/* Removed overlay */}
+      {/*<Animated3DGrid variant="default" />*/} {/* Removed 3D Grid */}
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

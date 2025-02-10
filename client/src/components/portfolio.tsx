@@ -1,13 +1,10 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Animated3DGrid } from "@/components/ui/animated-3d-grid";
 import { Image } from "lucide-react";
 
 export default function Portfolio() {
   return (
-    <section className="py-20 bg-black relative overflow-hidden">
-      <div className="absolute inset-0 bg-black/80" /> {/* Dark overlay */}
-      <Animated3DGrid variant="printer" />
+    <section className="py-20 bg-black/40 relative">
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, x: 20 }}
