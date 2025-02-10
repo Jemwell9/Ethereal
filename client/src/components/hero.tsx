@@ -18,17 +18,21 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="max-w-4xl mx-auto text-center mb-16"
+          className="max-w-6xl mx-auto text-center"
         >
-          <h1 className="text-[4rem] md:text-[5rem] font-heading font-black uppercase leading-none mb-6">
-            <span className="block text-white tracking-tight mb-2">Printing Your</span>
-            <span className="block text-white tracking-tight">Ideas To</span>
-            <span className="text-[#00FF00] bg-gradient-to-r from-[#00FF00] to-[#00FF00]/50 bg-clip-text text-transparent">Life</span>
+          <h1 className="flex flex-col items-center justify-center min-h-[70vh]">
+            <div className="text-[2.5rem] md:text-[3.5rem] font-heading font-black tracking-tight text-white mb-4">
+              <span className="block leading-none">PRINTING YOUR</span>
+              <span className="block leading-none">IDEAS TO</span>
+            </div>
+            <span className="block text-[8rem] md:text-[12rem] lg:text-[16rem] font-heading font-black leading-none tracking-tighter bg-gradient-to-r from-[#00FF00] via-[#00FF00] to-[#00FF00]/50 text-transparent bg-clip-text">
+              LIFE
+            </span>
           </h1>
         </motion.div>
 
         {/* Feature Grid */}
-        <div className="relative mt-24">
+        <div className="relative mt-8">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-end">
               {features.map((feature, index) => (
