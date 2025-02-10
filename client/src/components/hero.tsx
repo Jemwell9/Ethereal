@@ -20,7 +20,7 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
           className="max-w-4xl mx-auto text-center mb-16"
         >
-          <h1 className="text-7xl font-bold mb-6 tracking-tighter">
+          <h1 className="text-7xl font-bold mb-6 tracking-tighter font-heading">
             <span className="block text-white mb-2">PRINTING YOUR</span>
             <span className="block text-white">IDEAS TO</span>
             <span className="text-[#00FF00] bg-gradient-to-r from-[#00FF00] to-transparent bg-clip-text text-transparent">LIFE</span>
