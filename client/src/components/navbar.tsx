@@ -12,7 +12,7 @@ import {
 export default function Navbar() {
   return (
     <nav className="fixed w-full z-50 bg-black/50 backdrop-blur-sm border-b border-white/10">
-      <div className="container mx-auto flex items-center justify-between h-20 px-4">
+      <div className="container mx-auto flex items-center justify-between h-24 px-4">
         {/* Left menu */}
         <div className="hidden md:flex items-center space-x-8">
           <Link href="/">
@@ -49,12 +49,12 @@ export default function Navbar() {
         </div>
 
         {/* Center logo */}
-        <Link href="/">
+        <Link href="/" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <img 
             src="/Ethereal-Logo.png" 
             alt="Ethereal" 
-            className="h-10 w-auto object-contain" 
-            style={{ filter: 'drop-shadow(0 0 8px rgba(0, 255, 0, 0.3))' }}
+            className="h-16 w-auto object-contain transition-transform hover:scale-105" 
+            style={{ filter: 'drop-shadow(0 0 12px rgba(0, 255, 0, 0.4))' }}
           />
         </Link>
 
