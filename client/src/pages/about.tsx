@@ -15,6 +15,7 @@ import {
   Cpu,
   Database,
   Blocks,
+  Image, // Added import for Image component
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -226,6 +227,9 @@ export default function About() {
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="container mx-auto px-4">
+          <div className="aspect-video bg-black/50 border border-[#00FF00]/20 rounded-lg overflow-hidden flex items-center justify-center mb-12">
+            <Image className="w-32 h-32 text-[#00FF00]/40" />
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -258,7 +262,7 @@ export default function About() {
           </motion.h2>
           <div className="max-w-4xl mx-auto relative">
             {/* Continuous Timeline Line */}
-            <div className="absolute left-32 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-[#00FF00]/20 to-transparent" />
+            <div className="absolute left-48 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-[#00FF00]/20 to-transparent" />
 
             {milestones.map((milestone, index) => (
               <motion.div
@@ -267,12 +271,12 @@ export default function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="flex gap-8 mb-12 relative"
+                className="flex gap-16 mb-12 relative"
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-32 top-2 w-4 h-4 bg-black border-2 border-[#00FF00] rounded-full transform -translate-x-[7px]" />
+                <div className="absolute left-48 top-2 w-4 h-4 bg-black border-2 border-[#00FF00] rounded-full transform -translate-x-[7px]" />
 
-                <div className="w-32 flex-shrink-0 text-right">
+                <div className="w-48 flex-shrink-0 text-right pr-8">
                   <span className="text-[#00FF00] font-bold">{milestone.year}</span>
                 </div>
                 <div className="flex-grow pl-8">
@@ -287,7 +291,16 @@ export default function About() {
 
       {/* Technology Section */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 mb-12">
+          <div className="mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {[1, 2].map((_, index) => (
+                <div key={index} className="aspect-video bg-black/50 border border-[#00FF00]/20 rounded-lg overflow-hidden flex items-center justify-center">
+                  <Image className="w-24 h-24 text-[#00FF00]/40" />
+                </div>
+              ))}
+            </div>
+          </div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -327,7 +340,16 @@ export default function About() {
 
       {/* Team Section with updated grid */}
       <section className="py-20 bg-black/40">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 mb-12">
+          <div className="mb-12">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+              {[1, 2, 3].map((_, index) => (
+                <div key={index} className="aspect-square bg-black/50 border border-[#00FF00]/20 rounded-lg overflow-hidden flex items-center justify-center">
+                  <Image className="w-20 h-20 text-[#00FF00]/40" />
+                </div>
+              ))}
+            </div>
+          </div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -362,7 +384,14 @@ export default function About() {
 
       {/* Success Stories Section */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            {[1, 2, 3].map((_, index) => (
+              <div key={index} className="aspect-square bg-black/50 border border-[#00FF00]/20 rounded-lg overflow-hidden flex items-center justify-center">
+                <Image className="w-16 h-16 text-[#00FF00]/40" />
+              </div>
+            ))}
+          </div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -396,7 +425,14 @@ export default function About() {
 
       {/* Awards Section */}
       <section className="py-20 bg-black/40">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            {[1, 2].map((_, index) => (
+              <div key={index} className="aspect-video bg-black/50 border border-[#00FF00]/20 rounded-lg overflow-hidden flex items-center justify-center">
+                <Image className="w-16 h-16 text-[#00FF00]/40" />
+              </div>
+            ))}
+          </div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
