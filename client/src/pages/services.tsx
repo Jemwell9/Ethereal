@@ -59,8 +59,8 @@ export default function ServicesPage() {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-5xl font-bold mb-6 text-white">
-              Complete 3D Printing
-              <span className="text-[#00FF00]"> Services</span>
+              3D PRINTING
+              <span className="text-[#00FF00]"> SERVICES</span>
             </h1>
             <p className="text-lg text-white/60 mb-8">
               From concept to creation, we provide end-to-end 3D printing solutions
