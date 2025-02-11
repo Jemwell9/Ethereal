@@ -15,7 +15,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="relative flex items-center justify-between h-24">
           {/* Left menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 w-1/3">
             <Link href="/">
               <span className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium">HOME</span>
             </Link>
@@ -50,7 +50,7 @@ export default function Navbar() {
           </div>
 
           {/* Center logo */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
             <Link href="/">
               <img 
                 src="/Ethereal-Logo.png" 
@@ -62,7 +62,7 @@ export default function Navbar() {
           </div>
 
           {/* Right menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 w-1/3 justify-end">
             <Link href="/workshops">
               <span className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium">WORKSHOPS</span>
             </Link>
