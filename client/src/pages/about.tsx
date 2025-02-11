@@ -1,8 +1,20 @@
 import { motion } from "framer-motion";
-import { 
-  GraduationCap, Award, Target, Heart, History, 
-  Lightbulb, Users, Trophy, Rocket, Timer,
-  Microscope, Code, Cpu, Database, Blocks
+import {
+  GraduationCap,
+  Award,
+  Target,
+  Heart,
+  History,
+  Lightbulb,
+  Users,
+  Trophy,
+  Rocket,
+  Timer,
+  Microscope,
+  Code,
+  Cpu,
+  Database,
+  Blocks,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -10,76 +22,81 @@ const milestones = [
   {
     year: "2020",
     title: "Company Founded",
-    description: "Started in Singapore with a vision to revolutionize 3D printing accessibility in Southeast Asia"
+    description:
+      "Started in Singapore with a vision to revolutionize 3D printing accessibility in Southeast Asia",
   },
   {
     year: "2021 Q2",
     title: "First Innovation Center",
-    description: "Opened our first innovation center in Bukit Merah, introducing cutting-edge FDM printing services"
+    description:
+      "Opened our first innovation center in Bukit Merah, introducing cutting-edge FDM printing services",
   },
   {
     year: "2021 Q4",
     title: "Educational Partnership",
-    description: "Launched partnerships with local schools to promote STEM education through 3D printing"
+    description:
+      "Launched partnerships with local schools to promote STEM education through 3D printing",
   },
   {
     year: "2022 Q1",
     title: "Expansion Phase",
-    description: "Introduced advanced SLA and SLS printing technologies, expanding our material capabilities"
+    description:
+      "Introduced advanced SLA and SLS printing technologies, expanding our material capabilities",
   },
   {
     year: "2022 Q3",
     title: "Research Collaboration",
-    description: "Started collaboration with NTU's Advanced Materials Research Center"
+    description: "Started collaboration with NTU's Advanced Materials Research Center",
   },
   {
     year: "2022 Q4",
     title: "Innovation Hub Launch",
-    description: "Established our state-of-the-art research facility in Singapore Science Park"
+    description: "Established our state-of-the-art research facility in Singapore Science Park",
   },
   {
     year: "2023 Q2",
     title: "Regional Recognition",
-    description: "Received Singapore's Technology Innovation Award for sustainable manufacturing"
+    description:
+      "Received Singapore's Technology Innovation Award for sustainable manufacturing",
   },
   {
     year: "2023 Q4",
     title: "Global Partnerships",
-    description: "Formed strategic partnerships with leading industrial manufacturers in Asia"
+    description: "Formed strategic partnerships with leading industrial manufacturers in Asia",
   },
   {
     year: "2024 Q1",
     title: "Sustainability Initiative",
-    description: "Launched our eco-friendly materials program and green manufacturing processes"
+    description: "Launched our eco-friendly materials program and green manufacturing processes",
   },
   {
     year: "2024 Q4",
     title: "Market Leadership",
-    description: "Became Singapore's leading provider of advanced 3D printing solutions"
-  }
+    description: "Became Singapore's leading provider of advanced 3D printing solutions",
+  },
 ];
 
 const technologies = [
   {
     icon: Cpu,
     title: "Advanced Printers",
-    description: "State-of-the-art FDM, SLA, and SLS printers for various applications"
+    description: "State-of-the-art FDM, SLA, and SLS printers for various applications",
   },
   {
     icon: Database,
     title: "Material Science",
-    description: "Extensive research in composite materials and new printing mediums"
+    description: "Extensive research in composite materials and new printing mediums",
   },
   {
     icon: Code,
     title: "Custom Software",
-    description: "Proprietary slicing and optimization algorithms"
+    description: "Proprietary slicing and optimization algorithms",
   },
   {
     icon: Blocks,
     title: "Rapid Prototyping",
-    description: "Advanced rapid prototyping and iteration capabilities"
-  }
+    description: "Advanced rapid prototyping and iteration capabilities",
+  },
 ];
 
 const team = [
@@ -87,56 +104,56 @@ const team = [
     name: "Dr. Chen Wei Ming",
     role: "Chief Technology Officer",
     expertise: "Ph.D. in Materials Science, NUS",
-    description: "Leading our research initiatives in advanced materials and sustainable manufacturing"
+    description: "Leading our research initiatives in advanced materials and sustainable manufacturing",
   },
   {
     name: "Dr. Lee Mei Ling",
     role: "Head of Innovation",
     expertise: "Ph.D. in Mechanical Engineering, NTU",
-    description: "Pioneering new printing methodologies and industrial applications"
+    description: "Pioneering new printing methodologies and industrial applications",
   },
   {
     name: "Prof. Tan Kah Kee",
     role: "Lead Research Scientist",
     expertise: "Ph.D. in Chemical Engineering",
-    description: "Expert in polymer science and material optimization"
+    description: "Expert in polymer science and material optimization",
   },
   {
     name: "Dr. Wong Siew Mei",
     role: "Director of Operations",
     expertise: "Ph.D. in Industrial Engineering",
-    description: "Specializing in manufacturing process optimization"
+    description: "Specializing in manufacturing process optimization",
   },
   {
     name: "Er. Lim Jun Jie",
     role: "Senior Design Engineer",
     expertise: "M.Eng in Aerospace Engineering",
-    description: "Expert in CAD/CAM and advanced prototyping"
+    description: "Expert in CAD/CAM and advanced prototyping",
   },
   {
     name: "Dr. Ng Wei Ling",
     role: "Materials Research Lead",
     expertise: "Ph.D. in Nanotechnology",
-    description: "Developing next-generation printing materials"
-  }
+    description: "Developing next-generation printing materials",
+  },
 ];
 
 const successStories = [
   {
     title: "Medical Innovation",
     client: "Healthcare Solutions Inc.",
-    description: "Created custom medical device prototypes, reducing development time by 60%"
+    description: "Created custom medical device prototypes, reducing development time by 60%",
   },
   {
     title: "Aerospace Excellence",
     client: "AeroTech Systems",
-    description: "Developed lightweight components for aircraft, passing rigorous testing standards"
+    description: "Developed lightweight components for aircraft, passing rigorous testing standards",
   },
   {
     title: "Architectural Vision",
     client: "Urban Designers Co.",
-    description: "Produced intricate architectural models for major development projects"
-  }
+    description: "Produced intricate architectural models for major development projects",
+  },
 ];
 
 const awards = [
@@ -144,61 +161,63 @@ const awards = [
     icon: Trophy,
     title: "Innovation Excellence",
     year: "2023",
-    description: "National Technology Awards"
+    description: "National Technology Awards",
   },
   {
     icon: Award,
     title: "Best 3D Printing Service",
     year: "2023",
-    description: "Industry Choice Awards"
+    description: "Industry Choice Awards",
   },
   {
     icon: GraduationCap,
     title: "Research Recognition",
     year: "2022",
-    description: "Materials Science Innovation"
-  }
+    description: "Materials Science Innovation",
+  },
 ];
 
 const futureVision = [
   {
     icon: Rocket,
     title: "Next-Gen Materials",
-    description: "Developing sustainable and high-performance printing materials"
+    description: "Developing sustainable and high-performance printing materials",
   },
   {
     icon: Microscope,
     title: "Advanced Research",
-    description: "Expanding our R&D capabilities in nano-materials"
+    description: "Expanding our R&D capabilities in nano-materials",
   },
   {
     icon: Timer,
     title: "Faster Production",
-    description: "Implementing AI-driven optimization for faster printing"
-  }
+    description: "Implementing AI-driven optimization for faster printing",
+  },
 ];
 
 const values = [
   {
     icon: GraduationCap,
     title: "PhD-Level Expertise",
-    description: "Our team combines advanced academic knowledge with practical industry experience to deliver cutting-edge solutions."
+    description:
+      "Our team combines advanced academic knowledge with practical industry experience to deliver cutting-edge solutions.",
   },
   {
     icon: Award,
     title: "Quality Excellence",
-    description: "We maintain the highest standards in 3D printing, using state-of-the-art technology and premium materials."
+    description:
+      "We maintain the highest standards in 3D printing, using state-of-the-art technology and premium materials.",
   },
   {
     icon: Target,
     title: "Innovation Focus",
-    description: "Constantly pushing boundaries in 3D printing technology and creative applications."
+    description: "Constantly pushing boundaries in 3D printing technology and creative applications.",
   },
   {
     icon: Heart,
     title: "Customer-Centric",
-    description: "Your vision is our priority. We work closely with you to bring your ideas to life with precision and care."
-  }
+    description: "Your vision is our priority. We work closely with you to bring your ideas to life with precision and care.",
+  },
 ];
 
 export default function About() {
@@ -239,7 +258,7 @@ export default function About() {
           </motion.h2>
           <div className="max-w-4xl mx-auto relative">
             {/* Continuous Timeline Line */}
-            <div className="absolute left-24 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-[#00FF00]/20 to-transparent" />
+            <div className="absolute left-32 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-[#00FF00]/20 to-transparent" />
 
             {milestones.map((milestone, index) => (
               <motion.div
@@ -248,12 +267,12 @@ export default function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="flex gap-4 mb-12 relative"
+                className="flex gap-8 mb-12 relative"
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-24 top-2 w-4 h-4 bg-black border-2 border-[#00FF00] rounded-full transform -translate-x-[7px]" />
+                <div className="absolute left-32 top-2 w-4 h-4 bg-black border-2 border-[#00FF00] rounded-full transform -translate-x-[7px]" />
 
-                <div className="w-24 flex-shrink-0 text-right">
+                <div className="w-32 flex-shrink-0 text-right">
                   <span className="text-[#00FF00] font-bold">{milestone.year}</span>
                 </div>
                 <div className="flex-grow pl-8">
