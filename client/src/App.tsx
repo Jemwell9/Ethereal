@@ -6,6 +6,7 @@ import { Animated3DGrid } from "@/components/ui/animated-3d-grid";
 import Home from "@/pages/home";
 import About from "@/pages/about";
 import Booking from "@/pages/booking";
+import Services from "@/pages/services";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import NotFound from "@/pages/not-found";
@@ -16,6 +17,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/booking" component={Booking} />
+      <Route path="/services" component={Services} />
       <Route component={NotFound} />
     </Switch>
   );
