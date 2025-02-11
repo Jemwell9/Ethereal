@@ -60,7 +60,6 @@ export default function ServicesPage() {
           >
             <h1 className="text-5xl font-bold mb-6 text-white">
               3D PRINTING
-              <span className="text-[#00FF00]"> SERVICES</span>
             </h1>
             <p className="text-lg text-white/60 mb-8">
               From concept to creation, we provide end-to-end 3D printing solutions
