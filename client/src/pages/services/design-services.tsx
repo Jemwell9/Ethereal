@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { 
   Code2, 
-  Cube, 
+  Boxes, 
   FileCode, 
   Settings, 
   ArrowRight,
@@ -30,7 +30,7 @@ const features = [
     description: "Comprehensive documentation including technical drawings and specifications."
   },
   {
-    icon: Cube,
+    icon: Boxes,
     title: "Prototype Iterations",
     description: "Rapid prototyping and iterative design improvements based on your feedback."
   }

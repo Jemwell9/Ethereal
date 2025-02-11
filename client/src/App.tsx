@@ -7,6 +7,9 @@ import Home from "@/pages/home";
 import About from "@/pages/about";
 import Booking from "@/pages/booking";
 import Services from "@/pages/services";
+import DesignServices from "@/pages/services/design-services";
+import MaterialsSelection from "@/pages/services/materials-selection";
+import PrintingExecution from "@/pages/services/printing-execution";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import NotFound from "@/pages/not-found";
@@ -18,6 +21,9 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/booking" component={Booking} />
       <Route path="/services" component={Services} />
+      <Route path="/services/design" component={DesignServices} />
+      <Route path="/services/materials" component={MaterialsSelection} />
+      <Route path="/services/printing" component={PrintingExecution} />
       <Route component={NotFound} />
     </Switch>
   );
