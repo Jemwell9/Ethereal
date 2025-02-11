@@ -1,5 +1,13 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 export default function Navbar() {
   return (
@@ -13,9 +21,31 @@ export default function Navbar() {
           <Link href="/about">
             <span className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium">ABOUT</span>
           </Link>
-          <Link href="/services">
-            <span className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium">SERVICES</span>
-          </Link>
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium bg-transparent">
+                  3D PRINTING
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="grid gap-3 p-4 w-[400px] bg-black/90 backdrop-blur-sm">
+                    <Link href="/services#design" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
+                      <div className="text-[#00FF00] font-medium">3D Design Services</div>
+                      <p className="text-sm text-white/60">Professional CAD modeling and design optimization</p>
+                    </Link>
+                    <Link href="/services#materials" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
+                      <div className="text-[#00FF00] font-medium">Materials Selection</div>
+                      <p className="text-sm text-white/60">Expert guidance on material selection</p>
+                    </Link>
+                    <Link href="/services#printing" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
+                      <div className="text-[#00FF00] font-medium">3D Printing Execution</div>
+                      <p className="text-sm text-white/60">High-quality production and quality control</p>
+                    </Link>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
         </div>
 
         {/* Center logo */}
