@@ -49,7 +49,7 @@ export default function Navbar() {
             </NavigationMenu>
           </div>
 
-          {/* Center logo - now has its own column with auto width */}
+          {/* Center logo */}
           <div className="flex justify-center py-2">
             <Link href="/">
               <img 
@@ -63,12 +63,58 @@ export default function Navbar() {
 
           {/* Right menu */}
           <div className="hidden md:flex items-center justify-end gap-6">
-            <Link href="/workshops">
-              <span className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium">WORKSHOPS</span>
-            </Link>
-            <Link href="/consult">
-              <span className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium">CONSULT</span>
-            </Link>
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium bg-transparent">
+                    WORKSHOPS
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="grid gap-3 p-4 w-[400px] bg-black/90 backdrop-blur-sm">
+                      <Link href="/workshops/beginners" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
+                        <div className="text-[#00FF00] font-medium">Beginner Workshops</div>
+                        <p className="text-sm text-white/60">Introduction to 3D printing fundamentals</p>
+                      </Link>
+                      <Link href="/workshops/advanced" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
+                        <div className="text-[#00FF00] font-medium">Advanced Techniques</div>
+                        <p className="text-sm text-white/60">Master complex 3D printing methods</p>
+                      </Link>
+                      <Link href="/workshops/specialized" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
+                        <div className="text-[#00FF00] font-medium">Specialized Training</div>
+                        <p className="text-sm text-white/60">Industry-specific workshops</p>
+                      </Link>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium bg-transparent">
+                    CONSULT
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="grid gap-3 p-4 w-[400px] bg-black/90 backdrop-blur-sm">
+                      <Link href="/consult/business" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
+                        <div className="text-[#00FF00] font-medium">Business Solutions</div>
+                        <p className="text-sm text-white/60">Strategic consulting for enterprises</p>
+                      </Link>
+                      <Link href="/consult/technical" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
+                        <div className="text-[#00FF00] font-medium">Technical Consulting</div>
+                        <p className="text-sm text-white/60">Expert technical guidance and support</p>
+                      </Link>
+                      <Link href="/consult/project" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
+                        <div className="text-[#00FF00] font-medium">Project Planning</div>
+                        <p className="text-sm text-white/60">Comprehensive project consultation</p>
+                      </Link>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+
             <Button className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black text-xs tracking-[0.2em] font-medium px-6 rounded-full">
               CONTACT US
             </Button>
