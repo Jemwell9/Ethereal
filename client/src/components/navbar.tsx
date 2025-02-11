@@ -13,7 +13,7 @@ export default function Navbar() {
           <Link href="/about">
             <span className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium">ABOUT</span>
           </Link>
-          <Link href="#services">
+          <Link href="/services">
             <span className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium">SERVICES</span>
           </Link>
         </div>
@@ -25,18 +25,13 @@ export default function Navbar() {
             alt="Ethereal" 
             className="h-10 w-auto object-contain" 
             style={{ filter: 'drop-shadow(0 0 8px rgba(0, 255, 0, 0.3))' }}
-            onError={(e) => {
-              console.error('Logo failed to load:', e);
-              const target = e.target as HTMLImageElement;
-              target.style.border = '2px solid red';
-            }}
           />
         </Link>
 
         {/* Right menu */}
         <div className="hidden md:flex items-center space-x-8">
           <Link href="/workshops">
-            <span className="text-white hover:text-[00FF00] transition-colors text-xs tracking-[0.2em] font-medium">WORKSHOPS</span>
+            <span className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium">WORKSHOPS</span>
           </Link>
           <Link href="/consult">
             <span className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium">CONSULT</span>

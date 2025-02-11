@@ -7,6 +7,7 @@ import Home from "@/pages/home";
 import About from "@/pages/about";
 import Booking from "@/pages/booking";
 import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -26,7 +27,10 @@ function App() {
       <div className="min-h-screen bg-black relative">
         <div className="relative z-10">
           <Navbar />
-          <Router />
+          <main className="min-h-screen">
+            <Router />
+          </main>
+          <Footer />
           <Toaster />
         </div>
         <Animated3DGrid variant="default" />
