@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -17,105 +18,108 @@ import {
   BadgeCheck,
   Factory,
   Microscope,
-  Settings2
+  Settings2,
+  Zap,
+  Target,
+  Tool
 } from "lucide-react";
 
-const specializations = [
+const executionCapabilities = [
   {
     icon: Gauge,
-    title: "Rapid Prototyping",
-    description: "Fast turnaround for product development",
+    title: "High-Speed Production",
+    description: "Fast turnaround for urgent projects",
     features: [
-      "24-48 hour delivery",
-      "Design iterations",
-      "Functional testing",
-      "Multiple material options"
+      "24/7 production capability",
+      "Multiple printer arrays",
+      "Rapid prototyping",
+      "Bulk order processing"
     ]
   },
   {
-    icon: Factory,
-    title: "Production Series",
-    description: "Scale from prototype to production",
+    icon: Target,
+    title: "Precision Control",
+    description: "Industry-leading accuracy",
     features: [
-      "Large batch capacity",
-      "Consistent quality",
-      "Industrial materials",
-      "Assembly options"
+      "±0.1mm tolerance",
+      "Layer height from 0.05mm",
+      "Real-time monitoring",
+      "Quality verification"
     ]
   },
   {
-    icon: Settings2,
-    title: "Custom Solutions",
-    description: "Specialized printing requirements",
+    icon: Tool,
+    title: "Post-Processing",
+    description: "Professional finishing services",
     features: [
-      "Complex geometries",
-      "Multi-material prints",
-      "Custom finishes",
-      "Technical consultation"
+      "Surface smoothing",
+      "Color treatment",
+      "Assembly services",
+      "Functional testing"
     ]
   }
 ];
 
-const technologies = [
+const printerFleet = [
   {
     icon: Printer,
-    name: "FDM Technology",
-    description: "Professional FDM printing for durable functional parts",
+    name: "Industrial FDM",
+    description: "Large-format professional printing",
     capabilities: [
-      "Layer resolution: 0.1-0.3mm",
-      "Build volume up to 300x300x400mm",
-      "Engineering-grade materials",
-      "Excellent mechanical properties"
+      "Build volume: 400x400x500mm",
+      "Dual extrusion system",
+      "High-temp materials (up to 300°C)",
+      "Industrial-grade reliability"
     ]
   },
   {
     icon: Microscope,
-    name: "SLA/Resin",
-    description: "High-precision resin printing for detailed parts",
+    name: "Professional SLA",
+    description: "Ultra-high resolution printing",
     capabilities: [
-      "Ultra-fine detail resolution",
-      "Smooth surface finish",
-      "Ideal for visual prototypes",
-      "Dental and jewelry applications"
+      "25-100 micron precision",
+      "Engineering resins",
+      "Dental and medical grade",
+      "Optical-grade surface finish"
     ]
   },
   {
-    icon: PackageCheck,
-    name: "Industrial Solutions",
-    description: "Advanced industrial printing capabilities",
+    icon: Factory,
+    name: "Production Systems",
+    description: "Mass production capability",
     capabilities: [
-      "Metal-infused materials",
-      "Carbon fiber composites",
-      "High-temperature resistance",
-      "Production-grade quality"
+      "Multi-unit printing",
+      "Automated part removal",
+      "24/7 operation ready",
+      "Industrial IoT monitoring"
     ]
   }
 ];
 
-const qualitySteps = [
+const productionProcess = [
   {
-    icon: FileCheck,
-    title: "File Preparation",
-    description: "Expert optimization of your 3D files for optimal printing results",
-    duration: "1-2 days"
+    icon: Search,
+    title: "Initial Analysis",
+    description: "Thorough review of design specifications and requirements",
+    duration: "1-2 hours"
   },
   {
-    icon: Shell,
-    title: "Material Selection",
-    description: "Guided selection of optimal materials for your specific requirements",
-    duration: "1 day"
+    icon: Cog,
+    title: "Setup & Optimization",
+    description: "Machine calibration and print parameter optimization",
+    duration: "2-4 hours"
   },
   {
     icon: Printer,
     title: "Production",
-    description: "High-precision printing with continuous monitoring",
-    duration: "2-5 days"
+    description: "Monitored printing with quality checks",
+    duration: "Varies by project"
   },
   {
-    icon: BadgeCheck,
+    icon: PackageCheck,
     title: "Quality Control",
-    description: "Comprehensive inspection and testing of finished parts",
-    duration: "1-2 days"
+    description: "Multi-point inspection and validation",
+    duration: "1-2 hours"
   }
 ];
 
@@ -132,27 +136,27 @@ export default function PrintingExecutionPage() {
             className="text-center max-w-5xl mx-auto"
           >
             <h1 className="text-5xl font-bold mb-6 text-white">
-              PROFESSIONAL 3D PRINTING SOLUTIONS
+              PROFESSIONAL 3D PRINTING EXECUTION
             </h1>
             <p className="text-lg text-white/60 mb-12">
-              From rapid prototypes to production parts, we deliver precision-engineered 
-              solutions using state-of-the-art technology and premium materials.
+              State-of-the-art production facilities delivering precision parts with 
+              industry-leading quality control and rapid turnaround times.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-              {specializations.map((spec, index) => (
+              {executionCapabilities.map((cap, index) => (
                 <motion.div
-                  key={spec.title}
+                  key={cap.title}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   <Card className="bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-all hover:-translate-y-2">
                     <CardContent className="p-6">
-                      <spec.icon className="w-12 h-12 text-[#00FF00] mb-4" />
-                      <h3 className="text-xl font-bold text-white mb-4">{spec.title}</h3>
-                      <p className="text-white/60 mb-4">{spec.description}</p>
+                      <cap.icon className="w-12 h-12 text-[#00FF00] mb-4" />
+                      <h3 className="text-xl font-bold text-white mb-4">{cap.title}</h3>
+                      <p className="text-white/60 mb-4">{cap.description}</p>
                       <ul className="space-y-2">
-                        {spec.features.map((feature, i) => (
+                        {cap.features.map((feature, i) => (
                           <li key={i} className="text-white/60 flex items-center gap-2">
                             <ArrowRight className="w-4 h-4 text-[#00FF00]" />
                             {feature}
@@ -168,14 +172,14 @@ export default function PrintingExecutionPage() {
         </div>
       </section>
 
-      {/* Technologies Section */}
+      {/* Printer Fleet */}
       <section className="py-20 bg-black/40">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">Our Technologies</h2>
+          <h2 className="text-3xl font-bold text-white text-center mb-12">Our Printer Fleet</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {technologies.map((tech, index) => (
+            {printerFleet.map((printer, index) => (
               <motion.div
-                key={tech.name}
+                key={printer.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -184,12 +188,12 @@ export default function PrintingExecutionPage() {
                 <Card className="h-full bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-all hover:-translate-y-2">
                   <CardHeader>
                     <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
-                      <tech.icon className="w-6 h-6 text-[#00FF00]" />
+                      <printer.icon className="w-6 h-6 text-[#00FF00]" />
                     </div>
-                    <CardTitle className="text-white text-xl mb-4">{tech.name}</CardTitle>
-                    <p className="text-white/60 mb-6">{tech.description}</p>
+                    <CardTitle className="text-white text-xl mb-4">{printer.name}</CardTitle>
+                    <p className="text-white/60 mb-6">{printer.description}</p>
                     <ul className="space-y-3">
-                      {tech.capabilities.map((capability, i) => (
+                      {printer.capabilities.map((capability, i) => (
                         <li key={i} className="text-white/60 flex items-center gap-2">
                           <ArrowRight className="w-4 h-4 text-[#00FF00]" />
                           {capability}
@@ -204,12 +208,12 @@ export default function PrintingExecutionPage() {
         </div>
       </section>
 
-      {/* Quality Process */}
+      {/* Production Process */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">Our Quality Process</h2>
+          <h2 className="text-3xl font-bold text-white text-center mb-12">Production Process</h2>
           <div className="max-w-4xl mx-auto">
-            {qualitySteps.map((step, index) => (
+            {productionProcess.map((step, index) => (
               <motion.div
                 key={step.title}
                 initial={{ opacity: 0, x: -20 }}
@@ -226,7 +230,7 @@ export default function PrintingExecutionPage() {
                   <p className="text-white/60 mb-2">{step.description}</p>
                   <span className="text-sm text-[#00FF00]">Typical duration: {step.duration}</span>
                 </div>
-                {index < qualitySteps.length - 1 && (
+                {index < productionProcess.length - 1 && (
                   <div className="absolute left-6 top-12 bottom-0 w-px bg-[#00FF00]/20" />
                 )}
               </motion.div>
@@ -235,13 +239,13 @@ export default function PrintingExecutionPage() {
         </div>
       </section>
 
-      {/* Price Calculator */}
+      {/* Calculator Section */}
       <section id="calculator" className="py-20 bg-black/40">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-white text-center mb-6">Get an Instant Quote</h2>
+          <h2 className="text-3xl font-bold text-white text-center mb-6">Get Started</h2>
           <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-            Calculate the cost of your project instantly. Upload your files or enter dimensions
-            to receive a detailed quote for your 3D printing needs.
+            Ready to bring your project to life? Get an instant quote for your 3D printing needs
+            or contact our team for custom requirements.
           </p>
           <div className="max-w-2xl mx-auto">
             <QuoteCalculator />
@@ -260,14 +264,14 @@ export default function PrintingExecutionPage() {
             className="max-w-2xl mx-auto"
           >
             <h2 className="text-3xl font-bold mb-6 text-white">
-              Ready to Start Your Project?
+              Need Expert Guidance?
             </h2>
             <p className="text-white/60 mb-8">
-              Contact our experts for a personalized consultation and discover how we can bring
-              your ideas to life with professional 3D printing solutions.
+              Our team is ready to help you choose the right printing solution for your project.
+              Contact us for a consultation.
             </p>
             <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-              <Link href="/contact">Start Your Project</Link>
+              <Link href="/contact">Schedule Consultation</Link>
             </Button>
           </motion.div>
         </div>
