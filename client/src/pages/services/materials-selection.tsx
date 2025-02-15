@@ -19,21 +19,39 @@ const materialCategories = [
     title: "Standard Plastics",
     materials: ["PLA", "ABS", "PETG"],
     description: "Versatile materials suitable for most applications",
-    properties: ["Cost-effective", "Wide color range", "Good durability"]
+    properties: ["Cost-effective", "Wide color range", "Good durability"],
+    image: "/materials/standard-plastics.jpg",
+    samples: [
+      "/materials/pla-sample.jpg",
+      "/materials/abs-sample.jpg",
+      "/materials/petg-sample.jpg"
+    ]
   },
   {
     icon: Zap,
     title: "Engineering Materials",
     materials: ["Nylon", "PC", "TPU"],
     description: "High-performance materials for functional parts",
-    properties: ["High strength", "Heat resistant", "Flexible options"]
+    properties: ["High strength", "Heat resistant", "Flexible options"],
+    image: "/materials/engineering-materials.jpg",
+    samples: [
+      "/materials/nylon-sample.jpg",
+      "/materials/pc-sample.jpg",
+      "/materials/tpu-sample.jpg"
+    ]
   },
   {
     icon: Leaf,
     title: "Specialty Materials",
     materials: ["Carbon Fiber", "Metal-filled", "Wood-filled"],
     description: "Unique materials for specific applications",
-    properties: ["Premium finish", "Enhanced properties", "Unique aesthetics"]
+    properties: ["Premium finish", "Enhanced properties", "Unique aesthetics"],
+    image: "/materials/specialty-materials.jpg",
+    samples: [
+      "/materials/carbon-fiber-sample.jpg",
+      "/materials/metal-filled-sample.jpg",
+      "/materials/wood-filled-sample.jpg"
+    ]
   }
 ];
 
@@ -41,22 +59,26 @@ const selectionCriteria = [
   {
     title: "Mechanical Properties",
     description: "Strength, flexibility, and durability requirements",
-    icon: Ruler
+    icon: Ruler,
+    image: "/selection/mechanical-properties.jpg"
   },
   {
     title: "Environmental Conditions",
     description: "Temperature, UV exposure, and chemical resistance",
-    icon: Microscope
+    icon: Microscope,
+    image: "/selection/environmental-conditions.jpg"
   },
   {
     title: "Application Requirements",
     description: "End-use requirements and regulatory compliance",
-    icon: Lightbulb
+    icon: Lightbulb,
+    image: "/selection/application-requirements.jpg"
   },
   {
     title: "Cost Considerations",
     description: "Budget constraints and production volume",
-    icon: LineChart
+    icon: LineChart,
+    image: "/selection/cost-considerations.jpg"
   }
 ];
 
@@ -106,12 +128,32 @@ export default function MaterialsSelectionPage() {
               >
                 <Card className="bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors h-full">
                   <CardHeader>
+                    {/* Category Image */}
+                    <div className="mb-4 aspect-video rounded-lg overflow-hidden">
+                      <img 
+                        src={category.image} 
+                        alt={category.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                     <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
                       <category.icon className="w-6 h-6 text-[#00FF00]" />
                     </div>
                     <CardTitle className="text-white text-xl mb-4">{category.title}</CardTitle>
                     <p className="text-white/60 mb-4">{category.description}</p>
                     <div className="space-y-4">
+                      {/* Material Samples Grid */}
+                      <div className="grid grid-cols-3 gap-2 mb-4">
+                        {category.samples.map((sample, i) => (
+                          <div key={i} className="aspect-square rounded-lg overflow-hidden">
+                            <img 
+                              src={sample} 
+                              alt={`${category.materials[i]} sample`}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        ))}
+                      </div>
                       <div>
                         <h4 className="text-[#00FF00] text-sm font-medium mb-2">Available Materials:</h4>
                         <ul className="text-white/60 text-sm space-y-1">
@@ -152,6 +194,14 @@ export default function MaterialsSelectionPage() {
               >
                 <Card className="bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors">
                   <CardHeader>
+                    {/* Criterion Image */}
+                    <div className="mb-4 aspect-video rounded-lg overflow-hidden">
+                      <img 
+                        src={criterion.image} 
+                        alt={criterion.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                     <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
                       <criterion.icon className="w-6 h-6 text-[#00FF00]" />
                     </div>
@@ -176,6 +226,14 @@ export default function MaterialsSelectionPage() {
             </p>
             <Card className="bg-black/50 border-[#00FF00]/20">
               <CardContent className="p-6">
+                {/* Library Preview Image */}
+                <div className="mb-6 aspect-video rounded-lg overflow-hidden">
+                  <img 
+                    src="/materials/library-preview.jpg" 
+                    alt="Material Library Preview"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <Microscope className="w-12 h-12 text-[#00FF00] mx-auto mb-4" />
                 <p className="text-white/60">
                   Get notified when our interactive material library launches!

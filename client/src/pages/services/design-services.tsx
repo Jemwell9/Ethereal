@@ -20,22 +20,46 @@ const features = [
     title: "Custom 3D Modeling",
     description:
       "From concept sketches to detailed 3D models, we bring your ideas to life with precision and creativity.",
+    image: "/design/3d-modeling.jpg",
+    samples: [
+      "/design/modeling-sample-1.jpg",
+      "/design/modeling-sample-2.jpg",
+      "/design/modeling-sample-3.jpg"
+    ]
   },
   {
     icon: Settings,
     title: "Design Optimization",
     description:
       "We optimize your designs for 3D printing, ensuring structural integrity and cost-effectiveness.",
+    image: "/design/optimization.jpg",
+    samples: [
+      "/design/optimization-sample-1.jpg",
+      "/design/optimization-sample-2.jpg",
+      "/design/optimization-sample-3.jpg"
+    ]
   },
   {
     icon: FileCode,
     title: "Technical Documentation",
     description: "Comprehensive documentation including technical drawings and specifications.",
+    image: "/design/documentation.jpg",
+    samples: [
+      "/design/documentation-sample-1.jpg",
+      "/design/documentation-sample-2.jpg",
+      "/design/documentation-sample-3.jpg"
+    ]
   },
   {
     icon: Boxes,
     title: "Prototype Iterations",
     description: "Rapid prototyping and iterative design improvements based on your feedback.",
+    image: "/design/prototyping.jpg",
+    samples: [
+      "/design/prototype-sample-1.jpg",
+      "/design/prototype-sample-2.jpg",
+      "/design/prototype-sample-3.jpg"
+    ]
   },
 ];
 
@@ -45,24 +69,28 @@ const processSteps = [
     description: "We discuss your requirements, objectives, and technical specifications.",
     icon: Clock,
     duration: "1-2 days",
+    image: "/design/consultation.jpg"
   },
   {
     title: "Design Phase",
     description: "Our team creates initial 3D models and design concepts.",
     icon: Code2,
     duration: "3-5 days",
+    image: "/design/design-phase.jpg"
   },
   {
     title: "Optimization",
     description: "Designs are optimized for 3D printing and structural integrity.",
     icon: Settings,
     duration: "2-3 days",
+    image: "/design/optimization-process.jpg"
   },
   {
     title: "Review & Refinement",
     description: "Collaborative review process with iterative improvements.",
     icon: CheckCircle2,
     duration: "1-3 days",
+    image: "/design/review-process.jpg"
   },
 ];
 
@@ -117,6 +145,7 @@ export default function DesignServicesPage() {
                     </div>
                     <CardTitle className="text-white text-xl mb-2">{feature.title}</CardTitle>
                     <p className="text-white/60">{feature.description}</p>
+                    <img src={feature.image} alt={feature.title} className="w-full mt-4"/> {/* Added image */}
                   </CardHeader>
                 </Card>
               </motion.div>
@@ -146,6 +175,7 @@ export default function DesignServicesPage() {
                   <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
                   <p className="text-white/60 mb-2">{step.description}</p>
                   <span className="text-sm text-[#00FF00]">Typical duration: {step.duration}</span>
+                  <img src={step.image} alt={step.title} className="w-full mt-4"/> {/* Added image */}
                 </div>
                 {index < processSteps.length - 1 && (
                   <div className="absolute left-6 top-12 bottom-0 w-px bg-[#00FF00]/20" />

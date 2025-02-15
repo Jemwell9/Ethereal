@@ -25,6 +25,12 @@ const printingServices = [
       "Wide material selection",
       "Fast turnaround times",
       "Ideal for prototypes and small series"
+    ],
+    image: "/printing/standard-printing.jpg",
+    samples: [
+      "/printing/fdm-sample.jpg",
+      "/printing/sla-sample.jpg",
+      "/printing/prototype-sample.jpg"
     ]
   },
   {
@@ -36,6 +42,12 @@ const printingServices = [
       "Large build volumes",
       "Industrial-grade quality",
       "Production-ready parts"
+    ],
+    image: "/printing/industrial-printing.jpg",
+    samples: [
+      "/printing/industrial-sample-1.jpg",
+      "/printing/industrial-sample-2.jpg",
+      "/printing/industrial-sample-3.jpg"
     ]
   },
   {
@@ -47,6 +59,12 @@ const printingServices = [
       "Material certification",
       "Surface finish inspection",
       "Performance testing"
+    ],
+    image: "/printing/quality-control.jpg",
+    samples: [
+      "/printing/quality-check-1.jpg",
+      "/printing/quality-check-2.jpg",
+      "/printing/quality-check-3.jpg"
     ]
   },
   {
@@ -58,6 +76,12 @@ const printingServices = [
       "Color matching",
       "Assembly services",
       "Custom packaging"
+    ],
+    image: "/printing/post-processing.jpg",
+    samples: [
+      "/printing/finishing-sample-1.jpg",
+      "/printing/finishing-sample-2.jpg",
+      "/printing/finishing-sample-3.jpg"
     ]
   }
 ];
@@ -67,25 +91,29 @@ const processSteps = [
     title: "File Preparation",
     description: "We optimize your 3D files for printing, ensuring the best results.",
     icon: FileCheck,
-    duration: "1-2 days"
+    duration: "1-2 days",
+    image: "/process/file-preparation.jpg"
   },
   {
     title: "Material Selection",
     description: "Choose from our wide range of materials or get expert recommendations.",
     icon: Shell,
-    duration: "1 day"
+    duration: "1 day",
+    image: "/process/material-selection.jpg"
   },
   {
     title: "Production",
     description: "Your parts are printed using state-of-the-art equipment.",
     icon: Printer,
-    duration: "2-5 days"
+    duration: "2-5 days",
+    image: "/process/production.jpg"
   },
   {
     title: "Quality Assurance",
     description: "Rigorous quality checks and post-processing as needed.",
     icon: Search,
-    duration: "1-2 days"
+    duration: "1-2 days",
+    image: "/process/quality-assurance.jpg"
   }
 ];
 
@@ -134,6 +162,7 @@ export default function PrintingExecutionPage() {
               >
                 <Card className="bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors h-full">
                   <CardHeader>
+                    <img src={service.image} alt={service.title} className="w-full h-48 object-cover mb-4"/>
                     <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
                       <service.icon className="w-6 h-6 text-[#00FF00]" />
                     </div>
@@ -147,6 +176,12 @@ export default function PrintingExecutionPage() {
                         </li>
                       ))}
                     </ul>
+                    <div className="mt-4">
+                      {service.samples.map((sample, i) => (
+                        <img src={sample} alt={`Sample ${i + 1} for ${service.title}`} className="w-24 h-24 object-cover mr-2" key={i} />
+                      ))}
+                    </div>
+
                   </CardHeader>
                 </Card>
               </motion.div>
@@ -169,6 +204,7 @@ export default function PrintingExecutionPage() {
                 viewport={{ once: true }}
                 className="flex gap-6 mb-8 relative"
               >
+                <img src={step.image} alt={step.title} className="w-24 h-24 object-cover mr-4"/>
                 <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center flex-shrink-0">
                   <step.icon className="w-6 h-6 text-[#00FF00]" />
                 </div>
