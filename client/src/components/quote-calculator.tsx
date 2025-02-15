@@ -103,9 +103,9 @@ export default function QuoteCalculator() {
 
     if (!material || !quality) return 10; // Minimum price
 
-    const volume = 
-      values.dimensions.length * 
-      values.dimensions.width * 
+    const volume =
+      values.dimensions.length *
+      values.dimensions.width *
       values.dimensions.height;
 
     const basePrice = volume * material.pricePerUnit;
@@ -182,8 +182,8 @@ export default function QuoteCalculator() {
                         </FormControl>
                         <SelectContent className="bg-black/90 border-[#00FF00]/20">
                           {materials.map((material) => (
-                            <SelectItem 
-                              key={material.id} 
+                            <SelectItem
+                              key={material.id}
                               value={material.id}
                               className="text-white hover:bg-[#00FF00]/10"
                             >
@@ -211,8 +211,8 @@ export default function QuoteCalculator() {
                         </FormControl>
                         <SelectContent className="bg-black/90 border-[#00FF00]/20">
                           {printQualities.map((quality) => (
-                            <SelectItem 
-                              key={quality.id} 
+                            <SelectItem
+                              key={quality.id}
                               value={quality.id}
                               className="text-white hover:bg-[#00FF00]/10"
                             >
@@ -234,8 +234,8 @@ export default function QuoteCalculator() {
                       <FormItem>
                         <FormLabel className="text-white">Length (mm)</FormLabel>
                         <FormControl>
-                          <Input 
-                            {...field} 
+                          <Input
+                            {...field}
                             className="bg-black/30 border-[#00FF00]/20 text-white"
                           />
                         </FormControl>
@@ -250,7 +250,7 @@ export default function QuoteCalculator() {
                       <FormItem>
                         <FormLabel className="text-white">Width (mm)</FormLabel>
                         <FormControl>
-                          <Input 
+                          <Input
                             {...field}
                             className="bg-black/30 border-[#00FF00]/20 text-white"
                           />
@@ -266,7 +266,7 @@ export default function QuoteCalculator() {
                       <FormItem>
                         <FormLabel className="text-white">Height (mm)</FormLabel>
                         <FormControl>
-                          <Input 
+                          <Input
                             {...field}
                             className="bg-black/30 border-[#00FF00]/20 text-white"
                           />
@@ -284,7 +284,7 @@ export default function QuoteCalculator() {
                     <FormItem>
                       <FormLabel className="text-white">Quantity</FormLabel>
                       <FormControl>
-                        <Input 
+                        <Input
                           {...field}
                           className="bg-black/30 border-[#00FF00]/20 text-white"
                         />
@@ -294,7 +294,7 @@ export default function QuoteCalculator() {
                   )}
                 />
 
-                <Button 
+                <Button
                   type="submit"
                   className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black"
                 >
@@ -321,8 +321,8 @@ export default function QuoteCalculator() {
                         </FormControl>
                         <SelectContent className="bg-black/90 border-[#00FF00]/20">
                           {materials.map((material) => (
-                            <SelectItem 
-                              key={material.id} 
+                            <SelectItem
+                              key={material.id}
                               value={material.id}
                               className="text-white hover:bg-[#00FF00]/10"
                             >
@@ -350,8 +350,8 @@ export default function QuoteCalculator() {
                         </FormControl>
                         <SelectContent className="bg-black/90 border-[#00FF00]/20">
                           {printQualities.map((quality) => (
-                            <SelectItem 
-                              key={quality.id} 
+                            <SelectItem
+                              key={quality.id}
                               value={quality.id}
                               className="text-white hover:bg-[#00FF00]/10"
                             >
@@ -368,7 +368,7 @@ export default function QuoteCalculator() {
                 <FormField
                   control={uploadForm.control}
                   name="file"
-                  render={({ field: { onChange, ...field } }) => (
+                  render={({ field }) => (
                     <FormItem>
                       <FormLabel className="text-white">Upload 3D Model</FormLabel>
                       <FormControl>
@@ -393,14 +393,13 @@ export default function QuoteCalculator() {
                               )}
                             </div>
                             <input
-                              {...field}
                               id="dropzone-file"
                               type="file"
                               className="hidden"
                               accept=".stl,.obj,.3mf"
                               onChange={(e) => {
                                 handleFileChange(e);
-                                onChange(e.target.files?.[0]);
+                                field.onChange(e.target.files?.[0]);
                               }}
                             />
                           </label>
@@ -418,7 +417,7 @@ export default function QuoteCalculator() {
                     <FormItem>
                       <FormLabel className="text-white">Quantity</FormLabel>
                       <FormControl>
-                        <Input 
+                        <Input
                           {...field}
                           className="bg-black/30 border-[#00FF00]/20 text-white"
                         />
@@ -428,7 +427,7 @@ export default function QuoteCalculator() {
                   )}
                 />
 
-                <Button 
+                <Button
                   type="submit"
                   className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black"
                 >
