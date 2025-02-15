@@ -30,7 +30,7 @@ export default function Navbar() {
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-4 w-[400px] bg-black/90 backdrop-blur-sm">
-                      <Link href="/services#design" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
+                      <Link href="/services/design" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
                         <div className="text-[#00FF00] font-medium">3D Design Services</div>
                         <p className="text-sm text-white/60">Professional CAD modeling and design optimization</p>
                       </Link>
