@@ -6,91 +6,86 @@ import { Link } from "wouter";
 import QuoteCalculator from "@/components/quote-calculator";
 import {
   Printer,
-  Cog,
-  Search,
-  Box,
-  ArrowRight,
-  FileCheck,
-  Shell,
-  Timer,
-  PackageCheck,
-  Gauge,
-  BadgeCheck,
-  Factory,
-  Microscope,
   Settings2,
   Zap,
   Target,
-  Wrench
+  Wrench,
+  ArrowRight,
+  Gauge,
+  Factory,
+  Microscope,
+  PackageCheck,
+  Search,
+  Cog
 } from "lucide-react";
 
 const executionCapabilities = [
   {
     icon: Gauge,
-    title: "Industrial Speed",
-    description: "Rapid production capabilities",
+    title: "Industrial-Grade Speed",
+    description: "24/7 Production Facility",
     features: [
-      "24/7 continuous operation",
-      "Multiple printer arrays",
-      "High-volume capability",
-      "Quick turnaround times"
+      "Continuous operation capability",
+      "Multiple printer arrays for parallel production",
+      "High-volume manufacturing capacity",
+      "Fast turnaround times guaranteed"
     ]
   },
   {
     icon: Target,
     title: "Professional Precision",
-    description: "Industry-leading accuracy standards",
+    description: "Unmatched Accuracy Standards",
     features: [
-      "±0.1mm tolerance guarantee",
-      "Layer heights from 0.05mm",
+      "±0.1mm dimensional accuracy",
+      "Layer resolution down to 0.05mm",
       "Real-time quality monitoring",
-      "Dimensional accuracy checks"
+      "Strict tolerance compliance"
     ]
   },
   {
     icon: Wrench,
-    title: "Expert Finishing",
-    description: "Complete post-processing services",
+    title: "Premium Finishing",
+    description: "Complete Post-Processing",
     features: [
-      "Surface smoothing & polishing",
-      "Color treatment & painting",
-      "Assembly & fitting",
+      "Professional surface treatment",
+      "Color matching & painting",
+      "Assembly & fitting services",
       "Quality assurance testing"
     ]
   }
 ];
 
-const printerFleet = [
+const printerTechnology = [
   {
-    icon: Printer,
+    icon: Factory,
     name: "Industrial FDM Systems",
-    description: "Large-format professional printing",
+    description: "Large Format Production",
     capabilities: [
-      "Build volume up to 400x400x500mm",
-      "Multi-material extrusion system",
-      "High-temperature capability (300°C+)",
+      "Build volume up to 500x500x600mm",
+      "Multi-material compatibility",
+      "High-temperature capability (350°C+)",
       "Industrial-grade reliability"
     ]
   },
   {
     icon: Microscope,
     name: "Professional SLA/MSLA",
-    description: "Ultra-high resolution printing",
+    description: "Ultra-High Resolution",
     capabilities: [
-      "25-100 micron layer precision",
+      "25-micron layer precision",
       "Engineering-grade resins",
-      "Medical & dental certified",
-      "Optical-grade finish"
+      "Medical-grade certification",
+      "Optical-quality finish"
     ]
   },
   {
-    icon: Factory,
+    icon: Printer,
     name: "Production Systems",
-    description: "Mass manufacturing setup",
+    description: "Mass Manufacturing",
     capabilities: [
-      "Parallel print operations",
-      "Automated part removal",
-      "24/7 continuous production",
+      "Automated production line",
+      "Smart part removal system",
+      "24/7 continuous operation",
       "IoT-enabled monitoring"
     ]
   }
@@ -99,26 +94,26 @@ const printerFleet = [
 const productionProcess = [
   {
     icon: Search,
-    title: "Design Analysis",
-    description: "Comprehensive review of design specifications and requirements",
+    title: "Design Validation",
+    description: "Comprehensive analysis of design specifications and optimization for production",
     duration: "1-2 hours"
   },
   {
     icon: Cog,
-    title: "Print Preparation",
-    description: "Machine calibration and parameter optimization",
+    title: "Print Setup",
+    description: "Machine calibration, material preparation, and parameter optimization",
     duration: "2-4 hours"
   },
   {
     icon: Printer,
-    title: "Manufacturing",
-    description: "Monitored production with quality checkpoints",
+    title: "Production",
+    description: "Monitored manufacturing with quality checkpoints and real-time adjustments",
     duration: "Project dependent"
   },
   {
     icon: PackageCheck,
-    title: "Quality Assurance",
-    description: "Multi-point inspection and validation process",
+    title: "Quality Control",
+    description: "Multi-point inspection, validation, and documentation process",
     duration: "1-2 hours"
   }
 ];
@@ -136,12 +131,12 @@ export default function PrintingExecutionPage() {
             className="text-center max-w-5xl mx-auto"
           >
             <h1 className="text-5xl font-bold mb-6 text-white">
-              PROFESSIONAL 3D PRINTING
+              INDUSTRIAL 3D PRINTING EXECUTION
             </h1>
             <p className="text-lg text-white/60 mb-12 max-w-3xl mx-auto">
-              Experience industrial-grade 3D printing with our state-of-the-art facility. 
-              We combine precision engineering with rapid production capabilities to deliver 
-              exceptional results for every project.
+              Experience professional-grade 3D printing with our state-of-the-art facility. 
+              We combine cutting-edge technology with expert craftsmanship to deliver 
+              exceptional results for every project, from prototypes to production runs.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               {executionCapabilities.map((cap, index) => (
@@ -182,14 +177,14 @@ export default function PrintingExecutionPage() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold text-white text-center mb-4">Advanced Equipment</h2>
+            <h2 className="text-3xl font-bold text-white text-center mb-4">Advanced Technology</h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              Our facility is equipped with the latest in 3D printing technology,
+              Our facility features the latest in 3D printing technology,
               enabling us to handle projects of any scale with precision and efficiency.
             </p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {printerFleet.map((printer, index) => (
+            {printerTechnology.map((printer, index) => (
               <motion.div
                 key={printer.name}
                 initial={{ opacity: 0, y: 20 }}
@@ -229,10 +224,10 @@ export default function PrintingExecutionPage() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold text-white text-center mb-4">Our Process</h2>
+            <h2 className="text-3xl font-bold text-white text-center mb-4">Production Process</h2>
             <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-              We follow a systematic approach to ensure every project meets our high
-              quality standards and your specific requirements.
+              Our systematic approach ensures every project meets our high quality
+              standards and your specific requirements.
             </p>
           </motion.div>
           <div className="max-w-4xl mx-auto">
@@ -294,10 +289,10 @@ export default function PrintingExecutionPage() {
             className="max-w-2xl mx-auto"
           >
             <h2 className="text-3xl font-bold mb-6 text-white">
-              Ready to Begin?
+              Ready to Start Manufacturing?
             </h2>
             <p className="text-white/60 mb-8">
-              Our team is here to help bring your ideas to life with professional
+              Our team is ready to bring your ideas to life with professional
               3D printing solutions. Contact us to discuss your project requirements.
             </p>
             <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
