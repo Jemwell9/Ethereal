@@ -19,7 +19,7 @@ const features = [
     icon: Code2,
     title: "Custom 3D Modeling",
     description:
-      "From concept sketches to detailed 3D models, we bring your ideas to life with precision and creativity.",
+      "Expert CAD modeling services using industry-standard software. We transform your sketches, ideas, or 2D drawings into precise 3D models optimized for printing. Specializing in mechanical parts, architectural models, prototypes, and artistic designs.",
     image: "/design/3d-modeling.jpg",
     samples: [
       "/design/modeling-sample-1.jpg",
@@ -31,7 +31,7 @@ const features = [
     icon: Settings,
     title: "Design Optimization",
     description:
-      "We optimize your designs for 3D printing, ensuring structural integrity and cost-effectiveness.",
+      "Advanced optimization techniques to enhance your designs for 3D printing. We analyze structural integrity, optimize material usage, improve printability, and reduce costs while maintaining functionality. Includes topology optimization and part consolidation.",
     image: "/design/optimization.jpg",
     samples: [
       "/design/optimization-sample-1.jpg",
@@ -42,7 +42,7 @@ const features = [
   {
     icon: FileCode,
     title: "Technical Documentation",
-    description: "Comprehensive documentation including technical drawings and specifications.",
+    description: "Complete technical documentation package including dimensioned drawings, assembly instructions, material specifications, and manufacturing guidelines. Perfect for production runs and regulatory compliance.",
     image: "/design/documentation.jpg",
     samples: [
       "/design/documentation-sample-1.jpg",
@@ -53,7 +53,7 @@ const features = [
   {
     icon: Boxes,
     title: "Prototype Iterations",
-    description: "Rapid prototyping and iterative design improvements based on your feedback.",
+    description: "Rapid prototyping service with quick iteration cycles. We print, test, and refine your designs based on real-world feedback. Includes functional testing, fit checks, and design improvements with each iteration.",
     image: "/design/prototyping.jpg",
     samples: [
       "/design/prototype-sample-1.jpg",
