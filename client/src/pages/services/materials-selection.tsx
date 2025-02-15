@@ -10,7 +10,9 @@ import {
   ArrowRight,
   Droplet,
   Leaf,
-  Zap
+  Zap,
+  SearchCode,
+  GitCompare
 } from "lucide-react";
 
 const materialCategories = [
@@ -276,32 +278,65 @@ export default function MaterialsSelectionPage() {
 
       {/* Material Library - Placeholder for future feature */}
       <section id="material-library" className="py-20 bg-black/40">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bold text-white mb-6">Material Library</h2>
-            <p className="text-white/60 mb-8">
-              Our comprehensive material library is coming soon! Access detailed specifications,
-              comparison tools, and real-world application examples.
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-white mb-6 text-center">Material Library</h2>
+            <p className="text-white/60 mb-12 text-center max-w-2xl mx-auto">
+              Coming soon - Your comprehensive guide to 3D printing materials. Explore detailed specifications,
+              interactive comparison tools, and real-world applications.
             </p>
-            <Card className="bg-black/50 border-[#00FF00]/20">
-              <CardContent className="p-6">
-                {/* Library Preview Image */}
-                <div className="mb-6 aspect-video rounded-lg overflow-hidden">
-                  <img 
-                    src="/materials/library-preview.jpg" 
-                    alt="Material Library Preview"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <Microscope className="w-12 h-12 text-[#00FF00] mx-auto mb-4" />
-                <p className="text-white/60">
-                  Get notified when our interactive material library launches!
-                </p>
-                <Button asChild className="mt-6 bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-                  <Link href="/contact">Contact Material Expert</Link>
-                </Button>
-              </CardContent>
-            </Card>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <Card className="bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors">
+                <CardContent className="p-6">
+                  <SearchCode className="w-12 h-12 text-[#00FF00] mb-4" />
+                  <h3 className="text-white text-xl font-semibold mb-4">Material Specifications</h3>
+                  <ul className="text-white/60 space-y-2 mb-6">
+                    <li>• Detailed mechanical properties</li>
+                    <li>• Temperature resistance data</li>
+                    <li>• Chemical compatibility</li>
+                    <li>• Processing parameters</li>
+                  </ul>
+                  <div className="aspect-video rounded-lg overflow-hidden bg-black/30" />
+                </CardContent>
+              </Card>
+
+              <Card className="bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors">
+                <CardContent className="p-6">
+                  <GitCompare className="w-12 h-12 text-[#00FF00] mb-4" />
+                  <h3 className="text-white text-xl font-semibold mb-4">Comparison Tools</h3>
+                  <ul className="text-white/60 space-y-2 mb-6">
+                    <li>• Side-by-side comparisons</li>
+                    <li>• Cost analysis calculator</li>
+                    <li>• Property radar charts</li>
+                    <li>• Application suitability matrix</li>
+                  </ul>
+                  <div className="aspect-video rounded-lg overflow-hidden bg-black/30" />
+                </CardContent>
+              </Card>
+
+              <Card className="bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors">
+                <CardContent className="p-6">
+                  <Microscope className="w-12 h-12 text-[#00FF00] mb-4" />
+                  <h3 className="text-white text-xl font-semibold mb-4">Case Studies</h3>
+                  <ul className="text-white/60 space-y-2 mb-6">
+                    <li>• Real project examples</li>
+                    <li>• Material selection rationale</li>
+                    <li>• Performance analysis</li>
+                    <li>• Cost-benefit studies</li>
+                  </ul>
+                  <div className="aspect-video rounded-lg overflow-hidden bg-black/30" />
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="mt-12 text-center">
+              <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                <Link href="/contact">Get Early Access</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
           </div>
         </div>
       </section>
