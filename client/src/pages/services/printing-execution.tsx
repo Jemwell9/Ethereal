@@ -110,7 +110,7 @@ export default function PrintingExecutionPage() {
             </p>
             <div className="flex justify-center gap-4">
               <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-                <Link href="#price-calculator">Calculate Price</Link>
+                <Link href="#calculator">Calculate Price</Link>
               </Button>
               <Button asChild variant="outline" className="border-[#00FF00] text-[#00FF00] hover:bg-[#00FF00]/10">
                 <Link href="/contact">Request Quote</Link>
@@ -187,14 +187,16 @@ export default function PrintingExecutionPage() {
       </section>
 
       {/* Price Calculator */}
-      <section id="price-calculator" className="py-20 bg-black/40">
+      <section id="calculator" className="py-20 bg-black/40">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-white text-center mb-6">Price Calculator</h2>
           <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
             Get instant pricing for your 3D printing projects. Simply enter your project specifications
             below to receive an accurate quote.
           </p>
-          <QuoteCalculator />
+          <div className="max-w-2xl mx-auto">
+            <QuoteCalculator />
+          </div>
         </div>
       </section>
 
