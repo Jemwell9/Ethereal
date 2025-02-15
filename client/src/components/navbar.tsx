@@ -34,7 +34,7 @@ export default function Navbar() {
                         <div className="text-[#00FF00] font-medium">3D Design Services</div>
                         <p className="text-sm text-white/60">Professional CAD modeling and design optimization</p>
                       </Link>
-                      <Link href="/services#materials" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
+                      <Link href="/services/materials" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
                         <div className="text-[#00FF00] font-medium">Materials Selection</div>
                         <p className="text-sm text-white/60">Expert guidance on material selection</p>
                       </Link>
