@@ -16,42 +16,45 @@ import {
   PackageCheck,
   Search,
   Cog,
-  Wrench
+  Wrench,
+  Clock,
+  ShieldCheck,
+  Cpu
 } from "lucide-react";
 
 const PrintingExecutionPage = () => {
   const capabilities = [
     {
       icon: Factory,
-      title: "Industrial Manufacturing",
-      description: "24/7 Production Facility",
+      title: "Industrial Scale Production",
+      description: "Enterprise-Grade Manufacturing",
       features: [
-        "Multi-printer setup",
-        "High-volume capacity",
-        "Rapid turnaround",
-        "Continuous operation"
+        "24/7 Production capacity",
+        "High volume capabilities",
+        "Automated quality control",
+        "Real-time monitoring"
       ]
     },
     {
-      icon: Target,
-      title: "Precision Quality",
-      description: "Professional Standards",
+      icon: ShieldCheck,
+      title: "Quality Assurance",
+      description: "Precision Manufacturing",
       features: [
-        "±0.1mm accuracy",
-        "50μm resolution",
-        "Quality monitoring",
-        "Full inspection"
+        "ISO 9001:2015 certified",
+        "100% quality inspection",
+        "Material certification",
+        "Process validation"
       ]
     },
     {
-      icon: Settings2,
-      title: "Technical Excellence",
-      description: "Expert Engineering",
+      icon: Clock,
+      title: "Rapid Turnaround",
+      description: "Fast & Reliable Service",
       features: [
-        "Advanced materials",
-        "Complex geometries",
-        "Technical optimization",
-        "Design validation"
+        "Same-day quotes",
+        "Express production",
+        "Flexible scheduling",
+        "On-time delivery"
       ]
     }
   ];
@@ -59,24 +62,24 @@ const PrintingExecutionPage = () => {
   const technologies = [
     {
       icon: Printer,
-      title: "FDM Technology",
+      title: "Industrial FDM",
       description: "Large Format Production",
       specs: [
-        "Build volume: 500x500x600mm",
-        "Temperature: up to 350°C",
-        "Layer height: 0.1-0.4mm",
-        "Multi-material capable"
+        "Build volume: 1000x1000x1000mm",
+        "Layer height: 0.05-0.5mm",
+        "Multi-material capability",
+        "High-temp materials (400°C)"
       ]
     },
     {
-      icon: Zap,
-      title: "SLA/MSLA Systems",
-      description: "High Detail Printing",
+      icon: Cpu,
+      title: "Professional SLA/MSLA",
+      description: "High-Detail Production",
       specs: [
-        "XY resolution: 25 microns",
+        "25 micron resolution",
         "Engineering resins",
-        "Optical-grade finish",
-        "Medical certification"
+        "Biocompatible materials",
+        "Optical-grade finish"
       ]
     },
     {
@@ -84,55 +87,55 @@ const PrintingExecutionPage = () => {
       title: "Production Systems",
       description: "Mass Manufacturing",
       specs: [
-        "Automated workflows",
-        "24/7 monitoring",
-        "Quality control",
-        "Scale production"
+        "Automated post-processing",
+        "Quality monitoring",
+        "Material tracking",
+        "Process optimization"
       ]
     }
   ];
 
-  const process = [
+  const workflow = [
     {
       icon: Search,
-      title: "Design Analysis",
-      duration: "1-2 hours",
+      title: "Initial Assessment",
+      duration: "Day 1",
       steps: [
-        "File verification",
-        "Print optimization",
-        "Support planning",
-        "Material selection"
+        "Design review",
+        "Material selection",
+        "Process planning",
+        "Quality requirements"
       ]
     },
     {
       icon: Cog,
-      title: "Print Setup",
-      duration: "2-4 hours",
+      title: "Pre-Production",
+      duration: "Day 1-2",
       steps: [
-        "Slicing configuration",
-        "Parameter tuning",
+        "Machine calibration",
         "Material preparation",
-        "System calibration"
+        "Test prints",
+        "Parameter optimization"
       ]
     },
     {
-      icon: Printer,
-      title: "Production",
-      duration: "Varies by project",
+      icon: Factory,
+      title: "Production Phase",
+      duration: "Based on volume",
       steps: [
-        "Real-time monitoring",
+        "Continuous monitoring",
         "Quality checkpoints",
-        "Environment control",
-        "Progress tracking"
+        "Process documentation",
+        "Real-time updates"
       ]
     },
     {
       icon: PackageCheck,
       title: "Quality Control",
-      duration: "1-2 hours",
+      duration: "Final Day",
       steps: [
-        "Dimensional check",
-        "Surface inspection",
+        "Dimensional analysis",
+        "Visual inspection",
         "Functional testing",
         "Documentation"
       ]
@@ -151,32 +154,40 @@ const PrintingExecutionPage = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-5xl font-bold mb-6 text-white">
-              PROFESSIONAL 3D PRINTING
+              INDUSTRIAL 3D PRINTING
             </h1>
             <p className="text-lg text-white/60 mb-12">
-              Experience industrial-grade manufacturing with our state-of-the-art facility.
-              We combine cutting-edge technology with expert craftsmanship to deliver
-              exceptional results for every project.
+              Experience enterprise-grade additive manufacturing with our state-of-the-art
+              facility. We combine cutting-edge technology with rigorous quality control
+              to deliver exceptional results for every project.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {capabilities.map((item, index) => (
-              <Card key={index} className="bg-black/50 border-[#00FF00]/20">
-                <CardContent className="pt-6">
-                  <item.icon className="w-12 h-12 text-[#00FF00] mb-4" />
-                  <h3 className="text-xl font-bold text-white mb-4">{item.title}</h3>
-                  <p className="text-white/60 mb-4">{item.description}</p>
-                  <ul className="space-y-2">
-                    {item.features.map((feature, i) => (
-                      <li key={i} className="text-white/60 flex items-center gap-2">
-                        <ArrowRight className="w-4 h-4 text-[#00FF00]" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="bg-black/50 border-[#00FF00]/20 h-full">
+                  <CardContent className="pt-6">
+                    <item.icon className="w-12 h-12 text-[#00FF00] mb-4" />
+                    <h3 className="text-xl font-bold text-white mb-4">{item.title}</h3>
+                    <p className="text-white/60 mb-4">{item.description}</p>
+                    <ul className="space-y-2">
+                      {item.features.map((feature, i) => (
+                        <li key={i} className="text-white/60 flex items-center gap-2">
+                          <ArrowRight className="w-4 h-4 text-[#00FF00]" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -199,27 +210,35 @@ const PrintingExecutionPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {technologies.map((tech, index) => (
-              <Card key={index} className="bg-black/50 border-[#00FF00]/20">
-                <CardContent className="pt-6">
-                  <tech.icon className="w-12 h-12 text-[#00FF00] mb-4" />
-                  <h3 className="text-xl font-bold text-white mb-4">{tech.title}</h3>
-                  <p className="text-white/60 mb-4">{tech.description}</p>
-                  <ul className="space-y-2">
-                    {tech.specs.map((spec, i) => (
-                      <li key={i} className="text-white/60 flex items-center gap-2">
-                        <ArrowRight className="w-4 h-4 text-[#00FF00]" />
-                        {spec}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="bg-black/50 border-[#00FF00]/20 h-full">
+                  <CardContent className="pt-6">
+                    <tech.icon className="w-12 h-12 text-[#00FF00] mb-4" />
+                    <h3 className="text-xl font-bold text-white mb-4">{tech.title}</h3>
+                    <p className="text-white/60 mb-4">{tech.description}</p>
+                    <ul className="space-y-2">
+                      {tech.specs.map((spec, i) => (
+                        <li key={i} className="text-white/60 flex items-center gap-2">
+                          <ArrowRight className="w-4 h-4 text-[#00FF00]" />
+                          {spec}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Process */}
+      {/* Workflow */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <motion.div
@@ -228,15 +247,22 @@ const PrintingExecutionPage = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-white mb-4">Our Process</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">Production Workflow</h2>
             <p className="text-white/60">
               Systematic approach for consistent quality
             </p>
           </motion.div>
 
           <div className="max-w-4xl mx-auto">
-            {process.map((step, index) => (
-              <div key={index} className="flex gap-6 mb-8 relative">
+            {workflow.map((step, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="flex gap-6 mb-8 relative"
+              >
                 <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center flex-shrink-0">
                   <step.icon className="w-6 h-6 text-[#00FF00]" />
                 </div>
@@ -252,10 +278,10 @@ const PrintingExecutionPage = () => {
                     ))}
                   </ul>
                 </div>
-                {index < process.length - 1 && (
+                {index < workflow.length - 1 && (
                   <div className="absolute left-6 top-12 bottom-0 w-px bg-[#00FF00]/20" />
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
