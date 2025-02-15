@@ -276,15 +276,80 @@ export default function MaterialsSelectionPage() {
         </div>
       </section>
 
-      {/* Material Library - Placeholder for future feature */}
+      {/* Material Library - Comprehensive Guide */}
       <section id="material-library" className="py-20 bg-black/40">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-white mb-6 text-center">Material Library</h2>
             <p className="text-white/60 mb-12 text-center max-w-2xl mx-auto">
-              Coming soon - Your comprehensive guide to 3D printing materials. Explore detailed specifications,
+              Your comprehensive guide to 3D printing materials. Explore detailed specifications,
               interactive comparison tools, and real-world applications.
             </p>
+            
+            {/* Material Categories Overview */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+              <Card className="bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
+                    <Droplet className="w-6 h-6 text-[#00FF00]" />
+                  </div>
+                  <h3 className="text-white text-xl font-semibold mb-4">Standard Plastics</h3>
+                  <ul className="text-white/60 space-y-2">
+                    <li>• PLA</li>
+                    <li>• ABS</li>
+                    <li>• PETG</li>
+                    <li>• TPU</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
+                    <Zap className="w-6 h-6 text-[#00FF00]" />
+                  </div>
+                  <h3 className="text-white text-xl font-semibold mb-4">Engineering</h3>
+                  <ul className="text-white/60 space-y-2">
+                    <li>• Nylon</li>
+                    <li>• Polycarbonate</li>
+                    <li>• ASA</li>
+                    <li>• PEEK</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
+                    <Leaf className="w-6 h-6 text-[#00FF00]" />
+                  </div>
+                  <h3 className="text-white text-xl font-semibold mb-4">Composites</h3>
+                  <ul className="text-white/60 space-y-2">
+                    <li>• Carbon Fiber</li>
+                    <li>• Glass Fiber</li>
+                    <li>• Wood-filled</li>
+                    <li>• Metal-filled</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
+                    <Microscope className="w-6 h-6 text-[#00FF00]" />
+                  </div>
+                  <h3 className="text-white text-xl font-semibold mb-4">Specialty</h3>
+                  <ul className="text-white/60 space-y-2">
+                    <li>• Flexible</li>
+                    <li>• Transparent</li>
+                    <li>• Conductive</li>
+                    <li>• Bio-compatible</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Material Guide Features */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <Card className="bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors">
                 <CardContent className="p-6">
@@ -296,35 +361,47 @@ export default function MaterialsSelectionPage() {
                     <li>• Chemical compatibility</li>
                     <li>• Processing parameters</li>
                   </ul>
-                  <div className="aspect-video rounded-lg overflow-hidden bg-black/30" />
+                  <div className="aspect-video rounded-lg overflow-hidden bg-black/30 relative group cursor-pointer">
+                    <div className="absolute inset-0 bg-[#00FF00]/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <p className="text-white text-sm">Interactive property charts coming soon</p>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
 
               <Card className="bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors">
                 <CardContent className="p-6">
                   <GitCompare className="w-12 h-12 text-[#00FF00] mb-4" />
-                  <h3 className="text-white text-xl font-semibold mb-4">Comparison Tools</h3>
+                  <h3 className="text-white text-xl font-semibold mb-4">Material Selector</h3>
                   <ul className="text-white/60 space-y-2 mb-6">
-                    <li>• Side-by-side comparisons</li>
-                    <li>• Cost analysis calculator</li>
-                    <li>• Property radar charts</li>
-                    <li>• Application suitability matrix</li>
+                    <li>• Requirements analysis</li>
+                    <li>• Cost optimization</li>
+                    <li>• Performance comparison</li>
+                    <li>• Environmental impact</li>
                   </ul>
-                  <div className="aspect-video rounded-lg overflow-hidden bg-black/30" />
+                  <div className="aspect-video rounded-lg overflow-hidden bg-black/30 relative group cursor-pointer">
+                    <div className="absolute inset-0 bg-[#00FF00]/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <p className="text-white text-sm">Interactive material selector coming soon</p>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
 
               <Card className="bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors">
                 <CardContent className="p-6">
-                  <Microscope className="w-12 h-12 text-[#00FF00] mb-4" />
-                  <h3 className="text-white text-xl font-semibold mb-4">Case Studies</h3>
+                  <LineChart className="w-12 h-12 text-[#00FF00] mb-4" />
+                  <h3 className="text-white text-xl font-semibold mb-4">Application Guide</h3>
                   <ul className="text-white/60 space-y-2 mb-6">
-                    <li>• Real project examples</li>
-                    <li>• Material selection rationale</li>
-                    <li>• Performance analysis</li>
-                    <li>• Cost-benefit studies</li>
+                    <li>• Industry best practices</li>
+                    <li>• Processing guidelines</li>
+                    <li>• Quality benchmarks</li>
+                    <li>• Troubleshooting tips</li>
                   </ul>
-                  <div className="aspect-video rounded-lg overflow-hidden bg-black/30" />
+                  <div className="aspect-video rounded-lg overflow-hidden bg-black/30 relative group cursor-pointer">
+                    <div className="absolute inset-0 bg-[#00FF00]/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <p className="text-white text-sm">Application guides coming soon</p>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             </div>
