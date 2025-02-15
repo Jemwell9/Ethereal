@@ -337,9 +337,6 @@ export default function MaterialsSelectionPage() {
           </div>
         </div>
       </section>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-20">
