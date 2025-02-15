@@ -50,13 +50,16 @@ export default function Navbar() {
           </div>
 
           {/* Center logo */}
-          <div className="flex justify-center py-2">
+          <div className="flex justify-center py-1">
             <Link href="/">
               <img 
                 src="/Ethereal-Logo.png" 
                 alt="Ethereal" 
-                className="h-20 w-auto object-contain transition-transform hover:scale-105" 
-                style={{ filter: 'drop-shadow(0 0 12px rgba(0, 255, 0, 0.4))' }}
+                className="h-24 w-auto object-contain transition-transform hover:scale-105" 
+                style={{ 
+                  filter: 'drop-shadow(0 0 16px rgba(0, 255, 0, 0.5))',
+                  transform: 'scale(1.1)'
+                }}
               />
             </Link>
           </div>
