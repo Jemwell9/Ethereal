@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { 
+import QuoteCalculator from "@/components/quote-calculator";
+import {
   Printer,
   Cog,
   Search,
@@ -185,32 +186,15 @@ export default function PrintingExecutionPage() {
         </div>
       </section>
 
-      {/* Price Calculator - Placeholder for future feature */}
+      {/* Price Calculator */}
       <section id="price-calculator" className="py-20 bg-black/40">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bold text-white mb-6">Price Calculator</h2>
-            <p className="text-white/60 mb-8">
-              Get instant pricing for your 3D printing projects. Upload your files and specify requirements
-              to receive an accurate quote.
-            </p>
-            <Card className="bg-black/50 border-[#00FF00]/20">
-              <CardContent className="p-6">
-                <Calculator className="w-12 h-12 text-[#00FF00] mx-auto mb-4" />
-                <p className="text-white/60">
-                  Our advanced price calculator is coming soon! For now, contact us for a custom quote.
-                </p>
-                <div className="flex justify-center gap-4 mt-6">
-                  <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-                    <Link href="/contact">Request Quote</Link>
-                  </Button>
-                  <Button asChild variant="outline" className="border-[#00FF00] text-[#00FF00] hover:bg-[#00FF00]/10">
-                    <Link href="#bulk-pricing">Bulk Pricing</Link>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-white text-center mb-6">Price Calculator</h2>
+          <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
+            Get instant pricing for your 3D printing projects. Simply enter your project specifications
+            below to receive an accurate quote.
+          </p>
+          <QuoteCalculator />
         </div>
       </section>
 
