@@ -27,35 +27,35 @@ import {
 const executionCapabilities = [
   {
     icon: Gauge,
-    title: "High-Speed Production",
-    description: "Fast turnaround for urgent projects",
+    title: "Industrial Speed",
+    description: "Rapid production capabilities",
     features: [
-      "24/7 production capability",
+      "24/7 continuous operation",
       "Multiple printer arrays",
-      "Rapid prototyping",
-      "Bulk order processing"
+      "High-volume capability",
+      "Quick turnaround times"
     ]
   },
   {
     icon: Target,
-    title: "Precision Control",
-    description: "Industry-leading accuracy",
+    title: "Professional Precision",
+    description: "Industry-leading accuracy standards",
     features: [
-      "±0.1mm tolerance",
-      "Layer height from 0.05mm",
-      "Real-time monitoring",
-      "Quality verification"
+      "±0.1mm tolerance guarantee",
+      "Layer heights from 0.05mm",
+      "Real-time quality monitoring",
+      "Dimensional accuracy checks"
     ]
   },
   {
     icon: Wrench,
-    title: "Post-Processing",
-    description: "Professional finishing services",
+    title: "Expert Finishing",
+    description: "Complete post-processing services",
     features: [
-      "Surface smoothing",
-      "Color treatment",
-      "Assembly services",
-      "Functional testing"
+      "Surface smoothing & polishing",
+      "Color treatment & painting",
+      "Assembly & fitting",
+      "Quality assurance testing"
     ]
   }
 ];
@@ -63,35 +63,35 @@ const executionCapabilities = [
 const printerFleet = [
   {
     icon: Printer,
-    name: "Industrial FDM",
+    name: "Industrial FDM Systems",
     description: "Large-format professional printing",
     capabilities: [
-      "Build volume: 400x400x500mm",
-      "Dual extrusion system",
-      "High-temp materials (up to 300°C)",
+      "Build volume up to 400x400x500mm",
+      "Multi-material extrusion system",
+      "High-temperature capability (300°C+)",
       "Industrial-grade reliability"
     ]
   },
   {
     icon: Microscope,
-    name: "Professional SLA",
+    name: "Professional SLA/MSLA",
     description: "Ultra-high resolution printing",
     capabilities: [
-      "25-100 micron precision",
-      "Engineering resins",
-      "Dental and medical grade",
-      "Optical-grade surface finish"
+      "25-100 micron layer precision",
+      "Engineering-grade resins",
+      "Medical & dental certified",
+      "Optical-grade finish"
     ]
   },
   {
     icon: Factory,
     name: "Production Systems",
-    description: "Mass production capability",
+    description: "Mass manufacturing setup",
     capabilities: [
-      "Multi-unit printing",
+      "Parallel print operations",
       "Automated part removal",
-      "24/7 operation ready",
-      "Industrial IoT monitoring"
+      "24/7 continuous production",
+      "IoT-enabled monitoring"
     ]
   }
 ];
@@ -99,26 +99,26 @@ const printerFleet = [
 const productionProcess = [
   {
     icon: Search,
-    title: "Initial Analysis",
-    description: "Thorough review of design specifications and requirements",
+    title: "Design Analysis",
+    description: "Comprehensive review of design specifications and requirements",
     duration: "1-2 hours"
   },
   {
     icon: Cog,
-    title: "Setup & Optimization",
-    description: "Machine calibration and print parameter optimization",
+    title: "Print Preparation",
+    description: "Machine calibration and parameter optimization",
     duration: "2-4 hours"
   },
   {
     icon: Printer,
-    title: "Production",
-    description: "Monitored printing with quality checks",
-    duration: "Varies by project"
+    title: "Manufacturing",
+    description: "Monitored production with quality checkpoints",
+    duration: "Project dependent"
   },
   {
     icon: PackageCheck,
-    title: "Quality Control",
-    description: "Multi-point inspection and validation",
+    title: "Quality Assurance",
+    description: "Multi-point inspection and validation process",
     duration: "1-2 hours"
   }
 ];
@@ -136,11 +136,12 @@ export default function PrintingExecutionPage() {
             className="text-center max-w-5xl mx-auto"
           >
             <h1 className="text-5xl font-bold mb-6 text-white">
-              PROFESSIONAL 3D PRINTING EXECUTION
+              PROFESSIONAL 3D PRINTING
             </h1>
-            <p className="text-lg text-white/60 mb-12">
-              State-of-the-art production facilities delivering precision parts with 
-              industry-leading quality control and rapid turnaround times.
+            <p className="text-lg text-white/60 mb-12 max-w-3xl mx-auto">
+              Experience industrial-grade 3D printing with our state-of-the-art facility. 
+              We combine precision engineering with rapid production capabilities to deliver 
+              exceptional results for every project.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               {executionCapabilities.map((cap, index) => (
@@ -172,10 +173,21 @@ export default function PrintingExecutionPage() {
         </div>
       </section>
 
-      {/* Printer Fleet */}
+      {/* Equipment Section */}
       <section className="py-20 bg-black/40">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">Our Printer Fleet</h2>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-bold text-white text-center mb-4">Advanced Equipment</h2>
+            <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
+              Our facility is equipped with the latest in 3D printing technology,
+              enabling us to handle projects of any scale with precision and efficiency.
+            </p>
+          </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {printerFleet.map((printer, index) => (
               <motion.div
@@ -211,7 +223,18 @@ export default function PrintingExecutionPage() {
       {/* Production Process */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">Production Process</h2>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-bold text-white text-center mb-4">Our Process</h2>
+            <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
+              We follow a systematic approach to ensure every project meets our high
+              quality standards and your specific requirements.
+            </p>
+          </motion.div>
           <div className="max-w-4xl mx-auto">
             {productionProcess.map((step, index) => (
               <motion.div
@@ -239,14 +262,21 @@ export default function PrintingExecutionPage() {
         </div>
       </section>
 
-      {/* Calculator Section */}
+      {/* Quote Calculator */}
       <section id="calculator" className="py-20 bg-black/40">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-white text-center mb-6">Get Started</h2>
-          <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-            Ready to bring your project to life? Get an instant quote for your 3D printing needs
-            or contact our team for custom requirements.
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-bold text-white text-center mb-4">Start Your Project</h2>
+            <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
+              Get an instant quote for your 3D printing project or contact our team
+              for custom requirements and expert consultation.
+            </p>
+          </motion.div>
           <div className="max-w-2xl mx-auto">
             <QuoteCalculator />
           </div>
@@ -264,14 +294,14 @@ export default function PrintingExecutionPage() {
             className="max-w-2xl mx-auto"
           >
             <h2 className="text-3xl font-bold mb-6 text-white">
-              Need Expert Guidance?
+              Ready to Begin?
             </h2>
             <p className="text-white/60 mb-8">
-              Our team is ready to help you choose the right printing solution for your project.
-              Contact us for a consultation.
+              Our team is here to help bring your ideas to life with professional
+              3D printing solutions. Contact us to discuss your project requirements.
             </p>
             <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-              <Link href="/contact">Schedule Consultation</Link>
+              <Link href="/contact">Get Started</Link>
             </Button>
           </motion.div>
         </div>
