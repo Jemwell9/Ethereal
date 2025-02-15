@@ -5,7 +5,6 @@ import * as z from "zod";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -23,6 +22,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calculator, Upload } from "lucide-react";
+import { Link } from "wouter";
 
 const quoteFormSchema = z.object({
   material: z.string({
@@ -77,6 +77,7 @@ const printQualities = [
 export default function QuoteCalculator() {
   const [quote, setQuote] = useState<number | null>(null);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [fileSubmitted, setFileSubmitted] = useState(false);
 
   const dimensionsForm = useForm<QuoteFormValues>({
     resolver: zodResolver(quoteFormSchema),
@@ -112,19 +113,7 @@ export default function QuoteCalculator() {
     const qualityAdjustedPrice = basePrice * quality.multiplier;
     const totalPrice = qualityAdjustedPrice * values.quantity;
 
-    // Add minimum price threshold
     return Math.max(totalPrice, 10);
-  }
-
-  function calculateUploadQuote(values: UploadFormValues): number {
-    // For uploaded files, we'll use a base price since we can't calculate volume yet
-    const material = materials.find(m => m.id === values.material);
-    const quality = printQualities.find(q => q.id === values.quality);
-
-    if (!material || !quality) return 15; // Higher minimum price for custom uploads
-
-    const basePrice = 15 * material.pricePerUnit * quality.multiplier;
-    return basePrice * values.quantity;
   }
 
   function onDimensionsSubmit(data: QuoteFormValues) {
@@ -133,8 +122,7 @@ export default function QuoteCalculator() {
   }
 
   function onUploadSubmit(data: UploadFormValues) {
-    const estimatedPrice = calculateUploadQuote(data);
-    setQuote(estimatedPrice);
+    setFileSubmitted(true);
   }
 
   function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -165,9 +153,11 @@ export default function QuoteCalculator() {
             <TabsTrigger value="upload">Upload Model</TabsTrigger>
           </TabsList>
 
+          {/* Dimensions Calculator Form */}
           <TabsContent value="dimensions">
             <Form {...dimensionsForm}>
               <form onSubmit={dimensionsForm.handleSubmit(onDimensionsSubmit)} className="space-y-6">
+                {/* Material Selection */}
                 <FormField
                   control={dimensionsForm.control}
                   name="material"
@@ -197,6 +187,7 @@ export default function QuoteCalculator() {
                   )}
                 />
 
+                {/* Print Quality Selection */}
                 <FormField
                   control={dimensionsForm.control}
                   name="quality"
@@ -226,6 +217,7 @@ export default function QuoteCalculator() {
                   )}
                 />
 
+                {/* Dimensions Input */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <FormField
                     control={dimensionsForm.control}
@@ -277,6 +269,7 @@ export default function QuoteCalculator() {
                   />
                 </div>
 
+                {/* Quantity Input */}
                 <FormField
                   control={dimensionsForm.control}
                   name="quantity"
@@ -304,137 +297,156 @@ export default function QuoteCalculator() {
             </Form>
           </TabsContent>
 
+          {/* File Upload Form */}
           <TabsContent value="upload">
-            <Form {...uploadForm}>
-              <form onSubmit={uploadForm.handleSubmit(onUploadSubmit)} className="space-y-6">
-                <FormField
-                  control={uploadForm.control}
-                  name="material"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-white">Material</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+            {!fileSubmitted ? (
+              <Form {...uploadForm}>
+                <form onSubmit={uploadForm.handleSubmit(onUploadSubmit)} className="space-y-6">
+                  {/* Material Selection */}
+                  <FormField
+                    control={uploadForm.control}
+                    name="material"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-white">Preferred Material</FormLabel>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <FormControl>
+                            <SelectTrigger className="bg-black/30 border-[#00FF00]/20 text-white">
+                              <SelectValue placeholder="Select material" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent className="bg-black/90 border-[#00FF00]/20">
+                            {materials.map((material) => (
+                              <SelectItem
+                                key={material.id}
+                                value={material.id}
+                                className="text-white hover:bg-[#00FF00]/10"
+                              >
+                                {material.name}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  {/* Print Quality Selection */}
+                  <FormField
+                    control={uploadForm.control}
+                    name="quality"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-white">Desired Print Quality</FormLabel>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <FormControl>
+                            <SelectTrigger className="bg-black/30 border-[#00FF00]/20 text-white">
+                              <SelectValue placeholder="Select quality" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent className="bg-black/90 border-[#00FF00]/20">
+                            {printQualities.map((quality) => (
+                              <SelectItem
+                                key={quality.id}
+                                value={quality.id}
+                                className="text-white hover:bg-[#00FF00]/10"
+                              >
+                                {quality.name}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  {/* File Upload */}
+                  <FormField
+                    control={uploadForm.control}
+                    name="file"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-white">Upload 3D Model</FormLabel>
                         <FormControl>
-                          <SelectTrigger className="bg-black/30 border-[#00FF00]/20 text-white">
-                            <SelectValue placeholder="Select material" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent className="bg-black/90 border-[#00FF00]/20">
-                          {materials.map((material) => (
-                            <SelectItem
-                              key={material.id}
-                              value={material.id}
-                              className="text-white hover:bg-[#00FF00]/10"
+                          <div className="flex flex-col items-center justify-center w-full">
+                            <label
+                              htmlFor="dropzone-file"
+                              className="flex flex-col items-center justify-center w-full h-32 border-2 border-[#00FF00]/20 border-dashed rounded-lg cursor-pointer bg-black/30 hover:bg-[#00FF00]/5"
                             >
-                              {material.name}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                              <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                                <Upload className="w-8 h-8 mb-2 text-[#00FF00]" />
+                                {selectedFile ? (
+                                  <p className="text-sm text-white">{selectedFile.name}</p>
+                                ) : (
+                                  <>
+                                    <p className="mb-2 text-sm text-white">
+                                      <span className="font-semibold">Click to upload</span> or drag and drop
+                                    </p>
+                                    <p className="text-xs text-white/60">
+                                      STL, OBJ, or 3MF (max 50MB)
+                                    </p>
+                                  </>
+                                )}
+                              </div>
+                              <input
+                                id="dropzone-file"
+                                type="file"
+                                className="hidden"
+                                accept=".stl,.obj,.3mf"
+                                onChange={(e) => {
+                                  handleFileChange(e);
+                                  field.onChange(e.target.files?.[0]);
+                                }}
+                              />
+                            </label>
+                          </div>
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  control={uploadForm.control}
-                  name="quality"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-white">Print Quality</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  {/* Quantity Input */}
+                  <FormField
+                    control={uploadForm.control}
+                    name="quantity"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-white">Desired Quantity</FormLabel>
                         <FormControl>
-                          <SelectTrigger className="bg-black/30 border-[#00FF00]/20 text-white">
-                            <SelectValue placeholder="Select quality" />
-                          </SelectTrigger>
+                          <Input
+                            {...field}
+                            className="bg-black/30 border-[#00FF00]/20 text-white"
+                          />
                         </FormControl>
-                        <SelectContent className="bg-black/90 border-[#00FF00]/20">
-                          {printQualities.map((quality) => (
-                            <SelectItem
-                              key={quality.id}
-                              value={quality.id}
-                              className="text-white hover:bg-[#00FF00]/10"
-                            >
-                              {quality.name}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  control={uploadForm.control}
-                  name="file"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-white">Upload 3D Model</FormLabel>
-                      <FormControl>
-                        <div className="flex flex-col items-center justify-center w-full">
-                          <label
-                            htmlFor="dropzone-file"
-                            className="flex flex-col items-center justify-center w-full h-32 border-2 border-[#00FF00]/20 border-dashed rounded-lg cursor-pointer bg-black/30 hover:bg-[#00FF00]/5"
-                          >
-                            <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                              <Upload className="w-8 h-8 mb-2 text-[#00FF00]" />
-                              {selectedFile ? (
-                                <p className="text-sm text-white">{selectedFile.name}</p>
-                              ) : (
-                                <>
-                                  <p className="mb-2 text-sm text-white">
-                                    <span className="font-semibold">Click to upload</span> or drag and drop
-                                  </p>
-                                  <p className="text-xs text-white/60">
-                                    STL, OBJ, or 3MF (max 50MB)
-                                  </p>
-                                </>
-                              )}
-                            </div>
-                            <input
-                              id="dropzone-file"
-                              type="file"
-                              className="hidden"
-                              accept=".stl,.obj,.3mf"
-                              onChange={(e) => {
-                                handleFileChange(e);
-                                field.onChange(e.target.files?.[0]);
-                              }}
-                            />
-                          </label>
-                        </div>
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={uploadForm.control}
-                  name="quantity"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-white">Quantity</FormLabel>
-                      <FormControl>
-                        <Input
-                          {...field}
-                          className="bg-black/30 border-[#00FF00]/20 text-white"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <Button
-                  type="submit"
-                  className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black"
-                >
-                  Calculate Quote
+                  <Button
+                    type="submit"
+                    className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black"
+                  >
+                    Submit for Quote
+                  </Button>
+                </form>
+              </Form>
+            ) : (
+              <div className="p-6 text-center">
+                <Upload className="w-12 h-12 text-[#00FF00] mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">File Received!</h3>
+                <p className="text-white/60 mb-6">
+                  Our team will analyze your 3D model and provide a custom quote based on its specifications.
+                  We'll get back to you within 24 hours.
+                </p>
+                <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                  <Link href="/contact">Contact Support</Link>
                 </Button>
-              </form>
-            </Form>
+              </div>
+            )}
           </TabsContent>
         </Tabs>
 
