@@ -2,38 +2,41 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { 
-  Code2, 
-  Boxes, 
-  FileCode, 
-  Settings, 
+import QuoteCalculator from "@/components/quote-calculator";
+import {
+  Code2,
+  Boxes,
+  FileCode,
+  Settings,
   ArrowRight,
   Calculator,
   Clock,
-  CheckCircle2
+  CheckCircle2,
 } from "lucide-react";
 
 const features = [
   {
     icon: Code2,
     title: "Custom 3D Modeling",
-    description: "From concept sketches to detailed 3D models, we bring your ideas to life with precision and creativity."
+    description:
+      "From concept sketches to detailed 3D models, we bring your ideas to life with precision and creativity.",
   },
   {
     icon: Settings,
     title: "Design Optimization",
-    description: "We optimize your designs for 3D printing, ensuring structural integrity and cost-effectiveness."
+    description:
+      "We optimize your designs for 3D printing, ensuring structural integrity and cost-effectiveness.",
   },
   {
     icon: FileCode,
     title: "Technical Documentation",
-    description: "Comprehensive documentation including technical drawings and specifications."
+    description: "Comprehensive documentation including technical drawings and specifications.",
   },
   {
     icon: Boxes,
     title: "Prototype Iterations",
-    description: "Rapid prototyping and iterative design improvements based on your feedback."
-  }
+    description: "Rapid prototyping and iterative design improvements based on your feedback.",
+  },
 ];
 
 const processSteps = [
@@ -41,26 +44,26 @@ const processSteps = [
     title: "Initial Consultation",
     description: "We discuss your requirements, objectives, and technical specifications.",
     icon: Clock,
-    duration: "1-2 days"
+    duration: "1-2 days",
   },
   {
     title: "Design Phase",
     description: "Our team creates initial 3D models and design concepts.",
     icon: Code2,
-    duration: "3-5 days"
+    duration: "3-5 days",
   },
   {
     title: "Optimization",
     description: "Designs are optimized for 3D printing and structural integrity.",
     icon: Settings,
-    duration: "2-3 days"
+    duration: "2-3 days",
   },
   {
     title: "Review & Refinement",
     description: "Collaborative review process with iterative improvements.",
     icon: CheckCircle2,
-    duration: "1-3 days"
-  }
+    duration: "1-3 days",
+  },
 ];
 
 export default function DesignServicesPage() {
@@ -79,8 +82,9 @@ export default function DesignServicesPage() {
               3D DESIGN SERVICES
             </h1>
             <p className="text-lg text-white/60 mb-8">
-              Professional CAD modeling and design optimization services to transform your ideas into reality.
-              Our expert team specializes in creating print-ready 3D models for any application.
+              Professional CAD modeling and design optimization services to transform your ideas into
+              reality. Our expert team specializes in creating print-ready 3D models for any
+              application.
             </p>
             <div className="flex justify-center gap-4">
               <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
@@ -152,25 +156,16 @@ export default function DesignServicesPage() {
         </div>
       </section>
 
-      {/* Quote Calculator - Placeholder for future feature */}
+      {/* Quote Calculator */}
       <section id="calculator" className="py-20 bg-black/40">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-white text-center mb-6">Design Quote Calculator</h2>
+          <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
+            Get instant pricing for your 3D design projects. Simply enter your project specifications
+            below to receive an accurate quote.
+          </p>
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bold text-white mb-6">Design Quote Calculator</h2>
-            <p className="text-white/60 mb-8">
-              Get an instant quote for your 3D design project. Coming soon!
-            </p>
-            <Card className="bg-black/50 border-[#00FF00]/20">
-              <CardContent className="p-6">
-                <Calculator className="w-12 h-12 text-[#00FF00] mx-auto mb-4" />
-                <p className="text-white/60">
-                  Our quote calculator is coming soon. In the meantime, contact us for a custom quote!
-                </p>
-                <Button asChild className="mt-6 bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-                  <Link href="/contact">Contact for Quote</Link>
-                </Button>
-              </CardContent>
-            </Card>
+            <QuoteCalculator />
           </div>
         </div>
       </section>
@@ -189,7 +184,8 @@ export default function DesignServicesPage() {
               Ready to Start Your Design Project?
             </h2>
             <p className="text-white/60 mb-8">
-              Contact us today to discuss your design requirements and get a customized solution for your needs.
+              Contact us today to discuss your design requirements and get a customized solution for
+              your needs.
             </p>
             <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
               <Link href="/contact">Get Started</Link>
