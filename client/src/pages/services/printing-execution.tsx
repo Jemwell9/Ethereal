@@ -21,7 +21,7 @@ import {
   Settings2,
   Zap,
   Target,
-  Tool
+  Wrench
 } from "lucide-react";
 
 const executionCapabilities = [
@@ -48,7 +48,7 @@ const executionCapabilities = [
     ]
   },
   {
-    icon: Tool,
+    icon: Wrench,
     title: "Post-Processing",
     description: "Professional finishing services",
     features: [
