@@ -20,11 +20,11 @@ const features = [
     title: "Custom 3D Modeling",
     description:
       "Expert CAD modeling services using industry-standard software. We transform your sketches, ideas, or 2D drawings into precise 3D models optimized for printing. Specializing in mechanical parts, architectural models, prototypes, and artistic designs.",
-    image: "/design/3d-modeling.jpg",
+    image: "/services/3d-modeling.png",
     samples: [
-      "/design/modeling-sample-1.jpg",
-      "/design/modeling-sample-2.jpg",
-      "/design/modeling-sample-3.jpg"
+      "/services/modeling-1.png",
+      "/services/modeling-2.png",
+      "/services/modeling-3.png"
     ]
   },
   {
