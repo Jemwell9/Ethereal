@@ -127,21 +127,44 @@ export default function PrintingExecutionPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-center max-w-4xl mx-auto"
+            className="text-center max-w-5xl mx-auto"
           >
             <h1 className="text-5xl font-bold mb-6 text-white">
-              3D PRINTING EXECUTION
+              PROFESSIONAL 3D PRINTING
             </h1>
-            <p className="text-lg text-white/60 mb-8">
-              State-of-the-art 3D printing services with precision quality control and fast turnaround times.
-              From prototypes to production runs, we deliver excellence in every print.
+            <p className="text-lg text-white/60 mb-12">
+              Experience industrial-grade 3D printing with our state-of-the-art facility. 
+              From rapid prototypes to production-ready parts, we ensure precision and quality at every layer.
             </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              <Card className="bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-all hover:scale-105">
+                <CardContent className="p-6">
+                  <Timer className="w-12 h-12 text-[#00FF00] mb-4" />
+                  <h3 className="text-xl font-bold text-white mb-2">Fast Turnaround</h3>
+                  <p className="text-white/60">48-hour standard delivery for most prints. Express service available.</p>
+                </CardContent>
+              </Card>
+              <Card className="bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-all hover:scale-105">
+                <CardContent className="p-6">
+                  <Search className="w-12 h-12 text-[#00FF00] mb-4" />
+                  <h3 className="text-xl font-bold text-white mb-2">Quality Assured</h3>
+                  <p className="text-white/60">Every print undergoes rigorous quality checks and dimensional verification.</p>
+                </CardContent>
+              </Card>
+              <Card className="bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-all hover:scale-105">
+                <CardContent className="p-6">
+                  <Shell className="w-12 h-12 text-[#00FF00] mb-4" />
+                  <h3 className="text-xl font-bold text-white mb-2">Any Material</h3>
+                  <p className="text-white/60">Support for PLA, ABS, PETG, TPU, Nylon, Carbon Fiber, and more.</p>
+                </CardContent>
+              </Card>
+            </div>
             <div className="flex justify-center gap-4">
               <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
                 <Link href="#calculator">Calculate Price</Link>
               </Button>
               <Button asChild variant="outline" className="border-[#00FF00] text-[#00FF00] hover:bg-[#00FF00]/10">
-                <Link href="/contact">Request Quote</Link>
+                <Link href="/contact">Request Custom Quote</Link>
               </Button>
             </div>
           </motion.div>
@@ -151,41 +174,112 @@ export default function PrintingExecutionPage() {
       {/* Services Grid */}
       <section className="py-20 bg-black/40">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {printingServices.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors h-full">
-                  <CardHeader>
-                    <img src={service.image} alt={service.title} className="w-full h-48 object-cover mb-4"/>
-                    <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
-                      <service.icon className="w-6 h-6 text-[#00FF00]" />
-                    </div>
-                    <CardTitle className="text-white text-xl mb-2">{service.title}</CardTitle>
-                    <p className="text-white/60 mb-4">{service.description}</p>
-                    <ul className="space-y-2">
-                      {service.features.map((feature, i) => (
-                        <li key={i} className="text-white/60 flex items-center gap-2">
-                          <ArrowRight className="w-4 h-4 text-[#00FF00]" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="mt-4">
-                      {service.samples.map((sample, i) => (
-                        <img src={sample} alt={`Sample ${i + 1} for ${service.title}`} className="w-24 h-24 object-cover mr-2" key={i} />
-                      ))}
-                    </div>
+          <h2 className="text-3xl font-bold text-white text-center mb-12">Our Printing Services</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <Card className="bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-all hover:-translate-y-2">
+                <CardHeader>
+                  <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
+                    <Box className="w-6 h-6 text-[#00FF00]" />
+                  </div>
+                  <CardTitle className="text-white text-xl mb-4">Prototyping</CardTitle>
+                  <p className="text-white/60 mb-6">Rapid prototyping for product development and testing</p>
+                  <ul className="space-y-3">
+                    <li className="text-white/60 flex items-center gap-2">
+                      <ArrowRight className="w-4 h-4 text-[#00FF00]" />
+                      24-48 hour turnaround
+                    </li>
+                    <li className="text-white/60 flex items-center gap-2">
+                      <ArrowRight className="w-4 h-4 text-[#00FF00]" />
+                      Multiple iterations support
+                    </li>
+                    <li className="text-white/60 flex items-center gap-2">
+                      <ArrowRight className="w-4 h-4 text-[#00FF00]" />
+                      Design feedback included
+                    </li>
+                    <li className="text-white/60 flex items-center gap-2">
+                      <ArrowRight className="w-4 h-4 text-[#00FF00]" />
+                      Functional testing ready
+                    </li>
+                  </ul>
+                </CardHeader>
+              </Card>
+            </motion.div>
 
-                  </CardHeader>
-                </Card>
-              </motion.div>
-            ))}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <Card className="bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-all hover:-translate-y-2">
+                <CardHeader>
+                  <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
+                    <Cog className="w-6 h-6 text-[#00FF00]" />
+                  </div>
+                  <CardTitle className="text-white text-xl mb-4">Production Parts</CardTitle>
+                  <p className="text-white/60 mb-6">End-use parts with industrial-grade materials</p>
+                  <ul className="space-y-3">
+                    <li className="text-white/60 flex items-center gap-2">
+                      <ArrowRight className="w-4 h-4 text-[#00FF00]" />
+                      High-strength materials
+                    </li>
+                    <li className="text-white/60 flex items-center gap-2">
+                      <ArrowRight className="w-4 h-4 text-[#00FF00]" />
+                      Bulk order capacity
+                    </li>
+                    <li className="text-white/60 flex items-center gap-2">
+                      <ArrowRight className="w-4 h-4 text-[#00FF00]" />
+                      Quality certification
+                    </li>
+                    <li className="text-white/60 flex items-center gap-2">
+                      <ArrowRight className="w-4 h-4 text-[#00FF00]" />
+                      Production monitoring
+                    </li>
+                  </ul>
+                </CardHeader>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <Card className="bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-all hover:-translate-y-2">
+                <CardHeader>
+                  <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
+                    <Search className="w-6 h-6 text-[#00FF00]" />
+                  </div>
+                  <CardTitle className="text-white text-xl mb-4">Specialty Printing</CardTitle>
+                  <p className="text-white/60 mb-6">Custom solutions for unique requirements</p>
+                  <ul className="space-y-3">
+                    <li className="text-white/60 flex items-center gap-2">
+                      <ArrowRight className="w-4 h-4 text-[#00FF00]" />
+                      Custom materials
+                    </li>
+                    <li className="text-white/60 flex items-center gap-2">
+                      <ArrowRight className="w-4 h-4 text-[#00FF00]" />
+                      Complex geometries
+                    </li>
+                    <li className="text-white/60 flex items-center gap-2">
+                      <ArrowRight className="w-4 h-4 text-[#00FF00]" />
+                      Multi-material prints
+                    </li>
+                    <li className="text-white/60 flex items-center gap-2">
+                      <ArrowRight className="w-4 h-4 text-[#00FF00]" />
+                      Specialized finishes
+                    </li>
+                  </ul>
+                </CardHeader>
+              </Card>
+            </motion.div>
           </div>
         </div>
       </section>
