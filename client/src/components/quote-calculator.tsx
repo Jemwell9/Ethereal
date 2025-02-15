@@ -61,17 +61,65 @@ type QuoteFormValues = z.infer<typeof quoteFormSchema>;
 type UploadFormValues = z.infer<typeof uploadFormSchema>;
 
 const materials = [
-  { id: "pla", name: "PLA", pricePerUnit: 0.05 },
-  { id: "abs", name: "ABS", pricePerUnit: 0.06 },
-  { id: "petg", name: "PETG", pricePerUnit: 0.07 },
-  { id: "nylon", name: "Nylon", pricePerUnit: 0.12 },
-  { id: "tpu", name: "TPU", pricePerUnit: 0.15 },
+  { 
+    id: "pla", 
+    name: "PLA", 
+    pricePerUnit: 0.05,
+    image: "/materials/pla-sample.jpg",
+    description: "Versatile material, great for most applications"
+  },
+  { 
+    id: "abs", 
+    name: "ABS", 
+    pricePerUnit: 0.06,
+    image: "/materials/abs-sample.jpg",
+    description: "Durable and heat-resistant"
+  },
+  { 
+    id: "petg", 
+    name: "PETG", 
+    pricePerUnit: 0.07,
+    image: "/materials/petg-sample.jpg",
+    description: "Strong and chemical resistant"
+  },
+  { 
+    id: "nylon", 
+    name: "Nylon", 
+    pricePerUnit: 0.12,
+    image: "/materials/nylon-sample.jpg",
+    description: "Flexible and durable"
+  },
+  { 
+    id: "tpu", 
+    name: "TPU", 
+    pricePerUnit: 0.15,
+    image: "/materials/tpu-sample.jpg",
+    description: "Highly flexible and elastic"
+  }
 ] as const;
 
 const printQualities = [
-  { id: "draft", name: "Draft (0.3mm)", multiplier: 0.8 },
-  { id: "standard", name: "Standard (0.2mm)", multiplier: 1.0 },
-  { id: "fine", name: "Fine (0.1mm)", multiplier: 1.3 },
+  { 
+    id: "draft", 
+    name: "Draft (0.3mm)", 
+    multiplier: 0.8,
+    image: "/quality/draft-quality.jpg",
+    description: "Fast printing, visible layer lines"
+  },
+  { 
+    id: "standard", 
+    name: "Standard (0.2mm)", 
+    multiplier: 1.0,
+    image: "/quality/standard-quality.jpg",
+    description: "Balanced speed and quality"
+  },
+  { 
+    id: "fine", 
+    name: "Fine (0.1mm)", 
+    multiplier: 1.3,
+    image: "/quality/fine-quality.jpg",
+    description: "Smooth surface finish"
+  }
 ] as const;
 
 export default function QuoteCalculator() {
@@ -155,6 +203,30 @@ export default function QuoteCalculator() {
 
           {/* Dimensions Calculator Form */}
           <TabsContent value="dimensions">
+            {/* Material Quality Preview Grid */}
+            <div className="grid grid-cols-3 gap-4 mb-6">
+              {printQualities.map((quality) => (
+                <div key={quality.id} className="relative group cursor-pointer">
+                  <img src={quality.image} alt={quality.name} className="aspect-square rounded-lg object-cover" />
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <p className="text-white text-xs px-2 text-center">{quality.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Material Samples Grid */}
+            <div className="grid grid-cols-5 gap-2 mb-6">
+              {materials.map((material) => (
+                <div key={material.id} className="relative group cursor-pointer">
+                  <img src={material.image} alt={material.name} className="aspect-square rounded-lg object-cover" />
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <p className="text-white text-xs px-2 text-center">{material.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
             <Form {...dimensionsForm}>
               <form onSubmit={dimensionsForm.handleSubmit(onDimensionsSubmit)} className="space-y-6">
                 {/* Material Selection */}
@@ -407,6 +479,25 @@ export default function QuoteCalculator() {
                       </FormItem>
                     )}
                   />
+
+                  {/* Model Preview Placeholder */}
+                  <div className="mb-6">
+                    <div className="aspect-video rounded-lg overflow-hidden bg-black/30 border-2 border-dashed border-[#00FF00]/20">
+                      <div className="w-full h-full flex flex-col items-center justify-center">
+                        {selectedFile ? (
+                          <img src={URL.createObjectURL(selectedFile)} alt="Uploaded Model" className="max-h-full max-w-full object-contain" />
+                        ) : (
+                          <div className="text-center">
+                            <div className="w-16 h-16 mx-auto mb-4 bg-[#00FF00]/10 rounded-lg flex items-center justify-center">
+                              <Upload className="w-8 h-8 text-[#00FF00]" />
+                            </div>
+                            <p className="text-white text-sm">Model preview will appear here</p>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
 
                   {/* Quantity Input */}
                   <FormField
