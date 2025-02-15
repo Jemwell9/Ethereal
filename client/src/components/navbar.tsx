@@ -53,12 +53,17 @@ export default function Navbar() {
           <div className="flex justify-center py-1">
             <Link href="/">
               <img 
-                src="/Ethereal-Logo.png" 
+                src="/public/Ethereal-Logo.png" 
                 alt="Ethereal" 
                 className="h-24 w-auto object-contain transition-transform hover:scale-105" 
                 style={{ 
                   filter: 'drop-shadow(0 0 16px rgba(0, 255, 0, 0.5))',
                   transform: 'scale(1.1)'
+                }}
+                onError={(e) => {
+                  console.error('Logo failed to load:', e);
+                  const target = e.target as HTMLImageElement;
+                  target.style.border = '2px solid red';
                 }}
               />
             </Link>
