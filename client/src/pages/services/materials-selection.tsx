@@ -18,8 +18,19 @@ const materialCategories = [
     icon: Droplet,
     title: "Standard Plastics",
     materials: ["PLA", "ABS", "PETG"],
-    description: "Versatile materials suitable for most applications",
-    properties: ["Cost-effective", "Wide color range", "Good durability"],
+    description: "Perfect for prototypes, models, and everyday objects. Ideal for startups and product development.",
+    properties: [
+      "Fast production times",
+      "Cost-effective for small batches",
+      "Wide range of colors and finishes",
+      "Suitable for iterative design"
+    ],
+    applications: [
+      "Product prototypes",
+      "Display models",
+      "Educational props",
+      "Art installations"
+    ],
     image: "/materials/standard-plastics.jpg",
     samples: [
       "/materials/pla-sample.jpg",
@@ -31,8 +42,19 @@ const materialCategories = [
     icon: Zap,
     title: "Engineering Materials",
     materials: ["Nylon", "PC", "TPU"],
-    description: "High-performance materials for functional parts",
-    properties: ["High strength", "Heat resistant", "Flexible options"],
+    description: "Industrial-grade materials for functional parts that need to perform under stress or harsh conditions.",
+    properties: [
+      "Superior strength-to-weight ratio",
+      "High temperature resistance",
+      "Chemical resistance",
+      "Impact resistant"
+    ],
+    applications: [
+      "Functional prototypes",
+      "End-use parts",
+      "Manufacturing tools",
+      "Automotive components"
+    ],
     image: "/materials/engineering-materials.jpg",
     samples: [
       "/materials/nylon-sample.jpg",
@@ -44,8 +66,19 @@ const materialCategories = [
     icon: Leaf,
     title: "Specialty Materials",
     materials: ["Carbon Fiber", "Metal-filled", "Wood-filled"],
-    description: "Unique materials for specific applications",
-    properties: ["Premium finish", "Enhanced properties", "Unique aesthetics"],
+    description: "Premium materials that combine unique aesthetics with enhanced mechanical properties.",
+    properties: [
+      "Professional finish",
+      "Enhanced strength",
+      "Unique textures",
+      "Premium aesthetics"
+    ],
+    applications: [
+      "Luxury products",
+      "High-end prototypes",
+      "Exhibition models",
+      "Custom furniture parts"
+    ],
     image: "/materials/specialty-materials.jpg",
     samples: [
       "/materials/carbon-fiber-sample.jpg",
@@ -57,26 +90,50 @@ const materialCategories = [
 
 const selectionCriteria = [
   {
-    title: "Mechanical Properties",
-    description: "Strength, flexibility, and durability requirements",
+    title: "Performance Requirements",
+    description: "We analyze your product's needs for strength, flexibility, and durability to ensure optimal material selection",
+    details: [
+      "Load-bearing capability",
+      "Impact resistance",
+      "Wear resistance",
+      "Flexibility needs"
+    ],
     icon: Ruler,
     image: "/selection/mechanical-properties.jpg"
   },
   {
-    title: "Environmental Conditions",
-    description: "Temperature, UV exposure, and chemical resistance",
+    title: "Environment & Usage",
+    description: "We consider where and how your product will be used to ensure long-term reliability",
+    details: [
+      "Temperature exposure",
+      "UV resistance",
+      "Chemical contact",
+      "Outdoor durability"
+    ],
     icon: Microscope,
     image: "/selection/environmental-conditions.jpg"
   },
   {
-    title: "Application Requirements",
-    description: "End-use requirements and regulatory compliance",
+    title: "Regulatory & Safety",
+    description: "We ensure your product meets industry standards and safety requirements",
+    details: [
+      "Food safety compliance",
+      "Medical grade options",
+      "Fire resistance",
+      "Child safety standards"
+    ],
     icon: Lightbulb,
     image: "/selection/application-requirements.jpg"
   },
   {
-    title: "Cost Considerations",
-    description: "Budget constraints and production volume",
+    title: "Cost Optimization",
+    description: "We help balance quality and budget to maximize your ROI",
+    details: [
+      "Volume pricing options",
+      "Material efficiency",
+      "Production speed",
+      "Minimal waste"
+    ],
     icon: LineChart,
     image: "/selection/cost-considerations.jpg"
   }
@@ -95,11 +152,13 @@ export default function MaterialsSelectionPage() {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-5xl font-bold mb-6 text-white">
-              MATERIALS SELECTION
+              MATERIAL SOLUTIONS
             </h1>
             <p className="text-lg text-white/60 mb-8">
-              Expert guidance in choosing the perfect materials for your 3D printing projects.
-              We help you navigate through hundreds of options to find the ideal material that meets your specific requirements.
+              Turn your ideas into reality with the right material choice. Our experts help you navigate 
+              through industrial-grade options to find the perfect match for your project's performance, 
+              budget, and timeline requirements. From rapid prototypes to end-use parts, we ensure your 
+              success with proven materials.
             </p>
             <div className="flex justify-center gap-4">
               <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
