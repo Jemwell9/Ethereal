@@ -61,11 +61,11 @@ export default function QuoteCalculator() {
     resolver: zodResolver(quoteFormSchema),
     defaultValues: {
       dimensions: {
-        length: "",
-        width: "",
-        height: "",
+        length: 0,
+        width: 0,
+        height: 0,
       },
-      quantity: "1",
+      quantity: 1,
     },
   });
 
@@ -176,7 +176,6 @@ export default function QuoteCalculator() {
                     <FormLabel className="text-white">Length (mm)</FormLabel>
                     <FormControl>
                       <Input 
-                        placeholder="0"
                         {...field} 
                         className="bg-black/30 border-[#00FF00]/20 text-white"
                       />
@@ -193,7 +192,6 @@ export default function QuoteCalculator() {
                     <FormLabel className="text-white">Width (mm)</FormLabel>
                     <FormControl>
                       <Input 
-                        placeholder="0"
                         {...field}
                         className="bg-black/30 border-[#00FF00]/20 text-white"
                       />
@@ -210,7 +208,6 @@ export default function QuoteCalculator() {
                     <FormLabel className="text-white">Height (mm)</FormLabel>
                     <FormControl>
                       <Input 
-                        placeholder="0"
                         {...field}
                         className="bg-black/30 border-[#00FF00]/20 text-white"
                       />
@@ -229,7 +226,6 @@ export default function QuoteCalculator() {
                   <FormLabel className="text-white">Quantity</FormLabel>
                   <FormControl>
                     <Input 
-                      placeholder="1"
                       {...field}
                       className="bg-black/30 border-[#00FF00]/20 text-white"
                     />
