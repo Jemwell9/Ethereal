@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import QuoteCalculator from "@/components/quote-calculator";
@@ -9,14 +9,14 @@ import {
   Settings2,
   Zap,
   Target,
-  Wrench,
   ArrowRight,
   Gauge,
   Factory,
   Microscope,
   PackageCheck,
   Search,
-  Cog
+  Cog,
+  Wrench
 } from "lucide-react";
 
 const PrintingExecutionPage = () => {
