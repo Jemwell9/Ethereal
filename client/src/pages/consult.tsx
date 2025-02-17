@@ -1,83 +1,6 @@
-
 import { motion } from "framer-motion";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Link } from "wouter";
-import {
-  Printer,
-  Lightbulb,
-  FileCode,
-  GraduationCap,
-  ArrowRight,
-  MessageSquare,
-  Calendar,
-  Clock,
-  Video,
-  Users,
-} from "lucide-react";
-
-const consultationTypes = [
-  {
-    icon: Printer,
-    title: "3D Printing Consultation",
-    description: "Expert guidance on material selection and printing optimization",
-    features: [
-      "Material selection advice",
-      "Print optimization strategies",
-      "Cost estimation",
-      "Production timeline planning"
-    ]
-  },
-  {
-    icon: FileCode,
-    title: "Design Consultation",
-    description: "Professional input on your 3D designs and models",
-    features: [
-      "Design review and feedback",
-      "Optimization suggestions",
-      "File preparation guidance",
-      "Technical recommendations"
-    ]
-  },
-  {
-    icon: GraduationCap,
-    title: "Workshop Planning",
-    description: "Customized workshop and training program planning",
-    features: [
-      "Curriculum development",
-      "Skill level assessment",
-      "Equipment recommendations",
-      "Learning path planning"
-    ]
-  }
-];
-
-const consultationModes = [
-  {
-    icon: Video,
-    title: "Virtual Consultation",
-    duration: "30-60 minutes",
-    price: "$75",
-    features: [
-      "Flexible scheduling",
-      "Screen sharing capability",
-      "Recording available",
-      "Follow-up email summary"
-    ]
-  },
-  {
-    icon: Users,
-    title: "In-Person Consultation",
-    duration: "60 minutes",
-    price: "$120",
-    features: [
-      "Hands-on demonstration",
-      "Physical material samples",
-      "Equipment inspection",
-      "Direct interaction"
-    ]
-  }
-];
+import { ArrowRight, BrainCircuit, Rocket, Shapes, Settings } from "lucide-react";
 
 export default function ConsultPage() {
   return (
@@ -92,18 +15,19 @@ export default function ConsultPage() {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-5xl font-bold mb-6 text-white">
-              EXPERT CONSULTATION
+              3D PRINTING CONSULTANCY
             </h1>
             <p className="text-lg text-white/60 mb-8">
-              Get professional guidance for your 3D printing projects from our team of experts.
-              We offer comprehensive consultation services to help you achieve optimal results.
+              Transform your manufacturing processes with expert guidance. 
+              Our PhD-level consultants help you leverage 3D printing for 
+              rapid prototyping, cost reduction, and innovation.
             </p>
             <div className="flex justify-center gap-4">
               <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-                <Link href="#booking">Book Consultation</Link>
+                <a href="#contact">Get Started</a>
               </Button>
               <Button asChild variant="outline" className="border-[#00FF00] text-[#00FF00] hover:bg-[#00FF00]/10">
-                <Link href="#services">View Services</Link>
+                <a href="#services">Learn More</a>
               </Button>
             </div>
           </motion.div>
@@ -218,3 +142,81 @@ export default function ConsultPage() {
     </div>
   );
 }
+
+const consultationTypes = [
+  {
+    icon: Printer,
+    title: "3D Printing Consultation",
+    description: "Expert guidance on material selection and printing optimization",
+    features: [
+      "Material selection advice",
+      "Print optimization strategies",
+      "Cost estimation",
+      "Production timeline planning"
+    ]
+  },
+  {
+    icon: FileCode,
+    title: "Design Consultation",
+    description: "Professional input on your 3D designs and models",
+    features: [
+      "Design review and feedback",
+      "Optimization suggestions",
+      "File preparation guidance",
+      "Technical recommendations"
+    ]
+  },
+  {
+    icon: GraduationCap,
+    title: "Workshop Planning",
+    description: "Customized workshop and training program planning",
+    features: [
+      "Curriculum development",
+      "Skill level assessment",
+      "Equipment recommendations",
+      "Learning path planning"
+    ]
+  }
+];
+
+const consultationModes = [
+  {
+    icon: Video,
+    title: "Virtual Consultation",
+    duration: "30-60 minutes",
+    price: "$75",
+    features: [
+      "Flexible scheduling",
+      "Screen sharing capability",
+      "Recording available",
+      "Follow-up email summary"
+    ]
+  },
+  {
+    icon: Users,
+    title: "In-Person Consultation",
+    duration: "60 minutes",
+    price: "$120",
+    features: [
+      "Hands-on demonstration",
+      "Physical material samples",
+      "Equipment inspection",
+      "Direct interaction"
+    ]
+  }
+];
+
+import {
+  Printer,
+  Lightbulb,
+  FileCode,
+  GraduationCap,
+  ArrowRight,
+  MessageSquare,
+  Calendar,
+  Clock,
+  Video,
+  Users,
+} from "lucide-react";
+import { Link } from "wouter";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
