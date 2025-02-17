@@ -98,31 +98,9 @@ export default function Navbar() {
               </NavigationMenuList>
             </NavigationMenu>
 
-            <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium bg-transparent">
-                    CONSULT
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="grid gap-3 p-4 w-[400px] bg-black/90 backdrop-blur-sm">
-                      <Link href="/consult/business" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
-                        <div className="text-[#00FF00] font-medium">Business Solutions</div>
-                        <p className="text-sm text-white/60">Strategic consulting for enterprises</p>
-                      </Link>
-                      <Link href="/consult/technical" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
-                        <div className="text-[#00FF00] font-medium">Technical Consulting</div>
-                        <p className="text-sm text-white/60">Expert technical guidance and support</p>
-                      </Link>
-                      <Link href="/consult/project" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
-                        <div className="text-[#00FF00] font-medium">Project Planning</div>
-                        <p className="text-sm text-white/60">Comprehensive project consultation</p>
-                      </Link>
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
+            <Link href="/consult">
+              <span className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium">CONSULT</span>
+            </Link>
 
             <Button className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black text-xs tracking-[0.2em] font-medium px-6 rounded-full">
               CONTACT US
