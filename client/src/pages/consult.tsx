@@ -21,7 +21,6 @@ import {
   BadgeCheck,
   Settings2,
   Wrench as ToolIcon,
-  Printer,
   FileCode,
   GraduationCap,
   Video,
