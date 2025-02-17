@@ -387,6 +387,97 @@ export default function KidsWorkshopsPage() {
         </div>
       </section>
 
+      {/* Gallery Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-white mb-4">Creative Showcase</h2>
+            <p className="text-white/60">Amazing creations by our young artists</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            {[1, 2, 3, 4].map((index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group relative aspect-square bg-black/50 rounded-lg overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <img
+                  src={`/services/modeling-${index}.png`}
+                  alt={`Workshop creation ${index}`}
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related Resources */}
+      <section className="py-20 bg-black/50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-white mb-4">Continue the Creative Journey</h2>
+            <p className="text-white/60">Resources and next steps for young creators</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Card className="bg-black/50 border-[#00FF00]/20">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-white mb-4">Tips for Parents</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-2 text-white/60">
+                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                    Create a dedicated creative space at home
+                  </li>
+                  <li className="flex items-center gap-2 text-white/60">
+                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                    Set regular practice times
+                  </li>
+                  <li className="flex items-center gap-2 text-white/60">
+                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                    Display and celebrate creations
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-black/50 border-[#00FF00]/20">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-white mb-4">Next Steps</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-2 text-white/60">
+                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                    Join our Creative Adventure workshop
+                  </li>
+                  <li className="flex items-center gap-2 text-white/60">
+                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                    Explore sibling workshops
+                  </li>
+                  <li className="flex items-center gap-2 text-white/60">
+                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                    Book regular practice sessions
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-20">
         <div className="container mx-auto px-4">
