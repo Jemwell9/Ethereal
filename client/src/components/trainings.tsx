@@ -1,11 +1,18 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { PenTool, Users, Code2, Beaker, Leaf, Palette } from "lucide-react";
+import { 
+  Pen, 
+  Users, 
+  Code2, 
+  Beaker, 
+  Leaf, 
+  Palette 
+} from "lucide-react";
 import { Animated3DGrid } from "@/components/ui/animated-3d-grid";
 
 const workshops = [
-  { name: "3D PEN (KIDS)", icon: PenTool },
+  { name: "3D PEN (KIDS)", icon: Pen },
   { name: "TEAMBUILDING", icon: Users },
   { name: "AUTOCAD", icon: Code2 },
   { name: "MATERIAL SCIENCE", icon: Beaker },

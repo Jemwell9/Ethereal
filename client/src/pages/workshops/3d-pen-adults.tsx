@@ -612,7 +612,7 @@ export default function AdultWorkshopsPage() {
               </CardHeader>
               <CardContent className="prose prose-invert">
                 <p className="text-white/80">
-                  Begin your creative journey with our introductory single sessions, perfectly crafted for newcomers to 3D pen art. 
+                  Begin your creative journey with our introductory single sessions, perfectly crafted for newcomers to 3D pen art.
                   In these engaging 3-hour workshops, you'll receive comprehensive guidance and all necessary materials to create your first masterpiece.
                 </p>
                 <div className="bg-[#00FF00]/5 p-4 rounded-lg mt-4">
@@ -633,10 +633,11 @@ export default function AdultWorkshopsPage() {
                     <CardTitle className="text-white">Monthly Immersion Program</CardTitle>
                     <CardDescription className="text-white/60">Dedicated Practice for Rapid Growth</CardDescription>
                   </div>
-                </CardHeader>
+                </div>
+              </CardHeader>
               <CardContent className="prose prose-invert">
                 <p className="text-white/80">
-                  Accelerate your development with ourmonthly program, designed for enthusiasts seeking consistent growth. 
+                  Accelerate your development with our monthly program, designed for enthusiasts seeking consistent growth.
                   With four sessions per month, priority booking, and additional materials, you'll build a strong foundation in 3D pen artistry.
                 </p>
                 <div className="bg-[#00FF00]/5 p-4 rounded-lg mt-4">
@@ -661,7 +662,7 @@ export default function AdultWorkshopsPage() {
               </CardHeader>
               <CardContent className="prose prose-invert">
                 <p className="text-white/80">
-                  For those seeking individualized attention, our private sessions offer the ultimate learning experience. 
+                  For those seeking individualized attention, our private sessions offer the ultimate learning experience.
                   Work one-on-one with expert instructors, focus on your specific interests, and develop your unique artistic style.
                 </p>
                 <div className="bg-[#00FF00]/5 p-4 rounded-lg mt-4">

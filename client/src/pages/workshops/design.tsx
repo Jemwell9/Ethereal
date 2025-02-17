@@ -1,7 +1,15 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { ArrowRight, BookOpen, Shapes, Shield, Settings2, Star } from "lucide-react";
+import { 
+  ArrowRight, 
+  BookOpen, 
+  Shapes, 
+  Shield, 
+  Settings2, 
+  Star,
+  Sparkles 
+} from "lucide-react";
 import { Card } from "@/components/ui/card";
 import {
   Accordion,
