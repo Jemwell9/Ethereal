@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Printer, Code, GraduationCap, Pen, Image } from "lucide-react";
+import { Code, GraduationCap, Pen, Image } from "lucide-react";
 
 const services = [
   {
     title: "3D Printing (All Materials)",
     description: "From prototypes to finished products, we deliver quality results for every project using various materials. We've got you covered whether it's PLA, ABS, PETG, resin, metal, carbon fiber, nylon, or any other material.",
-    icon: Printer,
+    icon: Code,
     details: "Our technology ensures precision, durability, and customization for all creations, big or small."
   },
   {
