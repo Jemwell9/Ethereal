@@ -211,7 +211,6 @@ import {
   Lightbulb,
   FileCode,
   GraduationCap,
-  ArrowRight,
   MessageSquare,
   Calendar,
   Clock,
