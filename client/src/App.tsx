@@ -14,6 +14,7 @@ import DesignWorkshops from "@/pages/workshops/design";
 import KidsWorkshops from "@/pages/workshops/3d-pen-kids";
 import AdultWorkshops from "@/pages/workshops/3d-pen-adults";
 import PrintingMastery from "@/pages/workshops/printing-mastery";
+import ConsultPage from "@/pages/consult";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import NotFound from "@/pages/not-found";
@@ -32,6 +33,7 @@ function Router() {
       <Route path="/workshops/3d-pen-kids" component={KidsWorkshops} />
       <Route path="/workshops/3d-pen-adults" component={AdultWorkshops} />
       <Route path="/workshops/printing-mastery" component={PrintingMastery} />
+      <Route path="/consult" component={ConsultPage} />
       <Route component={NotFound} />
     </Switch>
   );
