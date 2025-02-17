@@ -209,6 +209,7 @@ export default function AutoCADWorkshopsPage() {
               <p className="text-white/60">Learn the tools and techniques used by professionals worldwide.</p>
             </motion.div>
             
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -222,6 +223,7 @@ export default function AutoCADWorkshopsPage() {
               <p className="text-white/60">Prepare for AutoCAD certification with our comprehensive curriculum.</p>
             </motion.div>
             
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -251,6 +253,7 @@ export default function AutoCADWorkshopsPage() {
             <p className="text-white/60">Everything you need to know about our AutoCAD workshops</p>
           </motion.div>
           
+
           <div className="max-w-3xl mx-auto">
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">

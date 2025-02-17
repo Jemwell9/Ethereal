@@ -11,6 +11,7 @@ import {
   Calculator,
   Clock,
   CheckCircle2,
+  FileText
 } from "lucide-react";
 
 const features = [
@@ -39,7 +40,7 @@ const features = [
     ]
   },
   {
-    icon: FileCode,
+    icon: FileText,
     title: "Technical Documentation",
     description: "Complete technical documentation package including dimensioned drawings, assembly instructions, material specifications, and manufacturing guidelines. Perfect for production runs and regulatory compliance.",
     image: "/design/documentation.jpg",
@@ -144,7 +145,7 @@ export default function DesignServicesPage() {
                     </div>
                     <CardTitle className="text-white text-xl mb-2">{feature.title}</CardTitle>
                     <p className="text-white/60">{feature.description}</p>
-                    <img src={feature.image} alt={feature.title} className="w-full mt-4"/> {/* Added image */}
+                    <img src={feature.image} alt={feature.title} className="w-full mt-4"/>
                   </CardHeader>
                 </Card>
               </motion.div>
@@ -174,7 +175,7 @@ export default function DesignServicesPage() {
                   <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
                   <p className="text-white/60 mb-2">{step.description}</p>
                   <span className="text-sm text-[#00FF00]">Typical duration: {step.duration}</span>
-                  <img src={step.image} alt={step.title} className="w-full mt-4"/> {/* Added image */}
+                  <img src={step.image} alt={step.title} className="w-full mt-4"/>
                 </div>
                 {index < processSteps.length - 1 && (
                   <div className="absolute left-6 top-12 bottom-0 w-px bg-[#00FF00]/20" />

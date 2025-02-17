@@ -20,15 +20,18 @@ import {
   Laptop,
   BadgeCheck,
   Settings2,
-  Wrench as ToolIcon,
   FileCode,
   GraduationCap,
   Video,
   Users,
   Clock,
   MessageSquare,
-  Calendar
+  Calendar,
+  Printer,
+  Lightbulb
 } from "lucide-react";
+import { Link } from "wouter";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
 const approachSteps = [
   {
@@ -66,7 +69,7 @@ const coreServices = [
     ]
   },
   {
-    icon: ToolIcon,
+    icon: Wrench,
     title: "Design & CAD Optimization",
     description: "Professional design review and optimization for 3D printing",
     features: [
@@ -377,20 +380,6 @@ const consultationModes = [
     ]
   }
 ];
-
-import {
-  Printer,
-  Lightbulb,
-  FileCode,
-  GraduationCap,
-  MessageSquare,
-  Calendar,
-  Clock,
-  Video,
-  Users,
-} from "lucide-react";
-import { Link } from "wouter";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
 const benefits = [
   {

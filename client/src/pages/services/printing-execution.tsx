@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import QuoteCalculator from "@/components/quote-calculator";
 import {
   Printer,
   Settings2,
@@ -453,14 +454,14 @@ const PrintingExecutionPage = () => {
                     </CardHeader>
                     <CardContent>
                       <div className="flex gap-2">
-                        <Button 
-                          variant="outline" 
+                        <Button
+                          variant="outline"
                           className="flex-1 border-[#00FF00] text-[#00FF00] hover:bg-[#00FF00] hover:text-black"
                         >
                           Track Order
                         </Button>
-                        <Button 
-                          variant="outline" 
+                        <Button
+                          variant="outline"
                           className="flex-1 border-[#00FF00] text-[#00FF00] hover:bg-[#00FF00] hover:text-black"
                         >
                           Update Status
