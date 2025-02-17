@@ -6,7 +6,6 @@ import QuoteCalculator from "@/components/quote-calculator";
 import {
   Code2,
   Boxes,
-  FileCode,
   Settings,
   ArrowRight,
   Calculator,
