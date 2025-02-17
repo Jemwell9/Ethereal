@@ -83,7 +83,7 @@ export default function DesignWorkshopsPage() {
             >
               <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                  <div className={`space-y-6 ${index % 2 === 1 ? 'order-last lg:order-first' : ''}`}>
+                  <div className={`space-y-6 ${workshop.title === "Advanced CAD Modeling" ? 'order-last' : ''}`}>
                     <div className="w-16 h-16 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
                       <workshop.icon className="w-8 h-8 text-[#00FF00]" />
                     </div>
