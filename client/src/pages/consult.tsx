@@ -1,6 +1,87 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BrainCircuit, Rocket, Shapes, Settings, Check, ArrowUpRight } from "lucide-react";
+import { 
+  ArrowRight, 
+  BrainCircuit, 
+  Rocket, 
+  Shapes, 
+  Settings, 
+  Check, 
+  ArrowUpRight,
+  Microscope,
+  LineChart,
+  Wrench,
+  Cog,
+  Search,
+  Workflow,
+  Zap,
+  Target,
+  FileSearch,
+  Building,
+  Gear,
+  Tool,
+  Laptop,
+  BadgeCheck
+} from "lucide-react";
+
+const approachSteps = [
+  {
+    icon: Search,
+    title: "Assessment",
+    description: "Thorough analysis of your current processes and requirements"
+  },
+  {
+    icon: Target,
+    title: "Strategy",
+    description: "Custom roadmap development for implementation and optimization"
+  },
+  {
+    icon: Zap,
+    title: "Implementation",
+    description: "Hands-on assistance with setup and integration"
+  },
+  {
+    icon: Workflow,
+    title: "Support",
+    description: "Continuous guidance and optimization assistance"
+  }
+];
+
+const coreServices = [
+  {
+    icon: Gear,
+    title: "Technology & Material Selection",
+    description: "Expert guidance on choosing the right 3D printing technology and materials",
+    features: [
+      "Printer technology assessment",
+      "Material property analysis",
+      "Cost-benefit evaluation",
+      "Performance optimization"
+    ]
+  },
+  {
+    icon: Tool,
+    title: "Design & CAD Optimization",
+    description: "Professional design review and optimization for 3D printing",
+    features: [
+      "Design for manufacturability",
+      "Topology optimization",
+      "File preparation",
+      "Quality assurance"
+    ]
+  },
+  {
+    icon: Laptop,
+    title: "Workflow Integration",
+    description: "Seamless integration of 3D printing into your existing processes",
+    features: [
+      "Process automation",
+      "Quality control systems",
+      "Team training",
+      "Documentation"
+    ]
+  }
+];
 
 export default function ConsultPage() {
   return (
@@ -55,6 +136,64 @@ export default function ConsultPage() {
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">{benefit.title}</h3>
                 <p className="text-white/60">{benefit.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Consultancy Approach */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">Our Consultancy Approach</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {approachSteps.map((step, index) => (
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-black/50 p-6 rounded-lg border border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors"
+              >
+                <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
+                  <step.icon className="w-6 h-6 text-[#00FF00]" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
+                <p className="text-white/60">{step.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Core Services */}
+      <section className="py-20 bg-black/40">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">Core Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {coreServices.map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-black/50 p-6 rounded-lg border border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors"
+              >
+                <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
+                  <service.icon className="w-6 h-6 text-[#00FF00]" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
+                <p className="text-white/60 mb-4">{service.description}</p>
+                <ul className="space-y-2">
+                  {service.features.map((feature, i) => (
+                    <li key={i} className="text-white/60 flex items-center gap-2">
+                      <Check className="w-4 h-4 text-[#00FF00]" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>
