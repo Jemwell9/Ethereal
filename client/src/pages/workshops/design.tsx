@@ -1,7 +1,6 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { Code2, Shapes, Settings2, Sparkles, ArrowRight } from "lucide-react";
 
@@ -9,12 +8,12 @@ const designWorkshops = [
   {
     title: "CAD Fundamentals",
     description: "Master the essentials of Computer-Aided Design with hands-on training in industry-standard software.",
-    details: "Perfect for beginners in CAD",
+    details: "Create your first 3D models based on your hobbies and interests",
     features: [
-      "Introduction to professional CAD software interfaces",
-      "Step-by-step guidance in creating 2D sketches and 3D models",
-      "Understanding design constraints and parameters",
-      "3D printing preparation techniques"
+      "Design and print your favorite collectibles or miniatures",
+      "Create custom phone cases and accessories",
+      "Design simple household items like organizers or holders",
+      "Learn to make personalized decorative items"
     ],
     duration: "8 hours",
     price: "$299",
@@ -24,12 +23,12 @@ const designWorkshops = [
   {
     title: "Advanced CAD Modeling",
     description: "Elevate your CAD expertise with professional-grade modeling techniques.",
-    details: "For intermediate CAD users",
+    details: "Design functional parts and complex assemblies",
     features: [
-      "Advanced surface modeling and complex geometry",
-      "Multi-body part design strategies",
-      "Assembly modeling and motion studies",
-      "Design optimization for manufacturing"
+      "Create replacement parts for home appliances",
+      "Design custom mechanical components",
+      "Build articulated models with moving parts",
+      "Develop prototypes for your inventions"
     ],
     duration: "12 hours",
     price: "$499",
@@ -39,12 +38,12 @@ const designWorkshops = [
   {
     title: "Design for Manufacturing",
     description: "Bridge the gap between design and production with manufacturing-optimized modeling.",
-    details: "Professional-level course",
+    details: "Master production-ready design techniques",
     features: [
-      "Manufacturing process considerations",
-      "Material selection optimization",
-      "Cost estimation techniques",
-      "Production workflow automation"
+      "Design industrial-grade components and assemblies",
+      "Create molds and tooling for manufacturing",
+      "Develop complex mechanical systems",
+      "Optimize designs for mass production"
     ],
     duration: "16 hours",
     price: "$699",
@@ -83,8 +82,8 @@ export default function DesignWorkshopsPage() {
               className={`py-20 ${index % 2 === 0 ? 'bg-black/50' : 'bg-black'}`}
             >
               <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                  <div className="space-y-6">
+                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}>
+                  <div className={`space-y-6 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                     <div className="w-16 h-16 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
                       <workshop.icon className="w-8 h-8 text-[#00FF00]" />
                     </div>
@@ -118,9 +117,9 @@ export default function DesignWorkshopsPage() {
                       </Button>
                     </div>
                   </div>
-                  <div className="aspect-video bg-[#00FF00]/5 rounded-lg overflow-hidden">
+                  <div className={`aspect-video bg-[#00FF00]/5 rounded-lg overflow-hidden ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
                     <img 
-                      src={`/public/services/modeling-${index + 1}.png`} 
+                      src={`/services/modeling-${index + 1}.png`} 
                       alt={workshop.title}
                       className="w-full h-full object-cover"
                     />
