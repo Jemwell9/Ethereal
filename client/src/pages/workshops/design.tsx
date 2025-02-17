@@ -82,8 +82,8 @@ export default function DesignWorkshopsPage() {
               className={`py-20 ${index % 2 === 0 ? 'bg-black/50' : 'bg-black'}`}
             >
               <div className="container mx-auto px-4">
-                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}>
-                  <div className={`space-y-6 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                  <div className={`space-y-6 ${index % 2 === 1 ? 'order-last lg:order-first' : ''}`}>
                     <div className="w-16 h-16 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
                       <workshop.icon className="w-8 h-8 text-[#00FF00]" />
                     </div>
@@ -117,12 +117,37 @@ export default function DesignWorkshopsPage() {
                       </Button>
                     </div>
                   </div>
-                  <div className={`aspect-video bg-[#00FF00]/5 rounded-lg overflow-hidden ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                    <img 
-                      src={`/services/modeling-${index + 1}.png`} 
-                      alt={workshop.title}
-                      className="w-full h-full object-cover"
-                    />
+                  <div className={`space-y-4 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="aspect-video bg-[#00FF00]/5 rounded-lg overflow-hidden">
+                        <img 
+                          src={`/services/modeling-${index + 1}-1.png`} 
+                          alt={`${workshop.title} example 1`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="aspect-video bg-[#00FF00]/5 rounded-lg overflow-hidden">
+                        <img 
+                          src={`/services/modeling-${index + 1}-2.png`} 
+                          alt={`${workshop.title} example 2`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="aspect-video bg-[#00FF00]/5 rounded-lg overflow-hidden">
+                        <img 
+                          src={`/services/modeling-${index + 1}-3.png`} 
+                          alt={`${workshop.title} example 3`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="aspect-video bg-[#00FF00]/5 rounded-lg overflow-hidden">
+                        <img 
+                          src={`/services/modeling-${index + 1}-4.png`} 
+                          alt={`${workshop.title} example 4`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
