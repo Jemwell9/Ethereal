@@ -573,7 +573,7 @@ export default function AdultWorkshopsPage() {
         </div>
       </section>
 
-      {/* Pricing Breakdown */}
+      {/* Workshop Insights Blog */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <motion.div
@@ -582,89 +582,83 @@ export default function AdultWorkshopsPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-white mb-4">Detailed Pricing</h2>
-            <p className="text-white/60">Transparent pricing for all skill levels</p>
+            <h2 className="text-4xl font-bold text-white mb-4">Workshop Insights</h2>
+            <p className="text-white/60">Discover your perfect learning path</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
             <Card className="bg-black/50 border-[#00FF00]/20">
               <CardHeader>
-                <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
-                  <Star className="w-6 h-6 text-[#00FF00]" />
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center">
+                    <Star className="w-6 h-6 text-[#00FF00]" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-white">Getting Started: Single Sessions</CardTitle>
+                    <CardDescription className="text-white/60">Your Gateway to 3D Pen Artistry</CardDescription>
+                  </div>
                 </div>
-                <CardTitle className="text-white">Single Session</CardTitle>
-                <CardDescription className="text-white/60">Perfect for trying it out</CardDescription>
               </CardHeader>
-              <CardContent>
-                <div className="text-3xl font-bold text-[#00FF00] mb-4">$89</div>
-                <ul className="space-y-2">
-                  <li className="text-white/60 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                    3-hour workshop
-                  </li>
-                  <li className="text-white/60 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                    All materials included
-                  </li>
-                  <li className="text-white/60 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                    Take home your creation
-                  </li>
-                </ul>
+              <CardContent className="prose prose-invert">
+                <p className="text-white/80">
+                  Begin your creative journey with our introductory single sessions, perfectly crafted for newcomers to 3D pen art. 
+                  In these engaging 3-hour workshops, you'll receive comprehensive guidance and all necessary materials to create your first masterpiece.
+                </p>
+                <div className="bg-[#00FF00]/5 p-4 rounded-lg mt-4">
+                  <p className="text-white/60 text-sm">
+                    Starting at $89 per session | All materials included | Take-home creation
+                  </p>
+                </div>
               </CardContent>
             </Card>
 
             <Card className="bg-black/50 border-[#00FF00]/20">
               <CardHeader>
-                <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
-                  <Award className="w-6 h-6 text-[#00FF00]" />
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center">
+                    <Award className="w-6 h-6 text-[#00FF00]" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-white">Monthly Immersion Program</CardTitle>
+                    <CardDescription className="text-white/60">Dedicated Practice for Rapid Growth</CardDescription>
+                  </div>
                 </div>
-                <CardTitle className="text-white">Monthly Pass</CardTitle>
-                <CardDescription className="text-white/60">Regular practice</CardDescription>
               </CardHeader>
-              <CardContent>
-                <div className="text-3xl font-bold text-[#00FF00] mb-4">$299</div>
-                <ul className="space-y-2">
-                  <li className="text-white/60 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                    4 sessions per month
-                  </li>
-                  <li className="text-white/60 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                    Priority booking
-                  </li>
-                  <li className="text-white/60 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                    Extra materials included
-                  </li>
-                </ul>
+              <CardContent className="prose prose-invert">
+                <p className="text-white/80">
+                  Accelerate your development with our monthly program, designed for enthusiasts seeking consistent growth. 
+                  With four sessions per month, priority booking, and additional materials, you'll build a strong foundation in 3D pen artistry.
+                </p>
+                <div className="bg-[#00FF00]/5 p-4 rounded-lg mt-4">
+                  <p className="text-white/60 text-sm">
+                    $299 monthly | 4 sessions included | Priority booking & extra materials
+                  </p>
+                </div>
               </CardContent>
             </Card>
 
             <Card className="bg-black/50 border-[#00FF00]/20">
               <CardHeader>
-                <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
-                  <Trophy className="w-6 h-6 text-[#00FF00]" />
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center">
+                    <Trophy className="w-6 h-6 text-[#00FF00]" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-white">Private Mentorship Experience</CardTitle>
+                    <CardDescription className="text-white/60">Personalized Guidance for Your Vision</CardDescription>
+                  </div>
                 </div>
-                <CardTitle className="text-white">Private Sessions</CardTitle>
-                <CardDescription className="text-white/60">Personalized attention</CardDescription>
               </CardHeader>
-              <CardContent>
-                <div className="text-3xl font-bold text-[#00FF00] mb-4">$149</div>
-                <ul className="space-y-2">
-                  <li className="text-white/60 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                    One-on-one instruction
-                  </li>
-                  <li className="text-white/60 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                    Flexible scheduling
-                  </li>
-                  <li className="text-white/60 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                    Custom project focus
-                  </li>
-                </ul>
+              <CardContent className="prose prose-invert">
+                <p className="text-white/80">
+                  For those seeking individualized attention, our private sessions offer the ultimate learning experience. 
+                  Work one-on-one with expert instructors, focus on your specific interests, and develop your unique artistic style.
+                </p>
+                <div className="bg-[#00FF00]/5 p-4 rounded-lg mt-4">
+                  <p className="text-white/60 text-sm">
+                    $149 per session | Flexible scheduling | Customized project focus
+                  </p>
+                </div>
               </CardContent>
             </Card>
           </div>
