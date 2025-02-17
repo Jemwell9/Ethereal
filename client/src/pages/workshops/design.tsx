@@ -33,7 +33,13 @@ const designWorkshops = [
     duration: "12 hours",
     price: "$499",
     icon: Shapes,
-    level: "Intermediate"
+    level: "Intermediate",
+    gallery: [
+      "/services/advanced-cad-1.png",
+      "/services/advanced-cad-2.png",
+      "/services/advanced-cad-3.png",
+      "/services/advanced-cad-4.png"
+    ]
   },
   {
     title: "Design for Manufacturing",
