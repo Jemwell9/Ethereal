@@ -1,9 +1,8 @@
-
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "wouter";
-import { Pen, Palette, Trophy, Sparkles, Book, Image, Star, Shield, Users, Award, Heart } from "lucide-react";
+import { Pen, Star, Shield, Sparkles, Users, Award, Heart, Palette, Book, Trophy } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export default function AdultWorkshopsPage() {
@@ -24,9 +23,30 @@ export default function AdultWorkshopsPage() {
             <p className="text-xl text-white/60 mb-8">
               Discover a new dimension of artistic expression and professional skill-building
             </p>
-            <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-              <Link href="/booking">Start Your Creative Journey</Link>
-            </Button>
+
+            {/* Trust Badges */}
+            <div className="flex justify-center gap-8 mb-12">
+              <div className="flex items-center gap-2">
+                <Shield className="w-6 h-6 text-[#00FF00]" />
+                <span className="text-white">Professional Tools</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Users className="w-6 h-6 text-[#00FF00]" />
+                <span className="text-white">Small Groups (8:1 Ratio)</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Award className="w-6 h-6 text-[#00FF00]" />
+                <span className="text-white">Expert Instructors</span>
+              </div>
+            </div>
+            <div className="flex gap-4 justify-center">
+              <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                <Link href="/booking">Book a Workshop</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="border-[#00FF00] text-[#00FF00]">
+                <Link href="#learn-more">Learn More</Link>
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>
