@@ -487,6 +487,62 @@ export default function AdultWorkshopsPage() {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section className="py-20 bg-black/50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-white mb-4">Success Stories</h2>
+            <p className="text-white/60">Hear from our workshop participants</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <Card className="bg-black/50 border-[#00FF00]/20">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 bg-[#00FF00]/10 rounded-full flex items-center justify-center mb-4">
+                  <Trophy className="w-6 h-6 text-[#00FF00]" />
+                </div>
+                <p className="text-white/80 mb-4">
+                  "The Explorer workshop opened my eyes to the creative possibilities of 3D pen art. The instructors were patient and knowledgeable."
+                </p>
+                <div className="text-white font-medium">James K.</div>
+                <div className="text-white/60">Graphic Designer</div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-black/50 border-[#00FF00]/20">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 bg-[#00FF00]/10 rounded-full flex items-center justify-center mb-4">
+                  <Star className="w-6 h-6 text-[#00FF00]" />
+                </div>
+                <p className="text-white/80 mb-4">
+                  "As an architect, the Artist package helped me develop new skills for creating physical models. Highly recommended!"
+                </p>
+                <div className="text-white font-medium">Maria R.</div>
+                <div className="text-white/60">Architect</div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-black/50 border-[#00FF00]/20">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 bg-[#00FF00]/10 rounded-full flex items-center justify-center mb-4">
+                  <Palette className="w-6 h-6 text-[#00FF00]" />
+                </div>
+                <p className="text-white/80 mb-4">
+                  "The Master package transformed my hobby into a successful business. Now I create commissioned art pieces!"
+                </p>
+                <div className="text-white font-medium">Alex T.</div>
+                <div className="text-white/60">Professional Artist</div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-20">
         <div className="container mx-auto px-4">
