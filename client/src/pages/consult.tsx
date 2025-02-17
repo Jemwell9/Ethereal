@@ -18,10 +18,10 @@ import {
   Target,
   FileSearch,
   Building,
-  Gear,
   Tool,
   Laptop,
-  BadgeCheck
+  BadgeCheck,
+  Settings2
 } from "lucide-react";
 
 const approachSteps = [
@@ -49,7 +49,7 @@ const approachSteps = [
 
 const coreServices = [
   {
-    icon: Gear,
+    icon: Settings2,
     title: "Technology & Material Selection",
     description: "Expert guidance on choosing the right 3D printing technology and materials",
     features: [
