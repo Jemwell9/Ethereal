@@ -543,6 +543,134 @@ export default function AdultWorkshopsPage() {
         </div>
       </section>
 
+      {/* Gallery Section */}
+      <section className="py-20 bg-black/50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-white mb-4">Workshop Gallery</h2>
+            <p className="text-white/60">Amazing creations from our workshop participants</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            {Array.from({ length: 8 }).map((_, index) => (
+              <Card key={index} className="bg-black/50 border-[#00FF00]/20">
+                <CardContent className="p-0">
+                  <div className="aspect-square bg-[#00FF00]/5 rounded-lg overflow-hidden">
+                    {/* Image placeholders - replace src with actual workshop images */}
+                    <div className="w-full h-full bg-[#00FF00]/10 flex items-center justify-center">
+                      <Pen className="w-8 h-8 text-[#00FF00]/30" />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Breakdown */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-white mb-4">Detailed Pricing</h2>
+            <p className="text-white/60">Transparent pricing for all skill levels</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <Card className="bg-black/50 border-[#00FF00]/20">
+              <CardHeader>
+                <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
+                  <Star className="w-6 h-6 text-[#00FF00]" />
+                </div>
+                <CardTitle className="text-white">Single Session</CardTitle>
+                <CardDescription className="text-white/60">Perfect for trying it out</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="text-3xl font-bold text-[#00FF00] mb-4">$89</div>
+                <ul className="space-y-2">
+                  <li className="text-white/60 flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                    3-hour workshop
+                  </li>
+                  <li className="text-white/60 flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                    All materials included
+                  </li>
+                  <li className="text-white/60 flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                    Take home your creation
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-black/50 border-[#00FF00]/20">
+              <CardHeader>
+                <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
+                  <Award className="w-6 h-6 text-[#00FF00]" />
+                </div>
+                <CardTitle className="text-white">Monthly Pass</CardTitle>
+                <CardDescription className="text-white/60">Regular practice</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="text-3xl font-bold text-[#00FF00] mb-4">$299</div>
+                <ul className="space-y-2">
+                  <li className="text-white/60 flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                    4 sessions per month
+                  </li>
+                  <li className="text-white/60 flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                    Priority booking
+                  </li>
+                  <li className="text-white/60 flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                    Extra materials included
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-black/50 border-[#00FF00]/20">
+              <CardHeader>
+                <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
+                  <Trophy className="w-6 h-6 text-[#00FF00]" />
+                </div>
+                <CardTitle className="text-white">Private Sessions</CardTitle>
+                <CardDescription className="text-white/60">Personalized attention</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="text-3xl font-bold text-[#00FF00] mb-4">$149</div>
+                <ul className="space-y-2">
+                  <li className="text-white/60 flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                    One-on-one instruction
+                  </li>
+                  <li className="text-white/60 flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                    Flexible scheduling
+                  </li>
+                  <li className="text-white/60 flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                    Custom project focus
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-20">
         <div className="container mx-auto px-4">
