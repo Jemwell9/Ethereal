@@ -271,6 +271,168 @@ export default function AdultWorkshopsPage() {
         </div>
       </section>
 
+      {/* Artist Package */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-white mb-4">Artist Package</h2>
+              <p className="text-white/60">Advanced techniques for artistic expression</p>
+            </div>
+
+            <Card className="bg-black/50 border-[#00FF00]/20 p-6 mb-8">
+              <div className="grid gap-6">
+                <div className="flex justify-between items-center">
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Creative Development</h3>
+                    <p className="text-white/60">6 hours of intensive artistic training</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-3xl font-bold text-[#00FF00]">$179</p>
+                    <p className="text-white/60">per person</p>
+                  </div>
+                </div>
+
+                <div className="grid gap-4">
+                  <h4 className="text-white font-medium">Advanced Features:</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-center gap-2 text-white/60">
+                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                      Advanced sculpting techniques
+                    </li>
+                    <li className="flex items-center gap-2 text-white/60">
+                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                      Color theory and mixing
+                    </li>
+                    <li className="flex items-center gap-2 text-white/60">
+                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                      Complex structure creation
+                    </li>
+                    <li className="flex items-center gap-2 text-white/60">
+                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                      Personal style development
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </Card>
+
+            {/* Success Story */}
+            <div className="mb-12">
+              <Card className="bg-black/50 border-[#00FF00]/20 p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-16 h-16 bg-[#00FF00]/10 rounded-full flex items-center justify-center">
+                    <Palette className="w-8 h-8 text-[#00FF00]" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-medium mb-2">Artistic Achievement</h4>
+                    <p className="text-white/60 mb-4">
+                      "The Artist package helped me develop my unique style. Now I create and sell custom 3D pen art pieces."
+                    </p>
+                    <p className="text-white/40">- Sarah, Professional Artist</p>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Master Package */}
+      <section className="py-20 bg-black/50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-white mb-4">Master Package</h2>
+              <p className="text-white/60">Professional mastery and portfolio development</p>
+            </div>
+
+            <Card className="bg-black/50 border-[#00FF00]/20 p-6 mb-8">
+              <div className="grid gap-6">
+                <div className="flex justify-between items-center">
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Professional Journey</h3>
+                    <p className="text-white/60">12 hours of expert-level instruction</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-3xl font-bold text-[#00FF00]">$299</p>
+                    <p className="text-white/60">per person</p>
+                  </div>
+                </div>
+
+                <div className="grid gap-4">
+                  <h4 className="text-white font-medium">Master Features:</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-center gap-2 text-white/60">
+                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                      Professional techniques mastery
+                    </li>
+                    <li className="flex items-center gap-2 text-white/60">
+                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                      Portfolio development
+                    </li>
+                    <li className="flex items-center gap-2 text-white/60">
+                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                      Exhibition preparation
+                    </li>
+                    <li className="flex items-center gap-2 text-white/60">
+                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                      Business integration strategies
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Professional Benefits */}
+                <div className="bg-[#00FF00]/5 p-4 rounded-lg">
+                  <h4 className="text-white font-medium mb-2">Professional Benefits</h4>
+                  <ul className="space-y-2">
+                    <li className="text-white/60">Certificate of completion</li>
+                    <li className="text-white/60">Portfolio review session</li>
+                    <li className="text-white/60">Online community access</li>
+                    <li className="text-white/60">Post-course mentoring</li>
+                  </ul>
+                </div>
+              </div>
+            </Card>
+
+            {/* Success Story */}
+            <div className="mb-12">
+              <Card className="bg-black/50 border-[#00FF00]/20 p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-16 h-16 bg-[#00FF00]/10 rounded-full flex items-center justify-center">
+                    <Trophy className="w-8 h-8 text-[#00FF00]" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-medium mb-2">Professional Success</h4>
+                    <p className="text-white/60 mb-4">
+                      "The Master package transformed my hobby into a successful business. I now teach and create commissioned pieces."
+                    </p>
+                    <p className="text-white/40">- David, 3D Art Studio Owner</p>
+                  </div>
+                </div>
+              </Card>
+            </div>
+
+            {/* CTA */}
+            <div className="text-center">
+              <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                <Link href="/booking">Start Your Master Journey</Link>
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="py-20 bg-black/50">
         <div className="container mx-auto px-4">
