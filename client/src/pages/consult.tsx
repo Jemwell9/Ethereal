@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { 
-  ArrowRight, 
-  BrainCircuit, 
-  Rocket, 
-  Shapes, 
-  Settings, 
-  Check, 
+import {
+  ArrowRight,
+  BrainCircuit,
+  Rocket,
+  Shapes,
+  Settings,
+  Check,
   ArrowUpRight,
   Microscope,
   LineChart,
@@ -20,7 +20,15 @@ import {
   Laptop,
   BadgeCheck,
   Settings2,
-  Wrench as ToolIcon
+  Wrench as ToolIcon,
+  Printer,
+  FileCode,
+  GraduationCap,
+  Video,
+  Users,
+  Clock,
+  MessageSquare,
+  Calendar
 } from "lucide-react";
 
 const approachSteps = [
@@ -98,8 +106,8 @@ export default function ConsultPage() {
               3D PRINTING CONSULTANCY SERVICES
             </h1>
             <p className="text-lg text-white/60 mb-8">
-              Transform your manufacturing processes with expert guidance. 
-              Our PhD-level consultants help you leverage 3D printing for 
+              Transform your manufacturing processes with expert guidance.
+              Our PhD-level consultants help you leverage 3D printing for
               rapid prototyping, cost reduction, and innovation.
             </p>
             <div className="flex justify-center gap-4">
