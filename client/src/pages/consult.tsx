@@ -124,11 +124,11 @@ export default function ConsultPage() {
         </div>
       </section>
 
-      {/* Why 3D Printing Section */}
-      <section id="benefits" className="py-20 bg-black/40">
+      {/* Success Stories Section */}
+      <section id="success-stories" className="py-20 bg-black/40">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-white text-center mb-12">
-            Why Choose 3D Printing?
+            Our Success Stories
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
@@ -359,47 +359,45 @@ const consultationModes = [
     icon: Video,
     title: "Virtual Consultation",
     duration: "30-60 minutes",
-    price: "$75",
     features: [
-      "Flexible scheduling",
-      "Screen sharing capability",
-      "Recording available",
-      "Follow-up email summary"
+      "Flexible scheduling worldwide",
+      "Interactive screen sharing sessions",
+      "Recorded sessions for future reference",
+      "Comprehensive follow-up documentation"
     ]
   },
   {
     icon: Users,
     title: "In-Person Consultation",
-    duration: "60 minutes",
-    price: "$120",
+    duration: "60-120 minutes",
     features: [
-      "Hands-on demonstration",
-      "Physical material samples",
-      "Equipment inspection",
-      "Direct interaction"
+      "Hands-on demonstrations and training",
+      "Physical material testing and selection",
+      "On-site equipment assessment",
+      "Immediate problem-solving solutions"
     ]
   }
 ];
 
-const benefits = [
+const successStories = [
   {
     icon: Rocket,
-    title: "Accelerated Innovation",
-    description: "Reduce time-to-market with rapid prototyping and iterative design processes."
+    title: "Automotive Innovation",
+    description: "Helped a leading auto manufacturer reduce prototype development time by 60% through optimized 3D printing processes."
   },
   {
     icon: BrainCircuit,
-    title: "Cost Optimization",
-    description: "Minimize waste, reduce tooling costs, and optimize production expenses."
+    title: "Medical Breakthrough",
+    description: "Assisted medical device startup in developing custom surgical guides, leading to successful FDA approval."
   },
   {
     icon: Shapes,
-    title: "Design Freedom",
-    description: "Create complex geometries and innovative designs previously impossible with traditional manufacturing."
+    title: "Architectural Excellence",
+    description: "Enabled architecture firm to create complex scale models, winning three major project bids."
   },
   {
     icon: Settings,
-    title: "Sustainable Production",
-    description: "Reduce material waste and energy consumption with additive manufacturing."
+    title: "Industrial Success",
+    description: "Optimized manufacturing workflow for aerospace parts, resulting in 40% cost reduction."
   }
 ];
