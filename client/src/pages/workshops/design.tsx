@@ -1,6 +1,7 @@
+
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { Code2, Shapes, Settings2, Sparkles, ArrowRight } from "lucide-react";
 
@@ -73,73 +74,61 @@ export default function DesignWorkshopsPage() {
             </p>
           </motion.div>
 
-          {/* Workshop Level Guide */}
-          <div className="grid grid-cols-3 gap-6 mb-16 max-w-3xl mx-auto">
-            {["Beginner", "Intermediate", "Advanced"].map((level, index) => (
-              <div key={level} className="text-center p-4 rounded-lg bg-[#00FF00]/5 border border-[#00FF00]/20">
-                <p className="text-[#00FF00] font-semibold">{level}</p>
-                <p className="text-white/60 text-sm mt-2">
-                  {index === 0 ? "No experience needed" : 
-                   index === 1 ? "Basic CAD knowledge required" : 
-                   "Advanced skills necessary"}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {designWorkshops.map((workshop, index) => (
-              <motion.div
-                key={workshop.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card className="h-full bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors">
-                  <CardHeader>
-                    <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
-                      <workshop.icon className="w-6 h-6 text-[#00FF00]" />
+          {designWorkshops.map((workshop, index) => (
+            <motion.section
+              key={workshop.title}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className={`py-20 ${index % 2 === 0 ? 'bg-black/50' : 'bg-black'}`}
+            >
+              <div className="container mx-auto px-4">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                  <div className="space-y-6">
+                    <div className="w-16 h-16 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
+                      <workshop.icon className="w-8 h-8 text-[#00FF00]" />
                     </div>
-                    <div className="mb-4">
-                      <span className="px-3 py-1 text-xs rounded-full bg-[#00FF00]/10 text-[#00FF00]">
-                        {workshop.level}
-                      </span>
-                    </div>
-                    <CardTitle className="text-white">{workshop.title}</CardTitle>
-                    <CardDescription className="text-white/60">{workshop.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-6">
-                    <div className="space-y-4">
-                      <p className="text-sm font-medium text-white">{workshop.details}</p>
-                      <ul className="space-y-2">
-                        {workshop.features.map((feature, i) => (
-                          <li key={i} className="text-sm text-white/60 flex items-center gap-2">
-                            <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                      <div className="flex justify-between items-center pt-4">
-                        <div>
-                          <p className="text-sm text-white/60">Duration</p>
-                          <p className="font-medium text-white">{workshop.duration}</p>
-                        </div>
-                        <div className="text-right">
-                          <p className="text-sm text-white/60">Price</p>
-                          <p className="font-medium text-white">{workshop.price}</p>
-                        </div>
+                    <span className="px-4 py-2 text-sm rounded-full bg-[#00FF00]/10 text-[#00FF00]">
+                      {workshop.level}
+                    </span>
+                    <h2 className="text-4xl font-bold text-white">{workshop.title}</h2>
+                    <p className="text-xl text-white/60">{workshop.description}</p>
+                    <p className="text-lg font-medium text-white">{workshop.details}</p>
+                    <ul className="space-y-4">
+                      {workshop.features.map((feature, i) => (
+                        <li key={i} className="text-lg text-white/60 flex items-center gap-3">
+                          <Sparkles className="w-5 h-5 text-[#00FF00]" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="flex flex-col sm:flex-row gap-6 items-center pt-6">
+                      <div>
+                        <p className="text-white/60">Duration</p>
+                        <p className="text-2xl font-medium text-white">{workshop.duration}</p>
                       </div>
-                      <Button asChild className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-                        <Link href="/booking" className="flex items-center justify-center gap-2">
-                          Book Now <ArrowRight className="w-4 h-4" />
+                      <div>
+                        <p className="text-white/60">Price</p>
+                        <p className="text-2xl font-medium text-white">{workshop.price}</p>
+                      </div>
+                      <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black px-8">
+                        <Link href="/booking" className="flex items-center gap-2">
+                          Book Now <ArrowRight className="w-5 h-5" />
                         </Link>
                       </Button>
                     </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
+                  </div>
+                  <div className="aspect-video bg-[#00FF00]/5 rounded-lg overflow-hidden">
+                    <img 
+                      src={`/public/services/modeling-${index + 1}.png`} 
+                      alt={workshop.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </motion.section>
+          ))}
         </div>
       </section>
     </div>
