@@ -2,163 +2,152 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { Code2, Shapes, Settings2, Sparkles, ArrowRight } from "lucide-react";
+import { Code2, Shapes, Settings2, Sparkles, ArrowRight, Star, Shield, BookOpen } from "lucide-react";
+import { Card } from "@/components/ui/card";
 
-const designWorkshops = [
+const autocadWorkshops = [
   {
-    title: "CAD Fundamentals",
-    description: "Master the essentials of Computer-Aided Design with hands-on training in industry-standard software.",
-    details: "Create your first 3D models based on your hobbies and interests",
+    title: "AutoCAD Fundamentals",
+    description: "Master the essentials of AutoCAD with hands-on training in industry-standard tools and practices.",
+    details: "Perfect for beginners starting their CAD journey",
     features: [
-      "Design and print your favorite collectibles or miniatures",
-      "Create custom phone cases and accessories",
-      "Design simple household items like organizers or holders",
-      "Learn to make personalized decorative items"
+      "Basic drawing and editing tools",
+      "2D drafting fundamentals",
+      "Layout and annotation basics",
+      "Simple project completion"
+    ],
+    testimonials: [
+      {
+        text: "This course gave me the foundation I needed to start my CAD journey.",
+        author: "Sarah M., Architecture Student"
+      }
     ],
     duration: "8 hours",
     price: "$299",
-    icon: Code2,
-    level: "Beginner"
+    icon: BookOpen,
+    level: "Beginner",
+    gallery: ["/services/autocad-basic-1.png", "/services/autocad-basic-2.png"]
   },
   {
-    title: "Advanced CAD Modeling",
-    description: "Elevate your CAD expertise with professional-grade modeling techniques.",
-    details: "Design functional parts and complex assemblies",
+    title: "Professional AutoCAD",
+    description: "Advance your CAD skills with complex modeling and industry-specific applications.",
+    details: "For those ready to take their skills further",
     features: [
-      "Create replacement parts for home appliances",
-      "Design custom mechanical components",
-      "Build articulated models with moving parts",
-      "Develop prototypes for your inventions"
+      "Advanced 2D and 3D techniques",
+      "Custom toolsets and automation",
+      "Industry-specific workflows",
+      "Complex project management"
     ],
-    duration: "12 hours",
-    price: "$499",
-    icon: Shapes,
-    level: "Intermediate",
-    gallery: [
-      "/services/advanced-cad-1.png",
-      "/services/advanced-cad-2.png",
-      "/services/advanced-cad-3.png",
-      "/services/advanced-cad-4.png"
-    ]
-  },
-  {
-    title: "Design for Manufacturing",
-    description: "Bridge the gap between design and production with manufacturing-optimized modeling.",
-    details: "Master production-ready design techniques",
-    features: [
-      "Design industrial-grade components and assemblies",
-      "Create molds and tooling for manufacturing",
-      "Develop complex mechanical systems",
-      "Optimize designs for mass production"
+    testimonials: [
+      {
+        text: "The professional course helped me land my dream job in mechanical design.",
+        author: "Michael R., CAD Designer"
+      }
     ],
     duration: "16 hours",
-    price: "$699",
-    icon: Settings2,
-    level: "Advanced"
+    price: "$599",
+    icon: Shapes,
+    level: "Intermediate",
+    gallery: ["/services/autocad-pro-1.png", "/services/autocad-pro-2.png"]
+  },
+  {
+    title: "AutoCAD Mastery",
+    description: "Become an AutoCAD expert with advanced techniques and certification preparation.",
+    details: "Expert-level training for professionals",
+    features: [
+      "Advanced 3D modeling",
+      "BIM integration",
+      "Certification preparation",
+      "Enterprise workflow optimization"
+    ],
+    testimonials: [
+      {
+        text: "This mastery program transformed how I approach complex CAD projects.",
+        author: "David K., Senior Designer"
+      }
+    ],
+    duration: "24 hours",
+    price: "$999",
+    icon: Star,
+    level: "Advanced",
+    gallery: ["/services/autocad-master-1.png", "/services/autocad-master-2.png"]
   }
 ];
 
-export default function DesignWorkshopsPage() {
+export default function AutoCADWorkshopsPage() {
   return (
-    <div className="min-h-screen bg-black pt-24">
-      <section className="py-20">
+    <div className="min-h-screen bg-black">
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 relative overflow-hidden">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-center max-w-4xl mx-auto mb-16"
+            className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-5xl font-bold mb-6 text-white">
-              PROFESSIONAL CAD & DESIGN WORKSHOPS
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+              Master AutoCAD Design
             </h1>
-            <p className="text-lg text-white/60 mb-12">
-              Transform your design skills with our industry-focused workshops. From CAD basics 
-              to advanced manufacturing techniques, our hands-on courses are designed to give you 
-              practical, professional-grade skills.
+            <p className="text-xl text-white/60 mb-8">
+              From foundational skills to expert-level techniques, our comprehensive AutoCAD workshops 
+              will transform you into a confident CAD professional.
             </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                <Link href="/booking">Start Your Journey</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="border-[#00FF00] text-[#00FF00]">
+                <Link href="#workshops">View Workshops</Link>
+              </Button>
+            </div>
           </motion.div>
+        </div>
+      </section>
 
-          {designWorkshops.map((workshop, index) => (
-            <motion.section
-              key={workshop.title}
+      {/* Value Proposition */}
+      <section className="py-20 bg-black/50">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`py-20 ${index % 2 === 0 ? 'bg-black/50' : 'bg-black'}`}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-center p-6"
             >
-              <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                  <div className={`space-y-6 ${workshop.title === "Advanced CAD Modeling" ? 'order-last' : ''}`}>
-                    <div className="w-16 h-16 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
-                      <workshop.icon className="w-8 h-8 text-[#00FF00]" />
-                    </div>
-                    <span className="px-4 py-2 text-sm rounded-full bg-[#00FF00]/10 text-[#00FF00]">
-                      {workshop.level}
-                    </span>
-                    <h2 className="text-4xl font-bold text-white">{workshop.title}</h2>
-                    <p className="text-xl text-white/60">{workshop.description}</p>
-                    <p className="text-lg font-medium text-white">{workshop.details}</p>
-                    <ul className="space-y-4">
-                      {workshop.features.map((feature, i) => (
-                        <li key={i} className="text-lg text-white/60 flex items-center gap-3">
-                          <Sparkles className="w-5 h-5 text-[#00FF00]" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="flex flex-col sm:flex-row gap-6 items-center pt-6">
-                      <div>
-                        <p className="text-white/60">Duration</p>
-                        <p className="text-2xl font-medium text-white">{workshop.duration}</p>
-                      </div>
-                      <div>
-                        <p className="text-white/60">Price</p>
-                        <p className="text-2xl font-medium text-white">{workshop.price}</p>
-                      </div>
-                      <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black px-8">
-                        <Link href="/booking" className="flex items-center gap-2">
-                          Book Now <ArrowRight className="w-5 h-5" />
-                        </Link>
-                      </Button>
-                    </div>
-                  </div>
-                  <div className={`space-y-4 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="aspect-video bg-[#00FF00]/5 rounded-lg overflow-hidden">
-                        <img 
-                          src={`/services/modeling-${index + 1}-1.png`} 
-                          alt={`${workshop.title} example 1`}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="aspect-video bg-[#00FF00]/5 rounded-lg overflow-hidden">
-                        <img 
-                          src={`/services/modeling-${index + 1}-2.png`} 
-                          alt={`${workshop.title} example 2`}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="aspect-video bg-[#00FF00]/5 rounded-lg overflow-hidden">
-                        <img 
-                          src={`/services/modeling-${index + 1}-3.png`} 
-                          alt={`${workshop.title} example 3`}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="aspect-video bg-[#00FF00]/5 rounded-lg overflow-hidden">
-                        <img 
-                          src={`/services/modeling-${index + 1}-4.png`} 
-                          alt={`${workshop.title} example 4`}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="w-16 h-16 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <Star className="w-8 h-8 text-[#00FF00]" />
               </div>
-            </motion.section>
-          ))}
+              <h3 className="text-xl font-bold text-white mb-3">Industry-Standard Training</h3>
+              <p className="text-white/60">Learn the tools and techniques used by professionals worldwide.</p>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-center p-6"
+            >
+              <div className="w-16 h-16 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <Shield className="w-8 h-8 text-[#00FF00]" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">Certification Ready</h3>
+              <p className="text-white/60">Prepare for AutoCAD certification with our comprehensive curriculum.</p>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="text-center p-6"
+            >
+              <div className="w-16 h-16 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <Settings2 className="w-8 h-8 text-[#00FF00]" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">Hands-On Projects</h3>
+              <p className="text-white/60">Apply your skills to real-world projects and build your portfolio.</p>
+            </motion.div>
+          </div>
         </div>
       </section>
     </div>
