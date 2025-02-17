@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "wouter";
-import { Printer, Settings, Target, Trophy, Image, Sparkles } from "lucide-react";
+import { Printer, Settings, Target, Sparkles } from "lucide-react";
 
 const printingWorkshops = [
   {
@@ -82,9 +82,6 @@ export default function PrintingMasteryPage() {
               >
                 <Card className="h-full bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors">
                   <CardHeader>
-                    <div className="aspect-video bg-[#00FF00]/5 rounded-lg overflow-hidden mb-4">
-                      <Image className="w-full h-full object-cover" />
-                    </div>
                     <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
                       <workshop.icon className="w-6 h-6 text-[#00FF00]" />
                     </div>

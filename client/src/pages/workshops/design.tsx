@@ -1,8 +1,7 @@
-
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { Code2, Shapes, Settings2, Sparkles, ArrowRight, Star, Shield, BookOpen } from "lucide-react";
+import { ArrowRight, BookOpen, Shapes, Shield, Settings2, Star } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import {
   Accordion,
@@ -96,7 +95,7 @@ export default function AutoCADWorkshopsPage() {
               Master AutoCAD Design
             </h1>
             <p className="text-xl text-white/60 mb-8">
-              From foundational skills to expert-level techniques, our comprehensive AutoCAD workshops 
+              From foundational skills to expert-level techniques, our comprehensive AutoCAD workshops
               will transform you into a confident CAD professional.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">

@@ -2,7 +2,18 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "wouter";
-import { Pen, Star, Shield, Sparkles, Users, Award, Heart, Palette, Book, Trophy } from "lucide-react";
+import {
+  Award,
+  Book,
+  Heart,
+  Palette,
+  Pen,
+  Shield,
+  Sparkles,
+  Star,
+  Trophy,
+  Users
+} from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export default function AdultWorkshopsPage() {
@@ -622,11 +633,10 @@ export default function AdultWorkshopsPage() {
                     <CardTitle className="text-white">Monthly Immersion Program</CardTitle>
                     <CardDescription className="text-white/60">Dedicated Practice for Rapid Growth</CardDescription>
                   </div>
-                </div>
-              </CardHeader>
+                </CardHeader>
               <CardContent className="prose prose-invert">
                 <p className="text-white/80">
-                  Accelerate your development with our monthly program, designed for enthusiasts seeking consistent growth. 
+                  Accelerate your development with ourmonthly program, designed for enthusiasts seeking consistent growth. 
                   With four sessions per month, priority booking, and additional materials, you'll build a strong foundation in 3D pen artistry.
                 </p>
                 <div className="bg-[#00FF00]/5 p-4 rounded-lg mt-4">
