@@ -4,6 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Code2, Shapes, Settings2, Sparkles, ArrowRight, Star, Shield, BookOpen } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const autocadWorkshops = [
   {
@@ -222,6 +228,75 @@ export default function AutoCADWorkshopsPage() {
               <p className="text-white/60">Apply your skills to real-world projects and build your portfolio.</p>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-black/50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-white mb-4">Frequently Asked Questions</h2>
+            <p className="text-white/60">Everything you need to know about our AutoCAD workshops</p>
+          </motion.div>
+          
+          <div className="max-w-3xl mx-auto">
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger className="text-white">What prerequisites are needed for the workshops?</AccordionTrigger>
+                <AccordionContent className="text-white/60">
+                  For beginners, no prior experience is required. For intermediate and advanced levels, basic AutoCAD knowledge and experience with 2D drafting is recommended.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger className="text-white">Are certificates provided upon completion?</AccordionTrigger>
+                <AccordionContent className="text-white/60">
+                  Yes, you'll receive a certificate of completion for each workshop level. Our advanced course also helps prepare you for AutoCAD certification exams.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3">
+                <AccordionTrigger className="text-white">What software version will be used?</AccordionTrigger>
+                <AccordionContent className="text-white/60">
+                  We use the latest version of AutoCAD, but the skills learned are applicable to recent previous versions as well.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-4">
+                <AccordionTrigger className="text-white">Do I need to bring my own computer?</AccordionTrigger>
+                <AccordionContent className="text-white/60">
+                  We provide fully equipped workstations, but you're welcome to bring your own laptop with AutoCAD installed if you prefer.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* Final Call-to-Action */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center max-w-3xl mx-auto"
+          >
+            <h2 className="text-4xl font-bold text-white mb-6">Ready to Master AutoCAD?</h2>
+            <p className="text-xl text-white/60 mb-8">
+              Join our workshops and transform your design capabilities. Start your journey today.
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                <Link href="/booking">Book Your Workshop</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="border-[#00FF00] text-[#00FF00]">
+                <Link href="#workshops">Browse Workshops</Link>
+              </Button>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>
