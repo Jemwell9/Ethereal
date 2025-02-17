@@ -1,0 +1,34 @@
+Objective: Create a web page focused on a 3D pen workshop designed for adults—highlighting creativity, professional skill-building, or simply a new hobby.
+
+Page Flow (in order):
+
+Hero / Introduction
+Headline that captures the imagination of adult learners (e.g., “Unleash Your Creativity with 3D Pens”)
+Subheading emphasizing artistic expression, stress relief, career upskilling, or hands-on fun
+Unique Value Proposition / Key Benefits
+Explain why this 3D pen workshop is uniquely suited for adults (professional applications, advanced techniques, community of like-minded learners)
+Workshop Details (Beginner-friendly to advanced)
+Outline what participants will learn (practical uses, design tips, advanced pen handling)
+Include:
+Pricing / Packages (single session, multi-session discounts, group rates)
+Testimonials (from past adult participants—highlight how it helped them personally or professionally)
+Success Stories (e.g., designs or projects completed by participants)
+FAQ (address time commitment, skill level required, recommended materials, etc.)
+Call-to-Action Blocks (encourage sign-up, request info)
+Security & Trust Badges (payment security, reputable endorsements, or professional certifications)
+Gallery
+Placeholder images of adult participants creating 3D pen art or prototypes
+Related Resources / Recommended Next Steps
+Invite participants to explore advanced 3D printing courses or complementary creative classes
+Highlights / Summary
+Recap the main benefits of the 3D pen workshop for adults
+Final Call-to-Action
+Encourage immediate enrollment or scheduling a demo session
+Instructions:
+
+Generate the page in small, incremental outputs so I can review and integrate each piece in Replit.
+Explain each coding step before providing the updated HTML, CSS, and (if needed) JavaScript.
+Use semantic HTML for accessibility (header, main, section, footer).
+Keep performance in mind (minimal extra code).
+Use placeholders for images or icons (e.g., images/adult_3d_pen.jpg).
+Follow best practices for SEO (clear headings, meta tags) and security (safe form handling).
