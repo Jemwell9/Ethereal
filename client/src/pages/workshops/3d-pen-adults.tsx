@@ -181,6 +181,96 @@ export default function AdultWorkshopsPage() {
         </div>
       </section>
 
+      {/* Explorer Package */}
+      <section className="py-20 bg-black/50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-white mb-4">Explorer Package</h2>
+              <p className="text-white/60">Perfect introduction to 3D pen artistry</p>
+            </div>
+
+            {/* Workshop Details */}
+            <Card className="bg-black/50 border-[#00FF00]/20 p-6 mb-8">
+              <div className="grid gap-6">
+                <div className="flex justify-between items-center">
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Beginner's Journey</h3>
+                    <p className="text-white/60">3 hours of guided creative exploration</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-3xl font-bold text-[#00FF00]">$89</p>
+                    <p className="text-white/60">per person</p>
+                  </div>
+                </div>
+
+                <div className="grid gap-4">
+                  <h4 className="text-white font-medium">What's Included:</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-center gap-2 text-white/60">
+                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                      Professional pen handling techniques
+                    </li>
+                    <li className="flex items-center gap-2 text-white/60">
+                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                      Basic design principles
+                    </li>
+                    <li className="flex items-center gap-2 text-white/60">
+                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                      Material knowledge and selection
+                    </li>
+                    <li className="flex items-center gap-2 text-white/60">
+                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                      Take-home creation
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Group Discounts */}
+                <div className="bg-[#00FF00]/5 p-4 rounded-lg">
+                  <h4 className="text-white font-medium mb-2">Group Discounts</h4>
+                  <ul className="space-y-2">
+                    <li className="text-white/60">2-3 people: 10% off per person</li>
+                    <li className="text-white/60">4+ people: 15% off per person</li>
+                    <li className="text-white/60">Corporate team rates available</li>
+                  </ul>
+                </div>
+              </div>
+            </Card>
+
+            {/* Success Story */}
+            <div className="mb-12">
+              <Card className="bg-black/50 border-[#00FF00]/20 p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-16 h-16 bg-[#00FF00]/10 rounded-full flex items-center justify-center">
+                    <Star className="w-8 h-8 text-[#00FF00]" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-medium mb-2">Career Transition Success</h4>
+                    <p className="text-white/60 mb-4">
+                      "The Explorer workshop opened my eyes to the possibilities of 3D pen art. I've since incorporated these skills into my design practice."
+                    </p>
+                    <p className="text-white/40">- Michael, Graphic Designer</p>
+                  </div>
+                </div>
+              </Card>
+            </div>
+
+            {/* CTA */}
+            <div className="text-center">
+              <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                <Link href="/booking">Book This Workshop</Link>
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="py-20 bg-black/50">
         <div className="container mx-auto px-4">
