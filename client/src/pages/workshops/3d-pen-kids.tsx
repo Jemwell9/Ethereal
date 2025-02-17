@@ -1,71 +1,9 @@
-
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "wouter";
-import { Pen, Star, Shield, Sparkles, BookOpen, Heart, Users, Award } from "lucide-react";
+import { Pen, Star, Shield, Sparkles, Users, Award, Heart } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-
-const workshopPackages = [
-  {
-    title: "Single Session Explorer (Ages 6-8)",
-    description: "Perfect first introduction to 3D pen art",
-    details: "Safe, guided creative fun",
-    features: [
-      "Basic pen control techniques",
-      "Simple shapes and patterns",
-      "Take-home creation",
-      "All materials included"
-    ],
-    duration: "2 hours",
-    price: "$49",
-    icon: Pen,
-    image: "/workshop-kids-beginner.svg"
-  },
-  {
-    title: "Creative Adventure (Ages 9-12)",
-    description: "Expanded learning with more complex projects",
-    details: "Build confidence and skills",
-    features: [
-      "Advanced techniques",
-      "Multiple projects",
-      "Creative storytelling",
-      "Safety certificate"
-    ],
-    duration: "3 hours",
-    price: "$69",
-    icon: Star,
-    image: "/workshop-kids-advanced.svg"
-  },
-  {
-    title: "Sibling Bundle (Ages 6-12)",
-    description: "Special package for two siblings to learn together",
-    details: "Shared creative experience",
-    features: [
-      "Paired activities",
-      "Team projects",
-      "Double the fun",
-      "Family discount"
-    ],
-    duration: "2.5 hours",
-    price: "$89",
-    icon: Heart,
-    image: "/workshop-kids-master.svg"
-  }
-];
-
-const testimonials = [
-  {
-    text: "My daughter couldn't stop talking about her 3D butterfly creation! The instructors made safety their top priority while keeping it fun.",
-    author: "Sarah M., Parent of 7-year-old",
-    rating: 5
-  },
-  {
-    text: "The sibling package was perfect for my kids. They worked together and created amazing projects!",
-    author: "Michael R., Parent of 8 and 10-year-olds",
-    rating: 5
-  }
-];
 
 export default function KidsWorkshopsPage() {
   return (
@@ -80,12 +18,27 @@ export default function KidsWorkshopsPage() {
             className="text-center max-w-4xl mx-auto mb-16"
           >
             <h1 className="text-5xl font-bold mb-6 text-white">
-              Spark Your Child's Creativity with 3D Pen Art
+              3D Pen Art for Young Creators
             </h1>
             <p className="text-xl text-white/60 mb-8">
-              Safe, fun, and educational workshops where imagination comes to life!
-              Perfect for young minds ages 6-12.
+              Where imagination meets creativity in a safe, fun learning environment
             </p>
+
+            {/* Trust Badges */}
+            <div className="flex justify-center gap-8 mb-12">
+              <div className="flex items-center gap-2">
+                <Shield className="w-6 h-6 text-[#00FF00]" />
+                <span className="text-white">Child-Safe Materials</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Users className="w-6 h-6 text-[#00FF00]" />
+                <span className="text-white">Small Groups (6:1 Ratio)</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Award className="w-6 h-6 text-[#00FF00]" />
+                <span className="text-white">Certified Instructors</span>
+              </div>
+            </div>
             <div className="flex gap-4 justify-center">
               <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
                 <Link href="/booking">Book a Workshop</Link>
@@ -95,112 +48,309 @@ export default function KidsWorkshopsPage() {
               </Button>
             </div>
           </motion.div>
-
-          {/* Trust Badges */}
-          <div className="flex justify-center gap-8 mb-12">
-            <div className="flex items-center gap-2">
-              <Shield className="w-6 h-6 text-[#00FF00]" />
-              <span className="text-white">Child-Safe Materials</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Users className="w-6 h-6 text-[#00FF00]" />
-              <span className="text-white">Small Groups (6:1 Ratio)</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Award className="w-6 h-6 text-[#00FF00]" />
-              <span className="text-white">Certified Instructors</span>
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* Workshop Packages */}
+      {/* Single Session Explorer Workshop */}
       <section className="py-20 bg-black/50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Workshop Packages</h2>
-            <p className="text-white/60">Choose the perfect experience for your child</p>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-white mb-4">Single Session Explorer</h2>
+              <p className="text-white/60">Perfect first introduction to 3D pen art</p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {workshopPackages.map((workshop, index) => (
-              <motion.div
-                key={workshop.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card className="h-full bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors">
-                  <CardHeader>
-                    <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
-                      <workshop.icon className="w-6 h-6 text-[#00FF00]" />
+            {/* Workshop Details */}
+            <Card className="bg-black/50 border-[#00FF00]/20 p-6 mb-8">
+              <div className="grid gap-6">
+                <div className="flex justify-between items-center">
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Basic Package</h3>
+                    <p className="text-white/60">2 hours of guided creative fun</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-3xl font-bold text-[#00FF00]">$49</p>
+                    <p className="text-white/60">per child</p>
+                  </div>
+                </div>
+
+                <div className="grid gap-4">
+                  <h4 className="text-white font-medium">What's Included:</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-center gap-2 text-white/60">
+                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                      Basic pen control techniques
+                    </li>
+                    <li className="flex items-center gap-2 text-white/60">
+                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                      Simple shapes and patterns
+                    </li>
+                    <li className="flex items-center gap-2 text-white/60">
+                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                      Take-home creation
+                    </li>
+                    <li className="flex items-center gap-2 text-white/60">
+                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                      All materials included
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Group Discounts */}
+                <div className="bg-[#00FF00]/5 p-4 rounded-lg">
+                  <h4 className="text-white font-medium mb-2">Group Discounts</h4>
+                  <ul className="space-y-2">
+                    <li className="text-white/60">2-3 children: 10% off per child</li>
+                    <li className="text-white/60">4+ children: 15% off per child</li>
+                    <li className="text-white/60">Sibling discount: 20% off second child</li>
+                  </ul>
+                </div>
+              </div>
+            </Card>
+
+            {/* Success Stories */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-white mb-6">Success Stories</h3>
+              <div className="grid gap-6">
+                <Card className="bg-black/50 border-[#00FF00]/20 p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-16 h-16 bg-[#00FF00]/10 rounded-full flex items-center justify-center">
+                      <Star className="w-8 h-8 text-[#00FF00]" />
                     </div>
-                    <CardTitle className="text-white">{workshop.title}</CardTitle>
-                    <CardDescription className="text-white/60">{workshop.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-6">
-                    <div className="space-y-4">
-                      <p className="text-sm font-medium text-white">{workshop.details}</p>
-                      <ul className="space-y-2">
-                        {workshop.features.map((feature, i) => (
-                          <li key={i} className="text-sm text-white/60 flex items-center gap-2">
-                            <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                      <div className="flex justify-between items-center pt-4">
-                        <div>
-                          <p className="text-sm text-white/60">Duration</p>
-                          <p className="font-medium text-white">{workshop.duration}</p>
-                        </div>
-                        <div className="text-right">
-                          <p className="text-sm text-white/60">Price</p>
-                          <p className="font-medium text-white">{workshop.price}</p>
-                        </div>
-                      </div>
-                      <Button asChild className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-                        <Link href="/booking">Book Now</Link>
-                      </Button>
+                    <div>
+                      <h4 className="text-white font-medium mb-2">Emily's First 3D Creation</h4>
+                      <p className="text-white/60 mb-4">
+                        "Emily created a beautiful butterfly in her first session. She was so proud to show it to her friends!"
+                      </p>
+                      <p className="text-white/40">- Sarah, Emily's mom</p>
                     </div>
-                  </CardContent>
+                  </div>
                 </Card>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </div>
+
+            {/* FAQ */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-white mb-6">Common Questions</h3>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="item-1">
+                  <AccordionTrigger className="text-white">Is it safe for young children?</AccordionTrigger>
+                  <AccordionContent className="text-white/60">
+                    Absolutely! We use child-safe materials and maintain a strict 6:1 student-to-instructor ratio. All activities are closely supervised with proper safety measures in place.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                  <AccordionTrigger className="text-white">What should my child bring?</AccordionTrigger>
+                  <AccordionContent className="text-white/60">
+                    Just their imagination! We provide all necessary materials, safety equipment, and refreshments. Comfortable clothing is recommended.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                  <AccordionTrigger className="text-white">Can parents stay and watch?</AccordionTrigger>
+                  <AccordionContent className="text-white/60">
+                    Yes! We welcome parents to observe and even participate in certain activities. It's a great way to share the creative experience with your child.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
+
+            {/* CTA */}
+            <div className="text-center">
+              <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                <Link href="/booking">Book This Workshop</Link>
+              </Button>
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* Creative Adventure Workshop */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Common Questions</h2>
-            <p className="text-white/60">Everything you need to know about our workshops</p>
-          </div>
-          
-          <div className="max-w-3xl mx-auto">
-            <Accordion type="single" collapsible>
-              <AccordionItem value="item-1">
-                <AccordionTrigger className="text-white">Is it safe for young children?</AccordionTrigger>
-                <AccordionContent className="text-white/60">
-                  Absolutely! We use child-safe materials and maintain a strict 6:1 student-to-instructor ratio. All activities are closely supervised with proper safety measures in place.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger className="text-white">What should my child bring?</AccordionTrigger>
-                <AccordionContent className="text-white/60">
-                  Just their imagination! We provide all necessary materials, safety equipment, and refreshments. Comfortable clothing is recommended.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3">
-                <AccordionTrigger className="text-white">Can parents stay and watch?</AccordionTrigger>
-                <AccordionContent className="text-white/60">
-                  Yes! We welcome parents to observe and even participate in certain activities. It's a great way to share the creative experience with your child.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-white mb-4">Creative Adventure</h2>
+              <p className="text-white/60">Expanded learning with more complex projects</p>
+            </div>
+
+            {/* Workshop Details */}
+            <Card className="bg-black/50 border-[#00FF00]/20 p-6 mb-8">
+              <div className="grid gap-6">
+                <div className="flex justify-between items-center">
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Advanced Package</h3>
+                    <p className="text-white/60">3 hours of creative exploration</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-3xl font-bold text-[#00FF00]">$69</p>
+                    <p className="text-white/60">per child</p>
+                  </div>
+                </div>
+
+                <div className="grid gap-4">
+                  <h4 className="text-white font-medium">What's Included:</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-center gap-2 text-white/60">
+                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                      Advanced techniques
+                    </li>
+                    <li className="flex items-center gap-2 text-white/60">
+                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                      Multiple projects
+                    </li>
+                    <li className="flex items-center gap-2 text-white/60">
+                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                      Creative storytelling
+                    </li>
+                    <li className="flex items-center gap-2 text-white/60">
+                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                      Safety certificate
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Group Discounts */}
+                <div className="bg-[#00FF00]/5 p-4 rounded-lg">
+                  <h4 className="text-white font-medium mb-2">Group Discounts</h4>
+                  <ul className="space-y-2">
+                    <li className="text-white/60">2-3 children: 10% off per child</li>
+                    <li className="text-white/60">4+ children: 15% off per child</li>
+                    <li className="text-white/60">Sibling discount: 20% off second child</li>
+                  </ul>
+                </div>
+              </div>
+            </Card>
+
+            {/* Success Stories */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-white mb-6">Success Stories</h3>
+              <div className="grid gap-6">
+                <Card className="bg-black/50 border-[#00FF00]/20 p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-16 h-16 bg-[#00FF00]/10 rounded-full flex items-center justify-center">
+                      <Star className="w-8 h-8 text-[#00FF00]" />
+                    </div>
+                    <div>
+                      <h4 className="text-white font-medium mb-2">Jack's Amazing Creations</h4>
+                      <p className="text-white/60 mb-4">
+                        "Jack's creativity was amazing! He created several projects that surpassed our expectations."
+                      </p>
+                      <p className="text-white/40">- John, Jack's dad</p>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="text-center">
+              <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                <Link href="/booking">Book This Workshop</Link>
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Sibling Bundle Workshop */}
+      <section className="py-20 bg-black/50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-white mb-4">Sibling Bundle</h2>
+              <p className="text-white/60">Special package for two siblings to learn together</p>
+            </div>
+
+            {/* Workshop Details */}
+            <Card className="bg-black/50 border-[#00FF00]/20 p-6 mb-8">
+              <div className="grid gap-6">
+                <div className="flex justify-between items-center">
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Sibling Package</h3>
+                    <p className="text-white/60">2.5 hours of shared creative fun</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-3xl font-bold text-[#00FF00]">$89</p>
+                    <p className="text-white/60">for two siblings</p>
+                  </div>
+                </div>
+
+                <div className="grid gap-4">
+                  <h4 className="text-white font-medium">What's Included:</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-center gap-2 text-white/60">
+                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                      Paired activities
+                    </li>
+                    <li className="flex items-center gap-2 text-white/60">
+                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                      Team projects
+                    </li>
+                    <li className="flex items-center gap-2 text-white/60">
+                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                      Double the fun
+                    </li>
+                    <li className="flex items-center gap-2 text-white/60">
+                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                      Family discount
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Group Discounts */}
+                <div className="bg-[#00FF00]/5 p-4 rounded-lg">
+                  <h4 className="text-white font-medium mb-2">Group Discounts</h4>
+                  <ul className="space-y-2">
+                    <li className="text-white/60">Additional siblings: 10% off per child</li>
+                  </ul>
+                </div>
+              </div>
+            </Card>
+
+            {/* Success Stories */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-white mb-6">Success Stories</h3>
+              <div className="grid gap-6">
+                <Card className="bg-black/50 border-[#00FF00]/20 p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-16 h-16 bg-[#00FF00]/10 rounded-full flex items-center justify-center">
+                      <Heart className="w-8 h-8 text-[#00FF00]" />
+                    </div>
+                    <div>
+                      <h4 className="text-white font-medium mb-2">Sibling Teamwork</h4>
+                      <p className="text-white/60 mb-4">
+                        "My twins loved working together! They created a fantastic collaborative project."
+                      </p>
+                      <p className="text-white/40">- Mary, mother of twins</p>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+            </div>
+
+
+            {/* CTA */}
+            <div className="text-center">
+              <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                <Link href="/booking">Book This Workshop</Link>
+              </Button>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -213,7 +363,7 @@ export default function KidsWorkshopsPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {testimonials.map((testimonial, index) => (
+            {[{text: "My daughter couldn't stop talking about her 3D butterfly creation! The instructors made safety their top priority while keeping it fun.", author: "Sarah M., Parent of 7-year-old", rating: 5}, {text: "The sibling package was perfect for my kids. They worked together and created amazing projects!", author: "Michael R., Parent of 8 and 10-year-olds", rating: 5}].map((testimonial, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
