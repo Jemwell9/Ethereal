@@ -443,26 +443,43 @@ export default function AdultWorkshopsPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-white mb-4">Frequently Asked Questions</h2>
+            <p className="text-white/60">Everything you need to know about our 3D pen workshops</p>
           </motion.div>
 
           <div className="max-w-3xl mx-auto">
             <Accordion type="single" collapsible className="space-y-4">
               <AccordionItem value="item-1" className="border-[#00FF00]/20 bg-black/50">
-                <AccordionTrigger className="text-white px-4">What experience do I need?</AccordionTrigger>
+                <AccordionTrigger className="text-white px-4">What materials are included in the workshop?</AccordionTrigger>
                 <AccordionContent className="text-white/60 px-4">
-                  No prior experience is needed for our beginner workshops. We provide all necessary materials and guidance.
+                  All materials are provided, including professional 3D pens, a variety of colored filaments, design templates, and safety equipment. You'll also receive a starter kit to take home.
                 </AccordionContent>
               </AccordionItem>
+
               <AccordionItem value="item-2" className="border-[#00FF00]/20 bg-black/50">
-                <AccordionTrigger className="text-white px-4">How long are the sessions?</AccordionTrigger>
+                <AccordionTrigger className="text-white px-4">Do I need prior experience with 3D pens?</AccordionTrigger>
                 <AccordionContent className="text-white/60 px-4">
-                  Each session runs for approximately 3-4 hours, with breaks included.
+                  No prior experience is necessary. Our Explorer Package is designed for complete beginners, while our Artist and Master packages are suitable for those with some experience.
                 </AccordionContent>
               </AccordionItem>
+
               <AccordionItem value="item-3" className="border-[#00FF00]/20 bg-black/50">
-                <AccordionTrigger className="text-white px-4">What materials are provided?</AccordionTrigger>
+                <AccordionTrigger className="text-white px-4">What's the class size?</AccordionTrigger>
                 <AccordionContent className="text-white/60 px-4">
-                  All materials including 3D pens, filaments, and design templates are provided during the workshop.
+                  We maintain small class sizes with a maximum of 8 participants per instructor to ensure personalized attention and optimal learning experience.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4" className="border-[#00FF00]/20 bg-black/50">
+                <AccordionTrigger className="text-white px-4">Can I bring my own 3D pen?</AccordionTrigger>
+                <AccordionContent className="text-white/60 px-4">
+                  Yes, you're welcome to bring your own 3D pen if you prefer. However, we provide high-quality professional pens for all participants.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5" className="border-[#00FF00]/20 bg-black/50">
+                <AccordionTrigger className="text-white px-4">Are there any prerequisites for the Master Package?</AccordionTrigger>
+                <AccordionContent className="text-white/60 px-4">
+                  While not strictly required, we recommend having some experience with 3D pens before enrolling in the Master Package. The Explorer or Artist packages are great stepping stones.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
