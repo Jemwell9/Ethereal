@@ -107,6 +107,80 @@ export default function AutoCADWorkshopsPage() {
 
       {/* Value Proposition */}
       <section className="py-20 bg-black/50">
+
+      {/* Workshop Sections */}
+      <section id="workshops" className="py-20">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-white mb-4">Our AutoCAD Workshops</h2>
+            <p className="text-white/60">Choose the perfect learning path for your skill level</p>
+          </motion.div>
+
+          {autocadWorkshops.map((workshop, index) => (
+            <motion.div
+              key={workshop.title}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="mb-32 last:mb-0"
+            >
+              <div className={`flex flex-col lg:flex-row gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+                <div className="lg:w-1/2 space-y-6">
+                  <div className="w-16 h-16 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
+                    <workshop.icon className="w-8 h-8 text-[#00FF00]" />
+                  </div>
+                  <h3 className="text-3xl font-bold text-white">{workshop.title}</h3>
+                  <p className="text-white/60">{workshop.description}</p>
+                  <div className="space-y-4">
+                    <p className="text-white font-medium">{workshop.details}</p>
+                    <ul className="space-y-2">
+                      {workshop.features.map((feature, i) => (
+                        <li key={i} className="flex items-center gap-2 text-white/60">
+                          <ArrowRight className="w-4 h-4 text-[#00FF00]" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                    {workshop.testimonials && (
+                      <div className="bg-white/5 p-6 rounded-lg">
+                        <p className="text-white/80 italic">&ldquo;{workshop.testimonials[0].text}&rdquo;</p>
+                        <p className="text-[#00FF00] mt-2">- {workshop.testimonials[0].author}</p>
+                      </div>
+                    )}
+                    <div className="flex items-center justify-between pt-4">
+                      <div>
+                        <p className="text-white/60">Duration</p>
+                        <p className="text-white font-medium">{workshop.duration}</p>
+                      </div>
+                      <div>
+                        <p className="text-white/60">Price</p>
+                        <p className="text-white font-medium">{workshop.price}</p>
+                      </div>
+                    </div>
+                    <Button asChild className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                      <Link href="/booking">Book Now</Link>
+                    </Button>
+                  </div>
+                </div>
+                <div className="lg:w-1/2">
+                  <div className="grid grid-cols-2 gap-4">
+                    {workshop.gallery?.map((image, i) => (
+                      <div key={i} className="aspect-square bg-black/30 rounded-lg overflow-hidden">
+                        <img src={image} alt={`${workshop.title} example ${i + 1}`} className="w-full h-full object-cover" />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <motion.div
