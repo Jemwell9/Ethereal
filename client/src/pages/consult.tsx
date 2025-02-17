@@ -11,17 +11,16 @@ import {
   Microscope,
   LineChart,
   Wrench,
-  Cog,
   Search,
   Workflow,
   Zap,
   Target,
   FileSearch,
   Building,
-  Tool,
   Laptop,
   BadgeCheck,
-  Settings2
+  Settings2,
+  Wrench as ToolIcon
 } from "lucide-react";
 
 const approachSteps = [
@@ -60,7 +59,7 @@ const coreServices = [
     ]
   },
   {
-    icon: Tool,
+    icon: ToolIcon,
     title: "Design & CAD Optimization",
     description: "Professional design review and optimization for 3D printing",
     features: [
