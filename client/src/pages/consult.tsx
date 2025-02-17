@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BrainCircuit, Rocket, Shapes, Settings } from "lucide-react";
+import { ArrowRight, BrainCircuit, Rocket, Shapes, Settings, Check, ArrowUpRight } from "lucide-react";
 
 export default function ConsultPage() {
   return (
-    <div className="min-h-screen bg-black pt-24">
+    <div className="min-h-screen bg-black">
       {/* Hero Section */}
-      <section className="py-20">
+      <section className="py-32">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -15,7 +15,7 @@ export default function ConsultPage() {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-5xl font-bold mb-6 text-white">
-              3D PRINTING CONSULTANCY
+              3D PRINTING CONSULTANCY SERVICES
             </h1>
             <p className="text-lg text-white/60 mb-8">
               Transform your manufacturing processes with expert guidance. 
@@ -27,10 +27,37 @@ export default function ConsultPage() {
                 <a href="#contact">Get Started</a>
               </Button>
               <Button asChild variant="outline" className="border-[#00FF00] text-[#00FF00] hover:bg-[#00FF00]/10">
-                <a href="#services">Learn More</a>
+                <a href="#benefits">Learn More</a>
               </Button>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Why 3D Printing Section */}
+      <section id="benefits" className="py-20 bg-black/40">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">
+            Why Choose 3D Printing?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={benefit.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-black/50 p-6 rounded-lg border border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors"
+              >
+                <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
+                  <benefit.icon className="w-6 h-6 text-[#00FF00]" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">{benefit.title}</h3>
+                <p className="text-white/60">{benefit.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -219,3 +246,26 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+
+const benefits = [
+  {
+    icon: Rocket,
+    title: "Accelerated Innovation",
+    description: "Reduce time-to-market with rapid prototyping and iterative design processes."
+  },
+  {
+    icon: BrainCircuit,
+    title: "Cost Optimization",
+    description: "Minimize waste, reduce tooling costs, and optimize production expenses."
+  },
+  {
+    icon: Shapes,
+    title: "Design Freedom",
+    description: "Create complex geometries and innovative designs previously impossible with traditional manufacturing."
+  },
+  {
+    icon: Settings,
+    title: "Sustainable Production",
+    description: "Reduce material waste and energy consumption with additive manufacturing."
+  }
+];
