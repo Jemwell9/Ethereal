@@ -131,9 +131,9 @@ export default function ConsultPage() {
             Our Success Stories
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
+            {successStories.map((story, index) => (
               <motion.div
-                key={benefit.title}
+                key={story.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -141,10 +141,10 @@ export default function ConsultPage() {
                 className="bg-black/50 p-6 rounded-lg border border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors"
               >
                 <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
-                  <benefit.icon className="w-6 h-6 text-[#00FF00]" />
+                  <story.icon className="w-6 h-6 text-[#00FF00]" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{benefit.title}</h3>
-                <p className="text-white/60">{benefit.description}</p>
+                <h3 className="text-xl font-bold text-white mb-2">{story.title}</h3>
+                <p className="text-white/60">{story.description}</p>
               </motion.div>
             ))}
           </div>
