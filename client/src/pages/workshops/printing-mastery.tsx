@@ -77,53 +77,57 @@ export default function PrintingMasteryPage() {
                   <p className="text-lg text-white/60 mb-8 max-w-xl">
                     Elevate your skills to professional levels. Master the art and science of additive manufacturing.
                   </p>
+                </motion.div>
+              </div>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {printingWorkshops.map((workshop, index) => (
-              <motion.div
-                key={workshop.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card className="h-full bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors">
-                  <CardHeader>
-                    <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
-                      <workshop.icon className="w-6 h-6 text-[#00FF00]" />
-                    </div>
-                    <CardTitle className="text-white">{workshop.title}</CardTitle>
-                    <CardDescription className="text-white/60">{workshop.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-6">
-                    <div className="space-y-4">
-                      <p className="text-sm font-medium text-white">{workshop.details}</p>
-                      <ul className="space-y-2">
-                        {workshop.features.map((feature, i) => (
-                          <li key={i} className="text-sm text-white/60 flex items-center gap-2">
-                            <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                      <div className="flex justify-between items-center pt-4">
-                        <div>
-                          <p className="text-sm text-white/60">Duration</p>
-                          <p className="font-medium text-white">{workshop.duration}</p>
-                        </div>
-                        <div className="text-right">
-                          <p className="text-sm text-white/60">Price</p>
-                          <p className="font-medium text-white">{workshop.price}</p>
-                        </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {printingWorkshops.map((workshop, index) => (
+                <motion.div
+                  key={workshop.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <Card className="h-full bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors">
+                    <CardHeader>
+                      <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
+                        <workshop.icon className="w-6 h-6 text-[#00FF00]" />
                       </div>
-                      <Button asChild className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-                        <Link href="/booking">Book Now</Link>
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
+                      <CardTitle className="text-white">{workshop.title}</CardTitle>
+                      <CardDescription className="text-white/60">{workshop.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-6">
+                      <div className="space-y-4">
+                        <p className="text-sm font-medium text-white">{workshop.details}</p>
+                        <ul className="space-y-2">
+                          {workshop.features.map((feature, i) => (
+                            <li key={i} className="text-sm text-white/60 flex items-center gap-2">
+                              <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+                        <div className="flex justify-between items-center pt-4">
+                          <div>
+                            <p className="text-sm text-white/60">Duration</p>
+                            <p className="font-medium text-white">{workshop.duration}</p>
+                          </div>
+                          <div className="text-right">
+                            <p className="text-sm text-white/60">Price</p>
+                            <p className="font-medium text-white">{workshop.price}</p>
+                          </div>
+                        </div>
+                        <Button asChild className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                          <Link href="/booking">Book Now</Link>
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>

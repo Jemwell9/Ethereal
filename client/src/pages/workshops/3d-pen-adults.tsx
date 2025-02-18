@@ -42,28 +42,31 @@ export default function AdultWorkshopsPage() {
                     Discover a new dimension of artistic expression and professional skill-building with our expert-led 3D pen workshops.
                   </p>
 
-            {/* Trust Badges */}
-            <div className="flex justify-center gap-8 mb-12">
-              <div className="flex items-center gap-2">
-                <Shield className="w-6 h-6 text-[#00FF00]" />
-                <span className="text-white">Professional Tools</span>
+                  {/* Trust Badges */}
+                  <div className="flex justify-center gap-8 mb-12">
+                    <div className="flex items-center gap-2">
+                      <Shield className="w-6 h-6 text-[#00FF00]" />
+                      <span className="text-white">Professional Tools</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Users className="w-6 h-6 text-[#00FF00]" />
+                      <span className="text-white">Small Groups (8:1 Ratio)</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Award className="w-6 h-6 text-[#00FF00]" />
+                      <span className="text-white">Expert Instructors</span>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 justify-center">
+                    <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                      <Link href="/booking">Book a Workshop</Link>
+                    </Button>
+                    <Button asChild size="lg" variant="outline" className="border-[#00FF00] text-[#00FF00]">
+                      <Link href="#learn-more">Learn More</Link>
+                    </Button>
+                  </div>
+                </motion.div>
               </div>
-              <div className="flex items-center gap-2">
-                <Users className="w-6 h-6 text-[#00FF00]" />
-                <span className="text-white">Small Groups (8:1 Ratio)</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Award className="w-6 h-6 text-[#00FF00]" />
-                <span className="text-white">Expert Instructors</span>
-              </div>
-            </div>
-            <div className="flex gap-4 justify-center">
-              <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-                <Link href="/booking">Book a Workshop</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="border-[#00FF00] text-[#00FF00]">
-                <Link href="#learn-more">Learn More</Link>
-              </Button>
             </div>
           </motion.div>
         </div>
