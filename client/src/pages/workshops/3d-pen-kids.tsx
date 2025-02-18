@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "wouter";
-import { Pen, Star, Shield, Sparkles, Users, Award, Heart } from "lucide-react";
+import { Pen, Star, Shield, Sparkles, Users, Award, Heart, Image } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export default function KidsWorkshopsPage() {
