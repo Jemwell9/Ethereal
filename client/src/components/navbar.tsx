@@ -101,17 +101,21 @@ export default function Navbar() {
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-4 w-[400px] bg-black/90 backdrop-blur-sm">
-                      <Link href="/services/design" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
-                        <div className="text-[#00FF00] font-medium">3D Design Services</div>
-                        <p className="text-sm text-white/60">Professional CAD modeling and design optimization</p>
+                      <Link href="/workshops/design" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
+                        <div className="text-[#00FF00] font-medium">Design Workshops</div>
+                        <p className="text-sm text-white/60">Master AutoCAD and 3D design principles</p>
                       </Link>
-                      <Link href="/services/materials" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
-                        <div className="text-[#00FF00] font-medium">Materials Selection</div>
-                        <p className="text-sm text-white/60">Expert guidance on material selection</p>
+                      <Link href="/workshops/3d-pen-kids" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
+                        <div className="text-[#00FF00] font-medium">3D Pen for Kids</div>
+                        <p className="text-sm text-white/60">Fun and educational workshops for young creators</p>
                       </Link>
-                      <Link href="/services#printing" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
-                        <div className="text-[#00FF00] font-medium">3D Printing Execution</div>
-                        <p className="text-sm text-white/60">High-quality production and quality control</p>
+                      <Link href="/workshops/3d-pen-adults" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
+                        <div className="text-[#00FF00] font-medium">3D Pen for Adults</div>
+                        <p className="text-sm text-white/60">Professional development and artistic expression</p>
+                      </Link>
+                      <Link href="/workshops/printing-mastery" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
+                        <div className="text-[#00FF00] font-medium">Printing Mastery</div>
+                        <p className="text-sm text-white/60">Advanced 3D printing techniques and optimization</p>
                       </Link>
                     </div>
                   </NavigationMenuContent>
