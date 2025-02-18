@@ -35,11 +35,15 @@ import {
   Database,
   Image,
   Blocks,
-  Clock3
+  Clock3,
+  HeartHandshake,
+  ArrowRight
 } from "lucide-react";
 import { Link } from "wouter";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { useState, useEffect } from "react";
+import React from 'react';
+import { useCountUp } from '@/hooks/use-count-up';
 
 const consultingServices = [
   {
@@ -214,15 +218,114 @@ const coreServices = [
   }
 ];
 
-export default function ConsultPage() {
-  const [count, setCount] = useState(0);
+const benefits = [
+  {
+    title: "Expert Guidance",
+    description: "Get personalized advice from experienced 3D printing professionals"
+  },
+  {
+    title: "Custom Solutions",
+    description: "Tailored recommendations for your specific project needs"
+  },
+  {
+    title: "Technical Support",
+    description: "Comprehensive assistance with material selection and design optimization"
+  }
+];
 
-  useEffect(() => {
-    // Removed unused timer effect
-  }, []);
+const stats = [
+  { value: 500, label: "Projects Completed", suffix: "+" },
+  { value: 98, label: "Success Rate", suffix: "%" },
+  { value: 50, label: "Industry Partners", suffix: "+" },
+  { value: 15, label: "Years Experience", suffix: "+" }
+];
+
+const problems = [
+  {
+    icon: FileSearch,
+    title: "Material Selection",
+    description: "Difficulty choosing the right materials for specific applications and requirements."
+  },
+  {
+    icon: Building,
+    title: "Scale-up Challenges",
+    description: "Issues transitioning from prototyping to production-scale 3D printing."
+  },
+  {
+    icon: Settings2,
+    title: "Quality Control",
+    description: "Maintaining consistent quality and meeting industry standards."
+  },
+  {
+    icon: Clock3,
+    title: "Production Time",
+    description: "Optimizing print times while maintaining quality in high-volume production."
+  },
+  {
+    icon: Code,
+    title: "G-code Optimization",
+    description: "Fine-tuning printer instructions for better performance and quality."
+  },
+  {
+    icon: Cpu,
+    title: "Machine Compatibility",
+    description: "Ensuring compatibility between different printers and materials."
+  },
+  {
+    icon: Database,
+    title: "Cost Management",
+    description: "Balancing material costs with quality requirements for profitability."
+  },
+  {
+    icon: Blocks,
+    title: "Design Optimization",
+    description: "Optimizing designs for successful 3D printing and minimal support structures."
+  },
+  {
+    icon: Image,
+    title: "Surface Finish",
+    description: "Achieving desired surface quality while maintaining structural integrity."
+  }
+];
+
+const successStories = [
+  {
+    icon: Rocket,
+    title: "VinFast Manufacturing",
+    description: "Optimized rapid prototyping for Vietnam's leading EV manufacturer, reducing development time by 60% and supporting their electric vehicle initiatives."
+  },
+  {
+    icon: BrainCircuit,
+    title: "Razer Singapore",
+    description: "Implemented rapid prototyping solutions for gaming peripherals, accelerating product development cycles by 40% and reducing iteration costs."
+  },
+  {
+    icon: Shapes,
+    title: "Surbana Jurong",
+    description: "Enhanced architectural visualization capabilities, leading to successful implementation of smart city projects across Southeast Asia."
+  },
+  {
+    icon: Settings,
+    title: "Petronas Malaysia",
+    description: "Developed custom 3D printing solutions for oil & gas components, resulting in 45% cost reduction in specialized parts manufacturing."
+  },
+  {
+    icon: LineChart,
+    title: "Bangkok Dusit Medical",
+    description: "Revolutionized medical device prototyping, enabling custom surgical planning models that improved patient outcomes by 35%."
+  },
+  {
+    icon: Building,
+    title: "SM Prime Holdings",
+    description: "Supported Philippines' largest property developer with architectural prototyping, reducing design iteration time by 50%."
+  }
+];
+
+export default function ConsultPage() {
+  const countUpValue = useCountUp({ end: 100, duration: 2 });
 
   return (
-    <div className="min-h-screen bg-black pt-24">
+    <main className="min-h-screen bg-black">
       <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#00FF00]/10 rounded-full filter blur-[128px]" />
@@ -468,6 +571,31 @@ export default function ConsultPage() {
       </section>
 
 
+      {/* New Benefits Section from Edited Code */}
+      <div className="container mx-auto px-4 py-12">
+        <h1 className="text-4xl font-bold text-white mb-8 text-center">Consultation Benefits</h1>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          {benefits.map((benefit, index) => (
+            <Card key={index} className="bg-black/50 border-[#00FF00]/20">
+              <CardContent className="p-6">
+                <HeartHandshake className="w-12 h-12 text-[#00FF00] mb-4" />
+                <h3 className="text-white text-xl font-semibold mb-2">{benefit.title}</h3>
+                <p className="text-white/60">{benefit.description}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <div className="text-center">
+          <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+            <Link href="/booking">
+              Book Consultation <ArrowRight className="ml-2" />
+            </Link>
+          </Button>
+        </div>
+      </div>
+
+
       {/* CTA Section */}
       <section id="booking" className="py-20 bg-black/40">
         <div className="container mx-auto px-4 text-center">
@@ -491,95 +619,6 @@ export default function ConsultPage() {
           </motion.div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }
-
-
-const stats = [
-  { value: 500, label: "Projects Completed", suffix: "+" },
-  { value: 98, label: "Success Rate", suffix: "%" },
-  { value: 50, label: "Industry Partners", suffix: "+" },
-  { value: 15, label: "Years Experience", suffix: "+" }
-];
-
-const problems = [
-  {
-    icon: FileSearch,
-    title: "Material Selection",
-    description: "Difficulty choosing the right materials for specific applications and requirements."
-  },
-  {
-    icon: Building,
-    title: "Scale-up Challenges",
-    description: "Issues transitioning from prototyping to production-scale 3D printing."
-  },
-  {
-    icon: Settings2,
-    title: "Quality Control",
-    description: "Maintaining consistent quality and meeting industry standards."
-  },
-  {
-    icon: Clock3,
-    title: "Production Time",
-    description: "Optimizing print times while maintaining quality in high-volume production."
-  },
-  {
-    icon: Code,
-    title: "G-code Optimization",
-    description: "Fine-tuning printer instructions for better performance and quality."
-  },
-  {
-    icon: Cpu,
-    title: "Machine Compatibility",
-    description: "Ensuring compatibility between different printers and materials."
-  },
-  {
-    icon: Database,
-    title: "Cost Management",
-    description: "Balancing material costs with quality requirements for profitability."
-  },
-  {
-    icon: Blocks,
-    title: "Design Optimization",
-    description: "Optimizing designs for successful 3D printing and minimal support structures."
-  },
-  {
-    icon: Image,
-    title: "Surface Finish",
-    description: "Achieving desired surface quality while maintaining structural integrity."
-  }
-];
-
-const successStories = [
-  {
-    icon: Rocket,
-    title: "VinFast Manufacturing",
-    description: "Optimized rapid prototyping for Vietnam's leading EV manufacturer, reducing development time by 60% and supporting their electric vehicle initiatives."
-  },
-  {
-    icon: BrainCircuit,
-    title: "Razer Singapore",
-    description: "Implemented rapid prototyping solutions for gaming peripherals, accelerating product development cycles by 40% and reducing iteration costs."
-  },
-  {
-    icon: Shapes,
-    title: "Surbana Jurong",
-    description: "Enhanced architectural visualization capabilities, leading to successful implementation of smart city projects across Southeast Asia."
-  },
-  {
-    icon: Settings,
-    title: "Petronas Malaysia",
-    description: "Developed custom 3D printing solutions for oil & gas components, resulting in 45% cost reduction in specialized parts manufacturing."
-  },
-  {
-    icon: LineChart,
-    title: "Bangkok Dusit Medical",
-    description: "Revolutionized medical device prototyping, enabling custom surgical planning models that improved patient outcomes by 35%."
-  },
-  {
-    icon: Building,
-    title: "SM Prime Holdings",
-    description: "Supported Philippines' largest property developer with architectural prototyping, reducing design iteration time by 50%."
-  }
-];
