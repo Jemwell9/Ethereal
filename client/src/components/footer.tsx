@@ -6,20 +6,23 @@ export default function Footer() {
   return (
     <footer className="py-6 bg-black text-white">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-6 md:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center sm:text-left">
           {/* Logo Section */}
-          <div className="flex-shrink-0">
+          <div className="flex justify-center sm:justify-start">
             <img 
               src="/Ethereal-Logo.png" 
               alt="Ethereal" 
-              className="h-16 md:h-20 w-auto"
+              className="h-16 w-auto"
               style={{ filter: 'drop-shadow(0 0 8px rgba(0, 255, 0, 0.3))' }}
             />
           </div>
 
           {/* Company Info */}
-          <div className="text-center md:text-right flex flex-col items-center">
-            <Building2 className="w-5 h-5 text-[#00FF00] mb-1" />
+          <div className="space-y-2">
+            <div className="flex items-center justify-center sm:justify-start gap-2">
+              <Building2 className="w-5 h-5 text-[#00FF00]" />
+              <span className="font-medium text-sm">Company</span>
+            </div>
             <p className="text-white/80 text-sm">
               We are the 3D materials arm of EXSTATIC PTE LTD
             </p>
@@ -27,8 +30,11 @@ export default function Footer() {
           </div>
 
           {/* Address */}
-          <div className="text-center md:text-right flex flex-col items-center">
-            <MapPin className="w-5 h-5 text-[#00FF00] mb-1" />
+          <div className="space-y-2">
+            <div className="flex items-center justify-center sm:justify-start gap-2">
+              <MapPin className="w-5 h-5 text-[#00FF00]" />
+              <span className="font-medium text-sm">Address</span>
+            </div>
             <address className="text-white/80 not-italic text-sm">
               165 BUKIT MERAH CENTRAL<br/>
               #05-3667, SINGAPORE 150165
@@ -36,13 +42,19 @@ export default function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div className="text-center md:text-right flex flex-col items-center gap-3">
-            <div className="flex flex-col items-center">
-              <Phone className="w-5 h-5 text-[#00FF00] mb-1" />
+          <div className="space-y-4">
+            <div className="space-y-2">
+              <div className="flex items-center justify-center sm:justify-start gap-2">
+                <Phone className="w-5 h-5 text-[#00FF00]" />
+                <span className="font-medium text-sm">Phone</span>
+              </div>
               <p className="text-[#00FF00] text-sm">+65 8806 2446</p>
             </div>
-            <div className="flex flex-col items-center">
-              <Mail className="w-5 h-5 text-[#00FF00] mb-1" />
+            <div className="space-y-2">
+              <div className="flex items-center justify-center sm:justify-start gap-2">
+                <Mail className="w-5 h-5 text-[#00FF00]" />
+                <span className="font-medium text-sm">Email</span>
+              </div>
               <p className="text-[#00FF00] text-sm">info@ethereal.sg</p>
             </div>
           </div>
