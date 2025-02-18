@@ -29,26 +29,25 @@ import {
   Calendar,
   Printer,
   Lightbulb,
-  Timer,
   Code,
   Cpu,
   Database,
   Image,
   Blocks,
-  HeartHandshake
+  Clock3
 } from "lucide-react";
 import { Link } from "wouter";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { useCountUp } from "@/hooks/use-count-up";
+import { useState, useEffect } from "react";
 
 const benefits = [
   {
-    icon: Timer,
+    icon: Clock3,
     title: "Quick Response",
     description: "Get expert consultation within 24 hours"
   },
   {
-    icon: HeartHandshake,
+    icon: Users,
     title: "Personalized Service",
     description: "Tailored solutions for your specific needs"
   }
@@ -111,7 +110,7 @@ const approachSteps = [
     ]
   },
   {
-    icon: HeartHandshake,
+    icon: Users,
     title: "Ongoing Support",
     description: "Continuous assistance and improvement",
     features: [
@@ -160,12 +159,21 @@ const coreServices = [
 ];
 
 export default function ConsultPage() {
-  const count = useCountUp({ end: 500, duration: 2 });
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (count < 500) {
+        setCount(prev => Math.min(prev + 25, 500));
+      }
+    }, 50);
+
+    return () => clearTimeout(timer);
+  }, [count]);
 
   return (
     <div className="min-h-screen bg-black pt-24">
       <section className="py-32 relative overflow-hidden">
-        {/* Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#00FF00]/10 rounded-full filter blur-[128px]" />
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#00FF00]/10 rounded-full filter blur-[128px]" />
@@ -190,8 +198,8 @@ export default function ConsultPage() {
                     <span className="text-[#00FF00]">Consultation</span>
                   </h1>
                   <p className="text-lg text-white/60 mb-8 max-w-xl">
-                    Transform your manufacturing processes with PhD-level expertise. 
-                    Our consultants help you leverage 3D printing technology for 
+                    Transform your manufacturing processes with PhD-level expertise.
+                    Our consultants help you leverage 3D printing technology for
                     rapid prototyping, cost reduction, and innovation.
                   </p>
                   <div className="flex flex-wrap gap-4">
@@ -231,19 +239,17 @@ export default function ConsultPage() {
           </motion.div>
         </div>
       </section>
-              {benefits.map((benefit, index) => (
-                <Card key={index} className="bg-black/50 border-[#00FF00]/20">
-                  <CardContent className="p-6">
-                    <benefit.icon className="w-12 h-12 text-[#00FF00] mb-4" />
-                    <h3 className="text-white text-xl font-semibold mb-2">{benefit.title}</h3>
-                    <p className="text-white/60">{benefit.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <div>
+      {benefits.map((benefit, index) => (
+        <Card key={index} className="bg-black/50 border-[#00FF00]/20">
+          <CardContent className="p-6">
+            <benefit.icon className="w-12 h-12 text-[#00FF00] mb-4" />
+            <h3 className="text-white text-xl font-semibold mb-2">{benefit.title}</h3>
+            <p className="text-white/60">{benefit.description}</p>
+          </CardContent>
+        </Card>
+      ))}
+      </div>
       {/* Quick Stats Section */}
       <section className="py-16 bg-black/40">
         <div className="container mx-auto px-4">
@@ -604,7 +610,7 @@ const problems = [
     description: "Maintaining consistent quality and meeting industry standards."
   },
   {
-    icon: Timer,
+    icon: Clock3,
     title: "Production Time",
     description: "Optimizing print times while maintaining quality in high-volume production."
   },
