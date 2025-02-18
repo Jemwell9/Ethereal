@@ -4,7 +4,6 @@ import { Link } from "wouter";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { useState, useEffect } from "react";
 import React from 'react';
-import { useCountUp } from '@/hooks/use-count-up';
 import { 
   Timer, 
   HeartHandshake, 
@@ -333,7 +332,7 @@ const successStories = [
   }
 ];
 
-const countUpValue = useCountUp({ end: 100, duration: 2 });
+
 
 export default function ConsultPage() {
   return (
