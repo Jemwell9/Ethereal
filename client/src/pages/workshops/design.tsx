@@ -90,22 +90,28 @@ const autocadWorkshops = [
 export default function AutoCADWorkshopsPage() {
   return (
     <div className="min-h-screen bg-black">
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 relative overflow-hidden">
-        <div className="container mx-auto px-4">
+      <section className="py-20">
+        <div className="container mx-auto px-4 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-center max-w-4xl mx-auto"
+            className="max-w-5xl mx-auto"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-              Master AutoCAD Design
-            </h1>
-            <p className="text-xl text-white/60 mb-8">
-              From foundational skills to expert-level techniques, our comprehensive AutoCAD workshops
-              will transform you into a confident CAD professional.
-            </p>
+            <div className="flex flex-col md:flex-row items-center gap-12">
+              <div className="flex-1 text-left">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
+                    Master <br />
+                    <span className="text-[#00FF00]">AutoCAD</span>
+                  </h1>
+                  <p className="text-lg text-white/60 mb-8 max-w-xl">
+                    From foundational skills to expert-level techniques, transform into a confident CAD professional.
+                  </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
                 <Link href="/booking">Start Your Journey</Link>

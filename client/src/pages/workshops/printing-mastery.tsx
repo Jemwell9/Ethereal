@@ -56,21 +56,27 @@ export default function PrintingMasteryPage() {
   return (
     <div className="min-h-screen bg-black pt-24">
       <section className="py-20">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-center max-w-4xl mx-auto mb-16"
+            className="max-w-5xl mx-auto"
           >
-            <h1 className="text-5xl font-bold mb-6 text-white">
-              3D PRINTING MASTERY
-            </h1>
-            <p className="text-lg text-white/60 mb-12">
-              Elevate your 3D printing skills to professional levels. From basic operations
-              to industrial applications, master the art and science of additive manufacturing.
-            </p>
-          </motion.div>
+            <div className="flex flex-col md:flex-row items-center gap-12">
+              <div className="flex-1 text-left">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
+                    3D Printing <br />
+                    <span className="text-[#00FF00]">Mastery</span>
+                  </h1>
+                  <p className="text-lg text-white/60 mb-8 max-w-xl">
+                    Elevate your skills to professional levels. Master the art and science of additive manufacturing.
+                  </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {printingWorkshops.map((workshop, index) => (

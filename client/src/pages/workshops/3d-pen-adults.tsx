@@ -19,21 +19,28 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 export default function AdultWorkshopsPage() {
   return (
     <div className="min-h-screen bg-black pt-24">
-      {/* Hero Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="container mx-auto px-4">
+      <section className="py-20">
+        <div className="container mx-auto px-4 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-center max-w-4xl mx-auto mb-16"
+            className="max-w-5xl mx-auto"
           >
-            <h1 className="text-5xl font-bold mb-6 text-white">
-              Unleash Your Creativity with 3D Pens
-            </h1>
-            <p className="text-xl text-white/60 mb-8">
-              Discover a new dimension of artistic expression and professional skill-building
-            </p>
+            <div className="flex flex-col md:flex-row items-center gap-12">
+              <div className="flex-1 text-left">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
+                    Unleash Your <br />
+                    <span className="text-[#00FF00]">Creativity</span>
+                  </h1>
+                  <p className="text-lg text-white/60 mb-8 max-w-xl">
+                    Discover a new dimension of artistic expression and professional skill-building with our expert-led 3D pen workshops.
+                  </p>
 
             {/* Trust Badges */}
             <div className="flex justify-center gap-8 mb-12">
