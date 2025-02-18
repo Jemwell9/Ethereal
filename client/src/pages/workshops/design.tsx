@@ -133,7 +133,7 @@ export default function DesignWorkshopsPage() {
       </section>
 
       <section id="workshops" className="py-20">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 lg:px-20">
           {designWorkshops.map((workshop, index) => (
             <motion.div
               key={workshop.title}
@@ -190,7 +190,7 @@ export default function DesignWorkshopsPage() {
       </section>
 
       <section className="py-20 bg-black/50">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 lg:px-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
