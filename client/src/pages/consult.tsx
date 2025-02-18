@@ -136,7 +136,9 @@ export default function ConsultPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-4xl font-bold text-[#00FF00] mb-2">{stat.value}</div>
+                <div className="text-4xl font-bold text-[#00FF00] mb-2">
+                  {useCountUp(stat.value).count}{stat.suffix}
+                </div>
                 <div className="text-white/60">{stat.label}</div>
               </motion.div>
             ))}
@@ -425,10 +427,10 @@ const consultationModes = [
 ];
 
 const stats = [
-  { value: "500+", label: "Projects Completed" },
-  { value: "98%", label: "Success Rate" },
-  { value: "50+", label: "Industry Partners" },
-  { value: "15+", label: "Years Experience" }
+  { value: 500, label: "Projects Completed", suffix: "+" },
+  { value: 98, label: "Success Rate", suffix: "%" },
+  { value: 50, label: "Industry Partners", suffix: "+" },
+  { value: 15, label: "Years Experience", suffix: "+" }
 ];
 
 const problems = [
@@ -446,28 +448,58 @@ const problems = [
     icon: Settings2,
     title: "Quality Control",
     description: "Maintaining consistent quality and meeting industry standards."
+  },
+  {
+    icon: Timer,
+    title: "Production Time",
+    description: "Optimizing print times while maintaining quality in high-volume production."
+  },
+  {
+    icon: Code,
+    title: "G-code Optimization",
+    description: "Fine-tuning printer instructions for better performance and quality."
+  },
+  {
+    icon: Cpu,
+    title: "Machine Compatibility",
+    description: "Ensuring compatibility between different printers and materials."
+  },
+  {
+    icon: Database,
+    title: "Cost Management",
+    description: "Balancing material costs with quality requirements for profitability."
+  },
+  {
+    icon: Blocks,
+    title: "Design Optimization",
+    description: "Optimizing designs for successful 3D printing and minimal support structures."
+  },
+  {
+    icon: Image,
+    title: "Surface Finish",
+    description: "Achieving desired surface quality while maintaining structural integrity."
   }
 ];
 
 const successStories = [
   {
     icon: Rocket,
-    title: "Automotive Innovation",
-    description: "Helped a leading auto manufacturer reduce prototype development time by 60% through optimized 3D printing processes."
+    title: "Vietnamese Automotive Success",
+    description: "Partnered with VinFast to optimize their rapid prototyping process, reducing development time by 60% and supporting their electric vehicle initiatives."
   },
   {
     icon: BrainCircuit,
-    title: "Medical Breakthrough",
-    description: "Assisted medical device startup in developing custom surgical guides, leading to successful FDA approval."
+    title: "Singapore MedTech Innovation",
+    description: "Helped local medical device startup develop patient-specific surgical guides, achieving HSA certification and expanding to 5 major hospitals."
   },
   {
     icon: Shapes,
-    title: "Architectural Excellence",
-    description: "Enabled architecture firm to create complex scale models, winning three major project bids."
+    title: "Malaysian Architecture Innovation",
+    description: "Assisted KLCC architects in creating complex scale models for sustainable building designs, winning multiple Green Building Index awards."
   },
   {
     icon: Settings,
-    title: "Industrial Success",
-    description: "Optimized manufacturing workflow for aerospace parts, resulting in 40% cost reduction."
+    title: "Thai Aerospace Achievement",
+    description: "Collaborated with Thai Aerospace Manufacturing to implement advanced 3D printing processes, reducing parts costs by 45% while meeting strict aviation standards."
   }
 ];
