@@ -1,6 +1,19 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import {
+import { Link } from "wouter";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { useState, useEffect } from "react";
+import React from 'react';
+import { useCountUp } from '@/hooks/use-count-up';
+import { 
+  Timer, 
+  HeartHandshake, 
+  ArrowRight,
+  CheckCircle2,
+  Zap,
+  Trophy,
+  Target,
+  Users,
   Microscope,
   LineChart,
   Wrench,
@@ -15,8 +28,6 @@ import {
   ArrowUpRight,
   Search,
   Workflow,
-  Zap,
-  Target,
   FileSearch,
   Building,
   Laptop,
@@ -24,7 +35,6 @@ import {
   FileCode,
   GraduationCap,
   Video,
-  Users,
   Clock,
   MessageSquare,
   Calendar,
@@ -36,14 +46,8 @@ import {
   Image,
   Blocks,
   Clock3,
-  HeartHandshake,
-  ArrowRight
 } from "lucide-react";
-import { Link } from "wouter";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { useState, useEffect } from "react";
-import React from 'react';
-import { useCountUp } from '@/hooks/use-count-up';
+
 
 const consultingServices = [
   {
@@ -220,16 +224,24 @@ const coreServices = [
 
 const benefits = [
   {
+    icon: CheckCircle2,
     title: "Expert Guidance",
-    description: "Get personalized advice from experienced 3D printing professionals"
+    description: "Get personalized advice from PhD-level experts"
   },
   {
-    title: "Custom Solutions",
-    description: "Tailored recommendations for your specific project needs"
+    icon: Zap,
+    title: "Quick Solutions",
+    description: "Fast turnaround time for your consulting needs"
   },
   {
-    title: "Technical Support",
-    description: "Comprehensive assistance with material selection and design optimization"
+    icon: Trophy,
+    title: "Proven Track Record",
+    description: "Successfully delivered 100+ consulting projects"
+  },
+  {
+    icon: Target,
+    title: "Tailored Approach",
+    description: "Solutions customized to your specific needs"
   }
 ];
 
@@ -321,17 +333,12 @@ const successStories = [
   }
 ];
 
+const countUpValue = useCountUp({ end: 100, duration: 2 });
+
 export default function ConsultPage() {
-  const countUpValue = useCountUp({ end: 100, duration: 2 });
-
   return (
-    <main className="min-h-screen bg-black">
-      <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#00FF00]/10 rounded-full filter blur-[128px]" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#00FF00]/10 rounded-full filter blur-[128px]" />
-        </div>
-
+    <div className="min-h-screen bg-black pt-20">
+      <section className="py-20">
         <div className="container mx-auto px-4 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -355,41 +362,35 @@ export default function ConsultPage() {
                     Our consultants help you leverage 3D printing technology for
                     rapid prototyping, cost reduction, and innovation.
                   </p>
-                  <div className="flex flex-wrap gap-4">
-                    <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-                      <a href="#contact">Schedule Consultation</a>
-                    </Button>
-                    <Button asChild variant="outline" size="lg" className="border-[#00FF00] text-[#00FF00] hover:bg-[#00FF00]/10">
-                      <a href="#services">View Services</a>
-                    </Button>
-                  </div>
+                  <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                    <Link href="/contact">Schedule Consultation <ArrowRight className="ml-2 w-4 h-4" /></Link>
+                  </Button>
                 </motion.div>
               </div>
-
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="flex-1 relative"
-              >
-                <div className="aspect-square relative rounded-lg overflow-hidden border border-[#00FF00]/20 bg-black/50 p-6">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#00FF00]/10 to-transparent" />
-                  <div className="relative h-full flex items-center justify-center">
-                    <div className="grid grid-cols-2 gap-4 w-full max-w-sm">
-                      {[Printer, LineChart, Settings2, Microscope].map((Icon, index) => (
-                        <div
-                          key={index}
-                          className="aspect-square bg-black/40 rounded-lg p-6 flex items-center justify-center border border-[#00FF00]/20"
-                        >
-                          <Icon className="w-12 h-12 text-[#00FF00]" />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-black/50">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={benefit.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="mx-auto w-16 h-16 bg-[#00FF00]/10 rounded-full flex items-center justify-center mb-4">
+                  <benefit.icon className="w-8 h-8 text-[#00FF00]" />
+                </div>
+                <h3 className="text-white font-semibold mb-2">{benefit.title}</h3>
+                <p className="text-white/60 text-sm">{benefit.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
       {/* Quick Stats Section */}
@@ -571,8 +572,6 @@ export default function ConsultPage() {
       </section>
 
 
-      
-
 
       {/* CTA Section */}
       <section id="booking" className="py-24 relative">
@@ -623,6 +622,6 @@ export default function ConsultPage() {
           </motion.div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
