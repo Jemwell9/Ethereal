@@ -9,43 +9,63 @@ export default function KidsWorkshopsPage() {
   return (
     <div className="min-h-screen bg-black pt-24">
       {/* Hero Section */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="pt-32 pb-20">
         <div className="container mx-auto px-4">
+          <div className="flex flex-col-reverse md:flex-row gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="flex-1 text-left"
+            >
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+                3D Pen Art for Young Creators
+              </h1>
+              <p className="text-xl text-white/60 mb-8">
+                Where imagination meets creativity in a safe, fun learning environment
+              </p>
+              <div className="flex gap-4">
+                <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                  <Link href="/booking">Book a Workshop</Link>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="border-[#00FF00] text-[#00FF00]">
+                  <Link href="#learn-more">Learn More</Link>
+                </Button>
+              </div>
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex-1"
+            >
+              <div className="aspect-square bg-black/50 border border-[#00FF00]/20 rounded-lg overflow-hidden">
+                <Image className="w-full h-full text-[#00FF00]/40" />
+              </div>
+            </motion.div>
+          </div>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center max-w-4xl mx-auto mb-16"
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20"
           >
-            <h1 className="text-5xl font-bold mb-6 text-white">
-              3D Pen Art for Young Creators
-            </h1>
-            <p className="text-xl text-white/60 mb-8">
-              Where imagination meets creativity in a safe, fun learning environment
-            </p>
-
-            {/* Trust Badges */}
-            <div className="flex justify-center gap-8 mb-12">
-              <div className="flex items-center gap-2">
-                <Shield className="w-6 h-6 text-[#00FF00]" />
-                <span className="text-white">Child-Safe Materials</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Users className="w-6 h-6 text-[#00FF00]" />
-                <span className="text-white">Small Groups (6:1 Ratio)</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Award className="w-6 h-6 text-[#00FF00]" />
-                <span className="text-white">Certified Instructors</span>
-              </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-[#00FF00] mb-2">500+</div>
+              <div className="text-white/60">Students Trained</div>
             </div>
-            <div className="flex gap-4 justify-center">
-              <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-                <Link href="/booking">Book a Workshop</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="border-[#00FF00] text-[#00FF00]">
-                <Link href="#learn-more">Learn More</Link>
-              </Button>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-[#00FF00] mb-2">98%</div>
+              <div className="text-white/60">Success Rate</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-[#00FF00] mb-2">50+</div>
+              <div className="text-white/60">Industry Projects</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-[#00FF00] mb-2">15+</div>
+              <div className="text-white/60">Years Experience</div>
             </div>
           </motion.div>
         </div>
