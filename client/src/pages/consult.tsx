@@ -34,11 +34,25 @@ import {
   Cpu,
   Database,
   Image,
-  Blocks
+  Blocks,
+  HeartHandshake
 } from "lucide-react";
 import { Link } from "wouter";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { useCountUp } from "@/hooks/use-count-up";
+
+const benefits = [
+  {
+    icon: Timer,
+    title: "Quick Response",
+    description: "Get expert consultation within 24 hours"
+  },
+  {
+    icon: HeartHandshake,
+    title: "Personalized Service",
+    description: "Tailored solutions for your specific needs"
+  }
+];
 
 const approachSteps = [
   {
@@ -146,37 +160,28 @@ const coreServices = [
 ];
 
 export default function ConsultPage() {
+  const count = useCountUp({ end: 500, duration: 2 });
+
   return (
-    <div className="min-h-screen bg-black">
-      {/* Hero Section */}
-      <section className="py-32">
+    <div className="min-h-screen bg-black pt-24">
+      <section className="py-20">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <h1 className="text-5xl font-bold mb-6 text-white">
-              3D PRINTING CONSULTANCY SERVICES
-            </h1>
-            <p className="text-lg text-white/60 mb-8">
-              Transform your manufacturing processes with expert guidance.
-              Our PhD-level consultants help you leverage 3D printing for
-              rapid prototyping, cost reduction, and innovation.
-            </p>
-            <div className="flex justify-center gap-4">
-              <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-                <a href="#contact">Get Started</a>
-              </Button>
-              <Button asChild variant="outline" className="border-[#00FF00] text-[#00FF00] hover:bg-[#00FF00]/10">
-                <a href="#services">Learn More</a>
-              </Button>
+          <div className="text-center">
+            <h1 className="text-4xl font-bold text-white mb-8">Expert Consultation</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+              {benefits.map((benefit, index) => (
+                <Card key={index} className="bg-black/50 border-[#00FF00]/20">
+                  <CardContent className="p-6">
+                    <benefit.icon className="w-12 h-12 text-[#00FF00] mb-4" />
+                    <h3 className="text-white text-xl font-semibold mb-2">{benefit.title}</h3>
+                    <p className="text-white/60">{benefit.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
-
       {/* Quick Stats Section */}
       <section className="py-16 bg-black/40">
         <div className="container mx-auto px-4">
@@ -189,7 +194,7 @@ export default function ConsultPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="text-center"
               >
-                <motion.div 
+                <motion.div
                   className="text-4xl font-bold text-[#00FF00] mb-2"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -382,7 +387,7 @@ export default function ConsultPage() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-white text-center mb-4">Consultation Options</h2>
-            <p className="text-white/60 text-center mb-12">First consultation is free - Let's discuss your project needs!</p>
+          <p className="text-white/60 text-center mb-12">First consultation is free - Let's discuss your project needs!</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {consultationModes.map((mode, index) => (
               <motion.div
