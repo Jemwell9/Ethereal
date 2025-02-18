@@ -38,6 +38,7 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { useCountUp } from "@/hooks/use-count-up";
 
 const approachSteps = [
   {
@@ -123,7 +124,7 @@ export default function ConsultPage() {
                 <a href="#contact">Get Started</a>
               </Button>
               <Button asChild variant="outline" className="border-[#00FF00] text-[#00FF00] hover:bg-[#00FF00]/10">
-                <a href="#benefits">Learn More</a>
+                <a href="#services">Learn More</a>
               </Button>
             </div>
           </motion.div>
