@@ -6,15 +6,17 @@ export default function Footer() {
   return (
     <footer className="py-6 bg-black text-white">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center sm:text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center items-center">
           {/* Logo Section */}
-          <div className="flex justify-center sm:justify-start">
-            <img 
-              src="/Ethereal-Logo.png" 
-              alt="Ethereal" 
-              className="h-48 w-auto"
-              style={{ filter: 'drop-shadow(0 0 8px rgba(0, 255, 0, 0.3))' }}
-            />
+          <div className="flex justify-center">
+            <Link href="/">
+              <img 
+                src="/Ethereal-Logo.png" 
+                alt="Ethereal" 
+                className="h-48 w-auto cursor-pointer"
+                style={{ filter: 'drop-shadow(0 0 8px rgba(0, 255, 0, 0.3))' }}
+              />
+            </Link>
           </div>
 
           {/* Company Info */}

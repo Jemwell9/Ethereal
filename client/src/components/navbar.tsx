@@ -53,9 +53,9 @@ export default function Navbar() {
           <div className="flex justify-center py-1">
             <Link href="/">
               <img 
-                src="/public/Ethereal-Logo.png" 
+                src="/Ethereal-Logo.png" 
                 alt="Ethereal" 
-                className="h-36 w-auto object-contain transition-transform hover:scale-105" 
+                className="h-36 w-auto object-contain transition-transform hover:scale-105 cursor-pointer" 
                 style={{ 
                   filter: 'drop-shadow(0 0 16px rgba(0, 255, 0, 0.5))',
                   transform: 'scale(1.1)'
