@@ -5,10 +5,9 @@ import {
   ArrowRight, 
   BookOpen, 
   Shapes, 
-  Shield, 
-  Settings2, 
   Star,
-  Sparkles 
+  Trophy,
+  Image
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import {
@@ -18,101 +17,69 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const autocadWorkshops = [
-  {
-    title: "AutoCAD Fundamentals",
-    description: "Master the essentials of AutoCAD with hands-on training in industry-standard tools and practices.",
-    details: "Perfect for beginners starting their CAD journey",
-    features: [
-      "Basic drawing and editing tools",
-      "2D drafting fundamentals",
-      "Layout and annotation basics",
-      "Simple project completion"
-    ],
-    testimonials: [
-      {
-        text: "This course gave me the foundation I needed to start my CAD journey.",
-        author: "Sarah M., Architecture Student"
-      }
-    ],
-    duration: "8 hours",
-    price: "$299",
-    icon: BookOpen,
-    level: "Beginner",
-    gallery: ["/services/autocad-basic-1.png", "/services/autocad-basic-2.png"]
-  },
-  {
-    title: "Professional AutoCAD",
-    description: "Advance your CAD skills with complex modeling and industry-specific applications.",
-    details: "For those ready to take their skills further",
-    features: [
-      "Advanced 2D and 3D techniques",
-      "Custom toolsets and automation",
-      "Industry-specific workflows",
-      "Complex project management"
-    ],
-    testimonials: [
-      {
-        text: "The professional course helped me land my dream job in mechanical design.",
-        author: "Michael R., CAD Designer"
-      }
-    ],
-    duration: "16 hours",
-    price: "$599",
-    icon: Shapes,
-    level: "Intermediate",
-    gallery: ["/services/autocad-pro-1.png", "/services/autocad-pro-2.png"]
-  },
-  {
-    title: "AutoCAD Mastery",
-    description: "Become an AutoCAD expert with advanced techniques and certification preparation.",
-    details: "Expert-level training for professionals",
-    features: [
-      "Advanced 3D modeling",
-      "BIM integration",
-      "Certification preparation",
-      "Enterprise workflow optimization"
-    ],
-    testimonials: [
-      {
-        text: "This mastery program transformed how I approach complex CAD projects.",
-        author: "David K., Senior Designer"
-      }
-    ],
-    duration: "24 hours",
-    price: "$999",
-    icon: Star,
-    level: "Advanced",
-    gallery: ["/services/autocad-master-1.png", "/services/autocad-master-2.png"]
-  }
-];
-
 export default function AutoCADWorkshopsPage() {
   return (
     <div className="min-h-screen bg-black">
       {/* Hero Section */}
-      <section className="pt-32 pb-20 relative overflow-hidden">
+      <section className="pt-32 pb-20">
         <div className="container mx-auto px-4">
+          <div className="flex flex-col-reverse md:flex-row gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="flex-1 text-left"
+            >
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+                Master AutoCAD Design
+              </h1>
+              <p className="text-xl text-white/60 mb-8">
+                From foundational skills to expert-level techniques, our comprehensive AutoCAD workshops
+                will transform you into a confident CAD professional.
+              </p>
+              <div className="flex gap-4">
+                <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                  <Link href="/booking">Start Your Journey</Link>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="border-[#00FF00] text-[#00FF00]">
+                  <Link href="#workshops">View Workshops</Link>
+                </Button>
+              </div>
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex-1"
+            >
+              <div className="aspect-square bg-black/50 border border-[#00FF00]/20 rounded-lg overflow-hidden">
+                <Image className="w-full h-full text-[#00FF00]/40" />
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Stats Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center max-w-4xl mx-auto"
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-              Master AutoCAD Design
-            </h1>
-            <p className="text-xl text-white/60 mb-8">
-              From foundational skills to expert-level techniques, our comprehensive AutoCAD workshops
-              will transform you into a confident CAD professional.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-                <Link href="/booking">Start Your Journey</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="border-[#00FF00] text-[#00FF00]">
-                <Link href="#workshops">View Workshops</Link>
-              </Button>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-[#00FF00] mb-2">500+</div>
+              <div className="text-white/60">Students Trained</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-[#00FF00] mb-2">98%</div>
+              <div className="text-white/60">Success Rate</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-[#00FF00] mb-2">50+</div>
+              <div className="text-white/60">Industry Projects</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-[#00FF00] mb-2">15+</div>
+              <div className="text-white/60">Years Experience</div>
             </div>
           </motion.div>
         </div>
@@ -312,3 +279,71 @@ export default function AutoCADWorkshopsPage() {
     </div>
   );
 }
+const autocadWorkshops = [
+  {
+    title: "AutoCAD Fundamentals",
+    description: "Master the essentials of AutoCAD with hands-on training in industry-standard tools and practices.",
+    details: "Perfect for beginners starting their CAD journey",
+    features: [
+      "Basic drawing and editing tools",
+      "2D drafting fundamentals",
+      "Layout and annotation basics",
+      "Simple project completion"
+    ],
+    testimonials: [
+      {
+        text: "This course gave me the foundation I needed to start my CAD journey.",
+        author: "Sarah M., Architecture Student"
+      }
+    ],
+    duration: "8 hours",
+    price: "$299",
+    icon: BookOpen,
+    level: "Beginner",
+    gallery: ["/services/autocad-basic-1.png", "/services/autocad-basic-2.png"]
+  },
+  {
+    title: "Professional AutoCAD",
+    description: "Advance your CAD skills with complex modeling and industry-specific applications.",
+    details: "For those ready to take their skills further",
+    features: [
+      "Advanced 2D and 3D techniques",
+      "Custom toolsets and automation",
+      "Industry-specific workflows",
+      "Complex project management"
+    ],
+    testimonials: [
+      {
+        text: "The professional course helped me land my dream job in mechanical design.",
+        author: "Michael R., CAD Designer"
+      }
+    ],
+    duration: "16 hours",
+    price: "$599",
+    icon: Shapes,
+    level: "Intermediate",
+    gallery: ["/services/autocad-pro-1.png", "/services/autocad-pro-2.png"]
+  },
+  {
+    title: "AutoCAD Mastery",
+    description: "Become an AutoCAD expert with advanced techniques and certification preparation.",
+    details: "Expert-level training for professionals",
+    features: [
+      "Advanced 3D modeling",
+      "BIM integration",
+      "Certification preparation",
+      "Enterprise workflow optimization"
+    ],
+    testimonials: [
+      {
+        text: "This mastery program transformed how I approach complex CAD projects.",
+        author: "David K., Senior Designer"
+      }
+    ],
+    duration: "24 hours",
+    price: "$999",
+    icon: Star,
+    level: "Advanced",
+    gallery: ["/services/autocad-master-1.png", "/services/autocad-master-2.png"]
+  }
+];
