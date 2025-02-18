@@ -40,19 +40,6 @@ import { Link } from "wouter";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { useState, useEffect } from "react";
 
-const benefits = [
-  {
-    icon: Clock3,
-    title: "Quick Response",
-    description: "Get expert consultation within 24 hours"
-  },
-  {
-    icon: Users,
-    title: "Personalized Service",
-    description: "Tailored solutions for your specific needs"
-  }
-];
-
 const approachSteps = [
   {
     icon: Search,
@@ -239,17 +226,6 @@ export default function ConsultPage() {
           </motion.div>
         </div>
       </section>
-      <div>
-      {benefits.map((benefit, index) => (
-        <Card key={index} className="bg-black/50 border-[#00FF00]/20">
-          <CardContent className="p-6">
-            <benefit.icon className="w-12 h-12 text-[#00FF00] mb-4" />
-            <h3 className="text-white text-xl font-semibold mb-2">{benefit.title}</h3>
-            <p className="text-white/60">{benefit.description}</p>
-          </CardContent>
-        </Card>
-      ))}
-      </div>
       {/* Quick Stats Section */}
       <section className="py-16 bg-black/40">
         <div className="container mx-auto px-4">
@@ -380,121 +356,7 @@ export default function ConsultPage() {
         </div>
       </section>
 
-      {/* Core Services */}
-      <section className="py-20 bg-black/40">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">Core Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {coreServices.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-black/50 p-6 rounded-lg border border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors"
-              >
-                <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
-                  <service.icon className="w-6 h-6 text-[#00FF00]" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
-                <p className="text-white/60 mb-4">{service.description}</p>
-                <ul className="space-y-2">
-                  {service.features.map((feature, i) => (
-                    <li key={i} className="text-white/60 flex items-center gap-2">
-                      <Check className="w-4 h-4 text-[#00FF00]" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Consultation Types */}
-      <section id="services" className="py-20 bg-black/40">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">Consultation Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {consultationTypes.map((type, index) => (
-              <motion.div
-                key={type.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors h-full">
-                  <CardHeader>
-                    <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
-                      <type.icon className="w-6 h-6 text-[#00FF00]" />
-                    </div>
-                    <CardTitle className="text-white text-xl mb-2">{type.title}</CardTitle>
-                    <CardDescription className="text-white/60">{type.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2">
-                      {type.features.map((feature, i) => (
-                        <li key={i} className="text-white/60 flex items-center gap-2">
-                          <ArrowRight className="w-4 h-4 text-[#00FF00]" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Consultation Modes */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-white text-center mb-4">Consultation Options</h2>
-          <p className="text-white/60 text-center mb-12">First consultation is free - Let's discuss your project needs!</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {consultationModes.map((mode, index) => (
-              <motion.div
-                key={mode.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors">
-                  <CardHeader>
-                    <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
-                      <mode.icon className="w-6 h-6 text-[#00FF00]" />
-                    </div>
-                    <CardTitle className="text-white text-xl mb-2">{mode.title}</CardTitle>
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="flex items-center gap-2">
-                        <Clock className="w-4 h-4 text-[#00FF00]" />
-                        <span className="text-white/60">{mode.duration}</span>
-                      </div>
-                      <div className="text-[#00FF00] font-bold">{mode.price}</div>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2">
-                      {mode.features.map((feature, i) => (
-                        <li key={i} className="text-white/60 flex items-center gap-2">
-                          <ArrowRight className="w-4 h-4 text-[#00FF00]" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* CTA Section */}
       <section id="booking" className="py-20 bg-black/40">
@@ -523,68 +385,7 @@ export default function ConsultPage() {
   );
 }
 
-const consultationTypes = [
-  {
-    icon: Printer,
-    title: "3D Printing Consultation",
-    description: "Expert guidance on material selection and printing optimization",
-    features: [
-      "Material selection advice",
-      "Print optimization strategies",
-      "Cost estimation",
-      "Production timeline planning"
-    ]
-  },
-  {
-    icon: FileCode,
-    title: "Design Consultation",
-    description: "Professional input on your 3D designs and models",
-    features: [
-      "Design review and feedback",
-      "Optimization suggestions",
-      "File preparation guidance",
-      "Technical recommendations"
-    ]
-  },
-  {
-    icon: GraduationCap,
-    title: "Workshop Planning",
-    description: "Customized workshop and training program planning",
-    features: [
-      "Curriculum development",
-      "Skill level assessment",
-      "Equipment recommendations",
-      "Learning path planning"
-    ]
-  }
-];
 
-const consultationModes = [
-  {
-    icon: Video,
-    title: "Virtual Consultation",
-    duration: "30-60 minutes",
-    price: "$250",
-    features: [
-      "Flexible scheduling worldwide",
-      "Interactive screen sharing sessions",
-      "Recorded sessions for future reference",
-      "Comprehensive follow-up documentation"
-    ]
-  },
-  {
-    icon: Users,
-    title: "In-Person Consultation",
-    duration: "60-120 minutes",
-    price: "$500",
-    features: [
-      "Hands-on demonstrations and training",
-      "Physical material testing and selection",
-      "On-site equipment assessment",
-      "Immediate problem-solving solutions"
-    ]
-  }
-];
 
 const stats = [
   { value: 500, label: "Projects Completed", suffix: "+" },
