@@ -90,38 +90,29 @@ const autocadWorkshops = [
 export default function AutoCADWorkshopsPage() {
   return (
     <div className="min-h-screen bg-black">
-      <section className="py-20">
-        <div className="container mx-auto px-4 relative">
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 relative overflow-hidden">
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="max-w-5xl mx-auto"
+            className="text-center max-w-4xl mx-auto"
           >
-            <div className="flex flex-col md:flex-row items-center gap-12">
-              <div className="flex-1 text-left">
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                >
-                  <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
-                    Master <br />
-                    <span className="text-[#00FF00]">AutoCAD</span>
-                  </h1>
-                  <p className="text-lg text-white/60 mb-8 max-w-xl">
-                    From foundational skills to expert-level techniques, transform into a confident CAD professional.
-                  </p>
-                  <div className="flex flex-wrap gap-4 justify-center">
-                    <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-                      <Link href="/booking">Start Your Journey</Link>
-                    </Button>
-                    <Button asChild size="lg" variant="outline" className="border-[#00FF00] text-[#00FF00]">
-                      <Link href="#workshops">View Workshops</Link>
-                    </Button>
-                  </div>
-                </motion.div>
-              </div>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+              Master AutoCAD Design
+            </h1>
+            <p className="text-xl text-white/60 mb-8">
+              From foundational skills to expert-level techniques, our comprehensive AutoCAD workshops
+              will transform you into a confident CAD professional.
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                <Link href="/booking">Start Your Journey</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="border-[#00FF00] text-[#00FF00]">
+                <Link href="#workshops">View Workshops</Link>
+              </Button>
             </div>
           </motion.div>
         </div>
@@ -129,49 +120,6 @@ export default function AutoCADWorkshopsPage() {
 
       {/* Value Proposition */}
       <section className="py-20 bg-black/50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-center p-6"
-            >
-              <div className="w-16 h-16 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Star className="w-8 h-8 text-[#00FF00]" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Industry-Standard Training</h3>
-              <p className="text-white/60">Learn the tools and techniques used by professionals worldwide.</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-center p-6"
-            >
-              <div className="w-16 h-16 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-[#00FF00]" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Certification Ready</h3>
-              <p className="text-white/60">Prepare for AutoCAD certification with our comprehensive curriculum.</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-center p-6"
-            >
-              <div className="w-16 h-16 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Settings2 className="w-8 h-8 text-[#00FF00]" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Hands-On Projects</h3>
-              <p className="text-white/60">Apply your skills to real-world projects and build your portfolio.</p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       {/* Workshop Sections */}
       <section id="workshops" className="py-20">
@@ -246,6 +194,51 @@ export default function AutoCADWorkshopsPage() {
           ))}
         </div>
       </section>
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-center p-6"
+            >
+              <div className="w-16 h-16 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <Star className="w-8 h-8 text-[#00FF00]" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">Industry-Standard Training</h3>
+              <p className="text-white/60">Learn the tools and techniques used by professionals worldwide.</p>
+            </motion.div>
+            
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-center p-6"
+            >
+              <div className="w-16 h-16 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <Shield className="w-8 h-8 text-[#00FF00]" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">Certification Ready</h3>
+              <p className="text-white/60">Prepare for AutoCAD certification with our comprehensive curriculum.</p>
+            </motion.div>
+            
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="text-center p-6"
+            >
+              <div className="w-16 h-16 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <Settings2 className="w-8 h-8 text-[#00FF00]" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">Hands-On Projects</h3>
+              <p className="text-white/60">Apply your skills to real-world projects and build your portfolio.</p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       {/* FAQ Section */}
       <section className="py-20 bg-black/50">
@@ -259,6 +252,7 @@ export default function AutoCADWorkshopsPage() {
             <h2 className="text-4xl font-bold text-white mb-4">Frequently Asked Questions</h2>
             <p className="text-white/60">Everything you need to know about our AutoCAD workshops</p>
           </motion.div>
+          
 
           <div className="max-w-3xl mx-auto">
             <Accordion type="single" collapsible>

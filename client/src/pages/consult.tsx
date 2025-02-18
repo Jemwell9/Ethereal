@@ -245,10 +245,10 @@ const benefits = [
 ];
 
 const stats = [
-  { value: 500, label: "Projects Completed", suffix: "+", icon: FileCode },
-  { value: 98, label: "Success Rate", suffix: "%", icon: Target },
-  { value: 50, label: "Industry Partners", suffix: "+", icon: Building },
-  { value: 15, label: "Years Experience", suffix: "+", icon: Trophy }
+  { value: 500, label: "Projects Completed", suffix: "+" },
+  { value: 98, label: "Success Rate", suffix: "%" },
+  { value: 50, label: "Industry Partners", suffix: "+" },
+  { value: 15, label: "Years Experience", suffix: "+" }
 ];
 
 const problems = [
@@ -404,9 +404,6 @@ export default function ConsultPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="w-12 h-12 mx-auto bg-[#00FF00]/10 rounded-full flex items-center justify-center mb-4">
-                  <stat.icon className="w-6 h-6 text-[#00FF00]" />
-                </div>
                 <motion.div
                   className="text-4xl font-bold text-[#00FF00] mb-2"
                   initial={{ opacity: 0 }}

@@ -19,54 +19,44 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 export default function AdultWorkshopsPage() {
   return (
     <div className="min-h-screen bg-black pt-24">
-      <section className="py-20">
-        <div className="container mx-auto px-4 relative">
+      {/* Hero Section */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="max-w-5xl mx-auto"
+            className="text-center max-w-4xl mx-auto mb-16"
           >
-            <div className="flex flex-col md:flex-row items-center gap-12">
-              <div className="flex-1 text-left">
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                >
-                  <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
-                    Unleash Your <br />
-                    <span className="text-[#00FF00]">Creativity</span>
-                  </h1>
-                  <p className="text-lg text-white/60 mb-8 max-w-xl">
-                    Discover a new dimension of artistic expression and professional skill-building with our expert-led 3D pen workshops.
-                  </p>
+            <h1 className="text-5xl font-bold mb-6 text-white">
+              Unleash Your Creativity with 3D Pens
+            </h1>
+            <p className="text-xl text-white/60 mb-8">
+              Discover a new dimension of artistic expression and professional skill-building
+            </p>
 
-                  {/* Trust Badges */}
-                  <div className="flex justify-center gap-8 mb-12">
-                    <div className="flex items-center gap-2">
-                      <Shield className="w-6 h-6 text-[#00FF00]" />
-                      <span className="text-white">Professional Tools</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Users className="w-6 h-6 text-[#00FF00]" />
-                      <span className="text-white">Small Groups (8:1 Ratio)</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Award className="w-6 h-6 text-[#00FF00]" />
-                      <span className="text-white">Expert Instructors</span>
-                    </div>
-                  </div>
-                  <div className="flex gap-4 justify-center">
-                    <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-                      <Link href="/booking">Book a Workshop</Link>
-                    </Button>
-                    <Button asChild size="lg" variant="outline" className="border-[#00FF00] text-[#00FF00]">
-                      <Link href="#learn-more">Learn More</Link>
-                    </Button>
-                  </div>
-                </motion.div>
+            {/* Trust Badges */}
+            <div className="flex justify-center gap-8 mb-12">
+              <div className="flex items-center gap-2">
+                <Shield className="w-6 h-6 text-[#00FF00]" />
+                <span className="text-white">Professional Tools</span>
               </div>
+              <div className="flex items-center gap-2">
+                <Users className="w-6 h-6 text-[#00FF00]" />
+                <span className="text-white">Small Groups (8:1 Ratio)</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Award className="w-6 h-6 text-[#00FF00]" />
+                <span className="text-white">Expert Instructors</span>
+              </div>
+            </div>
+            <div className="flex gap-4 justify-center">
+              <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                <Link href="/booking">Book a Workshop</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="border-[#00FF00] text-[#00FF00]">
+                <Link href="#learn-more">Learn More</Link>
+              </Button>
             </div>
           </motion.div>
         </div>
