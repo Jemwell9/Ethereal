@@ -143,9 +143,21 @@ export default function ConsultPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-4xl font-bold text-[#00FF00] mb-2">
-                  {useCountUp(stat.value).count}{stat.suffix}
-                </div>
+                <motion.div 
+                  className="text-4xl font-bold text-[#00FF00] mb-2"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                >
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 2 }}
+                  >
+                    {stat.value}{stat.suffix}
+                  </motion.span>
+                </motion.div>
                 <div className="text-white/60">{stat.label}</div>
               </motion.div>
             ))}
@@ -413,6 +425,7 @@ const consultationModes = [
     icon: Video,
     title: "Virtual Consultation",
     duration: "30-60 minutes",
+    price: "$250",
     features: [
       "Flexible scheduling worldwide",
       "Interactive screen sharing sessions",
@@ -424,6 +437,7 @@ const consultationModes = [
     icon: Users,
     title: "In-Person Consultation",
     duration: "60-120 minutes",
+    price: "$500",
     features: [
       "Hands-on demonstrations and training",
       "Physical material testing and selection",
