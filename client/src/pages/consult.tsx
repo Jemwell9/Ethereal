@@ -124,6 +124,50 @@ export default function ConsultPage() {
         </div>
       </section>
 
+      {/* Quick Stats Section */}
+      <section className="py-16 bg-black/40">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.value}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="text-4xl font-bold text-[#00FF00] mb-2">{stat.value}</div>
+                <div className="text-white/60">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Key Problems Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">Common Challenges We Solve</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {problems.map((problem, index) => (
+              <motion.div
+                key={problem.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-black/50 p-6 rounded-lg border border-[#00FF00]/20"
+              >
+                <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
+                  <problem.icon className="w-6 h-6 text-[#00FF00]" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">{problem.title}</h3>
+                <p className="text-white/60">{problem.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Success Stories Section */}
       <section id="success-stories" className="py-20 bg-black/40">
         <div className="container mx-auto px-4">
@@ -377,6 +421,31 @@ const consultationModes = [
       "On-site equipment assessment",
       "Immediate problem-solving solutions"
     ]
+  }
+];
+
+const stats = [
+  { value: "500+", label: "Projects Completed" },
+  { value: "98%", label: "Success Rate" },
+  { value: "50+", label: "Industry Partners" },
+  { value: "15+", label: "Years Experience" }
+];
+
+const problems = [
+  {
+    icon: FileSearch,
+    title: "Material Selection",
+    description: "Difficulty choosing the right materials for specific applications and requirements."
+  },
+  {
+    icon: Building,
+    title: "Scale-up Challenges",
+    description: "Issues transitioning from prototyping to production-scale 3D printing."
+  },
+  {
+    icon: Settings2,
+    title: "Quality Control",
+    description: "Maintaining consistent quality and meeting industry standards."
   }
 ];
 
