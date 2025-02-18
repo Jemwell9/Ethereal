@@ -247,6 +247,25 @@ export default function ContactPage() {
                 </CardContent>
               </Card>
             </motion.div>
+
+            {/* Benefits/Suggestions Section */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mt-12">
+              {[
+                { icon: Building2, text: "Expert Team" },
+                { icon: Globe, text: "Global Standards" },
+                { icon: Clock, text: "Fast Turnaround" },
+                { icon: Zap, text: "Innovative Solutions" },
+                { icon: Trophy, text: "Quality Assured" }
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col items-center text-center p-4 bg-black/50 border border-[#00FF00]/20 rounded-lg"
+                >
+                  <item.icon className="w-8 h-8 text-[#00FF00] mb-2" />
+                  <span className="text-white/80">{item.text}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
