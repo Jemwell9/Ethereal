@@ -91,7 +91,7 @@ export default function Navbar() {
                         <div className="text-[#00FF00] font-medium">3D Pen for Adults</div>
                         <p className="text-sm text-white/60">Advanced 3D pen techniques and projects</p>
                       </Link>
-                      
+
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
@@ -101,7 +101,9 @@ export default function Navbar() {
             <Link href="/consult">
               <span className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium">CONSULT</span>
             </Link>
-
+            <Link href="/contact">
+              <span className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium">CONTACT</span>
+            </Link>
             <Button className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black text-xs tracking-[0.2em] font-medium px-6 rounded-full">
               CONTACT US
             </Button>
