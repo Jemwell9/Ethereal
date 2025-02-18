@@ -1,12 +1,12 @@
-
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
-import { Mail, Phone, MapPin, Send, Building2, Globe, Clock, Zap, Trophy, Target } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Linkedin, Facebook, Instagram } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -248,23 +248,29 @@ export default function ContactPage() {
               </Card>
             </motion.div>
 
-            {/* Benefits/Suggestions Section */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mt-12">
-              {[
-                { icon: Building2, text: "Expert Team" },
-                { icon: Globe, text: "Global Standards" },
-                { icon: Clock, text: "Fast Turnaround" },
-                { icon: Zap, text: "Innovative Solutions" },
-                { icon: Trophy, text: "Quality Assured" }
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-center text-center p-4 bg-black/50 border border-[#00FF00]/20 rounded-lg"
-                >
-                  <item.icon className="w-8 h-8 text-[#00FF00] mb-2" />
-                  <span className="text-white/80">{item.text}</span>
-                </div>
-              ))}
+            <div className="mt-12">
+              <Accordion type="single" collapsible>
+                <AccordionItem value="item-1">
+                  <AccordionTrigger className="bg-black/50 border-[#00FF00]/20 text-white">
+                    FAQ Section - Common questions about services and processes
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-white">Frequently Asked Questions will go here.</p>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+
+              <div className="flex space-x-4 mt-4">
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="w-8 h-8 text-[#00FF00]" />
+                </a>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                  <Facebook className="w-8 h-8 text-[#00FF00]" />
+                </a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                  <Instagram className="w-8 h-8 text-[#00FF00]" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
