@@ -250,13 +250,149 @@ export default function ContactPage() {
             </motion.div>
 
             <div className="mt-12">
-              <Accordion type="single" collapsible>
-                <AccordionItem value="item-1">
-                  <AccordionTrigger className="bg-black/50 border-[#00FF00]/20 text-white">
-                    FAQ Section - Common questions about services and processes
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    <p className="text-white">Frequently Asked Questions will go here.</p>
+              <Accordion type="single" collapsible className="space-y-2">
+                {/* 3D Printing Services */}
+                <AccordionItem value="item-1" className="bg-black/50 border-[#00FF00]/20">
+                  <AccordionTrigger className="text-white px-4">What materials do you offer for 3D printing?</AccordionTrigger>
+                  <AccordionContent className="text-white/60 px-4">
+                    We work with a wide range of materials including PLA, ABS, PETG, TPU, Nylon, Carbon Fiber composites, and specialty resins. Each material is carefully selected based on your project requirements.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-2" className="bg-black/50 border-[#00FF00]/20">
+                  <AccordionTrigger className="text-white px-4">What is the typical turnaround time for a 3D printing project?</AccordionTrigger>
+                  <AccordionContent className="text-white/60 px-4">
+                    Turnaround time varies based on project complexity, size, and material. Simple projects can be completed in 1-2 days, while complex projects may take 1-2 weeks. We provide detailed timelines during consultation.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-3" className="bg-black/50 border-[#00FF00]/20">
+                  <AccordionTrigger className="text-white px-4">Do you offer post-processing services?</AccordionTrigger>
+                  <AccordionContent className="text-white/60 px-4">
+                    Yes, we offer comprehensive post-processing services including sanding, painting, vapor smoothing, and assembly. Each print is carefully finished to meet your specifications.
+                  </AccordionContent>
+                </AccordionItem>
+
+                {/* Design Services */}
+                <AccordionItem value="item-4" className="bg-black/50 border-[#00FF00]/20">
+                  <AccordionTrigger className="text-white px-4">Can you help with 3D model design?</AccordionTrigger>
+                  <AccordionContent className="text-white/60 px-4">
+                    Yes, our team of expert designers can create custom 3D models from scratch or optimize existing designs for 3D printing. We work with various CAD software and ensure printability.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-5" className="bg-black/50 border-[#00FF00]/20">
+                  <AccordionTrigger className="text-white px-4">What file formats do you accept?</AccordionTrigger>
+                  <AccordionContent className="text-white/60 px-4">
+                    We accept all common 3D file formats including STL, OBJ, STEP, F3D, and more. If you have a different format, contact us and we'll work to accommodate your needs.
+                  </AccordionContent>
+                </AccordionItem>
+
+                {/* Workshops */}
+                <AccordionItem value="item-6" className="bg-black/50 border-[#00FF00]/20">
+                  <AccordionTrigger className="text-white px-4">What workshops do you offer?</AccordionTrigger>
+                  <AccordionContent className="text-white/60 px-4">
+                    We offer workshops in 3D pen art (for both kids and adults), AutoCAD modeling, and 3D printing mastery. Each workshop is available at beginner, advanced, and master levels.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-7" className="bg-black/50 border-[#00FF00]/20">
+                  <AccordionTrigger className="text-white px-4">Are the workshops suitable for beginners?</AccordionTrigger>
+                  <AccordionContent className="text-white/60 px-4">
+                    Yes, our workshops cater to all skill levels. Beginner workshops start with fundamentals, while advanced and master classes build on existing knowledge.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-8" className="bg-black/50 border-[#00FF00]/20">
+                  <AccordionTrigger className="text-white px-4">What's included in workshop fees?</AccordionTrigger>
+                  <AccordionContent className="text-white/60 px-4">
+                    Workshop fees include all materials, equipment usage, safety gear, refreshments, and a certificate of completion. Some workshops also include take-home starter kits.
+                  </AccordionContent>
+                </AccordionItem>
+
+                {/* Consulting Services */}
+                <AccordionItem value="item-9" className="bg-black/50 border-[#00FF00]/20">
+                  <AccordionTrigger className="text-white px-4">What consulting services do you provide?</AccordionTrigger>
+                  <AccordionContent className="text-white/60 px-4">
+                    We offer technology assessment, material engineering, design optimization, cost optimization, and quality & compliance consulting services for 3D printing implementations.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-10" className="bg-black/50 border-[#00FF00]/20">
+                  <AccordionTrigger className="text-white px-4">How long does a consultation typically take?</AccordionTrigger>
+                  <AccordionContent className="text-white/60 px-4">
+                    Initial consultations usually take 1-2 hours. Full project consultations vary based on scope but typically range from a few days to several weeks for complex implementations.
+                  </AccordionContent>
+                </AccordionItem>
+
+                {/* General Questions */}
+                <AccordionItem value="item-11" className="bg-black/50 border-[#00FF00]/20">
+                  <AccordionTrigger className="text-white px-4">Do you offer bulk pricing?</AccordionTrigger>
+                  <AccordionContent className="text-white/60 px-4">
+                    Yes, we offer competitive bulk pricing for large orders and ongoing projects. Contact us for a customized quote based on your requirements.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-12" className="bg-black/50 border-[#00FF00]/20">
+                  <AccordionTrigger className="text-white px-4">What quality control measures do you have in place?</AccordionTrigger>
+                  <AccordionContent className="text-white/60 px-4">
+                    We implement rigorous quality control at every stage, including material testing, print monitoring, and final inspection. All projects undergo thorough quality checks before delivery.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-13" className="bg-black/50 border-[#00FF00]/20">
+                  <AccordionTrigger className="text-white px-4">Do you offer prototyping services?</AccordionTrigger>
+                  <AccordionContent className="text-white/60 px-4">
+                    Yes, we specialize in rapid prototyping with quick turnaround times. We can help iterate designs and provide functional prototypes for testing and validation.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-14" className="bg-black/50 border-[#00FF00]/20">
+                  <AccordionTrigger className="text-white px-4">What industries do you serve?</AccordionTrigger>
+                  <AccordionContent className="text-white/60 px-4">
+                    We serve various industries including automotive, aerospace, medical, education, architecture, and consumer products. Our expertise spans across multiple sectors.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-15" className="bg-black/50 border-[#00FF00]/20">
+                  <AccordionTrigger className="text-white px-4">Are your workshops available online?</AccordionTrigger>
+                  <AccordionContent className="text-white/60 px-4">
+                    While we primarily offer in-person workshops for hands-on experience, we do provide some virtual training sessions and consultations for theoretical aspects.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-16" className="bg-black/50 border-[#00FF00]/20">
+                  <AccordionTrigger className="text-white px-4">What support do you offer after service completion?</AccordionTrigger>
+                  <AccordionContent className="text-white/60 px-4">
+                    We provide ongoing support including technical assistance, maintenance advice, and follow-up consultations. Our team is always available to address any concerns.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-17" className="bg-black/50 border-[#00FF00]/20">
+                  <AccordionTrigger className="text-white px-4">Do you offer warranty on printed parts?</AccordionTrigger>
+                  <AccordionContent className="text-white/60 px-4">
+                    Yes, we offer warranties on our printed parts based on material type and intended use. Specific warranty terms are discussed during project consultation.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-18" className="bg-black/50 border-[#00FF00]/20">
+                  <AccordionTrigger className="text-white px-4">Can you handle confidential projects?</AccordionTrigger>
+                  <AccordionContent className="text-white/60 px-4">
+                    Yes, we sign NDAs and have strict confidentiality protocols in place. Your intellectual property and project details are always protected.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-19" className="bg-black/50 border-[#00FF00]/20">
+                  <AccordionTrigger className="text-white px-4">What are your payment terms?</AccordionTrigger>
+                  <AccordionContent className="text-white/60 px-4">
+                    We accept various payment methods including bank transfer and major credit cards. Large projects typically require a deposit, with balance due upon completion.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-20" className="bg-black/50 border-[#00FF00]/20">
+                  <AccordionTrigger className="text-white px-4">Do you ship internationally?</AccordionTrigger>
+                  <AccordionContent className="text-white/60 px-4">
+                    Yes, we offer international shipping for our 3D printed products. Shipping costs and delivery times vary by location and package specifications.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
