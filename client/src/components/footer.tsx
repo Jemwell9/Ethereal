@@ -12,7 +12,7 @@ export default function Footer() {
             <img 
               src="/Ethereal-Logo.png" 
               alt="Ethereal" 
-              className="h-16 w-auto"
+              className="h-48 w-auto"
               style={{ filter: 'drop-shadow(0 0 8px rgba(0, 255, 0, 0.3))' }}
             />
           </div>

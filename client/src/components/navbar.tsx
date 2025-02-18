@@ -55,7 +55,7 @@ export default function Navbar() {
               <img 
                 src="/public/Ethereal-Logo.png" 
                 alt="Ethereal" 
-                className="h-24 w-auto object-contain transition-transform hover:scale-105" 
+                className="h-36 w-auto object-contain transition-transform hover:scale-105" 
                 style={{ 
                   filter: 'drop-shadow(0 0 16px rgba(0, 255, 0, 0.5))',
                   transform: 'scale(1.1)'
