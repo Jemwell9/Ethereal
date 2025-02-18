@@ -575,25 +575,51 @@ export default function ConsultPage() {
 
 
       {/* CTA Section */}
-      <section id="booking" className="py-20 bg-black/40">
-        <div className="container mx-auto px-4 text-center">
+      <section id="booking" className="py-24 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-[#00FF00]/10" />
+        <div className="container mx-auto px-4 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="max-w-2xl mx-auto"
+            className="max-w-4xl mx-auto bg-black/60 p-12 rounded-2xl border border-[#00FF00]/20 backdrop-blur-sm"
           >
-            <h2 className="text-3xl font-bold mb-6 text-white">
-              Ready to Get Started?
-            </h2>
-            <p className="text-white/60 mb-8">
-              Book your consultation session now and take the first step towards bringing your 3D printing
-              projects to life with expert guidance.
-            </p>
-            <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-              <Link href="/booking">Schedule Consultation</Link>
-            </Button>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="text-left">
+                <h2 className="text-4xl font-bold mb-4 text-white">
+                  Transform Your <span className="text-[#00FF00]">3D Printing Vision</span> Into Reality
+                </h2>
+                <p className="text-white/60 mb-6">
+                  Get expert guidance on materials, design optimization, and manufacturing processes. Our PhD-level consultants are ready to help you innovate.
+                </p>
+                <ul className="space-y-3 mb-8">
+                  {[
+                    'Personalized Strategy Sessions',
+                    'Technical Expertise',
+                    'Cost Optimization',
+                    'Rapid Implementation'
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-2 text-white/80">
+                      <Check className="w-5 h-5 text-[#00FF00]" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="flex flex-col items-center text-center space-y-6">
+                <div className="w-20 h-20 bg-[#00FF00]/10 rounded-full flex items-center justify-center mb-4">
+                  <MessageSquare className="w-10 h-10 text-[#00FF00]" />
+                </div>
+                <div>
+                  <p className="text-xl font-semibold text-white mb-2">Book Your Free Consultation</p>
+                  <p className="text-white/60 mb-6">30-minute strategic planning session</p>
+                  <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black w-full">
+                    <Link href="/booking">Schedule Now</Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
