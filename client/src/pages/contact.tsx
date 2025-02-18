@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
-import { Mail, Phone, MapPin, Send, Building2, Globe, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Building2, Globe, Clock, Zap, Trophy, Target } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 export default function ContactPage() {
@@ -57,18 +57,70 @@ export default function ContactPage() {
             </p>
           </motion.div>
 
-          <div className="flex flex-col gap-12 max-w-7xl mx-auto">
-            {/* Contact Information */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto mb-12">
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-center"
+            >
+              <div className="flex flex-col items-center gap-4">
+                <div className="rounded-full bg-black/50 border-2 border-[#00FF00]/20 p-6">
+                  <Mail className="w-12 h-12 text-[#00FF00]" />
+                </div>
+                <h3 className="text-xl font-bold text-white">Expert Guidance</h3>
+                <p className="text-white/60">Get personalized service from PhD-level experts</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="w-full"
+              className="text-center"
             >
-              <Card className="bg-black/50 border-[#00FF00]/20 w-full">
-                <CardContent className="p-6 space-y-8">
-                  <div className="flex items-start gap-4">
-                    <Mail className="w-6 h-6 text-[#00FF00]" />
+              <div className="flex flex-col items-center gap-4">
+                <div className="rounded-full bg-black/50 border-2 border-[#00FF00]/20 p-6">
+                  <Zap className="w-12 h-12 text-[#00FF00]" />
+                </div>
+                <h3 className="text-xl font-bold text-white">Quick Solutions</h3>
+                <p className="text-white/60">Fast turnaround time for your needs</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-center"
+            >
+              <div className="flex flex-col items-center gap-4">
+                <div className="rounded-full bg-black/50 border-2 border-[#00FF00]/20 p-6">
+                  <Trophy className="w-12 h-12 text-[#00FF00]" />
+                </div>
+                <h3 className="text-xl font-bold text-white">Proven Track Record</h3>
+                <p className="text-white/60">100+ successful consulting projects</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="text-center"
+            >
+              <div className="flex flex-col items-center gap-4">
+                <div className="rounded-full bg-black/50 border-2 border-[#00FF00]/20 p-6">
+                  <Target className="w-12 h-12 text-[#00FF00]" />
+                </div>
+                <h3 className="text-xl font-bold text-white">Tailored Approach</h3>
+                <p className="text-white/60">Solutions customized to your specific needs</p>
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="flex flex-col gap-12 max-w-7xl mx-auto">
+            {/* Contact Form */}
                     <div>
                       <h3 className="text-white font-semibold mb-2">Email Us</h3>
                       <p className="text-white/60">info@ethereal.sg</p>
