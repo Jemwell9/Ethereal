@@ -92,11 +92,11 @@ export default function Navbar() {
           </div>
 
           {/* Right menu */}
-          <div className="flex flex-col md:flex-row items-center justify-evenly gap-4 md:gap-8 w-full md:w-auto">
-            <NavigationMenu>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 w-full md:w-auto">
+            <NavigationMenu className="flex items-center">
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-white hover:text-[#00FF00] transition-colors text-[10px] tracking-[0.2em] font-medium bg-transparent">
+                  <NavigationMenuTrigger className="text-white hover:text-[#00FF00] transition-colors text-[10px] tracking-[0.2em] font-medium bg-transparent h-8">
                     WORKSHOPS
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -118,10 +118,10 @@ export default function Navbar() {
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
-            <Link href="/consult">
+            <Link href="/consult" className="h-8 flex items-center">
               <span className="text-white hover:text-[#00FF00] transition-colors text-[10px] tracking-[0.2em] font-medium">CONSULT</span>
             </Link>
-            <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black text-[10px] tracking-[0.2em] font-medium px-6 rounded-full">
+            <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black text-[10px] tracking-[0.2em] font-medium px-6 rounded-full h-8">
               <Link href="/contact">CONTACT US</Link>
             </Button>
           </div>
