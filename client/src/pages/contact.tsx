@@ -123,53 +123,8 @@ export default function ContactPage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="w-full md:w-1/3"
-            >
-              <Card className="bg-black/50 border-[#00FF00]/20">
-                <CardContent className="p-6 space-y-6">
-                  <div className="flex items-start gap-4">
-                    <Mail className="w-6 h-6 text-[#00FF00]" />
-                    <div>
-                      <h3 className="text-white font-semibold mb-2">Email Us</h3>
-                      <p className="text-white/60">info@ethereal.sg</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <Phone className="w-6 h-6 text-[#00FF00]" />
-                    <div>
-                      <h3 className="text-white font-semibold mb-2">Call Us</h3>
-                      <p className="text-white/60">+65 8806 2446</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <MapPin className="w-6 h-6 text-[#00FF00]" />
-                    <div>
-                      <h3 className="text-white font-semibold mb-2">Visit Us</h3>
-                      <p className="text-white/60">165 BUKIT MERAH CENTRAL<br />
-                        #05-3667, SINGAPORE 150165<br />UEN No. 202243915R</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <Clock className="w-6 h-6 text-[#00FF00]" />
-                    <div>
-                      <h3 className="text-white font-semibold mb-2">Business Hours</h3>
-                      <p className="text-white/60">Mon - Fri: 9:00 AM - 6:00 PM<br />
-                        Sat: By Appointment<br />Sun: Closed</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="w-full md:w-2/3"
+              className="w-full"
             >
               <Card className="bg-black/50 border-[#00FF00]/20">
                 <CardContent className="p-6">
