@@ -1,5 +1,45 @@
 import { motion } from "framer-motion";
-import { Microscope, LineChart, Wrench, Calculator, BadgeCheck, FlaskConical } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Microscope,
+  LineChart,
+  Wrench,
+  Calculator,
+  BadgeCheck,
+  FlaskConical,
+  BrainCircuit,
+  Rocket,
+  Shapes,
+  Settings,
+  Check,
+  ArrowUpRight,
+  Search,
+  Workflow,
+  Zap,
+  Target,
+  FileSearch,
+  Building,
+  Laptop,
+  Settings2,
+  FileCode,
+  GraduationCap,
+  Video,
+  Users,
+  Clock,
+  MessageSquare,
+  Calendar,
+  Printer,
+  Lightbulb,
+  Code,
+  Cpu,
+  Database,
+  Image,
+  Blocks,
+  Clock3
+} from "lucide-react";
+import { Link } from "wouter";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { useState, useEffect } from "react";
 
 const consultingServices = [
   {
@@ -69,46 +109,6 @@ const consultingServices = [
     ]
   }
 ];
-import { Button } from "@/components/ui/button";
-import {
-  ArrowRight,
-  BrainCircuit,
-  Rocket,
-  Shapes,
-  Settings,
-  Check,
-  ArrowUpRight,
-  LineChart,
-  Wrench,
-  Search,
-  Workflow,
-  Zap,
-  Target,
-  FileSearch,
-  Building,
-  Laptop,
-  BadgeCheck,
-  Settings2,
-  FileCode,
-  GraduationCap,
-  Video,
-  Users,
-  Clock,
-  MessageSquare,
-  Calendar,
-  Printer,
-  Lightbulb,
-  Code,
-  Cpu,
-  Database,
-  Image,
-  Blocks,
-  Clock3
-} from "lucide-react";
-import { Link } from "wouter";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { useState, useEffect } from "react";
-
 const approachSteps = [
   {
     icon: Search,
@@ -467,7 +467,6 @@ export default function ConsultPage() {
         </div>
       </section>
 
-      
 
       {/* CTA Section */}
       <section id="booking" className="py-20 bg-black/40">
@@ -495,7 +494,6 @@ export default function ConsultPage() {
     </div>
   );
 }
-
 
 
 const stats = [
