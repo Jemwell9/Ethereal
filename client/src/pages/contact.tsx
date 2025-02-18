@@ -38,11 +38,9 @@ export default function ContactPage() {
             transition={{ duration: 0.5 }}
             className="text-center max-w-4xl mx-auto mb-16"
           >
-            <h1 className="text-5xl font-bold mb-6 text-white">
-              Contact Us
-            </h1>
+            <h1 className="text-5xl font-bold mb-6 text-white">Get in Touch</h1>
             <p className="text-lg text-white/60 mb-12">
-              Have questions about our services? Get in touch with our team.
+              Let's discuss how we can help bring your ideas to life.
             </p>
           </motion.div>
 
