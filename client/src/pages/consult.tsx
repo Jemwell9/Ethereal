@@ -28,7 +28,13 @@ import {
   MessageSquare,
   Calendar,
   Printer,
-  Lightbulb
+  Lightbulb,
+  Timer,
+  Code,
+  Cpu,
+  Database,
+  Image,
+  Blocks
 } from "lucide-react";
 import { Link } from "wouter";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
