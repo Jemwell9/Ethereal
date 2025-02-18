@@ -99,7 +99,7 @@ app.use((req, res, next) => {
             }
             attempt++;
         });
-        
+
     }, 100);
   }
 
