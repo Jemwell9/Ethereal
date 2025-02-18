@@ -1,5 +1,6 @@
 
 import { Link } from "wouter";
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -17,7 +18,8 @@ export default function Footer() {
           </div>
 
           {/* Company Info */}
-          <div className="text-right">
+          <div className="text-right flex flex-col items-center">
+            <Mail className="w-6 h-6 text-[#00FF00] mb-2" />
             <p className="text-white/80">
               We are the 3D materials arm of EXSTATIC PTE LTD
             </p>
@@ -25,22 +27,26 @@ export default function Footer() {
           </div>
 
           {/* Address */}
-          <address className="text-white/80 not-italic text-right">
-            165 BUKIT MERAH CENTRAL<br/>
-            #05-3667, SINGAPORE 150165
-          </address>
+          <div className="text-right flex flex-col items-center">
+            <MapPin className="w-6 h-6 text-[#00FF00] mb-2" />
+            <address className="text-white/80 not-italic">
+              165 BUKIT MERAH CENTRAL<br/>
+              #05-3667, SINGAPORE 150165
+            </address>
+          </div>
 
           {/* Contact Info */}
-          <div className="text-right">
+          <div className="text-right flex flex-col items-center">
+            <Phone className="w-6 h-6 text-[#00FF00] mb-2" />
             <p className="text-[#00FF00]">+65 8806 2446</p>
             <p className="text-[#00FF00]">info@ethereal.sg</p>
           </div>
 
-          {/* Terms Link */}
-          <div>
-            <Link href="/terms" className="text-white/60 hover:text-[#00FF00] transition-colors">
-              Terms & Support
-            </Link>
+          {/* Business Hours */}
+          <div className="text-right flex flex-col items-center">
+            <Clock className="w-6 h-6 text-[#00FF00] mb-2" />
+            <p className="text-white/80">Mon - Fri: 9:00 AM - 6:00 PM</p>
+            <p className="text-white/80">Sat: By Appointment</p>
           </div>
         </div>
       </div>
