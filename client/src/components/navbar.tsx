@@ -69,6 +69,30 @@ export default function Navbar() {
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
+            </div>
+
+          {/* Center logo */}
+          <div className="flex justify-center py-1">
+            <Link href="/">
+              <img 
+                src="/Ethereal-Logo.png" 
+                alt="Ethereal" 
+                className="h-36 w-auto object-contain transition-transform hover:scale-105 cursor-pointer" 
+                style={{ 
+                  filter: 'drop-shadow(0 0 16px rgba(0, 255, 0, 0.5))',
+                  transform: 'scale(1.1)'
+                }}
+                onError={(e) => {
+                  console.error('Logo failed to load:', e);
+                  const target = e.target as HTMLImageElement;
+                  target.style.border = '2px solid red';
+                }}
+              />
+            </Link>
+          </div>
+
+          {/* Right menu */}
+          <div className="flex flex-col md:flex-row items-center md:justify-end gap-4 md:gap-6 w-full md:w-auto">
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
@@ -94,30 +118,6 @@ export default function Navbar() {
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
-          </div>
-
-          {/* Center logo */}
-          <div className="flex justify-center py-1">
-            <Link href="/">
-              <img 
-                src="/Ethereal-Logo.png" 
-                alt="Ethereal" 
-                className="h-36 w-auto object-contain transition-transform hover:scale-105 cursor-pointer" 
-                style={{ 
-                  filter: 'drop-shadow(0 0 16px rgba(0, 255, 0, 0.5))',
-                  transform: 'scale(1.1)'
-                }}
-                onError={(e) => {
-                  console.error('Logo failed to load:', e);
-                  const target = e.target as HTMLImageElement;
-                  target.style.border = '2px solid red';
-                }}
-              />
-            </Link>
-          </div>
-
-          {/* Right menu */}
-          <div className="flex flex-col md:flex-row items-center md:justify-end gap-4 md:gap-6 w-full md:w-auto">
             <Link href="/consult">
               <span className="text-white hover:text-[#00FF00] transition-colors text-[10px] tracking-[0.2em] font-medium">CONSULT</span>
             </Link>
