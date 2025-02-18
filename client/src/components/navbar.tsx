@@ -13,9 +13,9 @@ export default function Navbar() {
   return (
     <nav className="fixed w-full z-50 bg-black/50 backdrop-blur-sm border-b border-white/10">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] gap-4 md:gap-8 items-center py-2 md:py-0">
+        <div className="flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] gap-4 md:gap-16 items-center py-2 md:py-0">
           {/* Left menu */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 w-full md:w-auto">
+          <div className="flex flex-col md:flex-row items-center justify-evenly gap-4 md:gap-8 w-full md:w-auto">
             <Link href="/">
               <span className="text-white hover:text-[#00FF00] transition-colors text-[10px] tracking-[0.2em] font-medium">HOME</span>
             </Link>
@@ -92,7 +92,7 @@ export default function Navbar() {
           </div>
 
           {/* Right menu */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 w-full md:w-auto">
+          <div className="flex flex-col md:flex-row items-center justify-evenly gap-4 md:gap-8 w-full md:w-auto">
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
