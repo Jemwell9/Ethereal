@@ -571,29 +571,7 @@ export default function ConsultPage() {
       </section>
 
 
-      {/* New Benefits Section from Edited Code */}
-      <div className="container mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold text-white mb-8 text-center">Consultation Benefits</h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {benefits.map((benefit, index) => (
-            <Card key={index} className="bg-black/50 border-[#00FF00]/20">
-              <CardContent className="p-6">
-                <HeartHandshake className="w-12 h-12 text-[#00FF00] mb-4" />
-                <h3 className="text-white text-xl font-semibold mb-2">{benefit.title}</h3>
-                <p className="text-white/60">{benefit.description}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        <div className="text-center">
-          <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-            <Link href="/booking">
-              Book Consultation <ArrowRight className="ml-2" />
-            </Link>
-          </Button>
-        </div>
-      </div>
+      
 
 
       {/* CTA Section */}
