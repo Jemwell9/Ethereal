@@ -505,22 +505,32 @@ const problems = [
 const successStories = [
   {
     icon: Rocket,
-    title: "Vietnamese Automotive Success",
-    description: "Partnered with VinFast to optimize their rapid prototyping process, reducing development time by 60% and supporting their electric vehicle initiatives."
+    title: "VinFast Manufacturing",
+    description: "Optimized rapid prototyping for Vietnam's leading EV manufacturer, reducing development time by 60% and supporting their electric vehicle initiatives."
   },
   {
     icon: BrainCircuit,
-    title: "Singapore MedTech Innovation",
-    description: "Helped local medical device startup develop patient-specific surgical guides, achieving HSA certification and expanding to 5 major hospitals."
+    title: "Razer Singapore",
+    description: "Implemented rapid prototyping solutions for gaming peripherals, accelerating product development cycles by 40% and reducing iteration costs."
   },
   {
     icon: Shapes,
-    title: "Malaysian Architecture Innovation",
-    description: "Assisted KLCC architects in creating complex scale models for sustainable building designs, winning multiple Green Building Index awards."
+    title: "Surbana Jurong",
+    description: "Enhanced architectural visualization capabilities, leading to successful implementation of smart city projects across Southeast Asia."
   },
   {
     icon: Settings,
-    title: "Thai Aerospace Achievement",
-    description: "Collaborated with Thai Aerospace Manufacturing to implement advanced 3D printing processes, reducing parts costs by 45% while meeting strict aviation standards."
+    title: "Petronas Malaysia",
+    description: "Developed custom 3D printing solutions for oil & gas components, resulting in 45% cost reduction in specialized parts manufacturing."
+  },
+  {
+    icon: LineChart,
+    title: "Bangkok Dusit Medical",
+    description: "Revolutionized medical device prototyping, enabling custom surgical planning models that improved patient outcomes by 35%."
+  },
+  {
+    icon: Building,
+    title: "SM Prime Holdings",
+    description: "Supported Philippines' largest property developer with architectural prototyping, reducing design iteration time by 50%."
   }
 ];
