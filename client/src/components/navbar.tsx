@@ -19,9 +19,31 @@ export default function Navbar() {
             <Link href="/">
               <span className="text-white hover:text-[#00FF00] transition-colors text-[10px] tracking-[0.2em] font-medium">HOME</span>
             </Link>
-            <Link href="/about">
-              <span className="text-white hover:text-[#00FF00] transition-colors text-[10px] tracking-[0.2em] font-medium">ABOUT</span>
-            </Link>
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-white hover:text-[#00FF00] transition-colors text-[10px] tracking-[0.2em] font-medium bg-transparent">
+                    ABOUT
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="grid gap-3 p-4 w-[400px] bg-black/90 backdrop-blur-sm">
+                      <Link href="/about" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
+                        <div className="text-[#00FF00] font-medium">Who We Are</div>
+                        <p className="text-sm text-white/60">Learn about our mission and values</p>
+                      </Link>
+                      <Link href="/about/portfolio" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
+                        <div className="text-[#00FF00] font-medium">Portfolio</div>
+                        <p className="text-sm text-white/60">Explore our completed projects</p>
+                      </Link>
+                      <Link href="/about/blog" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
+                        <div className="text-[#00FF00] font-medium">Blog</div>
+                        <p className="text-sm text-white/60">Latest news and insights</p>
+                      </Link>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
@@ -98,9 +120,6 @@ export default function Navbar() {
           <div className="flex flex-col md:flex-row items-center md:justify-end gap-4 md:gap-6 w-full md:w-auto">
             <Link href="/consult">
               <span className="text-white hover:text-[#00FF00] transition-colors text-[10px] tracking-[0.2em] font-medium">CONSULT</span>
-            </Link>
-            <Link href="/showcase">
-              <span className="text-white hover:text-[#00FF00] transition-colors text-[10px] tracking-[0.2em] font-medium">SHOWCASE</span>
             </Link>
             <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black text-[10px] tracking-[0.2em] font-medium px-6 rounded-full">
               <Link href="/contact">CONTACT US</Link>
