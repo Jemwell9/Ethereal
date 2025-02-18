@@ -20,43 +20,31 @@ export default function Footer() {
           </div>
 
           {/* Company Info */}
-          <div className="space-y-2">
-            <div className="flex items-center justify-center sm:justify-start gap-2">
-              <Building2 className="w-5 h-5 text-[#00FF00]" />
-              <span className="font-medium text-sm">Company</span>
-            </div>
-            <p className="text-white/80 text-sm">
+          <div className="space-y-2 flex flex-col items-center">
+            <Building2 className="w-6 h-6 text-[#00FF00] mb-2" />
+            <p className="text-white/80 text-sm text-center">
               We are the 3D materials arm of EXSTATIC PTE LTD
             </p>
             <p className="text-[#00FF00] text-xs">[UEN No. 202243915R]</p>
           </div>
 
           {/* Address */}
-          <div className="space-y-2">
-            <div className="flex items-center justify-center sm:justify-start gap-2">
-              <MapPin className="w-5 h-5 text-[#00FF00]" />
-              <span className="font-medium text-sm">Address</span>
-            </div>
-            <address className="text-white/80 not-italic text-sm">
+          <div className="space-y-2 flex flex-col items-center">
+            <MapPin className="w-6 h-6 text-[#00FF00] mb-2" />
+            <address className="text-white/80 not-italic text-sm text-center">
               165 BUKIT MERAH CENTRAL<br/>
               #05-3667, SINGAPORE 150165
             </address>
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <div className="flex items-center justify-center sm:justify-start gap-2">
-                <Phone className="w-5 h-5 text-[#00FF00]" />
-                <span className="font-medium text-sm">Phone</span>
-              </div>
+          <div className="space-y-4 flex flex-col items-center">
+            <div className="space-y-2 flex flex-col items-center">
+              <Phone className="w-6 h-6 text-[#00FF00] mb-2" />
               <p className="text-[#00FF00] text-sm">+65 8806 2446</p>
             </div>
-            <div className="space-y-2">
-              <div className="flex items-center justify-center sm:justify-start gap-2">
-                <Mail className="w-5 h-5 text-[#00FF00]" />
-                <span className="font-medium text-sm">Email</span>
-              </div>
+            <div className="space-y-2 flex flex-col items-center">
+              <Mail className="w-6 h-6 text-[#00FF00] mb-2" />
               <p className="text-[#00FF00] text-sm">info@ethereal.sg</p>
             </div>
           </div>
