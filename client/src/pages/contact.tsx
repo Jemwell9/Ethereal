@@ -57,13 +57,13 @@ export default function ContactPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
+          <div className="flex flex-col gap-12 max-w-7xl mx-auto">
             {/* Contact Information */}
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="space-y-8"
+              className="grid grid-cols-1 md:grid-cols-4 gap-8"
             >
               <Card className="bg-black/50 border-[#00FF00]/20">
                 <CardContent className="p-6 space-y-8">
@@ -107,7 +107,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="md:col-span-2"
+              className="w-full"
             >
               <Card className="bg-black/50 border-[#00FF00]/20">
                 <CardContent className="p-6">
