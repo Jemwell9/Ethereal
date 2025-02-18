@@ -58,7 +58,7 @@ export default function ContactPage() {
                     <Mail className="w-6 h-6 text-[#00FF00]" />
                     <div>
                       <h3 className="text-white font-semibold mb-2">Email Us</h3>
-                      <p className="text-white/60">info@ethereal3d.com</p>
+                      <p className="text-white/60">info@ethereal.sg</p>
                     </div>
                   </div>
 
@@ -66,7 +66,7 @@ export default function ContactPage() {
                     <Phone className="w-6 h-6 text-[#00FF00]" />
                     <div>
                       <h3 className="text-white font-semibold mb-2">Call Us</h3>
-                      <p className="text-white/60">+1 (555) 123-4567</p>
+                      <p className="text-white/60">+65 8806 2446</p>
                     </div>
                   </div>
 
@@ -74,7 +74,7 @@ export default function ContactPage() {
                     <MapPin className="w-6 h-6 text-[#00FF00]" />
                     <div>
                       <h3 className="text-white font-semibold mb-2">Visit Us</h3>
-                      <p className="text-white/60">123 Innovation Street<br />Tech District, CA 90210</p>
+                      <p className="text-white/60">165 BUKIT MERAH CENTRAL<br />#05-3667, SINGAPORE 150165<br />UEN No. 202243915R</p>
                     </div>
                   </div>
                 </CardContent>
