@@ -366,6 +366,16 @@ export default function ConsultPage() {
                   </Button>
                 </motion.div>
               </div>
+              <motion.div 
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="flex-1"
+              >
+                <div className="aspect-square bg-black/50 border border-[#00FF00]/20 rounded-lg overflow-hidden">
+                  <Image className="w-full h-full text-[#00FF00]/40" />
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
