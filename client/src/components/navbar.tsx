@@ -17,15 +17,15 @@ export default function Navbar() {
           {/* Left menu */}
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 w-full md:w-auto">
             <Link href="/">
-              <span className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium">HOME</span>
+              <span className="text-white hover:text-[#00FF00] transition-colors text-[10px] tracking-[0.2em] font-medium">HOME</span>
             </Link>
             <Link href="/about">
-              <span className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium">ABOUT</span>
+              <span className="text-white hover:text-[#00FF00] transition-colors text-[10px] tracking-[0.2em] font-medium">ABOUT</span>
             </Link>
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium bg-transparent">
+                  <NavigationMenuTrigger className="text-white hover:text-[#00FF00] transition-colors text-[10px] tracking-[0.2em] font-medium bg-transparent">
                     3D PRINTING
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -55,7 +55,7 @@ export default function Navbar() {
               <img 
                 src="/Ethereal-Logo.png" 
                 alt="Ethereal" 
-                className="h-36 w-auto object-contain transition-transform hover:scale-105 cursor-pointer" 
+                className="h-48 w-auto object-contain transition-transform hover:scale-105 cursor-pointer" 
                 style={{ 
                   filter: 'drop-shadow(0 0 16px rgba(0, 255, 0, 0.5))',
                   transform: 'scale(1.1)'
@@ -74,7 +74,7 @@ export default function Navbar() {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium bg-transparent">
+                  <NavigationMenuTrigger className="text-white hover:text-[#00FF00] transition-colors text-[10px] tracking-[0.2em] font-medium bg-transparent">
                     WORKSHOPS
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -99,12 +99,12 @@ export default function Navbar() {
             </NavigationMenu>
 
             <Link href="/consult">
-              <span className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium">CONSULT</span>
+              <span className="text-white hover:text-[#00FF00] transition-colors text-[10px] tracking-[0.2em] font-medium">CONSULT</span>
             </Link>
             <Link href="/showcase">
-              <span className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium">SHOWCASE</span>
+              <span className="text-white hover:text-[#00FF00] transition-colors text-[10px] tracking-[0.2em] font-medium">SHOWCASE</span>
             </Link>
-            <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black text-xs tracking-[0.2em] font-medium px-6 rounded-full">
+            <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black text-[10px] tracking-[0.2em] font-medium px-6 rounded-full">
               <Link href="/contact">CONTACT US</Link>
             </Button>
           </div>
