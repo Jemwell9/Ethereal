@@ -26,6 +26,27 @@ export default function Navbar() {
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium bg-transparent">
+                    SHOWCASE
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="grid gap-3 p-4 w-[400px] bg-black/90 backdrop-blur-sm">
+                      <Link href="/showcase/portfolio" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
+                        <div className="text-[#00FF00] font-medium">Portfolio</div>
+                        <p className="text-sm text-white/60">View our completed projects and works</p>
+                      </Link>
+                      <Link href="/showcase/blog" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
+                        <div className="text-[#00FF00] font-medium">Blog</div>
+                        <p className="text-sm text-white/60">Insights and updates from our team</p>
+                      </Link>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-white hover:text-[#00FF00] transition-colors text-xs tracking-[0.2em] font-medium bg-transparent">
                     3D PRINTING
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
