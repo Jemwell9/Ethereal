@@ -52,18 +52,34 @@ export default function KidsWorkshopsPage() {
             className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20"
           >
             <div className="text-center">
+              <div className="w-12 h-12 mx-auto mb-4 bg-[#00FF00]/10 rounded-full flex items-center justify-center">
+                <Users className="w-6 h-6 text-[#00FF00]" />
+              </div>
+              <p className="text-white mb-2">Expert Guidance</p>
               <div className="text-4xl font-bold text-[#00FF00] mb-2">500+</div>
               <div className="text-white/60">Students Trained</div>
             </div>
             <div className="text-center">
+              <div className="w-12 h-12 mx-auto mb-4 bg-[#00FF00]/10 rounded-full flex items-center justify-center">
+                <Star className="w-6 h-6 text-[#00FF00]" />
+              </div>
+              <p className="text-white mb-2">Proven Results</p>
               <div className="text-4xl font-bold text-[#00FF00] mb-2">98%</div>
               <div className="text-white/60">Success Rate</div>
             </div>
             <div className="text-center">
+              <div className="w-12 h-12 mx-auto mb-4 bg-[#00FF00]/10 rounded-full flex items-center justify-center">
+                <Trophy className="w-6 h-6 text-[#00FF00]" />
+              </div>
+              <p className="text-white mb-2">Real Projects</p>
               <div className="text-4xl font-bold text-[#00FF00] mb-2">50+</div>
               <div className="text-white/60">Industry Projects</div>
             </div>
             <div className="text-center">
+              <div className="w-12 h-12 mx-auto mb-4 bg-[#00FF00]/10 rounded-full flex items-center justify-center">
+                <Award className="w-6 h-6 text-[#00FF00]" />
+              </div>
+              <p className="text-white mb-2">Industry Experience</p>
               <div className="text-4xl font-bold text-[#00FF00] mb-2">15+</div>
               <div className="text-white/60">Years Experience</div>
             </div>
