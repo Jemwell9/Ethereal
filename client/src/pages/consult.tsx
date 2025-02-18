@@ -43,23 +43,69 @@ import { useCountUp } from "@/hooks/use-count-up";
 const approachSteps = [
   {
     icon: Search,
-    title: "Assessment",
-    description: "Thorough analysis of your current processes and requirements"
+    title: "Discovery & Assessment",
+    description: "In-depth analysis of your current processes, challenges, and objectives",
+    features: [
+      "Process audit",
+      "Requirements gathering",
+      "Technology assessment",
+      "Cost analysis"
+    ]
   },
   {
     icon: Target,
-    title: "Strategy",
-    description: "Custom roadmap development for implementation and optimization"
+    title: "Strategic Planning",
+    description: "Developing a customized implementation roadmap",
+    features: [
+      "ROI projections",
+      "Resource planning",
+      "Timeline development",
+      "Risk assessment"
+    ]
   },
   {
     icon: Zap,
     title: "Implementation",
-    description: "Hands-on assistance with setup and integration"
+    description: "Hands-on execution of the planned strategy",
+    features: [
+      "Setup assistance",
+      "System integration",
+      "Team training",
+      "Quality control"
+    ]
+  },
+  {
+    icon: FileSearch,
+    title: "Testing & Validation",
+    description: "Rigorous testing of implemented solutions",
+    features: [
+      "Performance testing",
+      "Quality assurance",
+      "Process validation",
+      "Compliance check"
+    ]
   },
   {
     icon: Workflow,
-    title: "Support",
-    description: "Continuous guidance and optimization assistance"
+    title: "Optimization",
+    description: "Fine-tuning processes for maximum efficiency",
+    features: [
+      "Performance analysis",
+      "Workflow refinement",
+      "Cost optimization",
+      "Process automation"
+    ]
+  },
+  {
+    icon: HeartHandshake,
+    title: "Ongoing Support",
+    description: "Continuous assistance and improvement",
+    features: [
+      "Technical support",
+      "Regular reviews",
+      "Update guidance",
+      "Performance monitoring"
+    ]
   }
 ];
 
@@ -217,10 +263,22 @@ export default function ConsultPage() {
       </section>
 
       {/* Our Consultancy Approach */}
-      <section className="py-20">
+      <section className="py-20 bg-black/40">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">Our Consultancy Approach</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-white mb-4">Our Consultancy Approach</h2>
+            <p className="text-white/60 max-w-2xl mx-auto">
+              A systematic and comprehensive approach to transform your 3D printing operations
+              from concept to execution
+            </p>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {approachSteps.map((step, index) => (
               <motion.div
                 key={step.title}
@@ -228,13 +286,21 @@ export default function ConsultPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-black/50 p-6 rounded-lg border border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors"
+                className="bg-black/50 p-8 rounded-lg border border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-all hover:bg-black/60"
               >
-                <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
-                  <step.icon className="w-6 h-6 text-[#00FF00]" />
+                <div className="w-14 h-14 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-6">
+                  <step.icon className="w-7 h-7 text-[#00FF00]" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
-                <p className="text-white/60">{step.description}</p>
+                <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
+                <p className="text-white/60 mb-6">{step.description}</p>
+                <ul className="space-y-2">
+                  {step.features.map((feature, i) => (
+                    <li key={i} className="text-white/60 flex items-center gap-2">
+                      <ArrowRight className="w-4 h-4 text-[#00FF00]" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>
