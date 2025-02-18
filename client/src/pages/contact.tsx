@@ -57,7 +57,7 @@ export default function ContactPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -68,8 +68,8 @@ export default function ContactPage() {
                 <div className="rounded-full bg-black/50 border-2 border-[#00FF00]/20 p-6">
                   <Mail className="w-12 h-12 text-[#00FF00]" />
                 </div>
-                <h3 className="text-xl font-bold text-white">Expert Guidance</h3>
-                <p className="text-white/60">Get personalized service from PhD-level experts</p>
+                <h3 className="text-xl font-bold text-white">Email Us</h3>
+                <p className="text-white/60">info@ethereal.sg</p>
               </div>
             </motion.div>
 
@@ -81,10 +81,10 @@ export default function ContactPage() {
             >
               <div className="flex flex-col items-center gap-4">
                 <div className="rounded-full bg-black/50 border-2 border-[#00FF00]/20 p-6">
-                  <Zap className="w-12 h-12 text-[#00FF00]" />
+                  <Phone className="w-12 h-12 text-[#00FF00]" />
                 </div>
-                <h3 className="text-xl font-bold text-white">Quick Solutions</h3>
-                <p className="text-white/60">Fast turnaround time for your needs</p>
+                <h3 className="text-xl font-bold text-white">Call Us</h3>
+                <p className="text-white/60">+65 8806 2446</p>
               </div>
             </motion.div>
 
@@ -96,10 +96,10 @@ export default function ContactPage() {
             >
               <div className="flex flex-col items-center gap-4">
                 <div className="rounded-full bg-black/50 border-2 border-[#00FF00]/20 p-6">
-                  <Trophy className="w-12 h-12 text-[#00FF00]" />
+                  <MapPin className="w-12 h-12 text-[#00FF00]" />
                 </div>
-                <h3 className="text-xl font-bold text-white">Proven Track Record</h3>
-                <p className="text-white/60">100+ successful consulting projects</p>
+                <h3 className="text-xl font-bold text-white">Visit Us</h3>
+                <p className="text-white/60">165 BUKIT MERAH CENTRAL<br />#05-3667, SINGAPORE 150165<br />UEN No. 202243915R</p>
               </div>
             </motion.div>
 
@@ -111,10 +111,10 @@ export default function ContactPage() {
             >
               <div className="flex flex-col items-center gap-4">
                 <div className="rounded-full bg-black/50 border-2 border-[#00FF00]/20 p-6">
-                  <Target className="w-12 h-12 text-[#00FF00]" />
+                  <Clock className="w-12 h-12 text-[#00FF00]" />
                 </div>
-                <h3 className="text-xl font-bold text-white">Tailored Approach</h3>
-                <p className="text-white/60">Solutions customized to your specific needs</p>
+                <h3 className="text-xl font-bold text-white">Business Hours</h3>
+                <p className="text-white/60">Mon - Fri: 9:00 AM - 6:00 PM<br />Sat: By Appointment<br />Sun: Closed</p>
               </div>
             </motion.div>
           </div>
