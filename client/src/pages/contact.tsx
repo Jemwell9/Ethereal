@@ -65,7 +65,7 @@ export default function ContactPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="w-full"
             >
-              <Card className="bg-black/50 border-[#00FF00]/20 w-full"
+              <Card className="bg-black/50 border-[#00FF00]/20 w-full">
                 <CardContent className="p-6 space-y-8">
                   <div className="flex items-start gap-4">
                     <Mail className="w-6 h-6 text-[#00FF00]" />
