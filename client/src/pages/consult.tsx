@@ -78,7 +78,6 @@ import {
   Settings,
   Check,
   ArrowUpRight,
-  Microscope,
   LineChart,
   Wrench,
   Search,
@@ -219,14 +218,8 @@ export default function ConsultPage() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (count < 500) {
-        setCount(prev => Math.min(prev + 25, 500));
-      }
-    }, 50);
-
-    return () => clearTimeout(timer);
-  }, [count]);
+    // Removed unused timer effect
+  }, []);
 
   return (
     <div className="min-h-screen bg-black pt-24">
