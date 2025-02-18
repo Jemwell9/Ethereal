@@ -261,16 +261,37 @@ export default function ContactPage() {
                 </AccordionItem>
               </Accordion>
 
-              <div className="flex space-x-4 mt-4">
-                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="w-8 h-8 text-[#00FF00]" />
-                </a>
-                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                  <Facebook className="w-8 h-8 text-[#00FF00]" />
-                </a>
-                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                  <Instagram className="w-8 h-8 text-[#00FF00]" />
-                </a>
+              <div className="mt-8">
+                <h3 className="text-2xl font-bold text-white mb-6">Our Social Media Gallery</h3>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {/* Instagram Photos */}
+                  <div className="aspect-square bg-black/50 border border-[#00FF00]/20 rounded-lg overflow-hidden">
+                    <img src="/workshop-adult-advanced.svg" alt="Instagram post" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+                  </div>
+                  <div className="aspect-square bg-black/50 border border-[#00FF00]/20 rounded-lg overflow-hidden">
+                    <img src="/workshop-adult-master.svg" alt="Instagram post" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+                  </div>
+                  <div className="aspect-square bg-black/50 border border-[#00FF00]/20 rounded-lg overflow-hidden">
+                    <img src="/workshop-kids-advanced.svg" alt="Instagram post" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+                  </div>
+                  <div className="aspect-square bg-black/50 border border-[#00FF00]/20 rounded-lg overflow-hidden">
+                    <img src="/workshop-kids-master.svg" alt="Instagram post" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+                  </div>
+                  
+                  {/* TikTok Videos */}
+                  <div className="aspect-square bg-black/50 border border-[#00FF00]/20 rounded-lg overflow-hidden col-span-2">
+                    <video className="w-full h-full object-cover" controls>
+                      <source src="/path-to-video.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <div className="aspect-square bg-black/50 border border-[#00FF00]/20 rounded-lg overflow-hidden col-span-2">
+                    <video className="w-full h-full object-cover" controls>
+                      <source src="/path-to-video.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
