@@ -2,37 +2,33 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Printer3d, Lightbulb, Code, Wrench, Star } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import { Link } from "wouter";
 
 const portfolioItems = [
   {
     title: "3D Printing Projects",
-    description: "Custom manufacturing solutions",
-    image: "/images/portfolio/3d-printing.jpg",
+    description: "Custom 3D printing solutions and prototypes",
     category: "Manufacturing",
     rating: 5,
   },
   {
-    title: "Design Consultancy",
-    description: "Creative design solutions",
-    image: "/images/portfolio/design.jpg",
+    title: "Design Services",
+    description: "Professional CAD modeling and design",
     category: "Design",
-    rating: 4,
-  },
-  {
-    title: "Technical Training",
-    description: "Professional development programs",
-    image: "/images/portfolio/training.jpg",
-    category: "Education",
     rating: 5,
   },
   {
-    title: "Research Projects",
-    description: "Innovation and development",
-    image: "/images/portfolio/research.jpg",
-    category: "Research",
+    title: "Technical Workshops",
+    description: "Training and skill development programs",
+    category: "Education",
     rating: 4,
+  },
+  {
+    title: "Engineering Solutions",
+    description: "Custom engineering and manufacturing",
+    category: "Engineering",
+    rating: 5,
   }
 ];
 
@@ -53,7 +49,7 @@ export default function PortfolioPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 max-w-6xl mx-auto">
             {portfolioItems.map((item, index) => (
               <motion.div
                 key={index}
@@ -82,8 +78,10 @@ export default function PortfolioPage() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <div className="aspect-video bg-black/50 rounded-lg mb-4"></div>
-                    <Button asChild className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                    <Button 
+                      asChild 
+                      className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black mt-4"
+                    >
                       <Link href="/contact">
                         Learn More <ArrowRight className="ml-2 w-4 h-4" />
                       </Link>
