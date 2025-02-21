@@ -19,7 +19,6 @@ import NotFound from "@/pages/not-found";
 import ContactPage from "@/pages/contact";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import React from 'react';
 
 // Error Boundary Component
 class ErrorBoundary extends React.Component<{ children: React.ReactNode }, { hasError: boolean }> {
@@ -30,6 +29,10 @@ class ErrorBoundary extends React.Component<{ children: React.ReactNode }, { has
 
   static getDerivedStateFromError() {
     return { hasError: true };
+  }
+
+  componentDidCatch(error: Error) {
+    console.error('Error caught by boundary:', error);
   }
 
   render() {
@@ -60,7 +63,7 @@ export default function App() {
         <div className="min-h-screen bg-black relative">
           <div className="relative z-10">
             <Navbar />
-            <main className="min-h-screen">
+            <main className="min-h-screen pt-24">
               <Switch>
                 <Route path="/" component={Home} />
                 <Route path="/about" component={About} />
