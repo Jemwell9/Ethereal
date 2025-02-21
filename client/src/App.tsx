@@ -4,7 +4,6 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { Animated3DGrid } from "@/components/ui/animated-3d-grid";
 import Home from "@/pages/home";
-import About from "@/pages/about";
 import Booking from "@/pages/booking";
 import Services from "@/pages/services";
 import DesignServices from "@/pages/services/design-services";
@@ -29,7 +28,6 @@ export default function App() {
           <main className="min-h-screen pt-20">
             <Switch>
               <Route path="/" component={Home} />
-              <Route path="/about" component={About} />
               <Route path="/booking" component={Booking} />
               <Route path="/services" component={Services} />
               <Route path="/services/design" component={DesignServices} />
