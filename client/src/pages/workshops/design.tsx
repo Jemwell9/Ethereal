@@ -1,24 +1,20 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useToast } from "@/hooks/use-toast";
 import { Link } from "wouter";
-import { 
-  ArrowRight, 
-  Pen,
-  Shapes, 
-  Star,
-  Image,
-  Shield,
-  Settings2,
-  User,
-  Target
-} from "lucide-react";
+import { ArrowRight, Image, Shapes, Star, Target } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import BookingCalendar from "@/components/booking-calendar";
 
 const designWorkshops = [
   {
@@ -189,7 +185,6 @@ export default function DesignWorkshopsPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
       <section className="py-20">
         <div className="container mx-auto px-4 lg:px-20">
           <h2 className="text-4xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
@@ -218,14 +213,13 @@ export default function DesignWorkshopsPage() {
         </div>
       </section>
 
-      {/* Instructor Profile */}
       <section className="py-20">
         <div className="container mx-auto px-4 lg:px-20">
           <h2 className="text-4xl font-bold text-white mb-12 text-center">Meet Your Instructor</h2>
           <div className="max-w-3xl mx-auto bg-black/50 rounded-lg p-8 border border-[#00FF00]/20">
             <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="w-32 h-32 rounded-full bg-[#00FF00]/10 flex items-center justify-center">
-                <User className="w-16 h-16 text-[#00FF00]" />
+                <Image className="w-16 h-16 text-[#00FF00]" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white mb-2">Alex Thompson</h3>
@@ -239,7 +233,6 @@ export default function DesignWorkshopsPage() {
         </div>
       </section>
 
-      {/* Call to Action */}
       <section className="py-20 bg-black/50">
         <div className="container mx-auto px-4 lg:px-20">
           <motion.div
@@ -263,7 +256,6 @@ export default function DesignWorkshopsPage() {
           </motion.div>
         </div>
       </section>
-      {/* Gallery Section */}
       <section className="py-20 bg-black/30">
         <div className="container mx-auto px-4 lg:px-20">
           <h2 className="text-4xl font-bold text-white mb-12 text-center">Workshop Gallery</h2>
@@ -287,7 +279,6 @@ export default function DesignWorkshopsPage() {
         </div>
       </section>
 
-      {/* Testimonials */}
       <section className="py-20">
         <div className="container mx-auto px-4 lg:px-20">
           <h2 className="text-4xl font-bold text-white mb-12 text-center">What Our Students Say</h2>
@@ -341,7 +332,6 @@ export default function DesignWorkshopsPage() {
         </div>
       </section>
 
-      {/* Overall Rating */}
       <section className="py-20 bg-black/30">
         <div className="container mx-auto px-4 lg:px-20">
           <div className="max-w-4xl mx-auto text-center">
@@ -357,7 +347,6 @@ export default function DesignWorkshopsPage() {
         </div>
       </section>
 
-      {/* Curriculum Section */}
       <section className="py-20 bg-black/30">
         <div className="container mx-auto px-4 lg:px-20">
           <h2 className="text-4xl font-bold text-white mb-12 text-center">What You'll Learn</h2>
@@ -396,30 +385,10 @@ export default function DesignWorkshopsPage() {
         </div>
       </section>
 
-      {/* Booking Calendar */}
       <section className="py-20 bg-black/30">
         <div className="container mx-auto px-4 lg:px-20">
           <h2 className="text-4xl font-bold text-white mb-12 text-center">Available Sessions</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {[
-              { date: "March 15", time: "9:00 AM - 5:00 PM", spots: "3 spots left" },
-              { date: "March 22", time: "9:00 AM - 5:00 PM", spots: "5 spots left" },
-              { date: "March 29", time: "9:00 AM - 5:00 PM", spots: "8 spots left" }
-            ].map((session, i) => (
-              <Card key={i} className="bg-black/50 border-[#00FF00]/20">
-                <CardContent className="p-6">
-                  <div className="space-y-4">
-                    <div className="text-white font-medium">{session.date}</div>
-                    <div className="text-white/60 text-sm">{session.time}</div>
-                    <div className="text-[#00FF00] text-sm">{session.spots}</div>
-                    <Button className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-                      Book Session
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <BookingCalendar />
         </div>
       </section>
     </div>
