@@ -306,6 +306,122 @@ export default function DesignWorkshopsPage() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 lg:px-20">
+          <h2 className="text-4xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
+          <div className="max-w-3xl mx-auto">
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger className="text-white">Do I need prior experience?</AccordionTrigger>
+                <AccordionContent className="text-white/60">
+                  No prior experience is needed for our Fundamentals course. For Professional and Mastery levels, basic knowledge is recommended.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger className="text-white">What software will we use?</AccordionTrigger>
+                <AccordionContent className="text-white/60">
+                  We use industry-standard 3D design software. All necessary software will be provided during the workshop.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3">
+                <AccordionTrigger className="text-white">What should I bring?</AccordionTrigger>
+                <AccordionContent className="text-white/60">
+                  Just bring your laptop. All other materials and equipment will be provided.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* Curriculum Section */}
+      <section className="py-20 bg-black/30">
+        <div className="container mx-auto px-4 lg:px-20">
+          <h2 className="text-4xl font-bold text-white mb-12 text-center">What You'll Learn</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                week: "Week 1",
+                topics: ["Software Introduction", "Basic Tools", "Simple Shapes", "Navigation"]
+              },
+              {
+                week: "Week 2",
+                topics: ["Advanced Tools", "Complex Modeling", "Materials", "Texturing"]
+              },
+              {
+                week: "Week 3",
+                topics: ["Project Planning", "Advanced Techniques", "Final Project", "Export & Share"]
+              }
+            ].map((week, i) => (
+              <Card key={i} className="bg-black/50 border-[#00FF00]/20">
+                <CardHeader>
+                  <CardTitle className="text-white">{week.week}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    {week.topics.map((topic, j) => (
+                      <li key={j} className="text-white/60 flex items-center gap-2">
+                        <ArrowRight className="w-4 h-4 text-[#00FF00]" />
+                        {topic}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Instructor Profile */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 lg:px-20">
+          <h2 className="text-4xl font-bold text-white mb-12 text-center">Meet Your Instructor</h2>
+          <div className="max-w-3xl mx-auto bg-black/50 rounded-lg p-8 border border-[#00FF00]/20">
+            <div className="flex flex-col md:flex-row gap-8 items-center">
+              <div className="w-32 h-32 rounded-full bg-[#00FF00]/10 flex items-center justify-center">
+                <User className="w-16 h-16 text-[#00FF00]" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-2">Alex Thompson</h3>
+                <p className="text-white/60 mb-4">Senior 3D Design Specialist</p>
+                <p className="text-white/60">
+                  With over 10 years of experience in 3D design and modeling, Alex has worked with major studios and led numerous successful projects. Their passion for teaching has helped hundreds of students master 3D design.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Booking Calendar */}
+      <section className="py-20 bg-black/30">
+        <div className="container mx-auto px-4 lg:px-20">
+          <h2 className="text-4xl font-bold text-white mb-12 text-center">Available Sessions</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {[
+              { date: "March 15", time: "9:00 AM - 5:00 PM", spots: "3 spots left" },
+              { date: "March 22", time: "9:00 AM - 5:00 PM", spots: "5 spots left" },
+              { date: "March 29", time: "9:00 AM - 5:00 PM", spots: "8 spots left" }
+            ].map((session, i) => (
+              <Card key={i} className="bg-black/50 border-[#00FF00]/20">
+                <CardContent className="p-6">
+                  <div className="space-y-4">
+                    <div className="text-white font-medium">{session.date}</div>
+                    <div className="text-white/60 text-sm">{session.time}</div>
+                    <div className="text-[#00FF00] text-sm">{session.spots}</div>
+                    <Button className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                      Book Session
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
