@@ -84,30 +84,45 @@ export default function KidsWorkshopsPage() {
   return (
     <div className="min-h-screen bg-black">
       {/* Hero Section */}
-      <section className="relative min-h-screen overflow-hidden">
-        {/* Animated diagonal light streaks */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(0,255,0,0.1)_50%,transparent_75%)] animate-pulse"></div>
-          <div className="absolute inset-0 bg-[linear-gradient(-45deg,transparent_25%,rgba(0,255,0,0.05)_50%,transparent_75%)] animate-pulse delay-75"></div>
-          <div className="absolute inset-0 bg-[linear-gradient(60deg,transparent_25%,rgba(0,255,0,0.03)_50%,transparent_75%)] animate-pulse delay-150"></div>
-        </div>
-        <div className="container mx-auto px-4 pt-24 pb-16 relative">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-6xl mx-auto text-center"
-          >
-            <h1 className="flex flex-col items-center justify-center min-h-[70vh]">
-              <div className="text-[2.5rem] md:text-[3.5rem] font-heading font-black tracking-tight text-white mb-4">
-                <span className="block leading-none">3D PEN WORKSHOPS</span>
-                <span className="block leading-none">FOR</span>
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col-reverse md:flex-row gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="flex-1 text-left"
+            >
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+                3D Pen Workshops for Kids
+              </h1>
+              <p className="text-xl text-white/60 mb-8">
+                Transform your child's creative journey with our engaging 3D pen workshops. Our expert instructors guide young minds through fun, interactive sessions.
+              </p>
+              <div className="flex gap-4">
+                <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                  <Link href="/booking">Start Your Journey</Link>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="border-[#00FF00] text-[#00FF00]">
+                  <Link href="#workshops">View Workshops</Link>
+                </Button>
               </div>
-              <span className="block text-[8rem] md:text-[12rem] lg:text-[16rem] font-heading font-black leading-none tracking-tighter bg-gradient-to-r from-[#00FF00] via-[#00FF00] to-[#00FF00]/50 text-transparent bg-clip-text">
-                KIDS
-              </span>
-            </h1>
-          </motion.div>
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex-1"
+            >
+              <div className="relative w-full aspect-square rounded-lg overflow-hidden">
+                <img
+                  src="/services/3d-pen-1.png"
+                  alt="3D Pen Workshop"
+                  className="object-cover w-full h-full"
+                />
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
