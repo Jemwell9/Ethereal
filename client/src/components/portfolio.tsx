@@ -54,7 +54,8 @@ const portfolioItems = [
   }
 ];
 
-export default function Portfolio() {
+// Change to named export
+export function Portfolio() {
   return (
     <section className="py-20 bg-black/40">
       <div className="container mx-auto px-4">
