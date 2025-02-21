@@ -18,7 +18,7 @@ import ConsultPage from "@/pages/consult";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import NotFound from "@/pages/not-found";
-import ContactPage from "@/pages/contact"; // Added import for ContactPage
+import ContactPage from "@/pages/contact";
 
 function Router() {
   return (
@@ -35,8 +35,8 @@ function Router() {
       <Route path="/workshops/3d-pen-adults" component={AdultWorkshops} />
       <Route path="/workshops/printing-mastery" component={PrintingMastery} />
       <Route path="/consult" component={ConsultPage} />
-      <Route path="/contact" component={ContactPage} /> {/* Added route for ContactPage */}
-      <Route component={NotFound} />
+      <Route path="/contact" component={ContactPage} />
+      <Route path="/:rest*" component={NotFound} />
     </Switch>
   );
 }
