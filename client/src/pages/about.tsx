@@ -1,31 +1,11 @@
 import { motion } from "framer-motion";
-import { Link } from "wouter";
 import { Portfolio } from "@/components/portfolio";
 import Blog from "@/components/blog";
-import {
-  GraduationCap,
-  Award,
-  Target,
-  Heart,
-  History,
-  Lightbulb,
-  Users,
-  Trophy,
-  Rocket,
-  Timer,
-  Microscope,
-  Code,
-  Cpu,
-  Database,
-  Blocks,
-  Image,
-} from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-
+import { Image } from "lucide-react";
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-black/95">
+    <div className="w-full">
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="container mx-auto px-4">

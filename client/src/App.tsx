@@ -20,35 +20,29 @@ import Footer from "@/components/footer";
 import NotFound from "@/pages/not-found";
 import ContactPage from "@/pages/contact";
 
-function Router() {
-  return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/booking" component={Booking} />
-      <Route path="/services" component={Services} />
-      <Route path="/services/design" component={DesignServices} />
-      <Route path="/services/materials" component={MaterialsSelection} />
-      <Route path="/services/printing" component={PrintingExecution} />
-      <Route path="/workshops/design" component={DesignWorkshops} />
-      <Route path="/workshops/3d-pen-kids" component={KidsWorkshops} />
-      <Route path="/workshops/3d-pen-adults" component={AdultWorkshops} />
-      <Route path="/workshops/printing-mastery" component={PrintingMastery} />
-      <Route path="/consult" component={ConsultPage} />
-      <Route path="/contact" component={ContactPage} />
-      <Route path="/:rest*" component={NotFound} />
-    </Switch>
-  );
-}
-
-function App() {
+export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen bg-black relative">
         <div className="relative z-10">
           <Navbar />
-          <main className="min-h-screen">
-            <Router />
+          <main className="min-h-screen pt-20">
+            <Switch>
+              <Route path="/" component={Home} />
+              <Route path="/about" component={About} />
+              <Route path="/booking" component={Booking} />
+              <Route path="/services" component={Services} />
+              <Route path="/services/design" component={DesignServices} />
+              <Route path="/services/materials" component={MaterialsSelection} />
+              <Route path="/services/printing" component={PrintingExecution} />
+              <Route path="/workshops/design" component={DesignWorkshops} />
+              <Route path="/workshops/3d-pen-kids" component={KidsWorkshops} />
+              <Route path="/workshops/3d-pen-adults" component={AdultWorkshops} />
+              <Route path="/workshops/printing-mastery" component={PrintingMastery} />
+              <Route path="/consult" component={ConsultPage} />
+              <Route path="/contact" component={ContactPage} />
+              <Route component={NotFound} />
+            </Switch>
           </main>
           <Footer />
           <Toaster />
@@ -58,5 +52,3 @@ function App() {
     </QueryClientProvider>
   );
 }
-
-export default App;

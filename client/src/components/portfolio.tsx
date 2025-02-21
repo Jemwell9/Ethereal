@@ -7,7 +7,6 @@ const portfolioItems = [
   {
     title: "Industrial Prototyping",
     description: "High-precision prototypes for manufacturing sector",
-    image: "/portfolio/industrial.jpg",
     icon: Printer,
     category: "Manufacturing",
     technologies: ["SLA Printing", "Metal Casting", "Rapid Prototyping"]
@@ -15,7 +14,6 @@ const portfolioItems = [
   {
     title: "Medical Devices",
     description: "Custom medical equipment and anatomical models",
-    image: "/portfolio/medical.jpg",
     icon: Microscope,
     category: "Healthcare",
     technologies: ["Bio-compatible Materials", "Precision Engineering"]
@@ -23,7 +21,6 @@ const portfolioItems = [
   {
     title: "Architectural Models",
     description: "Detailed architectural prototypes and scale models",
-    image: "/portfolio/architecture.jpg",
     icon: Shapes,
     category: "Architecture",
     technologies: ["Large Format Printing", "Complex Geometries"]
@@ -31,7 +28,6 @@ const portfolioItems = [
   {
     title: "Custom Tools & Fixtures",
     description: "Specialized manufacturing tools and fixtures",
-    image: "/portfolio/tools.jpg",
     icon: Wrench,
     category: "Engineering",
     technologies: ["Functional Parts", "Custom Solutions"]
@@ -39,7 +35,6 @@ const portfolioItems = [
   {
     title: "Research & Development",
     description: "Advanced prototypes for research institutions",
-    image: "/portfolio/research.jpg",
     icon: Lightbulb,
     category: "R&D",
     technologies: ["Material Testing", "Innovative Solutions"]
@@ -47,17 +42,15 @@ const portfolioItems = [
   {
     title: "Consumer Products",
     description: "Product design and consumer goods prototyping",
-    image: "/portfolio/consumer.jpg",
     icon: Image,
     category: "Product Design",
     technologies: ["Iterative Design", "Consumer Testing"]
   }
 ];
 
-// Change to named export
 export function Portfolio() {
   return (
-    <section className="py-20 bg-black/40">
+    <div className="w-full bg-black/40 py-20">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -117,6 +110,6 @@ export function Portfolio() {
           </div>
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 }
