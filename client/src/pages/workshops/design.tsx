@@ -1,8 +1,18 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Link } from "wouter";
-import { Pen, Star, Shield, Sparkles, Users, Award, Heart, Image, Trophy, ArrowRight, User } from "lucide-react";
+import { 
+  ArrowRight, 
+  Pen,
+  Shapes, 
+  Star,
+  Image,
+  Shield,
+  Settings2,
+  User,
+  Target
+} from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -23,7 +33,7 @@ const designWorkshops = [
     ],
     duration: "8 hours",
     price: "$299",
-    icon: BookOpen,
+    icon: Target,
     gallery: ["/services/modeling-1.png", "/services/modeling-2.png"]
   },
   {
@@ -92,8 +102,8 @@ export default function DesignWorkshopsPage() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="flex-1"
             >
-              <div className="aspect-square bg-black/50 border border-[#00FF00]/20 rounded-lg overflow-hidden">
-                <Image className="w-full h-full text-[#00FF00]/40" />
+              <div className="aspect-video bg-[#00FF00]/5 rounded-lg flex items-center justify-center">
+                <Image className="w-12 h-12 text-[#00FF00]/40" />
               </div>
             </motion.div>
           </div>
@@ -151,14 +161,14 @@ export default function DesignWorkshopsPage() {
                         </li>
                       ))}
                     </ul>
-                    <div className="flex items-center justify-between pt-4">
+                    <div className="flex justify-between items-center pt-4">
                       <div>
-                        <p className="text-white/60">Duration</p>
-                        <p className="text-white font-medium">{workshop.duration}</p>
+                        <p className="text-sm text-white/60">Duration</p>
+                        <p className="font-medium text-white">{workshop.duration}</p>
                       </div>
-                      <div>
-                        <p className="text-white/60">Price</p>
-                        <p className="text-white font-medium">{workshop.price}</p>
+                      <div className="text-right">
+                        <p className="text-sm text-white/60">Price</p>
+                        <p className="font-medium text-white">{workshop.price}</p>
                       </div>
                     </div>
                     <Button asChild className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
@@ -166,14 +176,12 @@ export default function DesignWorkshopsPage() {
                     </Button>
                   </div>
                 </div>
-                <div className="lg:w-1/2">
-                  <div className="grid grid-cols-2 gap-4">
-                    {workshop.gallery?.map((image, i) => (
-                      <div key={i} className="aspect-square bg-black/30 rounded-lg overflow-hidden">
-                        <img src={image} alt={`${workshop.title} example ${i + 1}`} className="w-full h-full object-cover" />
-                      </div>
-                    ))}
-                  </div>
+                <div className="lg:w-1/2 grid grid-cols-2 gap-4">
+                  {workshop.gallery.map((image, i) => (
+                    <div key={i} className="aspect-video bg-[#00FF00]/5 rounded-lg flex items-center justify-center">
+                      <Image className="w-8 h-8 text-[#00FF00]/40" />
+                    </div>
+                  ))}
                 </div>
               </div>
             </motion.div>
@@ -181,6 +189,57 @@ export default function DesignWorkshopsPage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 lg:px-20">
+          <h2 className="text-4xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
+          <div className="max-w-3xl mx-auto">
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger className="text-white">Do I need prior experience?</AccordionTrigger>
+                <AccordionContent className="text-white/60">
+                  No prior experience is needed for our Fundamentals course. For Professional and Mastery levels, basic knowledge is recommended.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger className="text-white">What software will we use?</AccordionTrigger>
+                <AccordionContent className="text-white/60">
+                  We use industry-standard 3D design software. All necessary software will be provided during the workshop.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3">
+                <AccordionTrigger className="text-white">What should I bring?</AccordionTrigger>
+                <AccordionContent className="text-white/60">
+                  Just bring your laptop. All other materials and equipment will be provided.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* Instructor Profile */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 lg:px-20">
+          <h2 className="text-4xl font-bold text-white mb-12 text-center">Meet Your Instructor</h2>
+          <div className="max-w-3xl mx-auto bg-black/50 rounded-lg p-8 border border-[#00FF00]/20">
+            <div className="flex flex-col md:flex-row gap-8 items-center">
+              <div className="w-32 h-32 rounded-full bg-[#00FF00]/10 flex items-center justify-center">
+                <User className="w-16 h-16 text-[#00FF00]" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-2">Alex Thompson</h3>
+                <p className="text-white/60 mb-4">Senior 3D Design Specialist</p>
+                <p className="text-white/60">
+                  With over 10 years of experience in 3D design and modeling, Alex has worked with major studios and led numerous successful projects. Their passion for teaching has helped hundreds of students master 3D design.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
       <section className="py-20 bg-black/50">
         <div className="container mx-auto px-4 lg:px-20">
           <motion.div
@@ -204,7 +263,6 @@ export default function DesignWorkshopsPage() {
           </motion.div>
         </div>
       </section>
-
       {/* Gallery Section */}
       <section className="py-20 bg-black/30">
         <div className="container mx-auto px-4 lg:px-20">
@@ -299,35 +357,6 @@ export default function DesignWorkshopsPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 lg:px-20">
-          <h2 className="text-4xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
-          <div className="max-w-3xl mx-auto">
-            <Accordion type="single" collapsible>
-              <AccordionItem value="item-1">
-                <AccordionTrigger className="text-white">Do I need prior experience?</AccordionTrigger>
-                <AccordionContent className="text-white/60">
-                  No prior experience is needed for our Fundamentals course. For Professional and Mastery levels, basic knowledge is recommended.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger className="text-white">What software will we use?</AccordionTrigger>
-                <AccordionContent className="text-white/60">
-                  We use industry-standard 3D design software. All necessary software will be provided during the workshop.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3">
-                <AccordionTrigger className="text-white">What should I bring?</AccordionTrigger>
-                <AccordionContent className="text-white/60">
-                  Just bring your laptop. All other materials and equipment will be provided.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div>
-        </div>
-      </section>
-
       {/* Curriculum Section */}
       <section className="py-20 bg-black/30">
         <div className="container mx-auto px-4 lg:px-20">
@@ -363,27 +392,6 @@ export default function DesignWorkshopsPage() {
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Instructor Profile */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 lg:px-20">
-          <h2 className="text-4xl font-bold text-white mb-12 text-center">Meet Your Instructor</h2>
-          <div className="max-w-3xl mx-auto bg-black/50 rounded-lg p-8 border border-[#00FF00]/20">
-            <div className="flex flex-col md:flex-row gap-8 items-center">
-              <div className="w-32 h-32 rounded-full bg-[#00FF00]/10 flex items-center justify-center">
-                <User className="w-16 h-16 text-[#00FF00]" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-2">Alex Thompson</h3>
-                <p className="text-white/60 mb-4">Senior 3D Design Specialist</p>
-                <p className="text-white/60">
-                  With over 10 years of experience in 3D design and modeling, Alex has worked with major studios and led numerous successful projects. Their passion for teaching has helped hundreds of students master 3D design.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
