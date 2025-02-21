@@ -84,30 +84,60 @@ export default function KidsWorkshopsPage() {
   return (
     <div className="min-h-screen bg-black">
       {/* Hero Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="container mx-auto px-4">
+      <section className="relative min-h-screen overflow-hidden">
+        {/* Animated diagonal light streaks */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(0,255,0,0.1)_50%,transparent_75%)] animate-pulse"></div>
+          <div className="absolute inset-0 bg-[linear-gradient(-45deg,transparent_25%,rgba(0,255,0,0.05)_50%,transparent_75%)] animate-pulse delay-75"></div>
+          <div className="absolute inset-0 bg-[linear-gradient(60deg,transparent_25%,rgba(0,255,0,0.03)_50%,transparent_75%)] animate-pulse delay-150"></div>
+        </div>
+        <div className="container mx-auto px-4 pt-24 pb-16 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-center max-w-4xl mx-auto mb-16"
+            className="max-w-6xl mx-auto text-center"
           >
-            <h1 className="text-5xl font-bold mb-6 text-white">
-              3D Pen Workshops for Kids
+            <h1 className="flex flex-col items-center justify-center min-h-[70vh]">
+              <div className="text-[2.5rem] md:text-[3.5rem] font-heading font-black tracking-tight text-white mb-4">
+                <span className="block leading-none">3D PEN WORKSHOPS</span>
+                <span className="block leading-none">FOR</span>
+              </div>
+              <span className="block text-[8rem] md:text-[12rem] lg:text-[16rem] font-heading font-black leading-none tracking-tighter bg-gradient-to-r from-[#00FF00] via-[#00FF00] to-[#00FF00]/50 text-transparent bg-clip-text">
+                KIDS
+              </span>
             </h1>
-            <p className="text-xl text-white/60 mb-8">
-              Unleash your child's creativity with our fun and educational 3D pen workshops
-              designed specifically for young artists.
-            </p>
-            <div className="flex gap-4 justify-center">
-              <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-                <Link href="/booking">Start Your Journey</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="border-[#00FF00] text-[#00FF00]">
-                <Link href="#workshops">View Workshops</Link>
-              </Button>
-            </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-20 bg-black/40">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="relative"
+              >
+                <Card className="bg-black/50 border-[#00FF00]/20">
+                  <CardHeader>
+                    <stat.icon className="w-8 h-8 text-[#00FF00] mb-4" />
+                    <CardTitle className="text-4xl font-bold text-white">
+                      {stat.value}
+                    </CardTitle>
+                    <CardDescription className="text-white/60">
+                      {stat.label}
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
