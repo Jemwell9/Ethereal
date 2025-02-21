@@ -1,49 +1,31 @@
-
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Image as ImageIcon } from "lucide-react";
+import { ArrowRight, Image as ImageIcon, Printer3d, Lightbulb, Code, Wrench } from "lucide-react";
+import { Link } from "wouter";
 
-const portfolioItems = [
+const portfolioCategories = [
   {
-    title: "3D Printed Architecture Model",
-    category: "Architecture",
-    image: "/portfolio/architecture-1.jpg",
-    description: "Custom architectural model with intricate details",
+    icon: <Printer3d className="w-8 h-8 text-[#00FF00]" />,
+    title: "3D Printing",
+    items: ["Custom Parts", "Prototypes", "Art Pieces"],
   },
   {
-    title: "Medical Device Prototype",
-    category: "Medical",
-    image: "/portfolio/medical-1.jpg",
-    description: "Precision medical device prototype",
+    icon: <Lightbulb className="w-8 h-8 text-[#00FF00]" />,
+    title: "Design",
+    items: ["Product Design", "Industrial Design", "Creative Concepts"],
   },
   {
-    title: "Custom Gaming Figurine",
-    category: "Gaming",
-    image: "/portfolio/gaming-1.jpg",
-    description: "Detailed gaming character figurine",
+    icon: <Code className="w-8 h-8 text-[#00FF00]" />,
+    title: "Technology",
+    items: ["Smart Solutions", "IoT Integration", "Digital Manufacturing"],
   },
   {
-    title: "Industrial Part Design",
-    category: "Manufacturing",
-    image: "/portfolio/manufacturing-1.jpg",
-    description: "Custom manufactured industrial component",
-  },
-  {
-    title: "Educational Model Set",
-    category: "Education",
-    image: "/portfolio/education-1.jpg",
-    description: "Interactive educational 3D models",
-  },
-  {
-    title: "Art Installation Piece",
-    category: "Art",
-    image: "/portfolio/art-1.jpg",
-    description: "Contemporary art piece using 3D printing",
-  },
+    icon: <Wrench className="w-8 h-8 text-[#00FF00]" />,
+    title: "Engineering",
+    items: ["Mechanical Parts", "Custom Tools", "Technical Solutions"],
+  }
 ];
-
-const categories = ["All", "Architecture", "Medical", "Gaming", "Manufacturing", "Education", "Art"];
 
 export default function PortfolioPage() {
   return (
@@ -58,56 +40,48 @@ export default function PortfolioPage() {
             className="text-center max-w-4xl mx-auto mb-16"
           >
             <h1 className="text-5xl font-bold mb-6 text-white">Our Portfolio</h1>
-            <p className="text-xl text-white/60">
-              Discover our diverse range of 3D printing projects and creative solutions
+            <p className="text-xl text-gray-400">
+              Explore our innovative creations and solutions across various industries
             </p>
           </motion.div>
 
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {categories.map((category, index) => (
-              <Button
-                key={index}
-                variant="outline"
-                className="border-[#00FF00]/20 hover:border-[#00FF00] hover:bg-[#00FF00]/10"
-              >
-                {category}
-              </Button>
-            ))}
-          </div>
-
-          {/* Portfolio Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {portfolioItems.map((item, index) => (
+          {/* Portfolio Categories */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {portfolioCategories.map((category, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="bg-black/50 border-[#00FF00]/20 overflow-hidden group cursor-pointer">
-                  <CardContent className="p-0">
-                    <div className="aspect-square bg-[#00FF00]/5 relative">
-                      {/* Replace with actual images */}
-                      <div className="w-full h-full flex items-center justify-center">
-                        <ImageIcon className="w-12 h-12 text-[#00FF00]/30" />
-                      </div>
-                      <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div className="text-center p-6">
-                          <p className="text-[#00FF00] text-sm mb-2">{item.category}</p>
-                          <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                          <p className="text-white/60 mb-4">{item.description}</p>
-                          <Button className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-                            View Details <ArrowRight className="w-4 h-4 ml-2" />
-                          </Button>
-                        </div>
-                      </div>
-                    </div>
+                <Card className="bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00] transition-colors">
+                  <CardContent className="p-6">
+                    <div className="mb-4">{category.icon}</div>
+                    <h3 className="text-xl font-bold text-white mb-4">{category.title}</h3>
+                    <ul className="space-y-2">
+                      {category.items.map((item, itemIndex) => (
+                        <li key={itemIndex} className="text-gray-400">{item}</li>
+                      ))}
+                    </ul>
                   </CardContent>
                 </Card>
               </motion.div>
             ))}
           </div>
+
+          {/* CTA Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="text-center mt-16"
+          >
+            <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+              <Link href="/contact">
+                Get Started <ArrowRight className="ml-2 w-4 h-4" />
+              </Link>
+            </Button>
+          </motion.div>
         </div>
       </section>
     </div>
