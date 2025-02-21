@@ -1,4 +1,4 @@
-import { ArrowRight, Star, Pen, Users, Clock, Trophy, Heart } from "lucide-react"
+import { ArrowRight, Star, Pen, Users, Clock, Trophy, Heart, CheckCircle, User2 } from "lucide-react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -255,37 +255,90 @@ export default function KidsWorkshopsPage() {
       {/* Testimonials */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-white mb-12 text-center">What Parents Say</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-black/50 border-[#00FF00]/20">
-                <CardHeader>
-                  <div className="flex items-center gap-4 mb-4">
-                    <img
-                      src={testimonial.avatar}
-                      alt={testimonial.name}
-                      className="w-12 h-12 rounded-full"
+          <h2 className="text-4xl font-bold text-white text-center mb-12">What Parents Say</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-black/50 p-6 rounded-lg border border-[#00FF00]/20"
+              >
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, idx) => (
+                    <Star 
+                      key={idx} 
+                      className="w-5 h-5 text-[#00FF00]" 
+                      fill={idx < testimonial.rating ? "#00FF00" : "transparent"} 
                     />
-                    <div>
-                      <CardTitle className="text-white">{testimonial.name}</CardTitle>
-                      <div className="flex gap-1">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`w-4 h-4 ${
-                              i < testimonial.rating ? "text-[#00FF00]" : "text-white/20"
-                            }`}
-                          />
-                        ))}
-                      </div>
-                    </div>
+                  ))}
+                </div>
+                <p className="text-white/80 mb-4">&ldquo;{testimonial.content}&rdquo;</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-[#00FF00]/20 flex items-center justify-center">
+                    <User2 className="w-5 h-5 text-[#00FF00]" />
                   </div>
-                  <CardDescription className="text-white/60">
-                    {testimonial.content}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
+                  <div className="text-white">
+                    <p className="font-medium">{testimonial.name}</p>
+                  </div>
+                </div>
+              </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Workshop Rating & Details */}
+      <section className="py-20 bg-black/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <div className="flex justify-center gap-2 mb-6">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-8 h-8 text-[#00FF00]" fill="#00FF00" />
+                ))}
+              </div>
+              <p className="text-2xl font-bold text-white mb-2">4.9 out of 5</p>
+              <p className="text-white/60">Based on 50+ student reviews</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-6">What You'll Learn</h3>
+                <ul className="space-y-4">
+                  {[
+                    "Basic 3D pen techniques and safety",
+                    "Color mixing and material properties",
+                    "Creating 3D structures and objects",
+                    "Project planning and execution",
+                    "Advanced techniques for detail work"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-white/80">
+                      <CheckCircle className="w-6 h-6 text-[#00FF00] flex-shrink-0 mt-1" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-6">Available Sessions</h3>
+                <div className="space-y-4">
+                  {[
+                    { time: "Weekday Mornings", schedule: "Mon-Fri, 9:00 AM - 11:00 AM" },
+                    { time: "Weekend Workshops", schedule: "Sat-Sun, 2:00 PM - 4:00 PM" },
+                    { time: "Evening Classes", schedule: "Tue & Thu, 6:00 PM - 8:00 PM" }
+                  ].map((session, i) => (
+                    <div key={i} className="bg-black/50 p-4 rounded-lg border border-[#00FF00]/20">
+                      <p className="font-medium text-white">{session.time}</p>
+                      <p className="text-white/60">{session.schedule}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
