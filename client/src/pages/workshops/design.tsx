@@ -212,6 +212,100 @@ export default function DesignWorkshopsPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Gallery Section */}
+      <section className="py-20 bg-black/30">
+        <div className="container mx-auto px-4 lg:px-20">
+          <h2 className="text-4xl font-bold text-white mb-12 text-center">Workshop Gallery</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="aspect-square bg-black/50 rounded-lg overflow-hidden"
+              >
+                <img 
+                  src={`/services/modeling-${(i % 3) + 1}.png`} 
+                  alt={`Gallery image ${i}`}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 lg:px-20">
+          <h2 className="text-4xl font-bold text-white mb-12 text-center">What Our Students Say</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Sarah Johnson",
+                role: "Design Student",
+                text: "The Design Fundamentals workshop gave me the perfect foundation to start my 3D design journey.",
+                rating: 5
+              },
+              {
+                name: "Michael Chen",
+                role: "Professional Designer",
+                text: "Professional Design workshop helped me transition from basic to advanced techniques seamlessly.",
+                rating: 5
+              },
+              {
+                name: "Emma Williams",
+                role: "Creative Director",
+                text: "Design Mastery was exactly what I needed to take my skills to the expert level.",
+                rating: 4
+              }
+            ].map((testimonial, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="bg-black/50 p-6 rounded-lg border border-[#00FF00]/20"
+              >
+                <div className="flex gap-1 mb-4">
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <Star
+                      key={index}
+                      className={`w-5 h-5 ${
+                        index < testimonial.rating ? 'text-[#00FF00]' : 'text-[#00FF00]/20'
+                      }`}
+                      fill={index < testimonial.rating ? '#00FF00' : 'none'}
+                    />
+                  ))}
+                </div>
+                <p className="text-white/60 mb-4">{testimonial.text}</p>
+                <div>
+                  <p className="text-white font-medium">{testimonial.name}</p>
+                  <p className="text-white/60 text-sm">{testimonial.role}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Overall Rating */}
+      <section className="py-20 bg-black/30">
+        <div className="container mx-auto px-4 lg:px-20">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-white mb-8">Workshop Rating</h2>
+            <div className="flex justify-center gap-2 mb-6">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="w-8 h-8 text-[#00FF00]" fill="#00FF00" />
+              ))}
+            </div>
+            <p className="text-2xl font-bold text-white mb-2">4.8 out of 5</p>
+            <p className="text-white/60">Based on 120+ student reviews</p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
