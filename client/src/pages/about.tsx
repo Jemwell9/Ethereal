@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import Portfolio from "@/components/portfolio";
+import Blog from "@/components/blog";
 import {
   GraduationCap,
   Award,
@@ -423,6 +425,12 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/* Portfolio Section */}
+      <Portfolio />
+
+      {/* Blog Section */}
+      <Blog />
 
       {/* Awards Section */}
       <section className="py-20 bg-black/40">
