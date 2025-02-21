@@ -1,34 +1,31 @@
-
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Star } from "lucide-react";
-import { Link } from "wouter";
+import { Image } from "lucide-react";
 
 const portfolioItems = [
   {
-    title: "3D Printing Projects",
-    description: "Custom 3D printing solutions and prototypes",
+    title: "3D Printing Services",
     category: "Manufacturing",
-    rating: 5,
+    description: "High-precision 3D printing solutions for prototypes and production",
+    image: "/portfolio/3d-printing.jpg"
   },
   {
-    title: "Design Services",
-    description: "Professional CAD modeling and design",
+    title: "Design Consultancy",
     category: "Design",
-    rating: 5,
+    description: "Professional CAD design and optimization services",
+    image: "/portfolio/design.jpg"
   },
   {
     title: "Technical Workshops",
-    description: "Training and skill development programs",
     category: "Education",
-    rating: 4,
+    description: "Hands-on training programs for 3D printing technologies",
+    image: "/portfolio/workshop.jpg"
   },
   {
-    title: "Engineering Solutions",
-    description: "Custom engineering and manufacturing",
+    title: "Custom Engineering",
     category: "Engineering",
-    rating: 5,
+    description: "Specialized engineering solutions for unique challenges",
+    image: "/portfolio/engineering.jpg"
   }
 ];
 
@@ -45,7 +42,7 @@ export default function PortfolioPage() {
           >
             <h1 className="text-5xl font-bold mb-6 text-white">Our Portfolio</h1>
             <p className="text-xl text-gray-400">
-              Explore our diverse range of projects and achievements
+              Explore our range of services and successful projects
             </p>
           </motion.div>
 
@@ -61,16 +58,6 @@ export default function PortfolioPage() {
                   <CardHeader>
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-[#00FF00] text-sm">{item.category}</span>
-                      <div className="flex gap-1">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`w-4 h-4 ${
-                              i < item.rating ? "text-[#00FF00] fill-[#00FF00]" : "text-gray-600"
-                            }`}
-                          />
-                        ))}
-                      </div>
                     </div>
                     <CardTitle className="text-white text-xl">{item.title}</CardTitle>
                     <CardDescription className="text-gray-400">
@@ -78,32 +65,16 @@ export default function PortfolioPage() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <Button 
-                      asChild 
-                      className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black mt-4"
-                    >
-                      <Link href="/contact">
-                        Learn More <ArrowRight className="ml-2 w-4 h-4" />
-                      </Link>
-                    </Button>
+                    <div className="aspect-square bg-[#00FF00]/5 rounded-lg overflow-hidden">
+                      <div className="w-full h-full bg-[#00FF00]/10 flex items-center justify-center">
+                        <Image className="w-8 h-8 text-[#00FF00]/30" />
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
               </motion.div>
             ))}
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="text-center mt-16"
-          >
-            <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-              <Link href="/contact">
-                Start Your Project <ArrowRight className="ml-2 w-4 h-4" />
-              </Link>
-            </Button>
-          </motion.div>
         </div>
       </section>
     </div>
