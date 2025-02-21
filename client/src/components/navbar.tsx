@@ -11,7 +11,7 @@ import {
 
 export default function Navbar() {
   return (
-    <nav className="fixed w-full z-50 bg-black/50 backdrop-blur-sm border-b border-white/10">
+    <nav className="sticky top-0 w-full z-[100] bg-black/50 backdrop-blur-sm border-b border-white/10">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] gap-4 md:gap-16 items-center py-2 md:py-0">
           {/* Left menu */}
