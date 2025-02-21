@@ -54,7 +54,7 @@ export default function Portfolio() {
           className="max-w-6xl mx-auto"
         >
           <h2 className="text-4xl font-bold text-white text-center mb-4">Our Portfolio</h2>
-          <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
             Explore our diverse range of successful projects across various industries,
             showcasing our expertise in 3D printing and design
           </p>
@@ -74,7 +74,7 @@ export default function Portfolio() {
                       <item.icon className="w-6 h-6 text-[#00FF00]" />
                     </div>
                     <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
-                    <p className="text-white/60 mb-4">{item.description}</p>
+                    <p className="text-gray-400 mb-4">{item.description}</p>
                     <span className="inline-block px-3 py-1 rounded-full text-sm bg-[#00FF00]/10 text-[#00FF00]">
                       {item.category}
                     </span>

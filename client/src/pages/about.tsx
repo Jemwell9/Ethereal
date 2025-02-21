@@ -226,7 +226,7 @@ const values = [
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-black pt-20">
+    <div className="min-h-screen bg-black/95 pt-20">
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="container mx-auto px-4">
@@ -243,7 +243,7 @@ export default function About() {
               Pioneering the Future of
               <span className="text-[#00FF00]"> 3D Printing</span>
             </h1>
-            <p className="text-lg text-white/60 mb-8">
+            <p className="text-lg text-gray-400 mb-8">
               We're a team of passionate innovators, combining PhD-level expertise
               with cutting-edge technology to transform ideas into reality.
             </p>
