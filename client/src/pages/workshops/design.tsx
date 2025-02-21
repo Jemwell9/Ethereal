@@ -15,6 +15,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import BookingCalendar from "@/components/booking-calendar";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 const designWorkshops = [
   {
@@ -385,10 +388,89 @@ export default function DesignWorkshopsPage() {
         </div>
       </section>
 
+      {/* Booking Calendar */}
       <section className="py-20 bg-black/30">
         <div className="container mx-auto px-4 lg:px-20">
           <h2 className="text-4xl font-bold text-white mb-12 text-center">Available Sessions</h2>
-          <BookingCalendar />
+          <div className="max-w-4xl mx-auto">
+            <Tabs defaultValue="march" className="w-full">
+              <TabsList className="grid w-full grid-cols-3 bg-black/50">
+                <TabsTrigger value="march" className="text-white">March</TabsTrigger>
+                <TabsTrigger value="april" className="text-white">April</TabsTrigger>
+                <TabsTrigger value="may" className="text-white">May</TabsTrigger>
+              </TabsList>
+              <TabsContent value="march">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {[
+                    { date: "March 15", time: "9:00 AM - 1:00 PM", spots: 3, price: "$249" },
+                    { date: "March 22", time: "2:00 PM - 6:00 PM", spots: 5, price: "$249" },
+                    { date: "March 29", time: "9:00 AM - 1:00 PM", spots: 8, price: "$249" }
+                  ].map((session, i) => (
+                    <Card key={i} className="bg-black/50 border-[#00FF00]/20">
+                      <CardContent className="p-6">
+                        <div className="space-y-4">
+                          <div className="flex justify-between items-center">
+                            <div>
+                              <div className="text-white font-medium">{session.date}</div>
+                              <div className="text-white/60 text-sm">{session.time}</div>
+                            </div>
+                            <Badge variant="outline" className="text-[#00FF00] border-[#00FF00]">
+                              {session.spots} spots left
+                            </Badge>
+                          </div>
+                          <div className="text-[#00FF00] font-medium">{session.price}</div>
+                          <Dialog>
+                            <DialogTrigger asChild>
+                              <Button className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                                Book Session
+                              </Button>
+                            </DialogTrigger>
+                            <DialogContent className="bg-black/95 border-[#00FF00]/20">
+                              <DialogHeader>
+                                <DialogTitle className="text-white">Book Workshop Session</DialogTitle>
+                                <DialogDescription className="text-white/60">
+                                  {session.date} at {session.time}
+                                </DialogDescription>
+                              </DialogHeader>
+                              <form className="space-y-4">
+                                <div className="space-y-2">
+                                  <Label htmlFor="name" className="text-white">Name</Label>
+                                  <Input id="name" placeholder="Your full name" className="bg-black/50 border-[#00FF00]/20 text-white" />
+                                </div>
+                                <div className="space-y-2">
+                                  <Label htmlFor="email" className="text-white">Email</Label>
+                                  <Input id="email" type="email" placeholder="your@email.com" className="bg-black/50 border-[#00FF00]/20 text-white" />
+                                </div>
+                                <div className="space-y-2">
+                                  <Label htmlFor="phone" className="text-white">Phone</Label>
+                                  <Input id="phone" placeholder="Your phone number" className="bg-black/50 border-[#00FF00]/20 text-white" />
+                                </div>
+                                <DialogFooter>
+                                  <Button type="submit" className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                                    Confirm Booking
+                                  </Button>
+                                </DialogFooter>
+                              </form>
+                            </DialogContent>
+                          </Dialog>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </TabsContent>
+              <TabsContent value="april">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* Similar structure for April sessions */}
+                </div>
+              </TabsContent>
+              <TabsContent value="may">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* Similar structure for May sessions */}
+                </div>
+              </TabsContent>
+            </Tabs>
+          </div>
         </div>
       </section>
     </div>
