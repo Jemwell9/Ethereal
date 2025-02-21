@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "wouter";
-import { ArrowRight, Image, Shapes, Star, Target } from "lucide-react";
+import { ArrowRight, Image, Shapes, Star, Target, BookOpen, Sparkles } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
