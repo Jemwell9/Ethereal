@@ -11,7 +11,7 @@ import {
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 w-full z-[100] bg-black/50 backdrop-blur-sm border-b border-white/10">
+    <nav className="fixed top-0 w-full z-[100] bg-black/50 backdrop-blur-sm border-b border-white/10">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] gap-4 md:gap-16 items-center py-2 md:py-0">
           {/* Left menu */}
@@ -69,7 +69,7 @@ export default function Navbar() {
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
-            </div>
+          </div>
 
           {/* Center logo */}
           <div className="flex justify-center py-1">
@@ -77,15 +77,14 @@ export default function Navbar() {
               <img 
                 src="/Ethereal-Logo.png" 
                 alt="Ethereal" 
-                className="h-36 w-auto object-contain transition-transform hover:scale-105 cursor-pointer" 
+                className="h-24 w-auto object-contain transition-transform hover:scale-105 cursor-pointer" 
                 style={{ 
-                  filter: 'drop-shadow(0 0 16px rgba(0, 255, 0, 0.5))',
-                  transform: 'scale(1.1)'
+                  filter: 'drop-shadow(0 0 16px rgba(0, 255, 0, 0.5))'
                 }}
                 onError={(e) => {
-                  console.error('Logo failed to load:', e);
                   const target = e.target as HTMLImageElement;
-                  target.style.border = '2px solid red';
+                  target.src = '/fallback-logo.png';
+                  console.warn('Logo failed to load, using fallback');
                 }}
               />
             </Link>
@@ -93,7 +92,7 @@ export default function Navbar() {
 
           {/* Right menu */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 w-full md:w-auto">
-            <NavigationMenu className="flex items-center">
+            <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="text-white hover:text-[#00FF00] transition-colors text-[10px] tracking-[0.2em] font-medium bg-transparent h-8">
@@ -113,7 +112,6 @@ export default function Navbar() {
                         <div className="text-[#00FF00] font-medium">3D Pen for Adults</div>
                         <p className="text-sm text-white/60">Professional development and artistic expression</p>
                       </Link>
-                      
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>

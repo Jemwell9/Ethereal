@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { useState, useEffect } from "react";
-import React from 'react';
+import { Card, CardContent } from "@/components/ui/card";
+import { useState } from "react";
 import { 
   Timer, 
   HeartHandshake, 
@@ -19,34 +18,20 @@ import {
   Calculator,
   BadgeCheck,
   FlaskConical,
-  BrainCircuit,
   Rocket,
   Shapes,
   Settings,
   Check,
-  ArrowUpRight,
   Search,
   Workflow,
   FileSearch,
   Building,
-  Laptop,
   Settings2,
-  FileCode,
-  GraduationCap,
-  Video,
-  Clock,
   MessageSquare,
-  Calendar,
-  Printer,
-  Lightbulb,
-  Code,
-  Cpu,
-  Database,
   Image,
   Blocks,
-  Clock3,
+  Clock3
 } from "lucide-react";
-
 
 const consultingServices = [
   {
@@ -209,7 +194,7 @@ const coreServices = [
     ]
   },
   {
-    icon: Laptop,
+    icon: Building,
     title: "Workflow Integration",
     description: "Seamless integration of 3D printing into your existing processes",
     features: [
@@ -331,7 +316,6 @@ const successStories = [
     description: "Supported Philippines' largest property developer with architectural prototyping, reducing design iteration time by 50%."
   }
 ];
-
 
 
 export default function ConsultPage() {
@@ -579,7 +563,6 @@ export default function ConsultPage() {
           </div>
         </div>
       </section>
-
 
 
       {/* CTA Section */}
