@@ -1,16 +1,8 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "wouter";
-import { 
-  ArrowRight, 
-  BookOpen, 
-  Shapes, 
-  Star,
-  Image,
-  Shield,
-  Settings2
-} from "lucide-react";
-import { Card } from "@/components/ui/card";
+import { Pen, Star, Shield, Sparkles, Users, Award, Heart, Image, Trophy, ArrowRight, User } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
