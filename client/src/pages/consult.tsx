@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
-import { useState } from "react";
 import { 
   Timer, 
   HeartHandshake, 
@@ -258,29 +257,14 @@ const problems = [
     description: "Optimizing print times while maintaining quality in high-volume production."
   },
   {
-    icon: Code,
-    title: "G-code Optimization",
-    description: "Fine-tuning printer instructions for better performance and quality."
-  },
-  {
-    icon: Cpu,
-    title: "Machine Compatibility",
-    description: "Ensuring compatibility between different printers and materials."
-  },
-  {
-    icon: Database,
-    title: "Cost Management",
-    description: "Balancing material costs with quality requirements for profitability."
+    icon: Image,
+    title: "Surface Finish",
+    description: "Achieving desired surface quality while maintaining structural integrity."
   },
   {
     icon: Blocks,
     title: "Design Optimization",
     description: "Optimizing designs for successful 3D printing and minimal support structures."
-  },
-  {
-    icon: Image,
-    title: "Surface Finish",
-    description: "Achieving desired surface quality while maintaining structural integrity."
   }
 ];
 
@@ -291,7 +275,7 @@ const successStories = [
     description: "Optimized rapid prototyping for Vietnam's leading EV manufacturer, reducing development time by 60% and supporting their electric vehicle initiatives."
   },
   {
-    icon: BrainCircuit,
+    icon: HeartHandshake,
     title: "Razer Singapore",
     description: "Implemented rapid prototyping solutions for gaming peripherals, accelerating product development cycles by 40% and reducing iteration costs."
   },
