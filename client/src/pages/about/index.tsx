@@ -1,8 +1,8 @@
 
-import React from "react";
 import { motion } from "framer-motion";
 import { Portfolio } from "@/components/portfolio";
 import { Image } from "lucide-react";
+import React from "react";
 
 export default function About() {
   return (
@@ -67,7 +67,7 @@ export default function About() {
               </p>
             </motion.div>
 
-            {/* 3. Technologies */}
+            {/* 3. Core Values */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -75,19 +75,19 @@ export default function About() {
               viewport={{ once: true }}
               className="bg-black/50 backdrop-blur-sm border border-[#00FF00]/20 rounded-lg p-8"
             >
-              <h2 className="text-3xl font-bold mb-6 text-white">Our Technologies</h2>
+              <h2 className="text-3xl font-bold mb-6 text-white">Core Values</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="text-center">
-                  <h3 className="text-[#00FF00] font-medium mb-2">Advanced Printers</h3>
-                  <p className="text-white/60">State-of-the-art 3D printing equipment</p>
+                  <h3 className="text-[#00FF00] font-medium mb-2">Innovation</h3>
+                  <p className="text-white/60">Pushing boundaries in technology</p>
                 </div>
                 <div className="text-center">
-                  <h3 className="text-[#00FF00] font-medium mb-2">Materials</h3>
-                  <p className="text-white/60">Wide range of printing materials</p>
+                  <h3 className="text-[#00FF00] font-medium mb-2">Quality</h3>
+                  <p className="text-white/60">Unwavering commitment to excellence</p>
                 </div>
                 <div className="text-center">
-                  <h3 className="text-[#00FF00] font-medium mb-2">Software</h3>
-                  <p className="text-white/60">Cutting-edge design tools</p>
+                  <h3 className="text-[#00FF00] font-medium mb-2">Customer Focus</h3>
+                  <p className="text-white/60">Your success is our priority</p>
                 </div>
               </div>
             </motion.div>
