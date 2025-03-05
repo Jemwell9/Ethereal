@@ -76,7 +76,7 @@ export default function Navbar() {
                 }}
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  target.src = '/fallback-logo.png';
+                  target.src = '/Ethereal-Logo.png';
                   console.warn('Logo failed to load, using fallback');
                 }}
               />
