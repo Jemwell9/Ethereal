@@ -1,23 +1,25 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import themePlugin from "@replit/vite-plugin-shadcn-theme-json";
-import path, { dirname } from "path";
+import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 import { fileURLToPath } from "url";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const filename = fileURLToPath(import.meta.url);
+const dir = path.dirname(filename); // Avoid redeclaring 'dirname'
+
 export default defineConfig({
+  base: "/Ethereal-Website/", // GitHub Pages base path
   plugins: [react(), runtimeErrorOverlay(), themePlugin()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "client", "src"),
-      "@shared": path.resolve(__dirname, "shared"),
+      "@": path.resolve(dir, "client", "src"),
+      "@shared": path.resolve(dir, "shared"),
     },
   },
-  root: path.resolve(__dirname, "client"),
+  root: path.resolve(dir, "client"),
   build: {
-    outDir: path.resolve(__dirname, "dist/public"),
+    outDir: path.resolve(dir, "dist/public"),
     emptyOutDir: true,
   },
 });
