@@ -68,7 +68,7 @@ export default function Navbar() {
           <div className="flex justify-center py-1">
             <Link href="/">
               <img 
-                src="Ethereal/Ethereal-Logo1.png" 
+                src="/Ethereal-Logo.png" 
                 alt="Ethereal" 
                 className="h-24 w-auto object-contain transition-transform hover:scale-105 cursor-pointer" 
                 style={{ 
@@ -76,7 +76,7 @@ export default function Navbar() {
                 }}
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  target.src = 'Ethereal/Ethereal-Logo2.png';
+                  target.src = '/Ethereal-Logo.png';
                   console.warn('Logo failed to load, using fallback');
                 }}
               />
