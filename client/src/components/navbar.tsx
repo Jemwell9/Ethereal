@@ -66,22 +66,22 @@ export default function Navbar() {
 
           {/* Center logo */}
           <div className="flex justify-center py-1">
-            <Link href="/">
-              <img 
-                src="./Ethereal/Ethereal-Logo.png" 
-                alt="Ethereal" 
-                className="h-24 w-auto object-contain transition-transform hover:scale-105 cursor-pointer" 
-                style={{ 
-                  filter: 'drop-shadow(0 0 16px rgba(0, 255, 0, 0.5))'
-                }}
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = './Ethereal/Ethereal-Logo.png';
-                  console.warn('Logo failed to load, using fallback');
-                }}
-              />
-            </Link>
-          </div>
+  <Link href="/">
+    <img 
+      src="/src/Ethereal-Logo.png" 
+      alt="Ethereal" 
+      className="h-24 w-auto object-contain transition-transform hover:scale-105 cursor-pointer" 
+      style={{ 
+        filter: 'drop-shadow(0 0 16px rgba(0, 255, 0, 0.5))'
+      }}
+      onError={(e) => {
+        const target = e.target as HTMLImageElement;
+        target.src = '/src/Ethereal-Logo.png'; // Fallback path if necessary
+        console.warn('Logo failed to load, using fallback');
+      }}
+    />
+  </Link>
+</div>
 
           {/* Right menu */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 w-full md:w-auto">
