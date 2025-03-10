@@ -2,6 +2,7 @@
 import { Link } from "wouter";
 import { Building2, Phone, Mail, MapPin } from "lucide-react";
 
+
 export default function Footer() {
   return (
     <footer className="py-6 bg-black text-white">
@@ -11,7 +12,7 @@ export default function Footer() {
           <div className="flex justify-center">
             <Link href="/">
               <img 
-                src={`${process.env.PUBLIC_URL}/Ethereal-Logo.png`}
+             src="https://jemwell9.github.io/Ethereal/Ethereal-Logo.png" 
                 alt="Ethereal" 
                 className="h-48 w-auto cursor-pointer"
                 style={{ filter: 'drop-shadow(0 0 8px rgba(0, 255, 0, 0.3))' }}
