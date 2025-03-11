@@ -9,7 +9,7 @@ const filename = fileURLToPath(import.meta.url);
 const dir = path.dirname(filename); // Avoid redeclaring 'dirname'
 
 export default defineConfig({
-  base: "/Ethereal/", // GitHub Pages base path
+  base: "/", // GitHub Pages base path
   plugins: [react(), runtimeErrorOverlay(), themePlugin()],
   resolve: {
     alias: {
