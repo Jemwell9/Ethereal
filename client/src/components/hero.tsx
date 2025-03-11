@@ -41,7 +41,7 @@ export default function Hero() {
             >
               <div className="w-full max-w-4xl mx-auto h-[200px] rounded-lg overflow-hidden shadow-[0_0_30px_rgba(0,255,0,0.3)]">
                 <img 
-                  src="/Ethereal-Homepage.png" 
+                  src="https://jemwell9.github.io/Ethereal/Ethereal-Homepage.png" 
                   alt="3D Printing Showcase" 
                   className="w-full h-full object-contain" 
                   onError={(e) => {

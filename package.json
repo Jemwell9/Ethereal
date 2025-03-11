@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
-  "homepage": "https://Jemwell9.github.io/Ethereal",
+  "homepage": "https://Jemwell9.github.io/Ethereal/",
   "scripts": {
     "dev": "tsx server/index.ts",
     "prebuild": "rm -rf dist",
