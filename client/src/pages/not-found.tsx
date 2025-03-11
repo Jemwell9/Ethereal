@@ -12,9 +12,8 @@ export default function NotFound() {
           </div>
 
           <p className="mt-4 text-sm text-gray-600">
-            Testing
+            Did you forget to add the page to the router test?
           </p>
-          <link rel="icon" type="image/x-icon" href="https://jemwell9.github.io/Ethereal/Ethereal-Logo.png" />
         </CardContent>
       </Card>
     </div>
