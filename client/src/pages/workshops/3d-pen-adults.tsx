@@ -1,582 +1,262 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Link } from "wouter";
-import {
-  Award,
-  Book,
-  Heart,
-  Palette,
-  Pen,
-  Shield,
-  Sparkles,
-  Star,
-  Trophy,
-  Users
-} from "lucide-react";
+import { Target, Shapes, Star, Sparkles, Pen, User, ArrowRight } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
-export default function AdultWorkshopsPage() {
+export default function PenWorkshopsPage() {
+  const packages = [
+    {
+      title: "Design Fundamentals",
+      description: "Master the essentials of 3D design with hands-on training in industry-standard tools.",
+      details: "Perfect for beginners starting their 3D design journey",
+      features: ["Basic modeling techniques", "Design principles", "Software fundamentals", "Simple project completion"],
+      duration: "8 hours",
+      price: "$299",
+      icon: Target,
+      gallery: ["/services/modeling-1.png", "/services/modeling-2.png"]
+    },
+    {
+      title: "Professional Design",
+      description: "Advance your 3D design skills with complex modeling and industry applications.",
+      details: "For intermediate designers",
+      features: ["Advanced modeling techniques", "Complex surface creation", "Optimization workflows", "Real-world projects"],
+      duration: "16 hours",
+      price: "$599",
+      icon: Shapes,
+      gallery: ["/services/modeling-2.png", "/services/modeling-3.png"]
+    },
+    {
+      title: "Design Mastery",
+      description: "Become a 3D design expert with advanced techniques and certification preparation.",
+      details: "Expert-level training",
+      features: ["Expert modeling techniques", "Industry certification prep", "Portfolio development", "Advanced project management"],
+      duration: "24 hours",
+      price: "$999",
+      icon: Star,
+      gallery: ["/services/modeling-1.png", "/services/modeling-3.png"]
+    }
+  ];
   return (
-    <div className="min-h-screen bg-black pt-24">
-      {/* Hero Section */}
-      <section className="py-20 relative overflow-hidden">
+    <div className="min-h-screen bg-black">
+      {/* Hero Section + Stats */}
+      <section className="pt-32 pb-20">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center max-w-4xl mx-auto mb-16"
-          >
-            <h1 className="text-5xl font-bold mb-6 text-white">
-              Unleash Your Creativity with 3D Pens
-            </h1>
-            <p className="text-xl text-white/60 mb-8">
-              Discover a new dimension of artistic expression and professional skill-building
-            </p>
-
-            {/* Trust Badges */}
-            <div className="flex justify-center gap-8 mb-12">
-              <div className="flex items-center gap-2">
-                <Shield className="w-6 h-6 text-[#00FF00]" />
-                <span className="text-white">Professional Tools</span>
+          <div className="flex flex-col-reverse md:flex-row gap-12 items-center">
+            <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} className="flex-1 text-left">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">Unleash Your Creativity with 3D Pens</h1>
+              <p className="text-xl text-white/60 mb-8">Discover a new dimension of artistic expression and professional skill-building.</p>
+              <div className="flex gap-4">
+                <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                  <Link href="/booking">Book Your Workshop</Link>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="border-[#00FF00] text-[#00FF00]">
+                  <Link href="#workshops">Browse Workshops</Link>
+                </Button>
               </div>
-              <div className="flex items-center gap-2">
-                <Users className="w-6 h-6 text-[#00FF00]" />
-                <span className="text-white">Small Groups (8:1 Ratio)</span>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.3 }} className="flex-1">
+              <div className="aspect-video bg-[#00FF00]/5 rounded-lg flex items-center justify-center">
+                <Pen className="w-12 h-12 text-[#00FF00]/40" />
               </div>
-              <div className="flex items-center gap-2">
-                <Award className="w-6 h-6 text-[#00FF00]" />
-                <span className="text-white">Expert Instructors</span>
-              </div>
-            </div>
-            <div className="flex gap-4 justify-center">
-              <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-                <Link href="/booking">Book a Workshop</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="border-[#00FF00] text-[#00FF00]">
-                <Link href="#learn-more">Learn More</Link>
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-20 bg-black/50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <Card className="bg-black/50 border-[#00FF00]/20">
-              <CardContent className="p-6">
-                <Star className="w-8 h-8 text-[#00FF00] mb-4" />
-                <h3 className="text-xl font-bold text-white mb-2">Professional Growth</h3>
-                <p className="text-white/60">Develop valuable skills for prototyping and design</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-black/50 border-[#00FF00]/20">
-              <CardContent className="p-6">
-                <Heart className="w-8 h-8 text-[#00FF00] mb-4" />
-                <h3 className="text-xl font-bold text-white mb-2">Creative Expression</h3>
-                <p className="text-white/60">Find your unique artistic voice in 3D</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-black/50 border-[#00FF00]/20">
-              <CardContent className="p-6">
-                <Users className="w-8 h-8 text-[#00FF00] mb-4" />
-                <h3 className="text-xl font-bold text-white mb-2">Community</h3>
-                <p className="text-white/60">Connect with like-minded creative professionals</p>
-              </CardContent>
-            </Card>
+            </motion.div>
           </div>
-        </div>
-      </section>
 
-      {/* Workshop Levels */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-white mb-4">Choose Your Path</h2>
-            <p className="text-white/60">From beginners to advanced artists, find your perfect starting point</p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <Card className="bg-black/50 border-[#00FF00]/20">
-              <CardHeader>
-                <Book className="w-8 h-8 text-[#00FF00] mb-4" />
-                <CardTitle className="text-white">Fundamentals</CardTitle>
-                <CardDescription className="text-white/60">Perfect for beginners</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 mb-6">
-                  <li className="text-white/60 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                    Basic pen control
-                  </li>
-                  <li className="text-white/60 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                    Material understanding
-                  </li>
-                  <li className="text-white/60 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                    Simple projects
-                  </li>
-                </ul>
-                <div className="text-center text-white mb-4">$129</div>
-                <Button asChild className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-                  <Link href="/booking">Book Now</Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-black/50 border-[#00FF00]/20">
-              <CardHeader>
-                <Palette className="w-8 h-8 text-[#00FF00] mb-4" />
-                <CardTitle className="text-white">Advanced Techniques</CardTitle>
-                <CardDescription className="text-white/60">For intermediate artists</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 mb-6">
-                  <li className="text-white/60 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                    Complex structures
-                  </li>
-                  <li className="text-white/60 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                    Color techniques
-                  </li>
-                  <li className="text-white/60 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                    Project planning
-                  </li>
-                </ul>
-                <div className="text-center text-white mb-4">$179</div>
-                <Button asChild className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-                  <Link href="/booking">Book Now</Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-black/50 border-[#00FF00]/20">
-              <CardHeader>
-                <Trophy className="w-8 h-8 text-[#00FF00] mb-4" />
-                <CardTitle className="text-white">Mastery</CardTitle>
-                <CardDescription className="text-white/60">For serious artists</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 mb-6">
-                  <li className="text-white/60 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                    Professional techniques
-                  </li>
-                  <li className="text-white/60 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                    Portfolio development
-                  </li>
-                  <li className="text-white/60 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                    Advanced projects
-                  </li>
-                </ul>
-                <div className="text-center text-white mb-4">$249</div>
-                <Button asChild className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-                  <Link href="/booking">Book Now</Link>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Explorer Package */}
-      <section className="py-20 bg-black/50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-4xl mx-auto"
-          >
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">Explorer Package</h2>
-              <p className="text-white/60">Perfect introduction to 3D pen artistry</p>
-            </div>
-
-            {/* Workshop Details */}
-            <Card className="bg-black/50 border-[#00FF00]/20 p-6 mb-8">
-              <div className="grid gap-6">
-                <div className="flex justify-between items-center">
-                  <div>
-                    <h3 className="text-2xl font-bold text-white mb-2">Beginner's Journey</h3>
-                    <p className="text-white/60">3 hours of guided creative exploration</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-3xl font-bold text-[#00FF00]">$89</p>
-                    <p className="text-white/60">per person</p>
-                  </div>
-                </div>
-
-                <div className="grid gap-4">
-                  <h4 className="text-white font-medium">What's Included:</h4>
-                  <ul className="space-y-2">
-                    <li className="flex items-center gap-2 text-white/60">
-                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                      Professional pen handling techniques
-                    </li>
-                    <li className="flex items-center gap-2 text-white/60">
-                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                      Basic design principles
-                    </li>
-                    <li className="flex items-center gap-2 text-white/60">
-                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                      Material knowledge and selection
-                    </li>
-                    <li className="flex items-center gap-2 text-white/60">
-                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                      Take-home creation
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Group Discounts */}
-                <div className="bg-[#00FF00]/5 p-4 rounded-lg">
-                  <h4 className="text-white font-medium mb-2">Group Discounts</h4>
-                  <ul className="space-y-2">
-                    <li className="text-white/60">2-3 people: 10% off per person</li>
-                    <li className="text-white/60">4+ people: 15% off per person</li>
-                    <li className="text-white/60">Corporate team rates available</li>
-                  </ul>
-                </div>
-              </div>
-            </Card>
-
-            {/* Success Story */}
-            <div className="mb-12">
-              <Card className="bg-black/50 border-[#00FF00]/20 p-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-16 h-16 bg-[#00FF00]/10 rounded-full flex items-center justify-center">
-                    <Star className="w-8 h-8 text-[#00FF00]" />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-medium mb-2">Career Transition Success</h4>
-                    <p className="text-white/60 mb-4">
-                      "The Explorer workshop opened my eyes to the possibilities of 3D pen art. I've since incorporated these skills into my design practice."
-                    </p>
-                    <p className="text-white/40">- Michael, Graphic Designer</p>
-                  </div>
-                </div>
-              </Card>
-            </div>
-
-            {/* CTA */}
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.6 }} className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20">
             <div className="text-center">
-              <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-                <Link href="/booking">Book This Workshop</Link>
-              </Button>
+              <div className="text-4xl font-bold text-[#00FF00] mb-2">500+</div>
+              <div className="text-white/60">Students Trained</div>
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Artist Package */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-4xl mx-auto"
-          >
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">Artist Package</h2>
-              <p className="text-white/60">Advanced techniques for artistic expression</p>
-            </div>
-
-            <Card className="bg-black/50 border-[#00FF00]/20 p-6 mb-8">
-              <div className="grid gap-6">
-                <div className="flex justify-between items-center">
-                  <div>
-                    <h3 className="text-2xl font-bold text-white mb-2">Creative Development</h3>
-                    <p className="text-white/60">6 hours of intensive artistic training</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-3xl font-bold text-[#00FF00]">$179</p>
-                    <p className="text-white/60">per person</p>
-                  </div>
-                </div>
-
-                <div className="grid gap-4">
-                  <h4 className="text-white font-medium">Advanced Features:</h4>
-                  <ul className="space-y-2">
-                    <li className="flex items-center gap-2 text-white/60">
-                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                      Advanced sculpting techniques
-                    </li>
-                    <li className="flex items-center gap-2 text-white/60">
-                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                      Color theory and mixing
-                    </li>
-                    <li className="flex items-center gap-2 text-white/60">
-                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                      Complex structure creation
-                    </li>
-                    <li className="flex items-center gap-2 text-white/60">
-                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                      Personal style development
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </Card>
-
-            {/* Success Story */}
-            <div className="mb-12">
-              <Card className="bg-black/50 border-[#00FF00]/20 p-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-16 h-16 bg-[#00FF00]/10 rounded-full flex items-center justify-center">
-                    <Palette className="w-8 h-8 text-[#00FF00]" />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-medium mb-2">Artistic Achievement</h4>
-                    <p className="text-white/60 mb-4">
-                      "The Artist package helped me develop my unique style. Now I create and sell custom 3D pen art pieces."
-                    </p>
-                    <p className="text-white/40">- Sarah, Professional Artist</p>
-                  </div>
-                </div>
-              </Card>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Master Package */}
-      <section className="py-20 bg-black/50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-4xl mx-auto"
-          >
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">Master Package</h2>
-              <p className="text-white/60">Professional mastery and portfolio development</p>
-            </div>
-
-            <Card className="bg-black/50 border-[#00FF00]/20 p-6 mb-8">
-              <div className="grid gap-6">
-                <div className="flex justify-between items-center">
-                  <div>
-                    <h3 className="text-2xl font-bold text-white mb-2">Professional Journey</h3>
-                    <p className="text-white/60">12 hours of expert-level instruction</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-3xl font-bold text-[#00FF00]">$299</p>
-                    <p className="text-white/60">per person</p>
-                  </div>
-                </div>
-
-                <div className="grid gap-4">
-                  <h4 className="text-white font-medium">Master Features:</h4>
-                  <ul className="space-y-2">
-                    <li className="flex items-center gap-2 text-white/60">
-                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                      Professional techniques mastery
-                    </li>
-                    <li className="flex items-center gap-2 text-white/60">
-                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                      Portfolio development
-                    </li>
-                    <li className="flex items-center gap-2 text-white/60">
-                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                      Exhibition preparation
-                    </li>
-                    <li className="flex items-center gap-2 text-white/60">
-                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
-                      Business integration strategies
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Professional Benefits */}
-                <div className="bg-[#00FF00]/5 p-4 rounded-lg">
-                  <h4 className="text-white font-medium mb-2">Professional Benefits</h4>
-                  <ul className="space-y-2">
-                    <li className="text-white/60">Certificate of completion</li>
-                    <li className="text-white/60">Portfolio review session</li>
-                    <li className="text-white/60">Online community access</li>
-                    <li className="text-white/60">Post-course mentoring</li>
-                  </ul>
-                </div>
-              </div>
-            </Card>
-
-            {/* Success Story */}
-            <div className="mb-12">
-              <Card className="bg-black/50 border-[#00FF00]/20 p-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-16 h-16 bg-[#00FF00]/10 rounded-full flex items-center justify-center">
-                    <Trophy className="w-8 h-8 text-[#00FF00]" />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-medium mb-2">Professional Success</h4>
-                    <p className="text-white/60 mb-4">
-                      "The Master package transformed my hobby into a successful business. I now teach and create commissioned pieces."
-                    </p>
-                    <p className="text-white/40">- David, 3D Art Studio Owner</p>
-                  </div>
-                </div>
-              </Card>
-            </div>
-
-            {/* CTA */}
             <div className="text-center">
-              <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-                <Link href="/booking">Start Your Master Journey</Link>
-              </Button>
+              <div className="text-4xl font-bold text-[#00FF00] mb-2">98%</div>
+              <div className="text-white/60">Success Rate</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-[#00FF00] mb-2">50+</div>
+              <div className="text-white/60">Industry Projects</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-[#00FF00] mb-2">15+</div>
+              <div className="text-white/60">Years Experience</div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Packages Section */}
+      <section id="workshops" className="py-20">
+        <div className="container mx-auto px-4 lg:px-20">
+          <h2 className="text-4xl font-bold text-white mb-12 text-center">Our Workshop Packages</h2>
+          {packages.map((pkg, i) => (
+            <div key={i} className={`flex flex-col lg:flex-row gap-12 mb-20 ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+              <div className="lg:w-1/2 space-y-6">
+                <pkg.icon className="w-8 h-8 text-[#00FF00] mb-4" />
+                <h3 className="text-3xl font-bold text-white">{pkg.title}</h3>
+                <p className="text-white/60">{pkg.description}</p>
+                <p className="text-white/50 text-sm">{pkg.details}</p>
+                <ul className="space-y-2">
+                  {pkg.features.map((feature, j) => (
+                    <li key={j} className="flex items-center gap-2 text-white/60">
+                      <Sparkles className="w-4 h-4 text-[#00FF00]" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex justify-between items-center">
+                  <span className="text-white/60">{pkg.duration}</span>
+                  <span className="text-[#00FF00] font-medium">{pkg.price}</span>
+                </div>
+                <Button asChild className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                  <Link href="/booking">Book Now</Link>
+                </Button>
+              </div>
+              <div className="lg:w-1/2 grid grid-cols-2 gap-4">
+                {pkg.gallery.map((src, index) => (
+                  <div key={index} className="aspect-square bg-[#00FF00]/5 rounded-lg overflow-hidden">
+                    <img src={src} alt="Workshop" className="w-full h-full object-cover" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-black/50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-white mb-4">Frequently Asked Questions</h2>
-            <p className="text-white/60">Everything you need to know about our 3D pen workshops</p>
-          </motion.div>
-
+      <section className="py-20 bg-black/30">
+        <div className="container mx-auto px-4 lg:px-20">
+          <h2 className="text-4xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
           <div className="max-w-3xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem value="item-1" className="border-[#00FF00]/20 bg-black/50">
-                <AccordionTrigger className="text-white px-4">What materials are included in the workshop?</AccordionTrigger>
-                <AccordionContent className="text-white/60 px-4">
-                  All materials are provided, including professional 3D pens, a variety of colored filaments, design templates, and safety equipment. You'll also receive a starter kit to take home.
-                </AccordionContent>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger className="text-white">Do I need prior experience with 3D pens?</AccordionTrigger>
+                <AccordionContent className="text-white/60">No experience needed! Our Explorer package is beginner-friendly.</AccordionContent>
               </AccordionItem>
-
-              <AccordionItem value="item-2" className="border-[#00FF00]/20 bg-black/50">
-                <AccordionTrigger className="text-white px-4">Do I need prior experience with 3D pens?</AccordionTrigger>
-                <AccordionContent className="text-white/60 px-4">
-                  No prior experience is necessary. Our Explorer Package is designed for complete beginners, while our Artist and Master packages are suitable for those with some experience.
-                </AccordionContent>
+              <AccordionItem value="item-2">
+                <AccordionTrigger className="text-white">Are all materials included?</AccordionTrigger>
+                <AccordionContent className="text-white/60">Yes, we provide all necessary tools and materials.</AccordionContent>
               </AccordionItem>
-
-              <AccordionItem value="item-3" className="border-[#00FF00]/20 bg-black/50">
-                <AccordionTrigger className="text-white px-4">What's the class size?</AccordionTrigger>
-                <AccordionContent className="text-white/60 px-4">
-                  We maintain small class sizes with a maximum of 8 participants per instructor to ensure personalized attention and optimal learning experience.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-4" className="border-[#00FF00]/20 bg-black/50">
-                <AccordionTrigger className="text-white px-4">Can I bring my own 3D pen?</AccordionTrigger>
-                <AccordionContent className="text-white/60 px-4">
-                  Yes, you're welcome to bring your own 3D pen if you prefer. However, we provide high-quality professional pens for all participants.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-5" className="border-[#00FF00]/20 bg-black/50">
-                <AccordionTrigger className="text-white px-4">Are there any prerequisites for the Master Package?</AccordionTrigger>
-                <AccordionContent className="text-white/60 px-4">
-                  While not strictly required, we recommend having some experience with 3D pens before enrolling in the Master Package. The Explorer or Artist packages are great stepping stones.
-                </AccordionContent>
+              <AccordionItem value="item-3">
+                <AccordionTrigger className="text-white">Can I bring my own pen?</AccordionTrigger>
+                <AccordionContent className="text-white/60">Yes, but we also provide high-quality 3D pens for use.</AccordionContent>
               </AccordionItem>
             </Accordion>
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20 bg-black/50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-white mb-4">Success Stories</h2>
-            <p className="text-white/60">Hear from our workshop participants</p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <Card className="bg-black/50 border-[#00FF00]/20">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 bg-[#00FF00]/10 rounded-full flex items-center justify-center mb-4">
-                  <Trophy className="w-6 h-6 text-[#00FF00]" />
-                </div>
-                <p className="text-white/80 mb-4">
-                  "The Explorer workshop opened my eyes to the creative possibilities of 3D pen art. The instructors were patient and knowledgeable."
-                </p>
-                <div className="text-white font-medium">James K.</div>
-                <div className="text-white/60">Graphic Designer</div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-black/50 border-[#00FF00]/20">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 bg-[#00FF00]/10 rounded-full flex items-center justify-center mb-4">
-                  <Star className="w-6 h-6 text-[#00FF00]" />
-                </div>
-                <p className="text-white/80 mb-4">
-                  "As an architect, the Artist package helped me develop new skills for creating physical models. Highly recommended!"
-                </p>
-                <div className="text-white font-medium">Maria R.</div>
-                <div className="text-white/60">Architect</div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-black/50 border-[#00FF00]/20">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 bg-[#00FF00]/10 rounded-full flex items-center justify-center mb-4">
-                  <Palette className="w-6 h-6 text-[#00FF00]" />
-                </div>
-                <p className="text-white/80 mb-4">
-                  "The Master package transformed my hobby into a successful business. Now I create commissioned art pieces!"
-                </p>
-                <div className="text-white font-medium">Alex T.</div>
-                <div className="text-white/60">Professional Artist</div>
-              </CardContent>
-            </Card>
+      <section className="py-20">
+        <div className="container mx-auto px-4 lg:px-20">
+          <h2 className="text-4xl font-bold text-white mb-12 text-center">Meet Your Instructor</h2>
+          <div className="max-w-3xl mx-auto bg-black/50 rounded-lg p-8 border border-[#00FF00]/20">
+            <div className="flex flex-col md:flex-row gap-8 items-center">
+              <div className="w-32 h-32 rounded-full bg-[#00FF00]/10 flex items-center justify-center">
+                <User className="w-16 h-16 text-[#00FF00]" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-2">Alex Thompson</h3>
+                <p className="text-white/60 mb-4">Senior 3D Design Specialist</p>
+                <p className="text-white/60">With over 10 years of experience, Alex has helped hundreds of students master 3D pen artistry.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section className="py-20 bg-black/50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-white mb-4">Workshop Gallery</h2>
-            <p className="text-white/60">Amazing creations from our workshop participants</p>
+      {/* CTA Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 lg:px-20">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-white mb-6">Ready to Start Creating?</h2>
+            <p className="text-xl text-white/60 mb-8">Join our community of creative professionals and start your journey in 3D pen artistry.</p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Button asChild size="lg" className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                <Link href="/booking">Book Your Workshop</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="border-[#00FF00] text-[#00FF00]">
+                <Link href="#workshops">Browse Workshops</Link>
+              </Button>
+            </div>
           </motion.div>
+        </div>
+      </section>
+<section className="py-20 bg-black/30">
+        <div className="container mx-auto px-4 lg:px-20">
+          <h2 className="text-4xl font-bold text-white mb-12 text-center">Workshop Gallery</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: i * 0.1 }} className="aspect-square bg-black/50 rounded-lg overflow-hidden">
+                <div className="w-full h-full bg-[#00FF00]/10 flex items-center justify-center">
+                  <Pen className="w-8 h-8 text-[#00FF00]/40" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
-            {Array.from({ length: 8 }).map((_, index) => (
-              <Card key={index} className="bg-black/50 border-[#00FF00]/20">
-                <CardContent className="p-0">
-                  <div className="aspect-square bg-[#00FF00]/5 rounded-lg overflow-hidden">
-                    {/* Image placeholders - replace src with actual workshop images */}
-                    <div className="w-full h-full bg-[#00FF00]/10 flex items-center justify-center">
-                      <Pen className="w-8 h-8 text-[#00FF00]/30" />
-                    </div>
-                  </div>
+      {/* Testimonials */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 lg:px-20">
+          <h2 className="text-4xl font-bold text-white mb-12 text-center">What Our Students Say</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[{ name: "Sarah Johnson", role: "Design Student", text: "The Explorer workshop gave me the perfect foundation.", rating: 5 }, { name: "Michael Chen", role: "Professional Designer", text: "The Artist package advanced my skills dramatically.", rating: 5 }, { name: "Emma Williams", role: "Creative Director", text: "Master Package took me to an expert level.", rating: 4 }].map((testimonial, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: i * 0.1 }} className="bg-black/50 p-6 rounded-lg border border-[#00FF00]/20">
+                <div className="flex gap-1 mb-4">
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <Star key={index} className={`w-5 h-5 ${index < testimonial.rating ? 'text-[#00FF00]' : 'text-[#00FF00]/20'}`} fill={index < testimonial.rating ? '#00FF00' : 'none'} />
+                  ))}
+                </div>
+                <p className="text-white/60 mb-4">{testimonial.text}</p>
+                <div>
+                  <p className="text-white font-medium">{testimonial.name}</p>
+                  <p className="text-white/60 text-sm">{testimonial.role}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+<section className="py-20 bg-black/30">
+        <div className="container mx-auto px-4 lg:px-20">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-white mb-8">Workshop Rating</h2>
+            <div className="flex justify-center gap-2 mb-6">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="w-8 h-8 text-[#00FF00]" fill="#00FF00" />
+              ))}
+            </div>
+            <p className="text-2xl font-bold text-white mb-2">4.8 out of 5</p>
+            <p className="text-white/60">Based on 120+ student reviews</p>
+          </div>
+        </div>
+      </section>
+
+      {/* What You'll Learn */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 lg:px-20">
+          <h2 className="text-4xl font-bold text-white mb-12 text-center">What You'll Learn</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[{ week: "Week 1", topics: ["Pen handling basics", "Simple structures", "Material selection", "Safety practices"] }, { week: "Week 2", topics: ["Advanced pen techniques", "Design principles", "Sculpting methods", "Project planning"] }, { week: "Week 3", topics: ["Portfolio project", "Exhibition readiness", "Business strategies", "Mentorship"] }].map((week, i) => (
+              <Card key={i} className="bg-black/50 border-[#00FF00]/20">
+                <CardHeader>
+                  <CardTitle className="text-white">{week.week}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    {week.topics.map((topic, j) => (
+                      <li key={j} className="text-white/60 flex items-center gap-2">
+                        <ArrowRight className="w-4 h-4 text-[#00FF00]" />
+                        {topic}
+                      </li>
+                    ))}
+                  </ul>
                 </CardContent>
               </Card>
             ))}
@@ -584,115 +264,76 @@ export default function AdultWorkshopsPage() {
         </div>
       </section>
 
-      {/* Workshop Insights Blog */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-white mb-4">Workshop Insights</h2>
-            <p className="text-white/60">Discover your perfect learning path</p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
-            <Card className="bg-black/50 border-[#00FF00]/20">
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center">
-                    <Star className="w-6 h-6 text-[#00FF00]" />
+      {/* Available Sessions */}
+      <section className="py-20 bg-black/30">
+        <div className="container mx-auto px-4 lg:px-20">
+          <h2 className="text-4xl font-bold text-white mb-12 text-center">Available Sessions</h2>
+          <div className="max-w-4xl mx-auto">
+            <Tabs defaultValue="march" className="w-full">
+              <TabsList className="grid w-full grid-cols-3 bg-black/50">
+                {['march', 'april', 'may'].map((month) => (
+                  <TabsTrigger key={month} value={month} className="text-white capitalize focus:outline-none">
+                    {month}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+              {['march', 'april', 'may'].map((month) => (
+                <TabsContent key={month} value={month}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {[{ date: "15", time: "9:00 AM - 1:00 PM", spots: 3, price: "$249" }, { date: "22", time: "2:00 PM - 6:00 PM", spots: 5, price: "$249" }, { date: "29", time: "9:00 AM - 1:00 PM", spots: 8, price: "$249" }].map((session, i) => (
+                      <Card key={i} className="bg-black/50 border-[#00FF00]/20">
+                        <CardContent className="p-6">
+                          <div className="space-y-4">
+                            <div className="flex justify-between items-center">
+                              <div>
+                                <div className="text-white font-medium">{month} {session.date}</div>
+                                <div className="text-white/60 text-sm">{session.time}</div>
+                              </div>
+                              <Badge variant="outline" className="text-[#00FF00] border-[#00FF00]">
+                                {session.spots} spots left
+                              </Badge>
+                            </div>
+                            <div className="text-[#00FF00] font-medium">{session.price}</div>
+                            <Dialog>
+                              <DialogTrigger asChild>
+                                <Button className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                                  Book Session
+                                </Button>
+                              </DialogTrigger>
+                              <DialogContent className="bg-black/95 border-[#00FF00]/20">
+                                <DialogHeader>
+                                  <DialogTitle className="text-white">Book Workshop Session</DialogTitle>
+                                </DialogHeader>
+                                <form className="space-y-4">
+                                  <div className="space-y-2">
+                                    <Label htmlFor="name" className="text-white">Name</Label>
+                                    <Input id="name" placeholder="Your full name" className="bg-black/50 border-[#00FF00]/20 text-white" />
+                                  </div>
+                                  <div className="space-y-2">
+                                    <Label htmlFor="email" className="text-white">Email</Label>
+                                    <Input id="email" type="email" placeholder="your@email.com" className="bg-black/50 border-[#00FF00]/20 text-white" />
+                                  </div>
+                                  <div className="space-y-2">
+                                    <Label htmlFor="phone" className="text-white">Phone</Label>
+                                    <Input id="phone" placeholder="Your phone number" className="bg-black/50 border-[#00FF00]/20 text-white" />
+                                  </div>
+                                  <DialogFooter>
+                                    <Button type="submit" className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                                      Confirm Booking
+                                    </Button>
+                                  </DialogFooter>
+                                </form>
+                              </DialogContent>
+                            </Dialog>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
                   </div>
-                  <div>
-                    <CardTitle className="text-white">Getting Started: Single Sessions</CardTitle>
-                    <CardDescription className="text-white/60">Your Gateway to 3D Pen Artistry</CardDescription>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="prose prose-invert">
-                <p className="text-white/80">
-                  Begin your creative journey with our introductory single sessions, perfectly crafted for newcomers to 3D pen art.
-                  In these engaging 3-hour workshops, you'll receive comprehensive guidance and all necessary materials to create your first masterpiece.
-                </p>
-                <div className="bg-[#00FF00]/5 p-4 rounded-lg mt-4">
-                  <p className="text-white/60 text-sm">
-                    Starting at $89 per session | All materials included | Take-home creation
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-black/50 border-[#00FF00]/20">
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center">
-                    <Award className="w-6 h-6 text-[#00FF00]" />
-                  </div>
-                  <div>
-                    <CardTitle className="text-white">Monthly Immersion Program</CardTitle>
-                    <CardDescription className="text-white/60">Dedicated Practice for Rapid Growth</CardDescription>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="prose prose-invert">
-                <p className="text-white/80">
-                  Accelerate your development with our monthly program, designed for enthusiasts seeking consistent growth.
-                  With four sessions per month, priority booking, and additional materials, you'll build a strong foundation in 3D pen artistry.
-                </p>
-                <div className="bg-[#00FF00]/5 p-4 rounded-lg mt-4">
-                  <p className="text-white/60 text-sm">
-                    $299 monthly | 4 sessions included | Priority booking & extra materials
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-black/50 border-[#00FF00]/20">
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center">
-                    <Trophy className="w-6 h-6 text-[#00FF00]" />
-                  </div>
-                  <div>
-                    <CardTitle className="text-white">Private Mentorship Experience</CardTitle>
-                    <CardDescription className="text-white/60">Personalized Guidance for Your Vision</CardDescription>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="prose prose-invert">
-                <p className="text-white/80">
-                  For those seeking individualized attention, our private sessions offer the ultimate learning experience.
-                  Work one-on-one with expert instructors, focus on your specific interests, and develop your unique artistic style.
-                </p>
-                <div className="bg-[#00FF00]/5 p-4 rounded-lg mt-4">
-                  <p className="text-white/60 text-sm">
-                    $149 per session | Flexible scheduling | Customized project focus
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+                </TabsContent>
+              ))}
+            </Tabs>
           </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <h2 className="text-4xl font-bold text-white mb-6">Ready to Start Creating?</h2>
-            <p className="text-white/60 mb-8">
-              Join our community of creative professionals and start your journey in 3D pen artistry
-            </p>
-            <Button asChild className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
-              <Link href="/booking">Book Your Workshop Now</Link>
-            </Button>
-          </motion.div>
         </div>
       </section>
     </div>
