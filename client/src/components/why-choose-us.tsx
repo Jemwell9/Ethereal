@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Zap, Award, Users, Palette, Layers, Leaf, Image } from "lucide-react";
-//import { Animated3DGrid } from "@/components/ui/animated-3d-grid"; // Removed as per edited code
 
 const features = [
   {
@@ -38,9 +37,7 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-20 bg-black/40 relative"> {/* Updated background color */}
-      {/*<div className="absolute inset-0 bg-black/80" /> */} {/* Removed overlay */}
-      {/*<Animated3DGrid variant="default" />*/} {/* Removed 3D Grid */}
+    <section className="py-20 bg-black/40 relative">
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -49,7 +46,7 @@ export default function WhyChooseUs() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4 text-white">WHY CHOOSE US?</h2>
+          <h2 className="font-[agrandir wide] font-bold text-[32px] text-white mb-4">WHY CHOOSE US?</h2>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -71,8 +68,8 @@ export default function WhyChooseUs() {
                       <feature.icon className="w-6 h-6 text-[#00FF00]" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-white">{feature.title}</h3>
-                      <p className="text-white/60 text-sm">{feature.description}</p>
+                      <h3 className="font-[horizon] font-bold uppercase text-[#00bf63] text-[16px]">{feature.title}</h3>
+                      <p className="font-[agrandir wide] text-[14px] text-white mt-2">{feature.description}</p>
                     </div>
                   </div>
                 </CardContent>
