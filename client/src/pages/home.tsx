@@ -16,10 +16,8 @@ export default function Home() {
       <WhyChooseUs />
       <Services />
       <Process />
-      <Workshops />
       <Testimonials />
       <ConceptManufacturing />
-      <Trainings />
     </main>
   );
 }

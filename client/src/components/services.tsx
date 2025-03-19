@@ -1,31 +1,39 @@
 import { motion } from "framer-motion";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code, GraduationCap, Pen, Image } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Printer, PencilRuler, HelpCircle, PenTool } from "lucide-react";
 
 const services = [
   {
-    title: "3D Printing (All Materials)",
-    description: "From prototypes to finished products, we deliver quality results for every project using various materials. We've got you covered whether it's PLA, ABS, PETG, resin, metal, carbon fiber, nylon, or any other material.",
-    icon: Code,
-    details: "Our technology ensures precision, durability, and customization for all creations, big or small."
+    title: "3D Printing",
+    subtitle: "(All Materials)",
+    description: "From prototypes to finished products, we deliver quality results for every project using various materials. We've got you covered whether it’s PLA, ABS, PETG, resin, metal, carbon fiber, nylon, or any other material. Our technology ensures precision, durability, and customization for all creations, big or small.",
+    img: "/images/3d-printing-sample.jpg",
+    icon: Printer,
+    reverse: false
   },
   {
-    title: "AutoCAD Modeling (Small to Large Scale)",
+    title: "AutoCAD",
+    subtitle: "(Small to Large Scale)",
     description: "Transform your ideas into 3D-print-ready designs with our expert AutoCAD modelling services. We specialize in creating precise and functional models tailored for 3D printing, ensuring every detail is optimized for a flawless print.",
-    icon: Code,
-    details: "From intricate prototypes to large-scale production designs."
+    img: "/images/autocad-sample.jpg",
+    icon: PencilRuler,
+    reverse: true
   },
   {
-    title: "Consultation Services (Design and Materials)",
+    title: "Consultation",
+    subtitle: "(Design and Materials)",
     description: "Navigate the world of 3D printing with confidence through our expert consultation services. From selecting the right materials—such as PLA, ABS, resin, metal, and more—to refining your design for optimal results, our team provides tailored guidance at every step.",
-    icon: GraduationCap,
-    details: "Whether you're prototyping, creating functional parts, or producing artistic pieces."
+    img: "/images/consultation-sample.jpg",
+    icon: HelpCircle,
+    reverse: false
   },
   {
-    title: "3D Pen Art Workshop (For Kids to Adults)",
+    title: "3D Pen Art Workshop",
+    subtitle: "(For Kids to Adults)",
     description: "Unleash your creativity with our fun and engaging 3D Pen Art Workshops, designed for all ages and skill levels. Whether you're a curious beginner or a seasoned artist, our hands-on sessions guide you in creating stunning 3D masterpieces.",
-    icon: Pen,
-    details: "Perfect for kids, adults, families, and team-building events, these workshops combine creativity and innovation in an enjoyable and interactive environment. Let your imagination come to life—one stroke at a time!"
+    img: "/images/3d-pen-sample.jpg",
+    icon: PenTool,
+    reverse: true
   }
 ];
 
@@ -40,13 +48,10 @@ export default function Services() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold mb-4 text-white">FEATURED SERVICES</h2>
-          <p className="text-[#00FF00]/80 max-w-2xl mx-auto">
-            We provide comprehensive services from consultation to delivery
-          </p>
+          <h2 className="text-[32px] font-[agrandir wide] mb-4 text-white">FEATURED SERVICES</h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="space-y-20">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -54,29 +59,28 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
+              className={`flex flex-col ${service.reverse ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 items-center`}
             >
-              <Card className="h-full bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors backdrop-blur-sm">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center mb-4">
-                    <service.icon className="w-6 h-6 text-[#00FF00]" />
-                  </div>
-                  <CardTitle className="text-white">{service.title}</CardTitle>
-                  <CardDescription className="text-white/60">{service.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-3 gap-2 mb-4">
-                    {[1, 2, 3].map((_, imgIndex) => (
-                      <div
-                        key={imgIndex}
-                        className="aspect-square bg-[#00FF00]/5 rounded-lg overflow-hidden flex items-center justify-center"
-                      >
-                        <Image className="w-6 h-6 text-[#00FF00]/40" />
-                      </div>
-                    ))}
-                  </div>
-                  <p className="text-[#00FF00]/80 text-sm">{service.details}</p>
-                </CardContent>
-              </Card>
+              {/* Image Column */}
+              <div className="w-full md:w-1/2 relative group">
+                <div className="aspect-video rounded-lg overflow-hidden bg-[#00FF00]/10 relative shadow-lg border border-[#00FF00]/20 group-hover:scale-105 transition-transform">
+                  <img src={service.img} alt="Service" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-black/40 to-black/10" />
+                  <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-[#00FF00]/10 rotate-12" />
+                </div>
+              </div>
+              {/* Text Column */}
+              <div className="w-full md:w-1/2 space-y-4 text-left">
+                <h3 className="font-[horizon] uppercase text-[36px] text-[#00af21] font-bold leading-tight">{service.title}</h3>
+                <h4 className="font-[horizon] text-white text-[30px] font-bold leading-tight -mt-2">{service.subtitle}</h4>
+                <p className="font-[agrandir wide] text-[20px] text-white leading-relaxed">{service.description}</p>
+                <div className="flex items-center gap-6 mt-6">
+                  <service.icon className="w-16 h-16 text-[#00FF00]" />
+                  <Button className="bg-[#00FF00] hover:bg-[#00FF00]/90 text-white text-lg font-bold px-10 py-5">
+                    CHECK OUT MORE
+                  </Button>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
