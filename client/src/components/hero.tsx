@@ -28,7 +28,7 @@ export default function Hero() {
             </div>
             {/* Replacing LIFE text with image and adjusting the margin */}
             <img 
-              src="/Life-Banner-1.png" // Reference the image from the public folder
+              src="https://jemwell9.github.io/Ethereal/Life-Banner-1.png" // Reference the image from the public folder
               alt="Life Banner"
               className="w-[1200px] h-[700px] object-contain mx-auto mt-[-250px]" // Adjusted margin-top to reduce the space between "IDEAS TO" and the image
             />
@@ -48,7 +48,7 @@ export default function Hero() {
               playsInline
               controlsList="nodownload nofullscreen noremoteplayback" // Hide download, fullscreen, and other controls
             >
-              <source src="/Jemwell-Project.mp4" type="video/mp4" />
+              <source src="https://jemwell9.github.io/Ethereal/Jemwell-Project.mp4" type="video/mp4" />
             </video>
           </div>
         </div>

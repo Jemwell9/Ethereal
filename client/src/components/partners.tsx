@@ -46,7 +46,7 @@ export default function Partners() {
         {/* Image Below with curved edges */}
 <div className="text-center mt-8">
   <img
-    src="/Leading-brands.png"  // Reference the image from the 'public' folder
+    src="https://jemwell9.github.io/Ethereal/Leading-brands.png"  // Reference the image from the 'public' folder
     alt="Ethereal"
     className="w-[700px] h-[auto] object-cover mx-auto rounded-lg"  // Custom width, height auto, and rounded corners
   />
