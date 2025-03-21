@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Link } from "wouter";
-import { Printer, Code2, GraduationCap, Pen } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -13,72 +11,70 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(60deg,transparent_25%,rgba(0,255,0,0.03)_50%,transparent_75%)] animate-pulse delay-150"></div>
       </div>
 
-      <div className="container mx-auto px-4 pt-24 pb-16 relative">
+      <div className="container mx-auto px-4 pt-24 pb-8 relative">
+        {/* Main Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="max-w-6xl mx-auto text-center"
         >
-          <h1 className="flex flex-col items-center justify-center min-h-[70vh]">
-            <div className="text-[2.5rem] md:text-[3.5rem] font-heading font-black tracking-tight text-white mb-4">
-              <span className="block leading-none">PRINTING YOUR</span>
+          <h1 className="flex flex-col items-center justify-center min-h-[60vh] text-white">
+            <div className="text-[60px] md:text-[80px] font-[horizon] font-bold leading-[1] mb-4 tracking-wide text-[#00bf63]"> {/* "PRINTING" in green color */}
+              <span className="block leading-none">PRINTING <span className="text-white">YOUR</span></span> {/* "YOUR" in white */}
+            </div>
+            <div className="text-[60px] md:text-[80px] font-[horizon] font-bold leading-[1] mb-4 tracking-wide text-white"> {/* "IDEAS TO" in white */}
               <span className="block leading-none">IDEAS TO</span>
             </div>
-            <span className="block text-[8rem] md:text-[12rem] lg:text-[16rem] font-heading font-black leading-none tracking-tighter bg-gradient-to-r from-[#00FF00] via-[#00FF00] to-[#00FF00]/50 text-transparent bg-clip-text">
-              LIFE
-            </span>
+            {/* Replacing LIFE text with image and adjusting the margin */}
+            <img 
+              src="/Life-Banner-1.png" // Reference the image from the public folder
+              alt="Life Banner"
+              className="w-[1200px] h-[700px] object-contain mx-auto mt-[-250px]" // Adjusted margin-top to reduce the space between "IDEAS TO" and the image
+            />
           </h1>
-
-          {/* Neon Table with 3D Printing Showcase */}
-          <div className="relative mt-[-100px] mb-16">
-            <div className="absolute inset-0 bg-[#00FF00] blur-[100px] opacity-20 h-[200px]"></div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative"
-            >
-              <div className="w-full max-w-4xl mx-auto h-[200px] rounded-lg overflow-hidden shadow-[0_0_30px_rgba(0,255,0,0.3)]">
-                <img 
-                  src="https://jemwell9.github.io/Ethereal/Ethereal-Homepage.png" 
-                  alt="3D Printing Showcase" 
-                  className="w-full h-full object-contain" 
-                  onError={(e) => {
-                    console.error('Hero image failed to load:', e);
-                    const target = e.target as HTMLImageElement;
-                    target.style.border = '2px solid red';
-                  }}
-                />
-              </div>
-            </motion.div>
-          </div>
         </motion.div>
 
-        {/* Feature Grid */}
-        <div className="relative mt-8">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-end">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={feature.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                  className="relative group"
-                >
-                  <div className="bg-[#00FF00]/10 p-4 rounded-lg transition-all group-hover:bg-[#00FF00]/20">
-                    <div className="w-full aspect-square bg-black/50 rounded-lg mb-2 flex items-center justify-center">
-                      {feature.icon}
-                    </div>
-                    <p className="text-xs text-white/80 uppercase tracking-[0.2em] text-center font-medium">
-                      {feature.title.split('\n').map((line, i) => (
-                        <span key={i} className="block">{line}</span>
-                      ))}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
+        {/* Stage Design Below LIFE */}
+        <div className="relative mt-2"> {/* Reduced margin here */}
+          {/* Video Stage */}
+          <div className="w-full max-w-6xl mx-auto mt-[-250px]"> {/* Reduced bottom margin */}
+            <video
+              width="100%" 
+              height="500px" 
+              autoPlay
+              muted
+              className="object-cover w-full h-full"
+              playsInline
+              controlsList="nodownload nofullscreen noremoteplayback" // Hide download, fullscreen, and other controls
+            >
+              <source src="/Jemwell-Project.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+
+        {/* 5 Columns: 3D PRINTING, AUTOCAD, etc. */}
+        <div className="text-center mt-4"> {/* Reduced top margin here */}
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center max-w-6xl mx-auto">
+            <div className="text-white">
+              <h3 className="text-xl font-bold">3D PRINTING</h3>
+              <p className="text-[#00FF00]">ALL MATERIALS</p>
+            </div>
+            <div className="text-white">
+              <h3 className="text-xl font-bold">AUTOCAD</h3>
+              <p className="text-[#00FF00]">MODELING</p>
+            </div>
+            <div className="text-white">
+              <h3 className="text-xl font-bold">PHD LEVEL</h3>
+              <p className="text-[#00FF00]">EXPERTISE</p>
+            </div>
+            <div className="text-white">
+              <h3 className="text-xl font-bold">3D PEN</h3>
+              <p className="text-[#00FF00]">ART WORKSHOP</p>
+            </div>
+            <div className="text-white">
+              <h3 className="text-xl font-bold">3D PRINTING</h3>
+              <p className="text-[#00FF00]">CUSTOM</p>
             </div>
           </div>
         </div>
@@ -86,22 +82,3 @@ export default function Hero() {
     </div>
   );
 }
-
-const features = [
-  {
-    title: "3D PRINTING\nALL MATERIALS",
-    icon: <Printer className="w-16 h-16 text-[#00FF00]" />
-  },
-  {
-    title: "AUTOCAD\nMODELING",
-    icon: <Code2 className="w-16 h-16 text-[#00FF00]" />
-  },
-  {
-    title: "PHD LEVEL\nEXPERTISE",
-    icon: <GraduationCap className="w-16 h-16 text-[#00FF00]" />
-  },
-  {
-    title: "3D PEN\nART WORKSHOP",
-    icon: <Pen className="w-16 h-16 text-[#00FF00]" />
-  }
-];
