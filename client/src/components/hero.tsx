@@ -1,7 +1,20 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useRef } from "react";
 
 export default function Hero() {
+  // Explicitly typing the videoRef as HTMLVideoElement or null
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  const handlePlay = () => {
+    setTimeout(() => {
+      // Ensure the videoRef is available and then call pause()
+      if (videoRef.current) {
+        videoRef.current.pause(); // Pause the video after 4 seconds
+      }
+    }, 3500); // 4000 milliseconds = 4 seconds
+  };
+
   return (
     <div className="relative min-h-screen bg-black overflow-hidden">
       {/* Animated diagonal light streaks */}
@@ -20,10 +33,10 @@ export default function Hero() {
           className="max-w-6xl mx-auto text-center"
         >
           <h1 className="flex flex-col items-center justify-center min-h-[60vh] text-white">
-            <div className="text-[60px] md:text-[80px] font-[horizon] font-bold leading-[1] mb-4 tracking-wide text-[#00bf63]"> {/* "PRINTING" in green color */}
-              <span className="block leading-none">PRINTING <span className="text-white">YOUR</span></span> {/* "YOUR" in white */}
+            <div className="text-[60px] md:text-[80px] font-[horizon] font-bold leading-[1] mb-4 tracking-wide text-[#00bf63]">
+              <span className="block leading-none">PRINTING <span className="text-white">YOUR</span></span>
             </div>
-            <div className="text-[60px] md:text-[80px] font-[horizon] font-bold leading-[1] mb-4 tracking-wide text-white"> {/* "IDEAS TO" in white */}
+            <div className="text-[60px] md:text-[80px] font-[horizon] font-bold leading-[1] mb-4 tracking-wide text-white">
               <span className="block leading-none">IDEAS TO</span>
             </div>
             {/* Replacing LIFE text with image and adjusting the margin */}
@@ -36,19 +49,21 @@ export default function Hero() {
         </motion.div>
 
         {/* Stage Design Below LIFE */}
-        <div className="relative mt-2"> {/* Reduced margin here */}
-          {/* Video Stage */}
-          <div className="w-full max-w-6xl mx-auto mt-[-250px]"> {/* Reduced bottom margin */}
+        <div className="relative mt-2">
+          <div className="w-full max-w-6xl mx-auto mt-[-250px]">
             <video
+              ref={videoRef} // Attach the video reference
               width="100%" 
               height="500px" 
               autoPlay
               muted
               className="object-cover w-full h-full"
               playsInline
-              controlsList="nodownload nofullscreen noremoteplayback" // Hide download, fullscreen, and other controls
+              controlsList="nodownload nofullscreen noremoteplayback"
+              onPlay={handlePlay} // Set the play event handler
             >
               <source src="https://jemwell9.github.io/Ethereal/Jemwell-Project.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
             </video>
           </div>
         </div>

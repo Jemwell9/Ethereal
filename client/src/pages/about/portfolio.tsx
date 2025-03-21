@@ -1,9 +1,9 @@
-
+import React from 'react'; // Explicitly import React
 import { motion } from "framer-motion";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button"; // Adjusted path to relative
+import { Card, CardContent, CardHeader, CardTitle } from "../../components/ui/card";
 import { ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 const projects = [
   {
@@ -69,7 +69,7 @@ export default function PortfolioPage() {
                     <div className="aspect-video bg-[#00FF00]/5 rounded-lg overflow-hidden mb-4">
                       <div className="w-full h-full bg-[#00FF00]/10" />
                     </div>
-                    <Button asChild className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
+                    <Button className="w-full bg-[#00FF00] hover:bg-[#00FF00]/90 text-black">
                       <Link href="/contact">
                         View Details <ArrowRight className="ml-2 w-4 h-4" />
                       </Link>

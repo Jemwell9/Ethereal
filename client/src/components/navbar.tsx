@@ -31,6 +31,15 @@ export default function Navbar() {
                         <div className="text-[#00FF00] font-medium">Who We Are</div>
                         <p className="text-sm text-white/60">Learn about our mission and values</p>
                       </Link>
+                      <Link href="/about/portfolio" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
+  <div className="text-[#00FF00] font-medium">Portfolio</div>
+  <p className="text-sm text-white/60">Check out our Portfolio</p>
+</Link>
+
+                      <Link href="/about" className="block p-3 space-y-1 hover:bg-white/5 rounded-md transition-colors">
+                        <div className="text-[#00FF00] font-medium">Blog</div>
+                        <p className="text-sm text-white/60">Check out our Blog</p>
+                      </Link>
                       
                     </div>
                   </NavigationMenuContent>
