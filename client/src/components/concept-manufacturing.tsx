@@ -1,24 +1,23 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Building2, Construction, Stethoscope, Factory, Gamepad2, Puzzle } from "lucide-react";
 
 const industries = [
-  { name: "ARCHITECTURE", icon: Building2 },
-  { name: "CONSTRUCTION", icon: Construction },
-  { name: "MEDICAL", icon: Stethoscope },
-  { name: "MANUFACTURING", icon: Factory },
-  { name: "GAMES", icon: Gamepad2 },
-  { name: "TOYS", icon: Puzzle },
+  { name: "ARCHITECTURE"},
+  { name: "CONSTRUCTION"},
+  { name: "MEDICAL"},
+  { name: "MANUFACTURING"},
+  { name: "GAMES"},
+  { name: "TOYS"},
 ];
 
 const industries2 = [
-  { name: "3D PEN (KIDS)", icon: Building2 },
-  { name: "3D PEN (ADULTS)", icon: Construction },
-  { name: "TEAMBUILDING", icon: Stethoscope },
-  { name: "GREEN TECH", icon: Factory },
-  { name: "AUTOCAD", icon: Gamepad2 },
-  { name: "MATERIAL SCIENCE", icon: Puzzle },
+  { name: "3D PEN (KIDS)"},
+  { name: "3D PEN (ADULTS)"},
+  { name: "TEAMBUILDING"},
+  { name: "GREEN TECH"},
+  { name: "AUTOCAD"},
+  { name: "MATERIAL SCIENCE" },
 ];
 
 export default function ConceptManufacturing() {
@@ -61,19 +60,18 @@ export default function ConceptManufacturing() {
           <div className="flex flex-col gap-12">
             {/* Icon and Concept Manufacturing Title */}
             <div className="flex gap-4 items-center">
-              <div className="w-16 h-16 bg-[#00FF00]/10 rounded-lg flex items-center justify-center">
-                <Building2 className="w-8 h-8 text-[#00FF00]" />
+              <div className="flex items-center justify-center">
+              <img src="/printing-icon.png" alt="Printing Icon" className="w-15 h-30" />
               </div>
               <h3 className="text-4xl font-bold text-white">CONCEPT MANUFACTURING</h3>
             </div>
 
             {/* Services - All in a single row */}
-            <div className="grid grid-cols-6 gap-4">
+            <div className="grid grid-cols-6 gap-1">
               {industries.map((industry) => (
-                <Card key={industry.name} className="bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors">
-                  <CardContent className="p-4 flex flex-col items-center justify-center text-center">
-                    <industry.icon className="w-8 h-8 text-[#00FF00] mb-2" />
-                    <span className="text-white text-[11px]">{industry.name}</span>
+                <Card key={industry.name} className="transition-colors">
+                  <CardContent className="p-1 flex items-center justify-center text-center">
+                    <span className="text-[#b8eb7c] text-[11px]">{industry.name}</span>
                   </CardContent>
                 </Card>
               ))}
@@ -86,35 +84,34 @@ export default function ConceptManufacturing() {
 
             {/* Buttons */}
             <div className="flex justify-center gap-4">
-              <Button className="text-white border-[#00FF00] hover:bg-[#00FF00] hover:text-black text-lg font-bold px-8 py-4">
+              <Button className="text-white border-[#00af21] hover:bg-[#00FF00] hover:text-black rounded-xl text-xl font-bold px-10 py-8">
                 FIND OUT MORE
               </Button>
-              <Button className="text-white border-[#00FF00] hover:bg-[#00FF00] hover:text-black text-lg font-bold px-8 py-4">
+              <Button className="text-white border-[#00af21] hover:bg-[#00FF00] hover:text-black rounded-xl text-xl font-bold px-10 py-8">
                 SEE OUR PAST WORKS
               </Button>
             </div>
           </div>
         </div>
 
-        {/* Training and Workshops Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
-          {/* 1st Column - Icon, Text, and Services */}
-          <div className="flex flex-col gap-12">
-            {/* Icon and Training and Workshops Title */}
-            <div className="flex gap-4 items-center">
-              <div className="w-16 h-16 bg-[#00FF00]/10 rounded-lg flex items-center justify-center">
-                <Building2 className="w-8 h-8 text-[#00FF00]" />
-              </div>
-              <h3 className="text-4xl font-bold text-white">TRAININGS AND WORKSHOPS (CERTIFIED)</h3>
-            </div>
+  {/* 1st Column - Icon, Text, and Services */}
+  <div className="flex flex-col gap-12">
+    <div className="flex gap-4 items-center">
+      <div className="flex items-center justify-center">
+        {/* Replace the icon with the image */}
+        <img src="/3d-pen-icon.png" alt="3D Pen Icon" className="w-15 h-35" />
+      </div>
+      <h3 className="text-4xl font-bold text-white">TRAININGS AND WORKSHOPS (CERTIFIED)</h3>
+    </div>
+
 
             {/* Services - All in a single row */}
-            <div className="grid grid-cols-6 gap-4">
+            <div className="grid grid-cols-6 gap-1">
               {industries2.map((industry) => (
-                <Card key={industry.name} className="bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors">
-                  <CardContent className="p-4 flex flex-col items-center justify-center text-center">
-                    <industry.icon className="w-8 h-8 text-[#00FF00] mb-2" />
-                    <span className="text-white text-[11px]">{industry.name}</span>
+                <Card key={industry.name} className="transition-colors">
+                  <CardContent className="p-1 flex items-center justify-center text-center">
+                    <span className="text-[#b8eb7c] text-[11px]">{industry.name}</span>
                   </CardContent>
                 </Card>
               ))}
@@ -127,10 +124,10 @@ export default function ConceptManufacturing() {
 
             {/* Buttons */}
             <div className="flex justify-center gap-4">
-              <Button className="text-white border-[#00FF00] hover:bg-[#00FF00] hover:text-black text-lg font-bold px-8 py-4">
+              <Button className="text-white border-[#00af21] hover:bg-[#00FF00] hover:text-black text-xl font-bold px-10 py-8">
                 FIND OUT MORE
               </Button>
-              <Button className="text-white border-[#00FF00] hover:bg-[#00FF00] hover:text-black text-lg font-bold px-8 py-4">
+              <Button className="text-white border-[#00af21] hover:bg-[#00FF00] hover:text-black rounded-xl text-xl font-bold px-10 py-8">
                 SEE OUR PAST WORKS
               </Button>
             </div>
@@ -139,25 +136,25 @@ export default function ConceptManufacturing() {
           {/* 2nd Column - Video Frames */}
           <div className="grid grid-cols-2 gap-6">
             <div className="w-full aspect-video bg-gray-500 rounded-lg overflow-hidden flex items-center justify-center">
-              <video className="w-full h-full" controls poster="https://jemwell9.github.io/Ethereal/thumb-1.jpg">
-                <source src="https://jemwell9.github.io/Ethereal/concept-manufacturing-vid-1.mp4" type="video/mp4" />
+              <video className="w-full h-full" controls poster="/thumb-5.jpg">
+                <source src="trainings-workshops-vid-1.mp4" type="video/mp4" />
               </video>
             </div>
             <div className="w-full aspect-video bg-gray-500 rounded-lg overflow-hidden flex items-center justify-center">
-              <video className="w-full h-full" controls poster="https://jemwell9.github.io/Ethereal/thumb-2.jpg">
-                <source src="https://jemwell9.github.io/Ethereal/concept-manufacturing-vid-2.mp4" type="video/mp4" />
+              <video className="w-full h-full" controls poster="/thumb-6.jpg">
+                <source src="trainings-workshops-vid-2.mp4" type="video/mp4" />
               </video>
             </div>
 
             <div className="w-full aspect-video bg-gray-500 rounded-lg overflow-hidden flex items-center justify-center" style={{ marginTop: '-75px' }}>
-              <video className="w-full h-full" controls poster="https://jemwell9.github.io/Ethereal/thumb-3.jpg">
-                <source src="https://jemwell9.github.io/Ethereal/concept-manufacturing-vid-3.mp4" type="video/mp4" />
+              <video className="w-full h-full" controls poster="/thumb-7.jpg">
+                <source src="trainings-workshops-vid-3.mp4" type="video/mp4" />
               </video>
             </div>
 
             <div className="w-full aspect-video bg-gray-500 rounded-lg overflow-hidden flex items-center justify-center" style={{ marginTop: '-75px' }}>
-              <video className="w-full h-full" controls poster="https://jemwell9.github.io/Ethereal/thumb-4.jpg">
-                <source src="https://jemwell9.github.io/Ethereal/concept-manufacturing-vid-4.mp4" type="video/mp4" />
+              <video className="w-full h-full" controls poster="/thumb-8.jpg">
+                <source src="trainings-workshops-vid-4.mp4" type="video/mp4" />
               </video>
             </div>
           </div>

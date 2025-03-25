@@ -87,7 +87,7 @@ export default function Services() {
                 <div className="flex items-center gap-6 mt-6 justify-center">
                   {/* Use img for the icon */}
                   <img src={service.icon} alt="Icon" className="w-30 h-20 text-[#00FF00]" /> {/* Adjusted icon size */}
-                  <Button className="bg-[#00af21] hover:bg-[#00FF00]/90 text-white text-xl font-bold px-10 py-8 rounded-xl tracking-[3px]">
+                  <Button className="bg-[#00af21] hover:bg-[#00FF00]/90 hover:text-black text-white text-xl font-bold px-10 py-8 rounded-xl tracking-[3px]">
                    CHECK OUT MORE
                   </Button>
                 </div>
