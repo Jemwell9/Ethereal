@@ -61,7 +61,7 @@ export default function ConceptManufacturing() {
             {/* Icon and Concept Manufacturing Title */}
             <div className="flex gap-4 items-center">
               <div className="flex items-center justify-center">
-              <img src="/printing-icon.png" alt="Printing Icon" className="w-15 h-30" />
+              <img src="https://jemwell9.github.io/Ethereal/printing-icon.png" alt="Printing Icon" className="w-15 h-30" />
               </div>
               <h3 className="text-4xl font-bold text-white">CONCEPT MANUFACTURING</h3>
             </div>
@@ -100,7 +100,7 @@ export default function ConceptManufacturing() {
     <div className="flex gap-4 items-center">
       <div className="flex items-center justify-center">
         {/* Replace the icon with the image */}
-        <img src="/3d-pen-icon.png" alt="3D Pen Icon" className="w-15 h-35" />
+        <img src="https://jemwell9.github.io/Ethereal/3d-pen-icon.png" alt="3D Pen Icon" className="w-15 h-35" />
       </div>
       <h3 className="text-4xl font-bold text-white">TRAININGS AND WORKSHOPS (CERTIFIED)</h3>
     </div>
@@ -136,25 +136,25 @@ export default function ConceptManufacturing() {
           {/* 2nd Column - Video Frames */}
           <div className="grid grid-cols-2 gap-6">
             <div className="w-full aspect-video bg-gray-500 rounded-lg overflow-hidden flex items-center justify-center">
-              <video className="w-full h-full" controls poster="/thumb-5.jpg">
-                <source src="trainings-workshops-vid-1.mp4" type="video/mp4" />
+              <video className="w-full h-full" controls poster="https://jemwell9.github.io/Ethereal/thumb-5.jpg">
+                <source src="https://jemwell9.github.io/Ethereal/trainings-workshops-vid-1.mp4" type="video/mp4" />
               </video>
             </div>
             <div className="w-full aspect-video bg-gray-500 rounded-lg overflow-hidden flex items-center justify-center">
-              <video className="w-full h-full" controls poster="/thumb-6.jpg">
-                <source src="trainings-workshops-vid-2.mp4" type="video/mp4" />
+              <video className="w-full h-full" controls poster="https://jemwell9.github.io/Ethereal/thumb-6.jpg">
+                <source src="https://jemwell9.github.io/Ethereal/trainings-workshops-vid-2.mp4" type="video/mp4" />
               </video>
             </div>
 
             <div className="w-full aspect-video bg-gray-500 rounded-lg overflow-hidden flex items-center justify-center" style={{ marginTop: '-75px' }}>
-              <video className="w-full h-full" controls poster="/thumb-7.jpg">
-                <source src="trainings-workshops-vid-3.mp4" type="video/mp4" />
+              <video className="w-full h-full" controls poster="https://jemwell9.github.io/Ethereal/thumb-7.jpg">
+                <source src="https://jemwell9.github.io/Ethereal/trainings-workshops-vid-3.mp4" type="video/mp4" />
               </video>
             </div>
 
             <div className="w-full aspect-video bg-gray-500 rounded-lg overflow-hidden flex items-center justify-center" style={{ marginTop: '-75px' }}>
-              <video className="w-full h-full" controls poster="/thumb-8.jpg">
-                <source src="trainings-workshops-vid-4.mp4" type="video/mp4" />
+              <video className="w-full h-full" controls poster="https://jemwell9.github.io/Ethereal/thumb-8.jpg">
+                <source src="https://jemwell9.github.io/Ethereal/trainings-workshops-vid-4.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
