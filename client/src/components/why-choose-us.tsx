@@ -1,43 +1,51 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Zap, Award, Users, Palette, Layers, Leaf, Image } from "lucide-react";
 
 const features = [
   {
     title: "Cutting-Edge Knowledge",
     description: "Our 3D printing services use the latest materials and techniques to deliver unmatched precision and quality.",
-    icon: Zap
+    icon: "/cek-icon.png" // Path to your icon image
   },
   {
     title: "Expert Guidance",
     description: "Collaborate with PhD-level professionals to refine your concepts into perfect designs.",
-    icon: Award
+    icon: "/eg-icon.png" // Path to your icon image
   },
   {
     title: "Trusted by Industry Leaders",
     description: "We've partnered with top brands and innovators across industries to deliver exceptional results.",
-    icon: Users
+    icon: "/tbil-icon.png" // Path to your icon image
   },
   {
     title: "Creative Empowerment",
     description: "Learn, create, and collaborate in workshops designed for all skill levels.",
-    icon: Palette
+    icon: "/ce-icon.png" // Path to your icon image
   },
   {
     title: "Material Diversity",
     description: "Access a wide range of materials, including plastics, metals, and composites, for any project.",
-    icon: Layers
+    icon: "/md-icon.png" // Path to your icon image
   },
   {
     title: "Sustainable Design Options",
     description: "Precision manufacturing minimizes material waste, reducing your carbon footprint.",
-    icon: Leaf
+    icon: "/sdo-icon.png" // Path to your icon image
   }
 ];
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-20 bg-black/40 relative">
+    <section
+    className="py-20 bg-black/40 relative"
+    style={{
+      backgroundImage: 'url("/why-choose-us-bg.png")', // Add your background image here
+      backgroundSize: 'contain', // Ensures the image is not stretched and fits within the container
+      backgroundPosition: 'bottom', // Keeps the image centered within the section
+      backgroundRepeat: 'no-repeat' // Prevents the image from repeating if it's smaller than the section
+    }}
+    
+    >
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,7 +54,10 @@ export default function WhyChooseUs() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="font-[agrandir wide] font-bold text-[32px] text-white mb-4">WHY CHOOSE US?</h2>
+          {/* Title with increased font size, letter spacing, and center alignment */}
+          <h2 className="font-[agrandir wide] font-bold text-[60px] md:text-[70px] text-white mb-4 mt-[-50px] tracking-[3px]">
+            WHY CHOOSE US?
+          </h2>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -60,16 +71,20 @@ export default function WhyChooseUs() {
             >
               <Card className="h-full bg-black/50 border-[#00FF00]/20 hover:border-[#00FF00]/40 transition-colors backdrop-blur-sm">
                 <CardContent className="pt-6">
-                  <div className="aspect-video mb-6 rounded-lg overflow-hidden bg-[#00FF00]/5 flex items-center justify-center">
-                    <Image className="w-12 h-12 text-[#00FF00]/40" />
+                  <div className="mb-6 rounded-lg overflow-hidden flex items-center justify-center">
+                    {/* Icon with adjustable size */}
+                    <img src={feature.icon} alt="Feature Icon" className="w-[100px] h-[100px]" /> {/* Adjust icon size */}
                   </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-[#00FF00]/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <feature.icon className="w-6 h-6 text-[#00FF00]" />
-                    </div>
+                  <div className="flex items-start gap-4 justify-center">
                     <div>
-                      <h3 className="font-[horizon] font-bold uppercase text-[#00bf63] text-[16px]">{feature.title}</h3>
-                      <p className="font-[agrandir wide] text-[14px] text-white mt-2">{feature.description}</p>
+                      {/* Title with increased font size and center alignment */}
+                      <h3 className="font-[horizon] font-bold uppercase text-[#00bf63] text-[18px] md:text-[20px] text-center tracking-wide">
+                        {feature.title}
+                      </h3>
+                      {/* Description with increased font size and center alignment */}
+                      <p className="font-[agrandir wide] text-[16px] md:text-[18px] text-white mt-2 text-center">
+                        {feature.description}
+                      </p>
                     </div>
                   </div>
                 </CardContent>

@@ -1,32 +1,38 @@
 import { motion } from "framer-motion";
-import { MessageSquare, Pencil, Printer, Truck, Eye, Lightbulb, Users, PenTool, Ruler } from "lucide-react";
 
 const steps = [
   {
-    icon: MessageSquare,
     title: "consultation",
-    description: "Share your vision, and we'll guide you through the possibilities."
+    description: "Share your vision, and we'll guide you through the possibilities.",
+    img: "/consultation-icon.png" // Updated icon to the given URL
   },
   {
-    icon: Pencil,
     title: "design",
-    description: "Collaborate with our experts for professional AutoCAD modeling and design refinement."
+    description: "Collaborate with our experts for professional AutoCAD modeling and design refinement.",
+    img: "/design-icon.png" // Updated icon to the given URL
   },
   {
-    icon: Printer,
     title: "printing/production",
-    description: "Watch your idea come to life with precision 3D printing."
+    description: "Watch your idea come to life with precision 3D printing.",
+    img: "/printing-icon.png" // Updated icon to the given URL
   },
   {
-    icon: Truck,
     title: "delivery",
-    description: "Your final product, delivered with unmatched quality and satisfaction."
+    description: "Your final product, delivered with unmatched quality and satisfaction.",
+    img: "/delivery-icon.png" // Updated icon to the given URL
   }
 ];
 
 export default function Process() {
   return (
-    <section className="py-20 bg-black">
+    <section className="py-20 bg-black" 
+      style={{
+        backgroundImage: 'url("/how-it-works-bg.png")', // Background image path
+        backgroundSize: 'contain', // Ensure the image does not stretch and stays contained
+        backgroundPosition: 'top', // Position the image at the top of the section
+        backgroundRepeat: 'no-repeat' // Prevent the image from repeating
+      }}
+    >
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -35,15 +41,13 @@ export default function Process() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-[25px] font-[agrandir wide] mb-4 text-[#77cc7d] uppercase tracking-[190]">
-            <span className="relative inline-block">
+          <h2 className="text-[50px] font-[agrandir wide] mb-4 uppercase tracking-[190]">
+            <span className="relative inline-block text-white">
               From
-              <Eye className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-6 h-6 text-[#77cc7d]" />
             </span>{' '}
-            <span className="text-[#77cc7d]">Vision to Creation</span>{' '}
-            <span className="relative inline-block">
+            <span className="text-[#77cc7d]">VISION TO CREATION</span>{' '}
+            <span className="relative inline-block text-white">
               How
-              <Lightbulb className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-6 h-6 text-[#77cc7d]" />
             </span>{' '}It Works
           </h2>
         </motion.div>
@@ -59,46 +63,47 @@ export default function Process() {
               className="text-center"
             >
               <div className="mb-6">
-                <div className="w-16 h-16 mx-auto bg-[#00FF00]/10 rounded-full flex items-center justify-center">
-                  <step.icon className="w-8 h-8 text-[#00FF00]" />
+                <div className="w-16 h-16 mx-auto  flex items-center justify-center">
+                  {/* Replaced icon with image */}
+                  <img src={step.img} alt={step.title} className="w-15 h-15" />
                 </div>
               </div>
-              <h3 className="text-white text-lg uppercase mb-4 font-[horizon] text-[12.4px]">{step.title}</h3>
-              <p className="text-white/60 text-[13px] leading-[1.4] tracking-[69] font-[agrandir wide]">{step.description}</p>
+              <h3 className="text-[#77cc7d] text-lg uppercase mb-4 font-[horizon] text-[24px] tracking-[2px]">{step.title}</h3>
+              <p className="text-white text-[16px] leading-[1.4] tracking-[2px] font-[agrandir wide]">{step.description}</p>
             </motion.div>
           ))}
         </div>
 
         {/* Workshops Section */}
         <div className="mt-20 text-center">
-          <h2 className="text-[25px] font-[agrandir wide] uppercase text-white mb-2 tracking-[190]">
+          <h2 className="text-[50px] font-[agrandir wide] uppercase text-white mb-2 tracking-[3px]">
             Empowering Creators Through Workshops
           </h2>
-          <p className="text-[12.5px] font-[horizon] uppercase text-white font-bold mb-8 tracking-[111]">
+          <p className="text-[24px] font-[horizon] uppercase text-[#77cc7d] font-bold mb-8 tracking-[3px]">
             Join a community of innovators, creators, and dreamers
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="bg-black/50 p-6 rounded-lg border border-[#00FF00]/20">
               <div className="mb-4">
-                <PenTool className="w-8 h-8 text-[#00FF00] mx-auto" />
+                <img src="/3d-pen-icon.png" alt="Workshop Icon" className="w-15 h-20 mx-auto" />
               </div>
-              <h3 className="text-white font-bold mb-2">3D Pen Art Workshops</h3>
-              <p className="text-white/60 text-sm">Hands-on creativity for individuals, families, and teams.</p>
+              <h3 className="text-[#00bf63] text-[20px] font-bold mb-2 tracking-[2px]">3D PEN ART WORKSHOPS</h3>
+              <p className="text-white text-[16px]">Hands-on creativity for individuals, families, and teams.</p>
             </div>
             <div className="bg-black/50 p-6 rounded-lg border border-[#00FF00]/20">
               <div className="mb-4">
-                <Ruler className="w-8 h-8 text-[#00FF00] mx-auto" />
+                <img src="/design-masterclasses-icon.png" alt="Workshop Icon" className="w-15 h-20 mx-auto" />
               </div>
-              <h3 className="text-white font-bold mb-2">Design Masterclasses</h3>
-              <p className="text-white/60 text-sm">Learn the art of AutoCAD modeling from industry experts.</p>
+              <h3 className="text-[#77cc7d] text-[20px] font-bold mb-2 tracking-[2px]">DESIGN MASTERCLASSES</h3>
+              <p className="text-white text-[16px]">Learn the art of AutoCAD modeling from industry experts.</p>
             </div>
             <div className="bg-black/50 p-6 rounded-lg border border-[#00FF00]/20">
               <div className="mb-4">
-                <Users className="w-8 h-8 text-[#00FF00] mx-auto" />
+                <img src="/corporate-icon.png" alt="Workshop Icon" className="w-15 h-20 mx-auto" />
               </div>
-              <h3 className="text-white font-bold mb-2">Corporate Team-Building Events</h3>
-              <p className="text-white/60 text-sm">Strengthen collaboration and innovation in your team with custom 3D design challenges.</p>
+              <h3 className="text-[#00bf63] text-[20px] font-bold mb-2 tracking-[2px]">CORPORATE TEAMBUILDING EVENTS</h3>
+              <p className="text-white text-[16px]">Strengthen collaboration and innovation in your team with custom 3D design challenges.</p>
             </div>
           </div>
         </div>

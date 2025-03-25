@@ -31,29 +31,29 @@ export default function ConceptManufacturing() {
           <div className="grid grid-cols-2 gap-6">
             {/* Video 1 */}
             <div className="w-full aspect-video bg-gray-500 rounded-lg overflow-hidden flex items-center justify-center">
-              <div className="w-full h-full bg-[#00FF00]/20 text-center text-white flex items-center justify-center">
-                <span>Video 1</span>
-              </div>
+              <video className="w-full h-full" controls poster="/thumb-1.jpg" >
+                <source src="/concept-manufacturing-vid-1.mp4" type="video/mp4" />
+              </video>
             </div>
             {/* Video 2 */}
             <div className="w-full aspect-video bg-gray-500 rounded-lg overflow-hidden flex items-center justify-center">
-              <div className="w-full h-full bg-[#00FF00]/20 text-center text-white flex items-center justify-center">
-                <span>Video 2</span>
-              </div>
+              <video className="w-full h-full" controls poster="/thumb-2.jpg">
+                <source src="/concept-manufacturing-vid-2.mp4" type="video/mp4" />
+              </video>
             </div>
 
             {/* Video 3 */}
             <div className="w-full aspect-video bg-gray-500 rounded-lg overflow-hidden flex items-center justify-center" style={{ marginTop: '5px' }}>
-              <div className="w-full h-full bg-[#00FF00]/20 text-center text-white flex items-center justify-center">
-                <span>Video 3</span>
-              </div>
+              <video className="w-full h-full" controls poster="/thumb-3.jpg">
+                <source src="/concept-manufacturing-vid-3.mp4" type="video/mp4" />
+              </video>
             </div>
 
             {/* Video 4 */}
             <div className="w-full aspect-video bg-gray-500 rounded-lg overflow-hidden flex items-center justify-center" style={{ marginTop: '5px' }}>
-              <div className="w-full h-full bg-[#00FF00]/20 text-center text-white flex items-center justify-center">
-                <span>Video 4</span>
-              </div>
+              <video className="w-full h-full" controls poster="/thumb-4.jpg">
+                <source src="/concept-manufacturing-vid-4.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
 
@@ -139,26 +139,26 @@ export default function ConceptManufacturing() {
           {/* 2nd Column - Video Frames */}
           <div className="grid grid-cols-2 gap-6">
             <div className="w-full aspect-video bg-gray-500 rounded-lg overflow-hidden flex items-center justify-center">
-              <div className="w-full h-full bg-[#00FF00]/20 text-center text-white flex items-center justify-center">
-                <span>Video 1</span>
-              </div>
+              <video className="w-full h-full" controls poster="/thumb-1.jpg">
+                <source src="/concept-manufacturing-vid-1.mp4" type="video/mp4" />
+              </video>
             </div>
             <div className="w-full aspect-video bg-gray-500 rounded-lg overflow-hidden flex items-center justify-center">
-              <div className="w-full h-full bg-[#00FF00]/20 text-center text-white flex items-center justify-center">
-                <span>Video 2</span>
-              </div>
+              <video className="w-full h-full" controls poster="/thumb-2.jpg">
+                <source src="/concept-manufacturing-vid-2.mp4" type="video/mp4" />
+              </video>
             </div>
 
             <div className="w-full aspect-video bg-gray-500 rounded-lg overflow-hidden flex items-center justify-center" style={{ marginTop: '-75px' }}>
-              <div className="w-full h-full bg-[#00FF00]/20 text-center text-white flex items-center justify-center">
-                <span>Video 3</span>
-              </div>
+              <video className="w-full h-full" controls poster="/thumb-3.jpg">
+                <source src="/concept-manufacturing-vid-3.mp4" type="video/mp4" />
+              </video>
             </div>
 
             <div className="w-full aspect-video bg-gray-500 rounded-lg overflow-hidden flex items-center justify-center" style={{ marginTop: '-75px' }}>
-              <div className="w-full h-full bg-[#00FF00]/20 text-center text-white flex items-center justify-center">
-                <span>Video 4</span>
-              </div>
+              <video className="w-full h-full" controls poster="/thumb-4.jpg">
+                <source src="/concept-manufacturing-vid-4.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>
