@@ -5,7 +5,7 @@ export default function Partners() {
     <section
       className="relative overflow-hidden h-[612px]"
       style={{
-        backgroundImage: 'url("/Banner-bg-2.png")',
+        backgroundImage: 'url("https://jemwell9.github.io/Ethereal/Banner-bg-2.png")',
         backgroundSize: 'cover',
         backgroundPosition: 'top center', // Focus on the top part of the image
         backgroundRepeat: 'no-repeat',

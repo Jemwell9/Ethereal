@@ -5,32 +5,32 @@ const features = [
   {
     title: "Cutting-Edge Knowledge",
     description: "Our 3D printing services use the latest materials and techniques to deliver unmatched precision and quality.",
-    icon: "/cek-icon.png" // Path to your icon image
+    icon: "https://jemwell9.github.io/Ethereal/cek-icon.png" // Path to your icon image
   },
   {
     title: "Expert Guidance",
     description: "Collaborate with PhD-level professionals to refine your concepts into perfect designs.",
-    icon: "/eg-icon.png" // Path to your icon image
+    icon: "https://jemwell9.github.io/Ethereal/eg-icon.png" // Path to your icon image
   },
   {
     title: "Trusted by Industry Leaders",
     description: "We've partnered with top brands and innovators across industries to deliver exceptional results.",
-    icon: "/tbil-icon.png" // Path to your icon image
+    icon: "https://jemwell9.github.io/Ethereal/tbil-icon.png" // Path to your icon image
   },
   {
     title: "Creative Empowerment",
     description: "Learn, create, and collaborate in workshops designed for all skill levels.",
-    icon: "/ce-icon.png" // Path to your icon image
+    icon: "https://jemwell9.github.io/Ethereal/ce-icon.png" // Path to your icon image
   },
   {
     title: "Material Diversity",
     description: "Access a wide range of materials, including plastics, metals, and composites, for any project.",
-    icon: "/md-icon.png" // Path to your icon image
+    icon: "https://jemwell9.github.io/Ethereal/md-icon.png" // Path to your icon image
   },
   {
     title: "Sustainable Design Options",
     description: "Precision manufacturing minimizes material waste, reducing your carbon footprint.",
-    icon: "/sdo-icon.png" // Path to your icon image
+    icon: "https://jemwell9.github.io/Ethereal/sdo-icon.png" // Path to your icon image
   }
 ];
 
@@ -39,7 +39,7 @@ export default function WhyChooseUs() {
     <section
     className="py-20 bg-black/40 relative"
     style={{
-      backgroundImage: 'url("/why-choose-us-bg.png")', // Add your background image here
+      backgroundImage: 'url("https://jemwell9.github.io/Ethereal/why-choose-us-bg.png")', // Add your background image here
       backgroundSize: 'contain', // Ensures the image is not stretched and fits within the container
       backgroundPosition: 'bottom', // Keeps the image centered within the section
       backgroundRepeat: 'no-repeat' // Prevents the image from repeating if it's smaller than the section

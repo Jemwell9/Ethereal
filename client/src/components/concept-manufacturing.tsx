@@ -31,28 +31,28 @@ export default function ConceptManufacturing() {
           <div className="grid grid-cols-2 gap-6">
             {/* Video 1 */}
             <div className="w-full aspect-video bg-gray-500 rounded-lg overflow-hidden flex items-center justify-center">
-              <video className="w-full h-full" controls poster="/thumb-1.jpg" >
-                <source src="/concept-manufacturing-vid-1.mp4" type="video/mp4" />
+              <video className="w-full h-full" controls poster="https://jemwell9.github.io/Ethereal/thumb-1.jpg" >
+                <source src="https://jemwell9.github.io/Ethereal/concept-manufacturing-vid-1.mp4" type="video/mp4" />
               </video>
             </div>
             {/* Video 2 */}
             <div className="w-full aspect-video bg-gray-500 rounded-lg overflow-hidden flex items-center justify-center">
-              <video className="w-full h-full" controls poster="/thumb-2.jpg">
-                <source src="/concept-manufacturing-vid-2.mp4" type="video/mp4" />
+              <video className="w-full h-full" controls poster="https://jemwell9.github.io/Ethereal/thumb-2.jpg">
+                <source src="https://jemwell9.github.io/Ethereal/concept-manufacturing-vid-2.mp4" type="video/mp4" />
               </video>
             </div>
 
             {/* Video 3 */}
             <div className="w-full aspect-video bg-gray-500 rounded-lg overflow-hidden flex items-center justify-center" style={{ marginTop: '5px' }}>
-              <video className="w-full h-full" controls poster="/thumb-3.jpg">
-                <source src="/concept-manufacturing-vid-3.mp4" type="video/mp4" />
+              <video className="w-full h-full" controls poster="https://jemwell9.github.io/Ethereal/thumb-3.jpg">
+                <source src="https://jemwell9.github.io/Ethereal/concept-manufacturing-vid-3.mp4" type="video/mp4" />
               </video>
             </div>
 
             {/* Video 4 */}
             <div className="w-full aspect-video bg-gray-500 rounded-lg overflow-hidden flex items-center justify-center" style={{ marginTop: '5px' }}>
-              <video className="w-full h-full" controls poster="/thumb-4.jpg">
-                <source src="/concept-manufacturing-vid-4.mp4" type="video/mp4" />
+              <video className="w-full h-full" controls poster="https://jemwell9.github.io/Ethereal/thumb-4.jpg">
+                <source src="https://jemwell9.github.io/Ethereal/concept-manufacturing-vid-4.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -139,25 +139,25 @@ export default function ConceptManufacturing() {
           {/* 2nd Column - Video Frames */}
           <div className="grid grid-cols-2 gap-6">
             <div className="w-full aspect-video bg-gray-500 rounded-lg overflow-hidden flex items-center justify-center">
-              <video className="w-full h-full" controls poster="/thumb-1.jpg">
-                <source src="/concept-manufacturing-vid-1.mp4" type="video/mp4" />
+              <video className="w-full h-full" controls poster="https://jemwell9.github.io/Ethereal/thumb-1.jpg">
+                <source src="https://jemwell9.github.io/Ethereal/concept-manufacturing-vid-1.mp4" type="video/mp4" />
               </video>
             </div>
             <div className="w-full aspect-video bg-gray-500 rounded-lg overflow-hidden flex items-center justify-center">
-              <video className="w-full h-full" controls poster="/thumb-2.jpg">
-                <source src="/concept-manufacturing-vid-2.mp4" type="video/mp4" />
+              <video className="w-full h-full" controls poster="https://jemwell9.github.io/Ethereal/thumb-2.jpg">
+                <source src="https://jemwell9.github.io/Ethereal/concept-manufacturing-vid-2.mp4" type="video/mp4" />
               </video>
             </div>
 
             <div className="w-full aspect-video bg-gray-500 rounded-lg overflow-hidden flex items-center justify-center" style={{ marginTop: '-75px' }}>
-              <video className="w-full h-full" controls poster="/thumb-3.jpg">
-                <source src="/concept-manufacturing-vid-3.mp4" type="video/mp4" />
+              <video className="w-full h-full" controls poster="https://jemwell9.github.io/Ethereal/thumb-3.jpg">
+                <source src="https://jemwell9.github.io/Ethereal/concept-manufacturing-vid-3.mp4" type="video/mp4" />
               </video>
             </div>
 
             <div className="w-full aspect-video bg-gray-500 rounded-lg overflow-hidden flex items-center justify-center" style={{ marginTop: '-75px' }}>
-              <video className="w-full h-full" controls poster="/thumb-4.jpg">
-                <source src="/concept-manufacturing-vid-4.mp4" type="video/mp4" />
+              <video className="w-full h-full" controls poster="https://jemwell9.github.io/Ethereal/thumb-4.jpg">
+                <source src="https://jemwell9.github.io/Ethereal/concept-manufacturing-vid-4.mp4" type="video/mp4" />
               </video>
             </div>
           </div>

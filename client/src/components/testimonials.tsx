@@ -7,19 +7,19 @@ const testimonials = {
       text: "Our company needed a large-scale model for a client pitch, and Ethereal delivered beyond our expectations. The quality and attention to detail helped us win the contract!",
       author: "Teo K. T.",
       role: "Urban Planner (ID)",
-      photo: "/teo-k-t-photo.png" // Updated photo path
+      photo: "https://jemwell9.github.io/Ethereal/teo-k-t-photo.png" // Updated photo path
     },
     {
       text: "Ethereal played a crucial role in helping our R&D team prototype a new product. Their 3D printing expertise saved us time and significantly improved our design process.",
       author: "Melissa L.",
       role: "Product Development Manager",
-      photo: "/melissa-l-photo.png" // Updated photo path
+      photo: "https://jemwell9.github.io/Ethereal/melissa-l-photo.png" // Updated photo path
     },
     {
       text: "We partnered with Ethereal for a public infrastructure project, and their attention to detail and ability to deliver on time was exceptional. They are a valuable asset for any government initiative.",
       author: "Shaun A.",
       role: "Marketing Lead",
-      photo: "/shaun-a-photo.png" // Updated photo path
+      photo: "https://jemwell9.github.io/Ethereal/shaun-a-photo.png" // Updated photo path
     }
   ],
   workshops: [
@@ -27,19 +27,19 @@ const testimonials = {
       text: "Ethereal's expertise in 3D printing has been a game-changer for our STEM program. The students were thrilled to see their designs come to life with such precision and quality.",
       author: "Samantha C.",
       role: "STEM Coordinator",
-      photo: "/samantha-c-photo.png" // Updated photo path
+      photo: "https://jemwell9.github.io/Ethereal/samantha-c-photo.png" // Updated photo path
     },
     {
       text: "We engaged Ethereal for a team-building 3D Pen Workshop, and it exceeded all expectations. The session was engaging, fun, and perfectly aligned with our corporate creativity goals.",
       author: "Keith T.",
       role: "HR Director",
-      photo: "/keith-t-photo.png" // Updated photo path
+      photo: "https://jemwell9.github.io/Ethereal/keith-t-photo.png" // Updated photo path
     },
     {
       text: "The 3D Pen Workshop hosted by Ethereal was a hit with our students and teachers alike. It was an innovative way to inspire creativity and hands-on learning in the classroom.",
       author: "Nicole L.",
       role: "Vice Head of Arts",
-      photo: "/nicole-l-photo.png" // Updated photo path
+      photo: "https://jemwell9.github.io/Ethereal/nicole-l-photo.png" // Updated photo path
     }
   ]
 };
@@ -48,7 +48,7 @@ export default function Testimonials() {
   return (
     <section className="py-20 bg-black"
       style={{
-        backgroundImage: 'url("/how-it-works-bg.png"), url("/featured-services-bg-b.png")',
+        backgroundImage: 'url("https://jemwell9.github.io/Ethereal/how-it-works-bg.png"), url("https://jemwell9.github.io/Ethereal/featured-services-bg-b.png")',
         backgroundSize: '100% 50%, 100% 50%', // Ensure the images are contained
         backgroundPosition: 'bottom,top', // Position the images at the top
         backgroundRepeat: 'no-repeat' // Prevent the images from repeating
