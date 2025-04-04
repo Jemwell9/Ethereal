@@ -124,7 +124,7 @@ export default function ConceptManufacturing() {
 
             {/* Buttons */}
             <div className="flex justify-center gap-4">
-              <Button className="text-white border-[#00af21] hover:bg-[#00FF00] hover:text-black text-xl font-bold px-10 py-8">
+              <Button className="text-white border-[#00af21] hover:bg-[#00FF00] hover:text-black rounded-xl text-xl font-bold px-10 py-8">
                 FIND OUT MORE
               </Button>
               <Button className="text-white border-[#00af21] hover:bg-[#00FF00] hover:text-black rounded-xl text-xl font-bold px-10 py-8">

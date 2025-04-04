@@ -1,7 +1,7 @@
-
+import React from "react"; // Import React
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Link } from "wouter";
+import { Button } from "@/components/ui/button"; // Correct import path
+import { Link } from "wouter"; // Link component from wouter for routing
 
 const blogPosts = [
   {
@@ -53,17 +53,23 @@ export default function BlogPage() {
                 transition={{ duration: 0.3 }}
                 className="bg-black/50 backdrop-blur-sm border border-[#00FF00]/20 rounded-lg overflow-hidden"
               >
-                <div className="aspect-video bg-black/50 relative">
-                  {/* Placeholder for blog post image */}
-                  <div className="absolute inset-0 flex items-center justify-center text-[#00FF00]/40">
-                    <span className="text-sm">Image: {post.title}</span>
-                  </div>
+                <div className="aspect-video relative">
+                  {/* Actual image for the blog post */}
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="object-cover w-full h-full"
+                  />
                 </div>
                 <div className="p-6">
                   <p className="text-[#00FF00] text-sm mb-2">{post.date}</p>
                   <h3 className="text-xl font-bold text-white mb-3">{post.title}</h3>
                   <p className="text-gray-400 mb-4">{post.excerpt}</p>
-                  <Button asChild variant="outline" className="w-full border-[#00FF00] text-[#00FF00] hover:bg-[#00FF00]/10">
+                  <Button
+                    asChild={true} // This ensures we render a Link component
+                    variant="outline"
+                    className="w-full border-[#00FF00] text-[#00FF00] hover:bg-[#00FF00]/10"
+                  >
                     <Link href={`/blog/${post.slug}`}>Read More</Link>
                   </Button>
                 </div>

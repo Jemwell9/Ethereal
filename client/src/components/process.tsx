@@ -4,22 +4,22 @@ const steps = [
   {
     title: "consultation",
     description: "Share your vision, and we'll guide you through the possibilities.",
-    img: "https://jemwell9.github.io/Ethereal/consultation-icon.png" // Updated icon to the given URL
+    img: "https://ethereal.sg/Ethereal/consultation-icon.png" // Updated icon to the given URL
   },
   {
     title: "design",
     description: "Collaborate with our experts for professional AutoCAD modeling and design refinement.",
-    img: "https://jemwell9.github.io/Ethereal/design-icon.png" // Updated icon to the given URL
+    img: "https://ethereal.sg/Ethereal/design-icon.png" // Updated icon to the given URL
   },
   {
     title: "printing/production",
     description: "Watch your idea come to life with precision 3D printing.",
-    img: "https://jemwell9.github.io/Ethereal/printing-icon.png" // Updated icon to the given URL
+    img: "https://ethereal.sg/Ethereal/printing-icon.png" // Updated icon to the given URL
   },
   {
     title: "delivery",
     description: "Your final product, delivered with unmatched quality and satisfaction.",
-    img: "https://jemwell9.github.io/Ethereal/delivery-icon.png" // Updated icon to the given URL
+    img: "https://ethereal.sg/Ethereal/delivery-icon.png" // Updated icon to the given URL
   }
 ];
 
@@ -27,7 +27,7 @@ export default function Process() {
   return (
     <section className="py-20 bg-black" 
       style={{
-        backgroundImage: 'url("https://jemwell9.github.io/Ethereal/how-it-works-bg.png")', // Background image path
+        backgroundImage: 'url("https://ethereal.sg/Ethereal/how-it-works-bg.png")', // Background image path
         backgroundSize: 'contain', // Ensure the image does not stretch and stays contained
         backgroundPosition: 'top', // Position the image at the top of the section
         backgroundRepeat: 'no-repeat' // Prevent the image from repeating
@@ -86,21 +86,21 @@ export default function Process() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="bg-black/50 p-6 rounded-lg border border-[#00FF00]/20">
               <div className="mb-4">
-                <img src="https://jemwell9.github.io/Ethereal/3d-pen-icon.png" alt="Workshop Icon" className="w-15 h-20 mx-auto" />
+                <img src="https://ethereal.sg/Ethereal/3d-pen-icon.png" alt="Workshop Icon" className="w-15 h-20 mx-auto" />
               </div>
               <h3 className="text-[#00bf63] text-[20px] font-bold mb-2 tracking-[2px]">3D PEN ART WORKSHOPS</h3>
               <p className="text-white text-[16px]">Hands-on creativity for individuals, families, and teams.</p>
             </div>
             <div className="bg-black/50 p-6 rounded-lg border border-[#00FF00]/20">
               <div className="mb-4">
-                <img src="https://jemwell9.github.io/Ethereal/design-masterclasses-icon.png" alt="Workshop Icon" className="w-15 h-20 mx-auto" />
+                <img src="https://ethereal.sg/Ethereal/design-masterclasses-icon.png" alt="Workshop Icon" className="w-15 h-20 mx-auto" />
               </div>
               <h3 className="text-[#77cc7d] text-[20px] font-bold mb-2 tracking-[2px]">DESIGN MASTERCLASSES</h3>
               <p className="text-white text-[16px]">Learn the art of AutoCAD modeling from industry experts.</p>
             </div>
             <div className="bg-black/50 p-6 rounded-lg border border-[#00FF00]/20">
               <div className="mb-4">
-                <img src="https://jemwell9.github.io/Ethereal/corporate-icon.png" alt="Workshop Icon" className="w-15 h-20 mx-auto" />
+                <img src="https://ethereal.sg/Ethereal/corporate-icon.png" alt="Workshop Icon" className="w-15 h-20 mx-auto" />
               </div>
               <h3 className="text-[#00bf63] text-[20px] font-bold mb-2 tracking-[2px]">CORPORATE TEAMBUILDING EVENTS</h3>
               <p className="text-white text-[16px]">Strengthen collaboration and innovation in your team with custom 3D design challenges.</p>

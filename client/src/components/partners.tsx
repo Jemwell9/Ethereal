@@ -5,7 +5,7 @@ export default function Partners() {
     <section
       className="relative overflow-hidden h-[612px]"
       style={{
-        backgroundImage: 'url("https://jemwell9.github.io/Ethereal/Banner-bg-2.png")',
+        backgroundImage: 'url("https://ethereal.sg/Ethereal/Banner-bg-2.png")',
         backgroundSize: 'cover',
         backgroundPosition: 'top center', // Focus on the top part of the image
         backgroundRepeat: 'no-repeat',
@@ -51,7 +51,7 @@ export default function Partners() {
         {/* Image Below with curved edges */}
         <div className="text-center mt-8">
           <img
-            src="https://jemwell9.github.io/Ethereal/Leading-brands.png" // Reference the image from the 'public' folder
+            src="https://ethereal.sg/Ethereal/Leading-brands.png" // Reference the image from the 'public' folder
             alt="Ethereal"
             className="w-[850px] h-[auto] object-cover mx-auto rounded-lg" // Custom width, height auto, and rounded corners
           />

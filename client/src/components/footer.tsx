@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="flex justify-center">
             <Link href="/">
               <img 
-             src="https://jemwell9.github.io/Ethereal/Ethereal-Logo.png" 
+             src="https://ethereal.sg/Ethereal/Ethereal-Logo.png" 
                 alt="Ethereal" 
                 className="h-48 w-auto cursor-pointer"
                 style={{ filter: 'drop-shadow(0 0 8px rgba(0, 255, 0, 0.3))' }}

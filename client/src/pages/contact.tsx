@@ -1,13 +1,13 @@
-
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
-import { Mail, Phone, MapPin, Send, Linkedin, Facebook, Instagram, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Clock } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import emailjs from 'emailjs-com';  // Import emailjs
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -25,7 +25,44 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+
+    // Check if all required fields are filled
+    if (!formData.name || !formData.email || !formData.message) {
+      alert("Please fill out all required fields.");
+      return;
+    }
+
+    // Send email using EmailJS
+    emailjs
+      .send(
+        "service_c21icd3",   // Replace with your EmailJS Service ID
+        "template_q2694ac",   // Replace with your EmailJS Template ID
+        formData,             // The form data to send
+        "P-ohrR6_XhH88nUQ8"        // Replace with your EmailJS User ID
+      )
+      .then(
+        (result) => {
+          console.log("Success:", result.text);
+          alert("Message Sent! Thank you for contacting us. We'll get back to you soon.");
+          // Optionally reset the form after sending
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            company: '',
+            projectType: '',
+            budget: '',
+            timeline: '',
+            subject: '',
+            message: '',
+            preferredContact: '',
+          });
+        },
+        (error) => {
+          console.log("Error:", error.text);
+          alert("There was an issue sending your message. Please try again.");
+        }
+      );
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

@@ -5,6 +5,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Animated3DGrid } from "@/components/ui/animated-3d-grid";
 import Home from "@/pages/home";
 import About from "@/pages/about";
+import Portfolio  from "@/pages/about/portfolio";
+import Blog  from "@/pages/about/blog";
 import Booking from "@/pages/booking";
 import Services from "@/pages/services";
 import DesignServices from "@/pages/services/design-services";
@@ -30,6 +32,8 @@ export default function App() {
             <Switch>
               <Route path="/" component={Home} />
               <Route path="/about" component={About} />
+              <Route path="about/portfolio" component={Portfolio} />
+              <Route path="about/blog" component={Blog} />
               <Route path="/booking" component={Booking} />
               <Route path="/services" component={Services} />
               <Route path="/services/design" component={DesignServices} />
