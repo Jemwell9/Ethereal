@@ -16,7 +16,7 @@ export default function Navbar() {
         <div className="flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] gap-4 md:gap-16 items-center py-2 md:py-0">
           {/* Left menu */}
           <div className="flex flex-col md:flex-row items-center justify-evenly gap-4 md:gap-8 w-full md:w-auto">
-            <Link href="/">
+            <Link href="/home">
               <span className="text-white hover:text-[#00FF00] transition-colors text-[10px] tracking-[0.2em] font-medium">HOME</span>
             </Link>
             <NavigationMenu>
@@ -74,9 +74,9 @@ export default function Navbar() {
 
           {/* Center logo */}
           <div className="flex justify-center py-1">
-  <Link href="/">
+  <Link href="/home">
     <img 
-      src="https://jemwell9.github.io/Ethereal/Ethereal-Logo.png" 
+      src="https://ethereal.sg/public/Ethereal-Logo.png" 
       alt="Ethereal" 
       className="h-24 w-auto object-contain transition-transform hover:scale-105 cursor-pointer" 
       style={{ 
@@ -84,7 +84,7 @@ export default function Navbar() {
       }}
       onError={(e) => {
         const target = e.target as HTMLImageElement;
-        target.src = 'https://jemwell9.github.io/Ethereal/Ethereal-Logo.png'; // Fallback path
+        target.src = 'https://ethereal.sg/public/Ethereal-Logo.png'; // Fallback path
         console.warn('Logo failed to load, using fallback');
       }}
     />

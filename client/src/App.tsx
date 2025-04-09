@@ -30,7 +30,8 @@ export default function App() {
           <Navbar />
           <main className="min-h-screen pt-24">
             <Switch>
-              <Route path="/" component={Home} />
+              <Route path="/home" component={Home} />
+              <Route path="/public" component={Home} />
               <Route path="/about" component={About} />
               <Route path="about/portfolio" component={Portfolio} />
               <Route path="about/blog" component={Blog} />

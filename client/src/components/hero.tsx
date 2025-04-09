@@ -4,7 +4,7 @@ import { useRef } from "react";
 
 export default function Hero() {
   return (
-    <div className="relative min-h-screen bg-black overflow-hidden" style={{ backgroundImage: 'url("https://ethereal.sg/Ethereal/Banner-bg-1.png")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <div className="relative min-h-screen bg-black overflow-hidden" style={{ backgroundImage: 'url("https://ethereal.sg/public/Banner-bg-1.png")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
       {/* Animated diagonal light streaks */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(0,255,0,0.1)_50%,transparent_75%)] animate-pulse"></div>
@@ -29,7 +29,7 @@ export default function Hero() {
             </div>
             {/* Replacing LIFE text with image and adjusting the margin */}
             <img 
-              src="https://ethereal.sg/Ethereal/Life-Banner-1.png" // Reference the image from the public folder
+              src="https://ethereal.sg/public/Life-Banner-1.png" // Reference the image from the public folder
               alt="Life Banner"
               className="w-[1200px] h-[700px] object-contain mx-auto mt-[-250px]" // Adjusted margin-top to reduce the space between "IDEAS TO" and the image
             />
@@ -41,7 +41,7 @@ export default function Hero() {
           <div className="w-full max-w-6xl mx-auto mt-[-250px]">
             {/* Image instead of video */}
             <img
-              src="https://ethereal.sg/Ethereal/Jemwell-Project.png" // Replace this with the path to your image
+              src="https://ethereal.sg/public/Jemwell-Project.png" // Replace this with the path to your image
               alt="Ethereal Project"
               className="object-cover w-full h-full"
             />

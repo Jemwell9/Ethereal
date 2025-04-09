@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
-  "homepage": "https://ethereal.sg",
+  "homepage": "https://ethereal.sg/public",
   "scripts": {
     "dev": "tsx server/index.ts",
     "prebuild": "rm -rf dist",

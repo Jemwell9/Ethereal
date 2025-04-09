@@ -10,9 +10,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center items-center">
           {/* Logo Section */}
           <div className="flex justify-center">
-            <Link href="/">
+            <Link href="/home">
               <img 
-             src="https://ethereal.sg/Ethereal/Ethereal-Logo.png" 
+             src="https://ethereal.sg/public/Ethereal-Logo.png" 
                 alt="Ethereal" 
                 className="h-48 w-auto cursor-pointer"
                 style={{ filter: 'drop-shadow(0 0 8px rgba(0, 255, 0, 0.3))' }}
